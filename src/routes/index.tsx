@@ -110,7 +110,7 @@ function Index() {
   const services = [
     {
       title: "Аппаратная\nкосметология",
-      image: serviceMedical.url,
+      image: serviceHardware.url,
     },
     {
       title: "Эстетическая\nкосметология",
@@ -118,7 +118,7 @@ function Index() {
     },
     {
       title: "Врачебная\nкосметология",
-      image: serviceHardware.url,
+      image: serviceMedical.url,
     },
   ];
 
