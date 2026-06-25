@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import heroVideo from "@/assets/komilfo_hero_v2.mp4.asset.json";
 import secondImage from "@/assets/komilfo_second.png.asset.json";
 import serviceEsthetic from "@/assets/service_esthetic.png.asset.json";
-import serviceMedical from "@/assets/service_medical.png.asset.json";
+import serviceHardware from "@/assets/service_hardware.png.asset.json";
 import {
   Dialog,
   DialogContent,
@@ -116,7 +116,7 @@ function Index() {
     },
     {
       title: "Аппаратная\nкосметология",
-      image: null as string | null,
+      image: serviceHardware.url,
     },
   ];
 
@@ -346,7 +346,7 @@ function Index() {
                       <img
                         src={s.image}
                         alt=""
-                        className="absolute inset-0 h-full w-full scale-105 object-cover blur-[2px] transition-all duration-700 group-hover:scale-110 group-hover:blur-[3px]"
+                        className="absolute inset-0 h-full w-full scale-105 object-cover transition-all duration-700 group-hover:scale-110 group-hover:blur-[2px]"
                       />
                     ) : (
                       <div className="absolute inset-0 bg-neutral-400" />
