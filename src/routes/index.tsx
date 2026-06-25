@@ -265,8 +265,8 @@ function Index() {
 
         {/* Контент */}
         <div className="relative z-10 mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-start px-6 pt-28 pb-24 text-center md:px-8 md:pt-36 lg:pt-44">
-          <h2 className="font-display max-w-3xl whitespace-pre-line text-2xl leading-[1.15] tracking-[0.01em] text-[#c4c4c4] drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)] md:text-3xl lg:text-4xl">
-            Бесплатно подберем персональную стратегию{"\n"}вашей красоты
+          <h2 className="font-display max-w-3xl whitespace-normal text-2xl leading-[1.15] tracking-[0.01em] text-[#c4c4c4] drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)] md:text-3xl lg:text-4xl">
+            Бесплатно подберем персональную <span className="whitespace-nowrap">стратегию вашей красоты</span>
           </h2>
           <p className="font-body mt-5 max-w-3xl text-base font-light leading-relaxed text-[#b8b8b8] md:mt-6 md:text-lg">
             и проведем аудит вашей внешности на основе вашего генотипа
