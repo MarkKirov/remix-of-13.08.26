@@ -405,14 +405,14 @@ function Index() {
           style={{ backgroundColor: BRAND }}
         >
           <div className="max-w-xl">
-            <h2 className="font-display text-2xl leading-[1.15] tracking-[0.01em] text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.15)] md:text-3xl lg:text-4xl">
+            <h2 className="font-display text-2xl leading-[1.15] tracking-[0.01em] text-[#f5f5f5] drop-shadow-[0_2px_12px_rgba(0,0,0,0.15)] md:text-3xl lg:text-4xl">
               Наш продукт — не препарат в шприце,{"\n"}
               а ваше уверенное отражение в зеркале
             </h2>
-            <p className="font-body mt-6 text-sm font-light leading-relaxed text-white/85 md:mt-8 md:text-base">
+            <p className="font-body mt-6 text-sm font-light leading-relaxed text-[#d4d4d4] md:mt-8 md:text-base">
               Мы создаём комплексную стратегию, комбинируем методы, чтобы на десятилетия сохранять вашу естественную молодость и индивидуальность.
             </p>
-            <p className="font-body mt-4 text-sm font-light leading-relaxed text-white/85 md:text-base">
+            <p className="font-body mt-4 text-sm font-light leading-relaxed text-[#d4d4d4] md:text-base">
               Поэтому мы не бросаем вас после процедуры, а строго проверяем результат и следим за тем, как услуга интегрировалась в ваш организм.
             </p>
           </div>
