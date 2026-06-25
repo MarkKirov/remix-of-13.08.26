@@ -9,6 +9,7 @@ import serviceMedical from "@/assets/service_medical.png.asset.json";
 import serviceHardware from "@/assets/service_hardware.png.asset.json";
 import comparisonBg from "@/assets/comparison-bg.png.asset.json";
 import headerLogo from "@/assets/header_logo.svg.asset.json";
+import consultationBg from "@/assets/consultation-bg.png.asset.json";
 import {
   Dialog,
   DialogContent,
@@ -93,29 +94,12 @@ const slides: Slide[] = [
 
 function Index() {
   const [active, setActive] = useState(0);
-  const [secondOffset, setSecondOffset] = useState(0);
   const videoRef = useRef<HTMLVideoElement | null>(null);
-  const secondRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.playbackRate = 0.4;
     }
-  }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!secondRef.current) return;
-      const rect = secondRef.current.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-      const sectionHeight = rect.height;
-      const progress = (windowHeight - rect.top) / (windowHeight + sectionHeight);
-      const clamped = Math.max(0, Math.min(1, progress));
-      setSecondOffset(-60 + clamped * 120);
-    };
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
