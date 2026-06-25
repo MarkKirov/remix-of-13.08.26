@@ -169,18 +169,18 @@ function Index() {
                     <div>
                       <button
                         type="button"
-                        className="group inline-flex items-center gap-2 rounded-full border-2 px-5 py-3 text-xs font-medium uppercase tracking-[0.1em] transition-all md:px-6 md:text-sm"
+                        className="group inline-flex items-center gap-2 rounded-full border-2 px-4 py-2 text-xs font-medium uppercase tracking-[0.1em] transition-all"
                         style={{
                           borderColor: BRAND,
                           color: "#fff",
-                          backgroundColor: "rgba(174, 49, 166, 0.22)",
+                          backgroundColor: "rgba(174, 49, 166, 0.18)",
                         }}
                         onMouseEnter={(e) => {
                           e.currentTarget.style.backgroundColor = BRAND;
                           e.currentTarget.style.color = "#fff";
                         }}
                         onMouseLeave={(e) => {
-                          e.currentTarget.style.backgroundColor = "rgba(174, 49, 166, 0.22)";
+                          e.currentTarget.style.backgroundColor = "rgba(174, 49, 166, 0.18)";
                           e.currentTarget.style.color = "#fff";
                         }}
                       >
@@ -191,6 +191,7 @@ function Index() {
                   </article>
                 ))}
               </div>
+
 
 
 
