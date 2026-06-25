@@ -3,6 +3,16 @@ import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import heroVideo from "@/assets/komilfo_hero_v2.mp4.asset.json";
 import secondImage from "@/assets/komilfo_second.png.asset.json";
+import serviceEsthetic from "@/assets/service_esthetic.png.asset.json";
+import serviceMedical from "@/assets/service_medical.png.asset.json";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -94,6 +104,21 @@ function Index() {
 
   const go = (dir: 1 | -1) =>
     setActive((i) => (i + dir + slides.length) % slides.length);
+
+  const services = [
+    {
+      title: "Эстетическая\nкосметология",
+      image: serviceEsthetic.url,
+    },
+    {
+      title: "Врачебная\nкосметология",
+      image: serviceMedical.url,
+    },
+    {
+      title: "Аппаратная\nкосметология",
+      image: null as string | null,
+    },
+  ];
 
   return (
     <div className="bg-neutral-950 text-white">
@@ -293,6 +318,75 @@ function Index() {
             <span>Записаться на бесплатную консультацию</span>
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
           </button>
+        </div>
+      </section>
+
+      {/* Третий экран — услуги на сером фоне */}
+      <section className="relative bg-neutral-200 py-20 md:py-28">
+        <div className="mx-auto max-w-6xl px-6 md:px-8">
+          <h2
+            className="font-display text-center text-3xl tracking-[0.01em] md:text-4xl lg:text-5xl"
+            style={{ color: BRAND }}
+          >
+            Наши услуги
+          </h2>
+          <p className="font-caption mt-3 text-center text-[10px] uppercase tracking-[0.18em] text-neutral-500 md:text-xs">
+            Выберите направление, чтобы узнать подробнее
+          </p>
+
+          <div className="mt-12 grid grid-cols-1 gap-6 md:mt-16 md:grid-cols-3 md:gap-7">
+            {services.map((s) => (
+              <Dialog key={s.title}>
+                <DialogTrigger asChild>
+                  <button
+                    type="button"
+                    className="group relative aspect-[3/4] w-full overflow-hidden rounded-2xl shadow-[0_20px_50px_-20px_rgba(0,0,0,0.35)] transition-transform duration-500 hover:-translate-y-1"
+                  >
+                    {s.image ? (
+                      <img
+                        src={s.image}
+                        alt=""
+                        className="absolute inset-0 h-full w-full scale-105 object-cover blur-[2px] transition-all duration-700 group-hover:scale-110 group-hover:blur-[3px]"
+                      />
+                    ) : (
+                      <div className="absolute inset-0 bg-neutral-400" />
+                    )}
+                    {/* Розовое затемнение в фирменном цвете */}
+                    <div
+                      className="absolute inset-0"
+                      style={{
+                        background: `linear-gradient(180deg, rgba(20,20,20,0.45) 0%, ${BRAND}55 60%, ${BRAND}88 100%)`,
+                      }}
+                    />
+                    <div className="absolute inset-0 bg-black/20" />
+
+                    <div className="absolute inset-0 flex flex-col items-center justify-end p-7 text-center md:p-8">
+                      <h3 className="font-display whitespace-pre-line text-xl leading-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)] md:text-2xl lg:text-[1.7rem]">
+                        {s.title}
+                      </h3>
+                      <span
+                        className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/70 px-4 py-2 text-[10px] font-normal uppercase tracking-[0.14em] text-white backdrop-blur-sm transition-colors group-hover:bg-white group-hover:text-neutral-900 md:text-xs"
+                      >
+                        Подробнее
+                        <ArrowRight className="h-3 w-3" />
+                      </span>
+                    </div>
+                  </button>
+                </DialogTrigger>
+                <DialogContent className="max-w-lg">
+                  <DialogHeader>
+                    <DialogTitle className="font-display text-2xl" style={{ color: BRAND }}>
+                      {s.title.replace("\n", " ")}
+                    </DialogTitle>
+                    <DialogDescription className="font-body pt-2 text-sm leading-relaxed text-neutral-600">
+                      Здесь скоро появится подробное описание услуг, методик и
+                      специалистов этого направления. Заглушка для предпросмотра.
+                    </DialogDescription>
+                  </DialogHeader>
+                </DialogContent>
+              </Dialog>
+            ))}
+          </div>
         </div>
       </section>
     </div>
