@@ -303,11 +303,10 @@ function Index() {
         <div className="relative z-10 mx-auto flex min-h-[80vh] max-w-5xl flex-col items-center justify-center px-6 py-16 text-center md:px-8 md:py-20">
           <div className="md:-translate-y-10">
             <h2 className="font-display text-xl leading-[1.25] tracking-[0.01em] text-[#e5e5e5] drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)] md:text-3xl lg:text-4xl">
-              Бесплатно подберём персональную
+              Бесплатно подберём персональную стратегию вашей красоты
               <span className="font-body my-2 block text-sm font-light leading-relaxed text-[#c4c4c4] md:my-3 md:text-base">
                 и проведём аудит вашей внешности на основе вашего генотипа
               </span>
-              стратегию вашей красоты
             </h2>
             <button
               type="button"
