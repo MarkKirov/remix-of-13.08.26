@@ -80,9 +80,9 @@ function Index() {
     setActive((i) => (i + dir + slides.length) % slides.length);
 
   return (
-    <div className="min-h-screen bg-neutral-950 text-white">
-      {/* Первый экран — слайдшоу с дескриптором поверх видео */}
-      <section className="relative overflow-hidden">
+    <div className="bg-neutral-950 text-white">
+      {/* Первый экран — видео на всю высоту viewport с текстом поверх */}
+      <section className="relative h-screen min-h-screen overflow-hidden">
         {/* Видео фон */}
         <video
           ref={videoRef}
@@ -95,22 +95,22 @@ function Index() {
         />
         {/* Затемнение */}
         <div className="absolute inset-0 bg-black/60" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
 
-        {/* Дескриптор поверх видео — затемнённая плашка */}
-        <header className="absolute inset-x-0 top-0 z-20 w-full bg-black/45 backdrop-blur-sm">
-          <div className="mx-auto max-w-6xl px-6 py-4 text-center text-white md:py-5">
+        {/* Дескриптор — тонким начертанием прямо поверх видео */}
+        <header className="absolute inset-x-0 top-0 z-20 w-full pt-6 md:pt-8">
+          <div className="mx-auto max-w-6xl px-6 text-center text-white">
             {/* Здесь позже будет прозрачный логотип */}
-            <p className="font-display text-sm md:text-base lg:text-lg leading-snug uppercase tracking-[0.08em]">
+            <p className="font-display text-[10px] font-light uppercase tracking-[0.14em] text-white/90 md:text-xs">
               17 лет сохраняем вашу природную красоту и индивидуальность
             </p>
-            <p className="font-display text-[10px] md:text-xs lg:text-sm opacity-85 mt-1.5 uppercase tracking-[0.18em]">
+            <p className="font-display text-[10px] font-light uppercase tracking-[0.14em] text-white/75 mt-1">
               без комплексов и рисков для здоровья
             </p>
           </div>
         </header>
 
-        <div className="relative z-10 mx-auto flex min-h-[640px] max-w-6xl items-center px-6 py-20 md:px-8 md:py-32">
+        <div className="relative z-10 mx-auto flex h-full min-h-screen max-w-6xl items-center px-6 pt-20 pb-8 md:px-8 md:pb-12 md:pt-24">
           <div className="flex w-full items-center gap-6 md:gap-10">
             {/* Стрелка назад */}
             <button
