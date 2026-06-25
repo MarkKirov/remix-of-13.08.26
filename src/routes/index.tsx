@@ -293,30 +293,32 @@ function Index() {
           src={consultationBg.url}
           alt=""
           className="absolute inset-0 h-full w-full object-cover"
-          style={{ objectPosition: "center 35%" }}
+          style={{ objectPosition: "center 55%" }}
           decoding="async"
         />
         <div className="absolute inset-0 bg-black/55" />
         <div className="absolute inset-0 bg-[#AE31A6]/25" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
 
-        <div className="relative z-10 mx-auto flex min-h-[80vh] max-w-5xl flex-col items-center justify-center px-6 py-20 text-center md:px-8 md:py-28">
-          <h2 className="font-display text-2xl leading-[1.15] tracking-[0.01em] text-[#e5e5e5] drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)] md:text-4xl lg:text-5xl">
-            Бесплатно подберём персональную{"\n"}стратегию вашей красоты
-          </h2>
-          <p className="font-body mt-6 max-w-2xl text-sm font-light leading-relaxed text-[#c4c4c4] md:mt-8 md:text-base">
-            и проведём аудит вашей внешности на основе вашего генотипа
-          </p>
-          <button
-            type="button"
-            className="group mt-10 inline-flex items-center gap-2 rounded-full border-2 px-6 py-3 text-xs font-normal uppercase tracking-[0.1em] transition-all md:mt-12 md:px-8 md:py-3.5 md:text-sm"
-            style={{ borderColor: BRAND, color: "#fff", backgroundColor: "transparent" }}
-            onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = BRAND; }}
-            onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent"; }}
-          >
-            <span>Записаться на бесплатную консультацию</span>
-            <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
-          </button>
+        <div className="relative z-10 mx-auto flex min-h-[80vh] max-w-5xl flex-col items-center justify-center px-6 py-16 text-center md:px-8 md:py-20">
+          <div className="md:-translate-y-6">
+            <h2 className="font-display text-xl leading-[1.2] tracking-[0.01em] text-[#e5e5e5] drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)] md:text-3xl lg:text-4xl">
+              Бесплатно подберём персональную{"\n"}стратегию вашей красоты
+            </h2>
+            <p className="font-body mt-5 max-w-2xl text-sm font-light leading-relaxed text-[#c4c4c4] md:mt-6 md:text-base">
+              и проведём аудит вашей внешности на основе вашего генотипа
+            </p>
+            <button
+              type="button"
+              className="group mt-8 inline-flex items-center gap-2 rounded-full border-2 px-5 py-2.5 text-xs font-normal uppercase tracking-[0.1em] transition-all md:mt-10 md:px-6 md:py-3"
+              style={{ borderColor: BRAND, color: "#fff", backgroundColor: "transparent" }}
+              onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = BRAND; }}
+              onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent"; }}
+            >
+              <span>Записаться на бесплатную консультацию</span>
+              <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
+            </button>
+          </div>
         </div>
       </section>
 
