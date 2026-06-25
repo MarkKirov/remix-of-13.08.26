@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import heroVideo from "@/assets/komilfo_hero_v2.mp4.asset.json";
+import secondImage from "@/assets/komilfo_second.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -244,6 +245,52 @@ function Index() {
               <ChevronRight className="h-5 w-5" />
             </button>
           </div>
+        </div>
+      </section>
+
+      {/* Второй экран — призыв с фоновым изображением */}
+      <section className="relative min-h-screen overflow-hidden">
+        {/* Фоновое изображение */}
+        <img
+          className="absolute inset-0 h-full w-full object-cover"
+          src={secondImage.url}
+          alt="Косметолог делает массаж лица"
+          decoding="async"
+        />
+        {/* Затемнение с розоватым оттенком */}
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-[#AE31A6]/20" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/70" />
+
+        {/* Контент */}
+        <div className="relative z-10 mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-center px-6 py-24 text-center md:px-8">
+          <h2 className="font-display max-w-4xl whitespace-pre-line text-3xl leading-[1.15] tracking-[0.01em] text-[#e5e5e5] drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)] md:text-4xl lg:text-6xl">
+            Бесплатно подберем персональную стратегию{"\n"}вашей красоты
+          </h2>
+          <p className="font-body mt-6 max-w-3xl text-base font-light leading-relaxed text-[#c4c4c4] md:mt-8 md:text-xl">
+            и проведем аудит вашей внешности на основе вашего генотипа
+          </p>
+
+          <button
+            type="button"
+            className="group mt-10 inline-flex items-center gap-3 rounded-full border-2 px-8 py-4 text-sm font-normal uppercase tracking-[0.1em] transition-all md:mt-12 md:px-10 md:py-5 md:text-base"
+            style={{
+              borderColor: BRAND,
+              color: "#fff",
+              backgroundColor: "transparent",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = BRAND;
+              e.currentTarget.style.borderColor = BRAND;
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = "transparent";
+              e.currentTarget.style.borderColor = BRAND;
+            }}
+          >
+            <span>Записаться на бесплатную консультацию</span>
+            <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+          </button>
         </div>
       </section>
     </div>
