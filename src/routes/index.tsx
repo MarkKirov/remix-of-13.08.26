@@ -275,16 +275,21 @@ function Index() {
         </div>
       </section>
 
-      {/* Второй экран — призыв с фоновым изображением */}
-      <section className="relative min-h-[80vh] overflow-hidden">
-        {/* Фоновое изображение */}
-        <img
-          className="absolute inset-0 h-full w-full object-cover"
-          style={{ objectPosition: "center 70%" }}
-          src={secondImage.url}
-          alt="Женщина на процедуре по уходу за лицом"
-          decoding="async"
-        />
+      {/* Второй экран — призыв с фоновым изображением и параллаксом */}
+      <section ref={secondRef} className="relative min-h-[80vh] overflow-hidden">
+        {/* Фоновое изображение с параллаксом */}
+        <div
+          className="absolute inset-0 h-[120%] w-full"
+          style={{ transform: `translateY(${secondOffset}px)` }}
+        >
+          <img
+            className="h-full w-full object-cover"
+            style={{ objectPosition: "center 70%" }}
+            src={secondImage.url}
+            alt="Женщина на процедуре по уходу за лицом"
+            decoding="async"
+          />
+        </div>
         {/* Затемнение с розоватым оттенком */}
         <div className="absolute inset-0 bg-black/60" />
         <div className="absolute inset-0 bg-[#AE31A6]/20" />
