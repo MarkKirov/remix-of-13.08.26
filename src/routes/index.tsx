@@ -143,28 +143,30 @@ function Index() {
                     key={i}
                     aria-hidden={i !== active}
                     style={{ gridArea: "1 / 1 / 2 / 2" }}
-                    className={`transition-opacity duration-700 ease-out ${
+                    className={`flex flex-col justify-between transition-opacity duration-700 ease-out ${
                       i === active ? "opacity-100" : "pointer-events-none opacity-0"
                     }`}
                   >
-                    <h1 className="font-display max-w-4xl text-3xl uppercase leading-[1.15] tracking-[0.01em] text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)] md:text-5xl">
-                      {s.title}
-                    </h1>
+                    <div className="flex flex-col">
+                      <h1 className="font-display max-w-4xl text-3xl uppercase leading-[1.15] tracking-[0.01em] text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)] md:text-5xl">
+                        {s.title}
+                      </h1>
 
-                    <ul className="mt-10 max-w-3xl space-y-5">
-                      {s.paragraphs.map((p, j) => (
-                        <li key={j} className="flex gap-4 text-base leading-relaxed text-white/90 md:text-lg">
-                          <span
-                            aria-hidden
-                            className="mt-2.5 h-2 w-2 shrink-0 rounded-full ring-2 ring-white/30"
-                            style={{ backgroundColor: BRAND }}
-                          />
-                          <span>{p}</span>
-                        </li>
-                      ))}
-                    </ul>
+                      <ul className="mt-10 max-w-3xl space-y-5">
+                        {s.paragraphs.map((p, j) => (
+                          <li key={j} className="flex gap-4 text-base leading-relaxed text-white/90 md:text-lg">
+                            <span
+                              aria-hidden
+                              className="mt-2.5 h-2 w-2 shrink-0 rounded-full ring-2 ring-white/30"
+                              style={{ backgroundColor: BRAND }}
+                            />
+                            <span>{p}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
 
-                    <div className="mt-12">
+                    <div>
                       <button
                         type="button"
                         className="group inline-flex items-center gap-3 rounded-full border-2 px-6 py-4 text-sm font-medium uppercase tracking-[0.12em] transition-all md:px-8 md:text-base"
@@ -189,6 +191,7 @@ function Index() {
                   </article>
                 ))}
               </div>
+
 
               {/* Навигация по слайдам */}
               <div className="mt-14 flex items-center justify-center gap-3">
