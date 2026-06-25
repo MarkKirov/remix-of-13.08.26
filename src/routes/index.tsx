@@ -55,7 +55,7 @@ const slides: Slide[] = [
     ),
     paragraphs: [
       "Не продаём процедуры — отвечаем за ваше здоровье и красоту.",
-      "Собираем анализ и проводим диагностику, защищая от аллергии, шрамов и рубцов.",
+      "Собираем анамнез и проводим диагностику, защищая от аллергии, шрамов и рубцов.",
       "Применяем сертифицированные препараты и медицинское оборудование.",
     ],
     cta: "Записаться на безопасную диагностику",
@@ -87,7 +87,7 @@ function Index() {
   }, []);
 
   useEffect(() => {
-    const id = setInterval(() => setActive((i) => (i + 1) % slides.length), 7000);
+    const id = setInterval(() => setActive((i) => (i + 1) % slides.length), 12000);
     return () => clearInterval(id);
   }, []);
 
@@ -181,19 +181,19 @@ function Index() {
                     <div>
                       <button
                         type="button"
-                        className="group inline-flex items-center gap-2 rounded-full border-2 px-4 py-2 text-xs font-medium uppercase tracking-[0.1em] transition-all"
+                        className="group inline-flex items-center gap-2 rounded-full border-2 px-6 py-3 text-xs font-medium uppercase tracking-[0.1em] transition-all"
                         style={{
                           borderColor: BRAND,
                           color: "#fff",
-                          backgroundColor: "rgba(174, 49, 166, 0.18)",
+                          backgroundColor: BRAND,
                         }}
                         onMouseEnter={(e) => {
-                          e.currentTarget.style.backgroundColor = BRAND;
-                          e.currentTarget.style.color = "#fff";
+                          e.currentTarget.style.backgroundColor = "#C24CBA";
+                          e.currentTarget.style.borderColor = "#C24CBA";
                         }}
                         onMouseLeave={(e) => {
-                          e.currentTarget.style.backgroundColor = "rgba(174, 49, 166, 0.18)";
-                          e.currentTarget.style.color = "#fff";
+                          e.currentTarget.style.backgroundColor = BRAND;
+                          e.currentTarget.style.borderColor = BRAND;
                         }}
                       >
                         <span>{s.cta}</span>
