@@ -113,112 +113,119 @@ function Index() {
         <div className="absolute inset-0 bg-black/60" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/70" />
 
-        <div className="relative z-10 mx-auto max-w-6xl px-6 md:px-16 py-20 md:py-32 min-h-[640px]">
-        {/* Стрелки */}
-        <button
-          type="button"
-          aria-label="Предыдущий слайд"
-          onClick={() => go(-1)}
-          className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-10 grid place-items-center h-11 w-11 md:h-12 md:w-12 rounded-full border border-white/40 bg-white/10 backdrop-blur text-white transition-colors"
-          style={{ transition: "background-color .2s, color .2s, border-color .2s" }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = BRAND;
-            e.currentTarget.style.borderColor = BRAND;
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = "";
-            e.currentTarget.style.borderColor = "";
-          }}
-        >
-          <ChevronLeft className="h-5 w-5" />
-        </button>
-        <button
-          type="button"
-          aria-label="Следующий слайд"
-          onClick={() => go(1)}
-          className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-10 grid place-items-center h-11 w-11 md:h-12 md:w-12 rounded-full border border-white/40 bg-white/10 backdrop-blur text-white transition-colors"
-          onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = BRAND;
-            e.currentTarget.style.borderColor = BRAND;
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = "";
-            e.currentTarget.style.borderColor = "";
-          }}
-        >
-          <ChevronRight className="h-5 w-5" />
-        </button>
-
-        {/* Слайды — все рендерятся в одной grid-ячейке, без скачков высоты */}
-        <div className="grid">
-          {slides.map((s, i) => (
-            <article
-              key={i}
-              aria-hidden={i !== active}
-              style={{ gridArea: "1 / 1 / 2 / 2" }}
-              className={`transition-opacity duration-700 ease-out ${
-                i === active ? "opacity-100" : "pointer-events-none opacity-0"
-              }`}
-            >
-              <h1 className="font-display text-3xl md:text-5xl leading-[1.15] uppercase tracking-[0.01em] text-white max-w-4xl drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)]">
-                {s.title}
-              </h1>
-
-              <ul className="mt-10 space-y-5 max-w-3xl">
-                {s.paragraphs.map((p, j) => (
-                  <li key={j} className="flex gap-4 text-base md:text-lg text-white/90 leading-relaxed">
-                    <span
-                      aria-hidden
-                      className="mt-2.5 h-2 w-2 shrink-0 rounded-full ring-2 ring-white/30"
-                      style={{ backgroundColor: BRAND }}
-                    />
-                    <span>{p}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <div className="mt-12">
-                <button
-                  type="button"
-                  className="group inline-flex items-center gap-3 rounded-full border-2 px-8 py-4 text-sm md:text-base font-medium uppercase tracking-[0.12em] transition-all"
-                  style={{
-                    borderColor: BRAND,
-                    color: "#fff",
-                    backgroundColor: BRAND,
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = "transparent";
-                    e.currentTarget.style.color = "#fff";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = BRAND;
-                    e.currentTarget.style.color = "#fff";
-                  }}
-                >
-                  <span>{s.cta}</span>
-                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </button>
-              </div>
-            </article>
-          ))}
-        </div>
-
-        {/* Навигация по слайдам */}
-        <div className="mt-14 flex items-center justify-center gap-3">
-          {slides.map((_, i) => (
+        <div className="relative z-10 mx-auto flex min-h-[640px] max-w-6xl items-center px-6 py-20 md:px-8 md:py-32">
+          <div className="flex w-full items-center gap-6 md:gap-10">
+            {/* Стрелка назад */}
             <button
-              key={i}
               type="button"
-              aria-label={`Слайд ${i + 1}`}
-              onClick={() => setActive(i)}
-              className="h-1.5 rounded-full transition-all"
-              style={{
-                width: i === active ? 40 : 16,
-                backgroundColor: i === active ? BRAND : "rgba(255,255,255,0.35)",
+              aria-label="Предыдущий слайд"
+              onClick={() => go(-1)}
+              className="shrink-0 grid h-9 w-9 place-items-center rounded-full border border-white/40 bg-white/10 text-white backdrop-blur transition-colors md:h-10 md:w-10"
+              style={{ transition: "background-color .2s, color .2s, border-color .2s" }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = BRAND;
+                e.currentTarget.style.borderColor = BRAND;
               }}
-            />
-          ))}
-        </div>
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = "";
+                e.currentTarget.style.borderColor = "";
+              }}
+            >
+              <ChevronLeft className="h-5 w-5" />
+            </button>
+
+            {/* Слайды + точки */}
+            <div className="min-w-0 flex-1 px-1 md:px-2">
+              {/* Слайды — все рендерятся в одной grid-ячейке, без скачков высоты */}
+              <div className="grid">
+                {slides.map((s, i) => (
+                  <article
+                    key={i}
+                    aria-hidden={i !== active}
+                    style={{ gridArea: "1 / 1 / 2 / 2" }}
+                    className={`transition-opacity duration-700 ease-out ${
+                      i === active ? "opacity-100" : "pointer-events-none opacity-0"
+                    }`}
+                  >
+                    <h1 className="font-display max-w-4xl text-3xl uppercase leading-[1.15] tracking-[0.01em] text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)] md:text-5xl">
+                      {s.title}
+                    </h1>
+
+                    <ul className="mt-10 max-w-3xl space-y-5">
+                      {s.paragraphs.map((p, j) => (
+                        <li key={j} className="flex gap-4 text-base leading-relaxed text-white/90 md:text-lg">
+                          <span
+                            aria-hidden
+                            className="mt-2.5 h-2 w-2 shrink-0 rounded-full ring-2 ring-white/30"
+                            style={{ backgroundColor: BRAND }}
+                          />
+                          <span>{p}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="mt-12">
+                      <button
+                        type="button"
+                        className="group inline-flex items-center gap-3 rounded-full border-2 px-6 py-4 text-sm font-medium uppercase tracking-[0.12em] transition-all md:px-8 md:text-base"
+                        style={{
+                          borderColor: BRAND,
+                          color: "#fff",
+                          backgroundColor: BRAND,
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.backgroundColor = "transparent";
+                          e.currentTarget.style.color = "#fff";
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.backgroundColor = BRAND;
+                          e.currentTarget.style.color = "#fff";
+                        }}
+                      >
+                        <span>{s.cta}</span>
+                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                      </button>
+                    </div>
+                  </article>
+                ))}
+              </div>
+
+              {/* Навигация по слайдам */}
+              <div className="mt-14 flex items-center justify-center gap-3">
+                {slides.map((_, i) => (
+                  <button
+                    key={i}
+                    type="button"
+                    aria-label={`Слайд ${i + 1}`}
+                    onClick={() => setActive(i)}
+                    className="h-1.5 rounded-full transition-all"
+                    style={{
+                      width: i === active ? 40 : 16,
+                      backgroundColor: i === active ? BRAND : "rgba(255,255,255,0.35)",
+                    }}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* Стрелка вперёд */}
+            <button
+              type="button"
+              aria-label="Следующий слайд"
+              onClick={() => go(1)}
+              className="shrink-0 grid h-9 w-9 place-items-center rounded-full border border-white/40 bg-white/10 text-white backdrop-blur transition-colors md:h-10 md:w-10"
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = BRAND;
+                e.currentTarget.style.borderColor = BRAND;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = "";
+                e.currentTarget.style.borderColor = "";
+              }}
+            >
+              <ChevronRight className="h-5 w-5" />
+            </button>
+          </div>
         </div>
       </section>
     </div>
