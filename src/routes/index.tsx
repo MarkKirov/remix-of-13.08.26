@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
-import heroVideo from "@/assets/komilfo_main.mp4.asset.json";
+import heroVideo from "@/assets/komilfo_hero_v2.mp4.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -67,7 +67,7 @@ function Index() {
 
   useEffect(() => {
     if (videoRef.current) {
-      videoRef.current.playbackRate = 0.5;
+      videoRef.current.playbackRate = 0.4;
     }
   }, []);
 
@@ -81,23 +81,7 @@ function Index() {
 
   return (
     <div className="min-h-screen bg-neutral-950 text-white">
-      {/* Дескриптор */}
-      <header
-        style={{ backgroundColor: BRAND }}
-        className="relative z-20 w-full text-white"
-      >
-        <div className="mx-auto max-w-6xl px-6 py-5 text-center">
-          {/* Здесь позже будет логотип */}
-          <p className="font-display text-base md:text-lg leading-snug uppercase tracking-[0.08em]">
-            17 лет сохраняем вашу природную красоту и индивидуальность
-          </p>
-          <p className="font-display text-xs md:text-sm opacity-90 mt-2 uppercase tracking-[0.18em]">
-            без комплексов и рисков для здоровья
-          </p>
-        </div>
-      </header>
-
-      {/* Первый экран — слайдшоу */}
+      {/* Первый экран — слайдшоу с дескриптором поверх видео */}
       <section className="relative overflow-hidden">
         {/* Видео фон */}
         <video
@@ -112,6 +96,19 @@ function Index() {
         {/* Затемнение */}
         <div className="absolute inset-0 bg-black/60" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/70" />
+
+        {/* Дескриптор поверх видео — затемнённая плашка */}
+        <header className="absolute inset-x-0 top-0 z-20 w-full bg-black/45 backdrop-blur-sm">
+          <div className="mx-auto max-w-6xl px-6 py-4 text-center text-white md:py-5">
+            {/* Здесь позже будет прозрачный логотип */}
+            <p className="font-display text-sm md:text-base lg:text-lg leading-snug uppercase tracking-[0.08em]">
+              17 лет сохраняем вашу природную красоту и индивидуальность
+            </p>
+            <p className="font-display text-[10px] md:text-xs lg:text-sm opacity-85 mt-1.5 uppercase tracking-[0.18em]">
+              без комплексов и рисков для здоровья
+            </p>
+          </div>
+        </header>
 
         <div className="relative z-10 mx-auto flex min-h-[640px] max-w-6xl items-center px-6 py-20 md:px-8 md:py-32">
           <div className="flex w-full items-center gap-6 md:gap-10">
