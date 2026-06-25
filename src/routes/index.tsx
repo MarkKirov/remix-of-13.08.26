@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
+import heroVideo from "@/assets/komilfo_main.mp4.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -62,6 +63,13 @@ const slides: Slide[] = [
 
 function Index() {
   const [active, setActive] = useState(0);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 0.5;
+    }
+  }, []);
 
   useEffect(() => {
     const id = setInterval(() => setActive((i) => (i + 1) % slides.length), 7000);
@@ -72,11 +80,11 @@ function Index() {
     setActive((i) => (i + dir + slides.length) % slides.length);
 
   return (
-    <div className="min-h-screen bg-white text-neutral-900">
+    <div className="min-h-screen bg-neutral-950 text-white">
       {/* Дескриптор */}
       <header
         style={{ backgroundColor: BRAND }}
-        className="w-full text-white"
+        className="relative z-20 w-full text-white"
       >
         <div className="mx-auto max-w-6xl px-6 py-5 text-center">
           {/* Здесь позже будет логотип */}
@@ -90,13 +98,28 @@ function Index() {
       </header>
 
       {/* Первый экран — слайдшоу */}
-      <section className="relative mx-auto max-w-6xl px-6 md:px-16 py-16 md:py-24">
+      <section className="relative overflow-hidden">
+        {/* Видео фон */}
+        <video
+          ref={videoRef}
+          className="absolute inset-0 h-full w-full object-cover"
+          src={heroVideo.url}
+          autoPlay
+          muted
+          loop
+          playsInline
+        />
+        {/* Затемнение */}
+        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/70" />
+
+        <div className="relative z-10 mx-auto max-w-6xl px-6 md:px-16 py-20 md:py-32 min-h-[640px]">
         {/* Стрелки */}
         <button
           type="button"
           aria-label="Предыдущий слайд"
           onClick={() => go(-1)}
-          className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-10 grid place-items-center h-11 w-11 md:h-12 md:w-12 rounded-full border border-neutral-200 bg-white/90 backdrop-blur text-neutral-700 hover:text-white transition-colors"
+          className="absolute left-2 md:left-6 top-1/2 -translate-y-1/2 z-10 grid place-items-center h-11 w-11 md:h-12 md:w-12 rounded-full border border-white/40 bg-white/10 backdrop-blur text-white transition-colors"
           style={{ transition: "background-color .2s, color .2s, border-color .2s" }}
           onMouseEnter={(e) => {
             e.currentTarget.style.backgroundColor = BRAND;
@@ -113,7 +136,7 @@ function Index() {
           type="button"
           aria-label="Следующий слайд"
           onClick={() => go(1)}
-          className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-10 grid place-items-center h-11 w-11 md:h-12 md:w-12 rounded-full border border-neutral-200 bg-white/90 backdrop-blur text-neutral-700 hover:text-white transition-colors"
+          className="absolute right-2 md:right-6 top-1/2 -translate-y-1/2 z-10 grid place-items-center h-11 w-11 md:h-12 md:w-12 rounded-full border border-white/40 bg-white/10 backdrop-blur text-white transition-colors"
           onMouseEnter={(e) => {
             e.currentTarget.style.backgroundColor = BRAND;
             e.currentTarget.style.borderColor = BRAND;
@@ -137,16 +160,16 @@ function Index() {
                 i === active ? "opacity-100" : "pointer-events-none opacity-0"
               }`}
             >
-              <h1 className="font-display text-3xl md:text-5xl leading-[1.15] uppercase tracking-[0.01em] text-neutral-900 max-w-4xl">
+              <h1 className="font-display text-3xl md:text-5xl leading-[1.15] uppercase tracking-[0.01em] text-white max-w-4xl drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)]">
                 {s.title}
               </h1>
 
               <ul className="mt-10 space-y-5 max-w-3xl">
                 {s.paragraphs.map((p, j) => (
-                  <li key={j} className="flex gap-4 text-base md:text-lg text-neutral-700 leading-relaxed">
+                  <li key={j} className="flex gap-4 text-base md:text-lg text-white/90 leading-relaxed">
                     <span
                       aria-hidden
-                      className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full"
+                      className="mt-2.5 h-2 w-2 shrink-0 rounded-full ring-2 ring-white/30"
                       style={{ backgroundColor: BRAND }}
                     />
                     <span>{p}</span>
@@ -160,16 +183,16 @@ function Index() {
                   className="group inline-flex items-center gap-3 rounded-full border-2 px-8 py-4 text-sm md:text-base font-medium uppercase tracking-[0.12em] transition-all"
                   style={{
                     borderColor: BRAND,
-                    color: BRAND,
-                    backgroundColor: "transparent",
+                    color: "#fff",
+                    backgroundColor: BRAND,
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = BRAND;
+                    e.currentTarget.style.backgroundColor = "transparent";
                     e.currentTarget.style.color = "#fff";
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = "transparent";
-                    e.currentTarget.style.color = BRAND;
+                    e.currentTarget.style.backgroundColor = BRAND;
+                    e.currentTarget.style.color = "#fff";
                   }}
                 >
                   <span>{s.cta}</span>
@@ -191,10 +214,11 @@ function Index() {
               className="h-1.5 rounded-full transition-all"
               style={{
                 width: i === active ? 40 : 16,
-                backgroundColor: i === active ? BRAND : "#E5E5E5",
+                backgroundColor: i === active ? BRAND : "rgba(255,255,255,0.35)",
               }}
             />
           ))}
+        </div>
         </div>
       </section>
     </div>
