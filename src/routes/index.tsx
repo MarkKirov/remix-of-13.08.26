@@ -452,7 +452,7 @@ function Index() {
         </div>
       </section>
 
-      {/* Сравнительная таблица — Комильфо vs подвальные кабинеты */}
+      {/* Сравнительная таблица — Комильфо vs нелегальные кабинеты */}
       <section className="relative overflow-hidden">
         <img
           src={comparisonBg.url}
@@ -461,8 +461,8 @@ function Index() {
           style={{ objectPosition: "center 30%" }}
           decoding="async"
         />
-        <div className="absolute inset-0 bg-black/70" />
-        <div className="absolute inset-0 bg-[#AE31A6]/15" />
+        <div className="absolute inset-0 bg-black/80" />
+        <div className="absolute inset-0 bg-[#AE31A6]/10" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/80" />
 
         <div className="relative z-10 mx-auto max-w-6xl px-6 py-20 md:px-8 md:py-28">
@@ -471,23 +471,19 @@ function Index() {
             <br />а не подвальные кабинеты
           </h2>
 
-          <div className="mt-10 rounded-3xl bg-black/55 p-6 backdrop-blur-md ring-1 ring-white/10 md:mt-14 md:p-10">
-            <div className="hidden grid-cols-12 gap-6 border-b border-white/15 pb-5 md:grid">
-              <div className="col-span-3 font-caption text-[10px] uppercase tracking-[0.18em] text-white/60">
-                Критерий
-              </div>
-              <div className="col-span-5 font-display text-lg tracking-[0.01em]" style={{ color: BRAND }}>
+          <div className="mt-10 rounded-3xl bg-black/80 p-6 backdrop-blur-md ring-1 ring-white/10 md:mt-14 md:p-10">
+            <div className="hidden grid-cols-2 gap-8 border-b border-white/15 pb-5 md:grid">
+              <div className="font-display text-lg tracking-[0.01em]" style={{ color: BRAND }}>
                 Профессиональная медицина «Комильфо»
               </div>
-              <div className="col-span-4 font-caption text-[10px] uppercase tracking-[0.18em] text-white/60">
-                Нелегальные кабинеты и «шабашники»
+              <div className="font-caption text-[10px] uppercase tracking-[0.18em] text-white/60">
+                Нелегальные кабинеты
               </div>
             </div>
 
             <div className="divide-y divide-white/10">
               {[
                 {
-                  k: "Препараты и подлинность",
                   us: (
                     <>
                       Строго сертифицированные препараты с контролем госбиомаркировки <span style={{ color: BRAND }}>«Честный Знак»</span>.
@@ -496,17 +492,14 @@ function Index() {
                   them: "Незарегистрированный контрафакт из интернета — риск тяжёлой аллергии и удушья.",
                 },
                 {
-                  k: "Класс оборудования",
                   us: "Серьёзная медицинская техника, регулярно проходящая официальное ТО.",
                   them: "Дешёвые китайские аппараты, которые по документам являются «бытовыми».",
                 },
                 {
-                  k: "Контроль и трек",
                   us: "Официальный диагноз, история болезни и проверка результата на каждом приёме.",
                   them: "Работа «вслепую» без документов на руках, фальшивые дипломы из принтера.",
                 },
                 {
-                  k: "Главный риск",
                   us: (
                     <>
                       <span style={{ color: BRAND }}>Исключён:</span> тактика подбирается индивидуально по генотипу, без рисков шрамирования.
@@ -519,20 +512,16 @@ function Index() {
                   ),
                 },
               ].map((row, idx) => (
-                <div key={idx} className="grid grid-cols-1 gap-3 py-6 md:grid-cols-12 md:gap-6 md:py-7">
-                  <div className="font-body text-xs uppercase tracking-[0.14em] text-white/70 md:col-span-3 md:text-sm md:normal-case md:tracking-normal">
-                    <span className="md:hidden">{idx + 1}. </span>
-                    {row.k}
-                  </div>
-                  <div className="font-body text-sm font-light leading-relaxed text-[#e5e5e5] md:col-span-5 md:text-base">
+                <div key={idx} className="grid grid-cols-1 gap-3 py-6 md:grid-cols-2 md:gap-8 md:py-7">
+                  <div className="font-body text-sm font-light leading-relaxed text-[#e5e5e5] md:text-base">
                     <div className="mb-1 font-caption text-[10px] uppercase tracking-[0.18em] md:hidden" style={{ color: BRAND }}>
                       Комильфо
                     </div>
                     {row.us}
                   </div>
-                  <div className="font-body text-sm font-light leading-relaxed text-white/55 md:col-span-4 md:text-base">
+                  <div className="font-body text-sm font-light leading-relaxed text-white/55 md:text-base">
                     <div className="mb-1 font-caption text-[10px] uppercase tracking-[0.18em] text-white/40 md:hidden">
-                      Подвальные кабинеты
+                      Нелегальные кабинеты
                     </div>
                     {row.them}
                   </div>
