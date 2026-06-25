@@ -502,7 +502,7 @@ function Index() {
         >
           <img
             className="h-full w-full object-cover"
-            style={{ objectPosition: "center 30%" }}
+            style={{ objectPosition: "center top" }}
             src={doctorConsultation.url}
             alt="Врач клиники Комильфо"
             decoding="async"
