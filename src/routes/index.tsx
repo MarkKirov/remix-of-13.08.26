@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
+import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -67,6 +68,9 @@ function Index() {
     return () => clearInterval(id);
   }, []);
 
+  const go = (dir: 1 | -1) =>
+    setActive((i) => (i + dir + slides.length) % slides.length);
+
   return (
     <div className="min-h-screen bg-white text-neutral-900">
       {/* Дескриптор */}
@@ -76,41 +80,100 @@ function Index() {
       >
         <div className="mx-auto max-w-6xl px-6 py-5 text-center">
           {/* Здесь позже будет логотип */}
-          <p className="text-base md:text-lg font-medium leading-snug">
+          <p className="font-display text-base md:text-lg leading-snug uppercase tracking-[0.08em]">
             17 лет сохраняем вашу природную красоту и индивидуальность
           </p>
-          <p className="text-sm md:text-base opacity-90 mt-1">
+          <p className="font-display text-xs md:text-sm opacity-90 mt-2 uppercase tracking-[0.18em]">
             без комплексов и рисков для здоровья
           </p>
         </div>
       </header>
 
       {/* Первый экран — слайдшоу */}
-      <section className="relative mx-auto max-w-5xl px-6 py-16 md:py-24">
-        <div className="relative min-h-[420px] md:min-h-[460px]">
+      <section className="relative mx-auto max-w-6xl px-6 md:px-16 py-16 md:py-24">
+        {/* Стрелки */}
+        <button
+          type="button"
+          aria-label="Предыдущий слайд"
+          onClick={() => go(-1)}
+          className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-10 grid place-items-center h-11 w-11 md:h-12 md:w-12 rounded-full border border-neutral-200 bg-white/90 backdrop-blur text-neutral-700 hover:text-white transition-colors"
+          style={{ transition: "background-color .2s, color .2s, border-color .2s" }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = BRAND;
+            e.currentTarget.style.borderColor = BRAND;
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = "";
+            e.currentTarget.style.borderColor = "";
+          }}
+        >
+          <ChevronLeft className="h-5 w-5" />
+        </button>
+        <button
+          type="button"
+          aria-label="Следующий слайд"
+          onClick={() => go(1)}
+          className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-10 grid place-items-center h-11 w-11 md:h-12 md:w-12 rounded-full border border-neutral-200 bg-white/90 backdrop-blur text-neutral-700 hover:text-white transition-colors"
+          onMouseEnter={(e) => {
+            e.currentTarget.style.backgroundColor = BRAND;
+            e.currentTarget.style.borderColor = BRAND;
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.backgroundColor = "";
+            e.currentTarget.style.borderColor = "";
+          }}
+        >
+          <ChevronRight className="h-5 w-5" />
+        </button>
+
+        {/* Слайды — все рендерятся в одной grid-ячейке, без скачков высоты */}
+        <div className="grid">
           {slides.map((s, i) => (
             <article
               key={i}
               aria-hidden={i !== active}
-              className={`absolute inset-0 transition-opacity duration-700 ${
+              style={{ gridArea: "1 / 1 / 2 / 2" }}
+              className={`transition-opacity duration-700 ease-out ${
                 i === active ? "opacity-100" : "pointer-events-none opacity-0"
               }`}
             >
-              <h1 className="text-3xl md:text-5xl font-semibold leading-tight tracking-tight text-neutral-900">
+              <h1 className="font-display text-3xl md:text-5xl leading-[1.15] uppercase tracking-[0.01em] text-neutral-900 max-w-4xl">
                 {s.title}
               </h1>
-              <div className="mt-6 space-y-4 text-base md:text-lg text-neutral-700 leading-relaxed">
+
+              <ul className="mt-10 space-y-5 max-w-3xl">
                 {s.paragraphs.map((p, j) => (
-                  <p key={j}>{p}</p>
+                  <li key={j} className="flex gap-4 text-base md:text-lg text-neutral-700 leading-relaxed">
+                    <span
+                      aria-hidden
+                      className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full"
+                      style={{ backgroundColor: BRAND }}
+                    />
+                    <span>{p}</span>
+                  </li>
                 ))}
-              </div>
-              <div className="mt-10">
+              </ul>
+
+              <div className="mt-12">
                 <button
                   type="button"
-                  style={{ backgroundColor: BRAND }}
-                  className="inline-flex items-center justify-center rounded-full px-7 py-4 text-white text-sm md:text-base font-medium shadow-sm transition-opacity hover:opacity-90"
+                  className="group inline-flex items-center gap-3 rounded-full border-2 px-8 py-4 text-sm md:text-base font-medium uppercase tracking-[0.12em] transition-all"
+                  style={{
+                    borderColor: BRAND,
+                    color: BRAND,
+                    backgroundColor: "transparent",
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.backgroundColor = BRAND;
+                    e.currentTarget.style.color = "#fff";
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.backgroundColor = "transparent";
+                    e.currentTarget.style.color = BRAND;
+                  }}
                 >
-                  {s.cta}
+                  <span>{s.cta}</span>
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </button>
               </div>
             </article>
@@ -118,16 +181,16 @@ function Index() {
         </div>
 
         {/* Навигация по слайдам */}
-        <div className="mt-10 flex items-center justify-center gap-3">
+        <div className="mt-14 flex items-center justify-center gap-3">
           {slides.map((_, i) => (
             <button
               key={i}
               type="button"
               aria-label={`Слайд ${i + 1}`}
               onClick={() => setActive(i)}
-              className="h-2.5 rounded-full transition-all"
+              className="h-1.5 rounded-full transition-all"
               style={{
-                width: i === active ? 32 : 10,
+                width: i === active ? 40 : 16,
                 backgroundColor: i === active ? BRAND : "#E5E5E5",
               }}
             />
