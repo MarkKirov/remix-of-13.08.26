@@ -474,7 +474,7 @@ function Index() {
             Настоящий психологический комфорт появляется тогда, когда вы на 100% уверены в стерильности, подлинности препаратов и квалификации врача. У шабашников правила игры совершенно другие. Ниже приведено прямое и жесткое сравнение, которое наглядно объясняет, почему экономия на косметологии — это огромный риск
           </p>
 
-          <div className="mt-10 rounded-3xl bg-black/80 p-6 backdrop-blur-md ring-1 ring-white/10 md:mt-14 md:p-10">
+          <div className="mt-10 rounded-3xl bg-black/60 p-6 backdrop-blur-md ring-1 ring-white/10 md:mt-14 md:p-10">
             <div className="hidden grid-cols-2 gap-8 border-b border-white/15 pb-5 md:grid">
               <div className="font-display text-lg tracking-[0.01em]" style={{ color: BRAND }}>
                 Профессиональная медицина «Комильфо»
