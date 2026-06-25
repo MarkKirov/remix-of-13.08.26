@@ -8,6 +8,7 @@ import serviceEsthetic from "@/assets/service_esthetic.png.asset.json";
 import serviceMedical from "@/assets/service_medical.png.asset.json";
 import serviceHardware from "@/assets/service_hardware.png.asset.json";
 import comparisonBg from "@/assets/comparison-bg.png.asset.json";
+import headerLogo from "@/assets/header_logo.svg.asset.json";
 import {
   Dialog,
   DialogContent,
@@ -158,16 +159,24 @@ function Index() {
         <div className="absolute inset-0 bg-black/60" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
 
-        {/* Дескриптор — тонким начертанием прямо поверх видео */}
-        <header className="absolute inset-x-0 top-0 z-20 w-full pt-6 md:pt-8">
-          <div className="mx-auto max-w-6xl px-6 text-center text-white">
-            {/* Здесь позже будет прозрачный логотип */}
-            <p className="font-caption text-[10px] uppercase tracking-[0.14em] text-white/90 md:text-xs">
-              17 лет сохраняем вашу природную красоту и индивидуальность
-            </p>
-            <p className="font-caption text-[10px] uppercase tracking-[0.14em] text-white/75 mt-1">
-              без комплексов и рисков для здоровья
-            </p>
+        {/* Дескриптор и логотип — тонким начертанием прямо поверх видео */}
+        <header className="absolute inset-x-0 top-0 z-20 w-full pt-4 md:pt-6">
+          <div className="mx-auto flex max-w-6xl items-start px-6 md:px-8">
+            <img
+              src={headerLogo.url}
+              alt="Camille Four"
+              className="w-24 shrink-0 md:w-36"
+              style={{ filter: "brightness(0) invert(1)" }}
+            />
+            <div className="flex-1 text-center">
+              <p className="font-caption text-[9px] uppercase tracking-[0.14em] text-white/90 md:text-[10px]">
+                17 лет сохраняем вашу природную красоту и индивидуальность
+              </p>
+              <p className="font-caption text-[9px] uppercase tracking-[0.14em] text-white/75 mt-1 md:text-[10px]">
+                без комплексов и рисков для здоровья
+              </p>
+            </div>
+            <div className="w-24 shrink-0 md:w-36" aria-hidden="true" />
           </div>
         </header>
 
