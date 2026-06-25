@@ -108,12 +108,12 @@ function Index() {
 
   const services = [
     {
-      title: "Эстетическая\nкосметология",
-      image: serviceEsthetic.url,
-    },
-    {
       title: "Врачебная\nкосметология",
       image: serviceMedical.url,
+    },
+    {
+      title: "Эстетическая\nкосметология",
+      image: serviceEsthetic.url,
     },
     {
       title: "Аппаратная\nкосметология",
@@ -352,7 +352,7 @@ function Index() {
                         <img
                           src={s.image}
                           alt=""
-                          className="h-full w-full scale-105 object-cover transition-all duration-700 group-hover:scale-100"
+                          className="h-full w-full scale-105 object-cover grayscale-0 saturate-[1.2] transition-all duration-700 group-hover:scale-100 group-hover:grayscale"
                         />
                       ) : (
                         <div className="absolute inset-0 bg-neutral-400" />
