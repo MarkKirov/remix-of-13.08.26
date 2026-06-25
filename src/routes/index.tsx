@@ -341,32 +341,38 @@ function Index() {
                 <DialogTrigger asChild>
                   <button
                     type="button"
-                    className="group relative aspect-[3/4] w-full overflow-hidden rounded-2xl shadow-[0_20px_50px_-20px_rgba(0,0,0,0.35)] transition-transform duration-500 hover:-translate-y-1"
+                    className="group relative aspect-[3/4] w-full overflow-hidden rounded-2xl bg-neutral-900 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.35)] transition-transform duration-500 hover:-translate-y-1"
+                    style={{ backgroundColor: BRAND }}
                   >
-                    {s.image ? (
-                      <img
-                        src={s.image}
-                        alt=""
-                        className="absolute inset-0 h-full w-full scale-105 object-cover transition-all duration-700 group-hover:scale-110 group-hover:blur-[2px]"
-                      />
-                    ) : (
-                      <div className="absolute inset-0 bg-neutral-400" />
-                    )}
-                    {/* Розовое затемнение в фирменном цвете */}
+                    {/* Обёртка изображения — уменьшается при наведении, открывая рамку */}
                     <div
-                      className="absolute inset-0"
-                      style={{
-                        background: `linear-gradient(180deg, rgba(20,20,20,0.45) 0%, ${BRAND}55 60%, ${BRAND}88 100%)`,
-                      }}
-                    />
-                    <div className="absolute inset-0 bg-black/20" />
+                      className="absolute inset-0 overflow-hidden rounded-2xl transition-all duration-700 group-hover:inset-3 group-hover:rounded-xl"
+                    >
+                      {s.image ? (
+                        <img
+                          src={s.image}
+                          alt=""
+                          className="h-full w-full scale-105 object-cover transition-all duration-700 group-hover:scale-100"
+                        />
+                      ) : (
+                        <div className="absolute inset-0 bg-neutral-400" />
+                      )}
+                      {/* Розовое затемнение в фирменном цвете */}
+                      <div
+                        className="absolute inset-0 transition-opacity duration-700 group-hover:opacity-90"
+                        style={{
+                          background: `linear-gradient(180deg, rgba(20,20,20,0.45) 0%, ${BRAND}55 60%, ${BRAND}88 100%)`,
+                        }}
+                      />
+                      <div className="absolute inset-0 bg-black/20 transition-opacity duration-700 group-hover:opacity-40" />
+                    </div>
 
-                    <div className="absolute inset-0 flex flex-col items-center justify-end p-7 text-center md:p-8">
+                    <div className="absolute inset-0 flex flex-col justify-between p-7 text-left md:p-8">
                       <h3 className="font-body whitespace-pre-line text-xl leading-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)] md:text-2xl lg:text-[1.7rem]">
                         {s.title}
                       </h3>
                       <span
-                        className="mt-5 inline-flex items-center gap-2 rounded-full border border-white/70 px-4 py-2 text-[10px] font-normal uppercase tracking-[0.14em] text-white backdrop-blur-sm transition-colors group-hover:bg-white group-hover:text-neutral-900 md:text-xs"
+                        className="mt-5 self-end inline-flex items-center gap-2 rounded-full border border-white/70 px-4 py-2 text-[10px] font-normal uppercase tracking-[0.14em] text-white backdrop-blur-sm opacity-0 translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0 group-hover:bg-white group-hover:text-neutral-900 md:text-xs"
                       >
                         Подробнее
                         <ArrowRight className="h-3 w-3" />
