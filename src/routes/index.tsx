@@ -145,13 +145,13 @@ function Index() {
                     }`}
                   >
                     <div className="pb-6 md:pb-8">
-                      <h1 className="font-display max-w-4xl text-2xl uppercase leading-[1.15] tracking-[0.01em] text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)] md:text-3xl lg:text-5xl">
+                      <h1 className="font-display max-w-4xl text-2xl leading-[1.15] tracking-[0.01em] text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)] md:text-3xl lg:text-5xl">
                         {s.title}
                       </h1>
 
                       <ul className="mt-6 max-w-3xl space-y-3 md:mt-8 md:space-y-4">
                         {s.paragraphs.map((p, j) => (
-                          <li key={j} className="flex gap-4 text-sm leading-relaxed text-white/90 md:text-base lg:text-lg">
+                          <li key={j} className="font-body flex gap-4 text-sm leading-relaxed text-white/90 md:text-base lg:text-lg">
                             <span
                               aria-hidden
                               className="mt-2 h-2 w-2 shrink-0 rounded-full ring-2 ring-white/30 md:mt-2.5"
