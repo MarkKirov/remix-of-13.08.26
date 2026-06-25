@@ -147,12 +147,12 @@ function Index() {
                       i === active ? "opacity-100" : "pointer-events-none opacity-0"
                     }`}
                   >
-                    <div className="flex flex-col">
+                    <div className="pb-8 md:pb-10">
                       <h1 className="font-display max-w-4xl text-3xl uppercase leading-[1.15] tracking-[0.01em] text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)] md:text-5xl">
                         {s.title}
                       </h1>
 
-                      <ul className="mt-10 max-w-3xl space-y-5">
+                      <ul className="mt-8 max-w-3xl space-y-4 md:mt-10 md:space-y-5">
                         {s.paragraphs.map((p, j) => (
                           <li key={j} className="flex gap-4 text-base leading-relaxed text-white/90 md:text-lg">
                             <span
@@ -169,28 +169,29 @@ function Index() {
                     <div>
                       <button
                         type="button"
-                        className="group inline-flex items-center gap-3 rounded-full border-2 px-6 py-4 text-sm font-medium uppercase tracking-[0.12em] transition-all md:px-8 md:text-base"
+                        className="group inline-flex items-center gap-2 rounded-full border-2 px-5 py-3 text-xs font-medium uppercase tracking-[0.1em] transition-all md:px-6 md:text-sm"
                         style={{
                           borderColor: BRAND,
                           color: "#fff",
-                          backgroundColor: BRAND,
+                          backgroundColor: "rgba(174, 49, 166, 0.22)",
                         }}
                         onMouseEnter={(e) => {
-                          e.currentTarget.style.backgroundColor = "transparent";
+                          e.currentTarget.style.backgroundColor = BRAND;
                           e.currentTarget.style.color = "#fff";
                         }}
                         onMouseLeave={(e) => {
-                          e.currentTarget.style.backgroundColor = BRAND;
+                          e.currentTarget.style.backgroundColor = "rgba(174, 49, 166, 0.22)";
                           e.currentTarget.style.color = "#fff";
                         }}
                       >
                         <span>{s.cta}</span>
-                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                        <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
                       </button>
                     </div>
                   </article>
                 ))}
               </div>
+
 
 
               {/* Навигация по слайдам */}
