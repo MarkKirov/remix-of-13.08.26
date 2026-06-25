@@ -402,7 +402,7 @@ function Index() {
         {/* Левая половина — розовый фон с текстом */}
         <div
           className="flex w-full items-center justify-center px-8 py-16 md:w-1/2 md:px-12 lg:px-20"
-          style={{ backgroundColor: "#C69DA9" }}
+          style={{ backgroundColor: BRAND }}
         >
           <div className="max-w-xl">
             <h2 className="font-display text-2xl leading-[1.15] tracking-[0.01em] text-[#f5f5f5] drop-shadow-[0_2px_12px_rgba(0,0,0,0.15)] md:text-3xl lg:text-4xl">
