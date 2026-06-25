@@ -140,12 +140,24 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
-    font-family: "PT Sans", "Montserrat", system-ui, sans-serif;
+    font-family: "Inter", "PT Sans", system-ui, sans-serif;
   }
 
   .font-display {
+    font-family: "Playfair Display", "Montserrat", system-ui, sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+
+  .font-body {
+    font-family: "Inter", "PT Sans", system-ui, sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+
+  .font-caption {
     font-family: "Montserrat", system-ui, sans-serif;
-    font-weight: 600;
-    letter-spacing: 0.02em;
+    font-weight: 300;
+    letter-spacing: 0.14em;
   }
 }
