@@ -147,17 +147,17 @@ function Index() {
                       i === active ? "opacity-100" : "pointer-events-none opacity-0"
                     }`}
                   >
-                    <div className="flex flex-col">
-                      <h1 className="font-display max-w-4xl text-3xl uppercase leading-[1.15] tracking-[0.01em] text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)] md:text-5xl">
+                    <div className="pb-6 md:pb-8">
+                      <h1 className="font-display max-w-4xl text-2xl uppercase leading-[1.15] tracking-[0.01em] text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)] md:text-3xl lg:text-5xl">
                         {s.title}
                       </h1>
 
-                      <ul className="mt-10 max-w-3xl space-y-5">
+                      <ul className="mt-6 max-w-3xl space-y-3 md:mt-8 md:space-y-4">
                         {s.paragraphs.map((p, j) => (
-                          <li key={j} className="flex gap-4 text-base leading-relaxed text-white/90 md:text-lg">
+                          <li key={j} className="flex gap-4 text-sm leading-relaxed text-white/90 md:text-base lg:text-lg">
                             <span
                               aria-hidden
-                              className="mt-2.5 h-2 w-2 shrink-0 rounded-full ring-2 ring-white/30"
+                              className="mt-2 h-2 w-2 shrink-0 rounded-full ring-2 ring-white/30 md:mt-2.5"
                               style={{ backgroundColor: BRAND }}
                             />
                             <span>{p}</span>
@@ -169,28 +169,31 @@ function Index() {
                     <div>
                       <button
                         type="button"
-                        className="group inline-flex items-center gap-3 rounded-full border-2 px-6 py-4 text-sm font-medium uppercase tracking-[0.12em] transition-all md:px-8 md:text-base"
+                        className="group inline-flex items-center gap-2 rounded-full border-2 px-4 py-2 text-xs font-medium uppercase tracking-[0.1em] transition-all"
                         style={{
                           borderColor: BRAND,
                           color: "#fff",
-                          backgroundColor: BRAND,
+                          backgroundColor: "rgba(174, 49, 166, 0.18)",
                         }}
                         onMouseEnter={(e) => {
-                          e.currentTarget.style.backgroundColor = "transparent";
+                          e.currentTarget.style.backgroundColor = BRAND;
                           e.currentTarget.style.color = "#fff";
                         }}
                         onMouseLeave={(e) => {
-                          e.currentTarget.style.backgroundColor = BRAND;
+                          e.currentTarget.style.backgroundColor = "rgba(174, 49, 166, 0.18)";
                           e.currentTarget.style.color = "#fff";
                         }}
                       >
                         <span>{s.cta}</span>
-                        <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                        <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
                       </button>
                     </div>
                   </article>
                 ))}
               </div>
+
+
+
 
 
               {/* Навигация по слайдам */}
