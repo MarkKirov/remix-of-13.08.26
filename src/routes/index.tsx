@@ -7,6 +7,7 @@ import productPhilosophy from "@/assets/product-philosophy.png.asset.json";
 import serviceEsthetic from "@/assets/service_esthetic.png.asset.json";
 import serviceMedical from "@/assets/service_medical.png.asset.json";
 import serviceHardware from "@/assets/service_hardware.png.asset.json";
+import comparisonBg from "@/assets/comparison-bg.png.asset.json";
 import {
   Dialog,
   DialogContent,
