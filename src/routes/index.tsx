@@ -101,10 +101,10 @@ function Index() {
         <header className="absolute inset-x-0 top-0 z-20 w-full pt-6 md:pt-8">
           <div className="mx-auto max-w-6xl px-6 text-center text-white">
             {/* Здесь позже будет прозрачный логотип */}
-            <p className="font-display text-[10px] font-light uppercase tracking-[0.14em] text-white/90 md:text-xs">
+            <p className="font-caption text-[10px] uppercase tracking-[0.14em] text-white/90 md:text-xs">
               17 лет сохраняем вашу природную красоту и индивидуальность
             </p>
-            <p className="font-display text-[10px] font-light uppercase tracking-[0.14em] text-white/75 mt-1">
+            <p className="font-caption text-[10px] uppercase tracking-[0.14em] text-white/75 mt-1">
               без комплексов и рисков для здоровья
             </p>
           </div>
