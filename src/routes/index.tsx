@@ -147,17 +147,17 @@ function Index() {
                       i === active ? "opacity-100" : "pointer-events-none opacity-0"
                     }`}
                   >
-                    <div className="pb-8 md:pb-10">
-                      <h1 className="font-display max-w-4xl text-3xl uppercase leading-[1.15] tracking-[0.01em] text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)] md:text-5xl">
+                    <div className="pb-6 md:pb-8">
+                      <h1 className="font-display max-w-4xl text-2xl uppercase leading-[1.15] tracking-[0.01em] text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)] md:text-3xl lg:text-5xl">
                         {s.title}
                       </h1>
 
-                      <ul className="mt-8 max-w-3xl space-y-4 md:mt-10 md:space-y-5">
+                      <ul className="mt-6 max-w-3xl space-y-3 md:mt-8 md:space-y-4">
                         {s.paragraphs.map((p, j) => (
-                          <li key={j} className="flex gap-4 text-base leading-relaxed text-white/90 md:text-lg">
+                          <li key={j} className="flex gap-4 text-sm leading-relaxed text-white/90 md:text-base lg:text-lg">
                             <span
                               aria-hidden
-                              className="mt-2.5 h-2 w-2 shrink-0 rounded-full ring-2 ring-white/30"
+                              className="mt-2 h-2 w-2 shrink-0 rounded-full ring-2 ring-white/30 md:mt-2.5"
                               style={{ backgroundColor: BRAND }}
                             />
                             <span>{p}</span>
@@ -191,6 +191,7 @@ function Index() {
                   </article>
                 ))}
               </div>
+
 
 
 
