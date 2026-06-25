@@ -301,13 +301,14 @@ function Index() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
 
         <div className="relative z-10 mx-auto flex min-h-[80vh] max-w-5xl flex-col items-center justify-center px-6 py-16 text-center md:px-8 md:py-20">
-          <div className="md:-translate-y-6">
-            <h2 className="font-display text-xl leading-[1.2] tracking-[0.01em] text-[#e5e5e5] drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)] md:text-3xl lg:text-4xl">
-              Бесплатно подберём персональную{"\n"}стратегию вашей красоты
+          <div className="md:-translate-y-10">
+            <h2 className="font-display text-xl leading-[1.25] tracking-[0.01em] text-[#e5e5e5] drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)] md:text-3xl lg:text-4xl">
+              Бесплатно подберём персональную
+              <span className="font-body my-2 block text-sm font-light leading-relaxed text-[#c4c4c4] md:my-3 md:text-base">
+                и проведём аудит вашей внешности на основе вашего генотипа
+              </span>
+              стратегию вашей красоты
             </h2>
-            <p className="font-body mt-5 max-w-2xl text-sm font-light leading-relaxed text-[#c4c4c4] md:mt-6 md:text-base">
-              и проведём аудит вашей внешности на основе вашего генотипа
-            </p>
             <button
               type="button"
               className="group mt-8 inline-flex items-center gap-2 rounded-full border-2 px-5 py-2.5 text-xs font-normal uppercase tracking-[0.1em] transition-all md:mt-10 md:px-6 md:py-3"
