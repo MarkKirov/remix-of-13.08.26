@@ -263,11 +263,11 @@ function Index() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/70" />
 
         {/* Контент */}
-        <div className="relative z-10 mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-center px-6 py-24 text-center md:px-8">
-          <h2 className="font-display max-w-4xl whitespace-pre-line text-3xl leading-[1.15] tracking-[0.01em] text-[#e5e5e5] drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)] md:text-4xl lg:text-6xl">
+        <div className="relative z-10 mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-start px-6 pt-28 pb-24 text-center md:px-8 md:pt-36 lg:pt-44">
+          <h2 className="font-display max-w-3xl whitespace-pre-line text-2xl leading-[1.15] tracking-[0.01em] text-[#c4c4c4] drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)] md:text-3xl lg:text-4xl">
             Бесплатно подберем персональную стратегию{"\n"}вашей красоты
           </h2>
-          <p className="font-body mt-6 max-w-3xl text-base font-light leading-relaxed text-[#c4c4c4] md:mt-8 md:text-xl">
+          <p className="font-body mt-5 max-w-3xl text-base font-light leading-relaxed text-[#b8b8b8] md:mt-6 md:text-lg">
             и проведем аудит вашей внешности на основе вашего генотипа
           </p>
 
