@@ -280,9 +280,9 @@ function Index() {
         {/* Фоновое изображение */}
         <img
           className="absolute inset-0 h-full w-full object-cover"
-          style={{ objectPosition: "center 25%" }}
+          style={{ objectPosition: "center 40%" }}
           src={secondImage.url}
-          alt="Косметолог делает массаж лица"
+          alt="Женщина на процедуре по уходу за лицом"
           decoding="async"
         />
         {/* Затемнение с розоватым оттенком */}
