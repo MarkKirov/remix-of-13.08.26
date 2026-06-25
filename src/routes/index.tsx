@@ -165,7 +165,7 @@ function Index() {
             <img
               src={headerLogo.url}
               alt="Camille Four"
-              className="w-24 shrink-0 md:w-36"
+              className="w-32 shrink-0 md:w-44"
               style={{ filter: "brightness(0) invert(1)" }}
             />
             <div className="flex-1 text-center">
