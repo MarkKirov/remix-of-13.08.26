@@ -110,7 +110,7 @@ function Index() {
           </div>
         </header>
 
-        <div className="relative z-10 mx-auto flex min-h-[640px] max-w-6xl items-center px-6 py-20 md:px-8 md:py-32">
+        <div className="relative z-10 mx-auto flex h-full min-h-screen max-w-6xl items-center px-6 pt-20 pb-8 md:px-8 md:pb-12 md:pt-24">
           <div className="flex w-full items-center gap-6 md:gap-10">
             {/* Стрелка назад */}
             <button
