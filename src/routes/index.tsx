@@ -362,7 +362,7 @@ function Index() {
                     <div className="absolute inset-0 bg-black/20" />
 
                     <div className="absolute inset-0 flex flex-col items-center justify-end p-7 text-center md:p-8">
-                      <h3 className="font-display whitespace-pre-line text-xl leading-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)] md:text-2xl lg:text-[1.7rem]">
+                      <h3 className="font-body whitespace-pre-line text-xl leading-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)] md:text-2xl lg:text-[1.7rem]">
                         {s.title}
                       </h3>
                       <span
