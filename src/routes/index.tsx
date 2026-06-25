@@ -249,7 +249,7 @@ function Index() {
       </section>
 
       {/* Второй экран — призыв с фоновым изображением */}
-      <section className="relative min-h-screen overflow-hidden">
+      <section className="relative min-h-[80vh] overflow-hidden">
         {/* Фоновое изображение */}
         <img
           className="absolute inset-0 h-full w-full object-cover"
@@ -264,7 +264,8 @@ function Index() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/70" />
 
         {/* Контент */}
-        <div className="relative z-10 mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-start px-6 pt-28 pb-24 text-center md:px-8 md:pt-36 lg:pt-44">
+        <div className="relative z-10 mx-auto flex min-h-[80vh] max-w-5xl flex-col items-center justify-start px-6 pt-20 pb-16 text-center md:px-8 md:pt-28 md:pb-20 lg:pt-36">
+
           <h2 className="font-display max-w-3xl whitespace-normal text-2xl leading-[1.15] tracking-[0.01em] text-[#c4c4c4] drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)] md:text-3xl lg:text-4xl">
             Бесплатно подберем персональную <span className="whitespace-nowrap">стратегию вашей красоты</span>
           </h2>
