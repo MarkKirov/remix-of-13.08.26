@@ -461,15 +461,18 @@ function Index() {
           style={{ objectPosition: "center 30%" }}
           decoding="async"
         />
-        <div className="absolute inset-0 bg-black/80" />
+        <div className="absolute inset-0 bg-black/60" />
         <div className="absolute inset-0 bg-[#AE31A6]/10" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/80" />
 
         <div className="relative z-10 mx-auto max-w-6xl px-6 py-20 md:px-8 md:py-28">
           <h2 className="font-display text-3xl leading-[1.1] tracking-[0.01em] text-[#e5e5e5] drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)] md:text-5xl lg:text-6xl">
-            Почему <span style={{ color: BRAND }}>Комильфо</span>,
-            <br />а не подвальные кабинеты
+            Ваше спокойствие и безопасность —{"\n"}
+            это тоже часть красивого отражения
           </h2>
+          <p className="font-body mt-6 max-w-4xl text-sm font-light leading-relaxed text-[#c4c4c4] md:mt-8 md:text-base">
+            Настоящий психологический комфорт появляется тогда, когда вы на 100% уверены в стерильности, подлинности препаратов и квалификации врача. У шабашников правила игры совершенно другие. Ниже приведено прямое и жесткое сравнение, которое наглядно объясняет, почему экономия на косметологии — это огромный риск
+          </p>
 
           <div className="mt-10 rounded-3xl bg-black/80 p-6 backdrop-blur-md ring-1 ring-white/10 md:mt-14 md:p-10">
             <div className="hidden grid-cols-2 gap-8 border-b border-white/15 pb-5 md:grid">
