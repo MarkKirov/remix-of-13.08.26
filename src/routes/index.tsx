@@ -33,7 +33,7 @@ type Slide = {
 
 const slides: Slide[] = [
   {
-    title: "Не меняем внешность, а сохраняем красоту",
+    title: "Не меняем внешность, а\nсохраняем красоту",
     paragraphs: [
       "Проектируем персональную стратегию сохранения вашей естественной красоты.",
       "Опираемся на глубокую медицинскую диагностику, а не слепые тренды из Интернета.",
@@ -145,7 +145,7 @@ function Index() {
                     }`}
                   >
                     <div className="pb-6 md:pb-8">
-                      <h1 className="font-display max-w-4xl text-2xl leading-[1.15] tracking-[0.01em] text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)] md:text-3xl lg:text-5xl">
+                      <h1 className="font-display max-w-4xl whitespace-pre-line text-2xl leading-[1.15] tracking-[0.01em] text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)] md:text-3xl lg:text-5xl">
                         {s.title}
                       </h1>
 
