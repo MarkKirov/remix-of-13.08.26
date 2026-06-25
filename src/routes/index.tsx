@@ -91,12 +91,29 @@ const slides: Slide[] = [
 
 function Index() {
   const [active, setActive] = useState(0);
+  const [secondOffset, setSecondOffset] = useState(0);
   const videoRef = useRef<HTMLVideoElement | null>(null);
+  const secondRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.playbackRate = 0.4;
     }
+  }, []);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!secondRef.current) return;
+      const rect = secondRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      const sectionHeight = rect.height;
+      const progress = (windowHeight - rect.top) / (windowHeight + sectionHeight);
+      const clamped = Math.max(0, Math.min(1, progress));
+      setSecondOffset(-60 + clamped * 120);
+    };
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -275,16 +292,21 @@ function Index() {
         </div>
       </section>
 
-      {/* Второй экран — призыв с фоновым изображением */}
-      <section className="relative min-h-[80vh] overflow-hidden">
-        {/* Фоновое изображение */}
-        <img
-          className="absolute inset-0 h-full w-full object-cover"
-          style={{ objectPosition: "center 70%" }}
-          src={secondImage.url}
-          alt="Женщина на процедуре по уходу за лицом"
-          decoding="async"
-        />
+      {/* Второй экран — призыв с фоновым изображением и параллаксом */}
+      <section ref={secondRef} className="relative min-h-[80vh] overflow-hidden">
+        {/* Фоновое изображение с параллаксом */}
+        <div
+          className="absolute inset-0 h-[120%] w-full"
+          style={{ transform: `translateY(${secondOffset}px)` }}
+        >
+          <img
+            className="h-full w-full object-cover"
+            style={{ objectPosition: "center 70%" }}
+            src={secondImage.url}
+            alt="Женщина на процедуре по уходу за лицом"
+            decoding="async"
+          />
+        </div>
         {/* Затемнение с розоватым оттенком */}
         <div className="absolute inset-0 bg-black/60" />
         <div className="absolute inset-0 bg-[#AE31A6]/20" />
