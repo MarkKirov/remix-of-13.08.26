@@ -451,7 +451,7 @@ function Index() {
             У нелегальных кабинетов правила игры совершенно другие.
           </p>
 
-          <div className="mt-10 rounded-3xl bg-black/60 p-6 backdrop-blur-md ring-1 ring-white/10 md:mt-14 md:p-10">
+          <div className="mt-10 rounded-3xl bg-black/40 p-6 backdrop-blur-md ring-1 ring-white/10 md:mt-14 md:p-10">
             <div className="hidden grid-cols-2 gap-8 border-b border-white/15 pb-5 md:grid">
               <div className="font-display text-lg tracking-[0.01em]" style={{ color: BRAND }}>
                 Профессиональная медицина «Комильфо»
