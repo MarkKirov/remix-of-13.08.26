@@ -287,6 +287,39 @@ function Index() {
       </section>
 
 
+      {/* Второй экран — призыв на бесплатную диагностику */}
+      <section className="relative min-h-[80vh] overflow-hidden">
+        <img
+          src={consultationBg.url}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover"
+          style={{ objectPosition: "center 35%" }}
+          decoding="async"
+        />
+        <div className="absolute inset-0 bg-black/55" />
+        <div className="absolute inset-0 bg-[#AE31A6]/25" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
+
+        <div className="relative z-10 mx-auto flex min-h-[80vh] max-w-5xl flex-col items-center justify-center px-6 py-20 text-center md:px-8 md:py-28">
+          <h2 className="font-display text-2xl leading-[1.15] tracking-[0.01em] text-[#e5e5e5] drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)] md:text-4xl lg:text-5xl">
+            Бесплатно подберём персональную{"\n"}стратегию вашей красоты
+          </h2>
+          <p className="font-body mt-6 max-w-2xl text-sm font-light leading-relaxed text-[#c4c4c4] md:mt-8 md:text-base">
+            и проведём аудит вашей внешности на основе вашего генотипа
+          </p>
+          <button
+            type="button"
+            className="group mt-10 inline-flex items-center gap-2 rounded-full border-2 px-6 py-3 text-xs font-normal uppercase tracking-[0.1em] transition-all md:mt-12 md:px-8 md:py-3.5 md:text-sm"
+            style={{ borderColor: BRAND, color: "#fff", backgroundColor: "transparent" }}
+            onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = BRAND; }}
+            onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent"; }}
+          >
+            <span>Записаться на бесплатную консультацию</span>
+            <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
+          </button>
+        </div>
+      </section>
+
       {/* Третий экран — услуги на сером фоне */}
       <section className="relative bg-neutral-200 py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-6 md:px-8">
@@ -477,21 +510,15 @@ function Index() {
         </div>
       </section>
 
-      {/* Экран призыва с фоновым изображением и параллаксом */}
-      <section ref={secondRef} className="relative min-h-[80vh] overflow-hidden">
-        {/* Фоновое изображение с параллаксом */}
-        <div
-          className="absolute inset-0 h-[120%] w-full"
-          style={{ transform: `translateY(${secondOffset}px)` }}
-        >
-          <img
-            className="h-full w-full object-cover"
-            style={{ objectPosition: "center top" }}
-            src={doctorConsultation.url}
-            alt="Врач клиники Комильфо"
-            decoding="async"
-          />
-        </div>
+      {/* Экран призыва с фоновым изображением */}
+      <section className="relative min-h-[80vh] overflow-hidden">
+        <img
+          className="absolute inset-0 h-full w-full object-cover"
+          style={{ objectPosition: "center top" }}
+          src={doctorConsultation.url}
+          alt="Врач клиники Комильфо"
+          decoding="async"
+        />
         {/* Затемнение с розоватым оттенком */}
         <div className="absolute inset-0 bg-black/35" />
         <div className="absolute inset-0 bg-[#AE31A6]/10" />
