@@ -4,6 +4,7 @@ import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import heroVideo from "@/assets/komilfo_hero_v2.mp4.asset.json";
 import secondImage from "@/assets/komilfo_second.png.asset.json";
 import serviceEsthetic from "@/assets/service_esthetic.png.asset.json";
+import serviceMedical from "@/assets/service_medical.png.asset.json";
 import serviceHardware from "@/assets/service_hardware.png.asset.json";
 import {
   Dialog,
