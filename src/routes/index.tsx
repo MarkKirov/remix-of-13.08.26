@@ -357,14 +357,13 @@ function Index() {
                       ) : (
                         <div className="absolute inset-0 bg-neutral-400" />
                       )}
-                      {/* Розовое затемнение в фирменном цвете */}
+                      {/* Нейтральное затемнение снизу для читаемости текста */}
                       <div
-                        className="absolute inset-0 transition-opacity duration-700 group-hover:opacity-90"
+                        className="absolute inset-0 transition-opacity duration-700 group-hover:opacity-80"
                         style={{
-                          background: `linear-gradient(180deg, rgba(20,20,20,0.45) 0%, ${BRAND}55 60%, ${BRAND}88 100%)`,
+                          background: "linear-gradient(180deg, rgba(20,20,20,0.25) 0%, rgba(20,20,20,0.55) 60%, rgba(20,20,20,0.85) 100%)",
                         }}
                       />
-                      <div className="absolute inset-0 bg-black/20 transition-opacity duration-700 group-hover:opacity-40" />
                     </div>
 
                     <div className="absolute inset-0 flex flex-col justify-between p-7 text-left md:p-8">
