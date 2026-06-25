@@ -483,6 +483,58 @@ function Index() {
           </div>
         </div>
       </section>
+
+      {/* Экран призыва с фоновым изображением и параллаксом */}
+      <section ref={secondRef} className="relative min-h-[80vh] overflow-hidden">
+        {/* Фоновое изображение с параллаксом */}
+        <div
+          className="absolute inset-0 h-[120%] w-full"
+          style={{ transform: `translateY(${secondOffset}px)` }}
+        >
+          <img
+            className="h-full w-full object-cover"
+            style={{ objectPosition: "center 30%" }}
+            src={doctorConsultation.url}
+            alt="Врач клиники Комильфо"
+            decoding="async"
+          />
+        </div>
+        {/* Затемнение с розоватым оттенком */}
+        <div className="absolute inset-0 bg-black/35" />
+        <div className="absolute inset-0 bg-[#AE31A6]/10" />
+        <div className="absolute inset-0 bg-gradient-to-l from-black/70 via-black/25 to-transparent" />
+
+        {/* Контент */}
+        <div className="relative z-10 mx-auto flex min-h-[80vh] max-w-6xl flex-col items-end justify-center px-6 py-16 text-right md:px-8 md:py-20">
+          <h2 className="font-display max-w-xl whitespace-normal text-2xl leading-[1.15] tracking-[0.01em] drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)] md:text-3xl lg:text-4xl" style={{ color: BRAND }}>
+            Не рискуйте здоровьем
+          </h2>
+          <p className="font-body mt-4 max-w-lg text-base font-light leading-relaxed text-[#c4c4c4] md:mt-5 md:text-lg">
+            мы бесплатно подберём персональную стратегию вашей красоты на встрече с косметологом
+          </p>
+
+          <button
+            type="button"
+            className="group mt-8 inline-flex items-center gap-2 rounded-full border-2 px-5 py-2.5 text-xs font-normal uppercase tracking-[0.1em] transition-all md:mt-10 md:px-7 md:py-3 md:text-sm"
+            style={{
+              borderColor: BRAND,
+              color: "#fff",
+              backgroundColor: "transparent",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = BRAND;
+              e.currentTarget.style.borderColor = BRAND;
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = "transparent";
+              e.currentTarget.style.borderColor = BRAND;
+            }}
+          >
+            <span>Записаться на бесплатную консультацию</span>
+            <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
+          </button>
+        </div>
+      </section>
     </div>
   );
 }
