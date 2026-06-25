@@ -253,6 +253,7 @@ function Index() {
         {/* Фоновое изображение */}
         <img
           className="absolute inset-0 h-full w-full object-cover"
+          style={{ objectPosition: "center 25%" }}
           src={secondImage.url}
           alt="Косметолог делает массаж лица"
           decoding="async"
