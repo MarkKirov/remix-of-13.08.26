@@ -114,13 +114,13 @@ function Index() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/70" />
 
         <div className="relative z-10 mx-auto flex min-h-[640px] max-w-6xl items-center px-6 py-20 md:px-8 md:py-32">
-          <div className="flex w-full items-center gap-4 md:gap-6">
+          <div className="flex w-full items-center gap-6 md:gap-10">
             {/* Стрелка назад */}
             <button
               type="button"
               aria-label="Предыдущий слайд"
               onClick={() => go(-1)}
-              className="shrink-0 grid h-10 w-10 place-items-center rounded-full border border-white/40 bg-white/10 text-white backdrop-blur transition-colors md:h-11 md:w-11"
+              className="shrink-0 grid h-9 w-9 place-items-center rounded-full border border-white/40 bg-white/10 text-white backdrop-blur transition-colors md:h-10 md:w-10"
               style={{ transition: "background-color .2s, color .2s, border-color .2s" }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = BRAND;
@@ -135,7 +135,7 @@ function Index() {
             </button>
 
             {/* Слайды + точки */}
-            <div className="min-w-0 flex-1">
+            <div className="min-w-0 flex-1 px-1 md:px-2">
               {/* Слайды — все рендерятся в одной grid-ячейке, без скачков высоты */}
               <div className="grid">
                 {slides.map((s, i) => (
@@ -213,7 +213,7 @@ function Index() {
               type="button"
               aria-label="Следующий слайд"
               onClick={() => go(1)}
-              className="shrink-0 grid h-10 w-10 place-items-center rounded-full border border-white/40 bg-white/10 text-white backdrop-blur transition-colors md:h-11 md:w-11"
+              className="shrink-0 grid h-9 w-9 place-items-center rounded-full border border-white/40 bg-white/10 text-white backdrop-blur transition-colors md:h-10 md:w-10"
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = BRAND;
                 e.currentTarget.style.borderColor = BRAND;
