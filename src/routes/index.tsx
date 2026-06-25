@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
 import heroVideo from "@/assets/komilfo_hero_v2.mp4.asset.json";
-import secondImage from "@/assets/komilfo_second.png.asset.json";
+import doctorConsultation from "@/assets/doctor-consultation.jpg.asset.json";
 import productPhilosophy from "@/assets/product-philosophy.png.asset.json";
 import serviceEsthetic from "@/assets/service_esthetic.png.asset.json";
 import serviceMedical from "@/assets/service_medical.png.asset.json";
@@ -302,25 +302,24 @@ function Index() {
         >
           <img
             className="h-full w-full object-cover"
-            style={{ objectPosition: "center 70%" }}
-            src={secondImage.url}
-            alt="Женщина на процедуре по уходу за лицом"
+            style={{ objectPosition: "center 30%" }}
+            src={doctorConsultation.url}
+            alt="Врач клиники Комильфо"
             decoding="async"
           />
         </div>
         {/* Затемнение с розоватым оттенком */}
-        <div className="absolute inset-0 bg-black/60" />
-        <div className="absolute inset-0 bg-[#AE31A6]/20" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/70" />
+        <div className="absolute inset-0 bg-black/35" />
+        <div className="absolute inset-0 bg-[#AE31A6]/10" />
+        <div className="absolute inset-0 bg-gradient-to-l from-black/70 via-black/25 to-transparent" />
 
         {/* Контент */}
-        <div className="relative z-10 mx-auto flex min-h-[80vh] max-w-5xl flex-col items-center justify-start px-6 pt-20 pb-16 text-center md:px-8 md:pt-28 md:pb-20 lg:pt-36">
-
-          <h2 className="font-display max-w-3xl whitespace-normal text-2xl leading-[1.15] tracking-[0.01em] text-[#c4c4c4] drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)] md:text-3xl lg:text-4xl">
-            Бесплатно подберем персональную <span className="whitespace-nowrap">стратегию вашей красоты</span>
+        <div className="relative z-10 mx-auto flex min-h-[80vh] max-w-6xl flex-col items-end justify-center px-6 py-16 text-right md:px-8 md:py-20">
+          <h2 className="font-display max-w-xl whitespace-normal text-2xl leading-[1.15] tracking-[0.01em] drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)] md:text-3xl lg:text-4xl" style={{ color: BRAND }}>
+            Не рискуйте здоровьем
           </h2>
-          <p className="font-body mt-5 max-w-3xl text-base font-light leading-relaxed text-[#b8b8b8] md:mt-6 md:text-lg">
-            и проведем аудит вашей внешности на основе вашего генотипа
+          <p className="font-body mt-4 max-w-lg text-base font-light leading-relaxed text-[#c4c4c4] md:mt-5 md:text-lg">
+            мы бесплатно подберём персональную стратегию вашей красоты на встрече с косметологом
           </p>
 
           <button
