@@ -420,7 +420,39 @@ function Index() {
         </div>
       </section>
 
-      {/* Сравнительная таблица — Камильфо vs подвальные кабинеты */}
+      {/* Четвёртый экран — философия продукта: текст / изображение */}
+      <section className="relative flex min-h-screen flex-col overflow-hidden md:flex-row">
+        {/* Левая половина — розовый фон с текстом */}
+        <div
+          className="flex w-full items-center justify-center px-8 py-16 md:w-1/2 md:px-12 lg:px-20"
+          style={{ backgroundColor: BRAND }}
+        >
+          <div className="max-w-xl">
+            <h2 className="font-display text-2xl leading-[1.15] tracking-[0.01em] text-[#f5f5f5] drop-shadow-[0_2px_12px_rgba(0,0,0,0.15)] md:text-3xl lg:text-4xl">
+              Наш продукт — не препарат в шприце,{"\n"}
+              а ваше уверенное отражение в зеркале
+            </h2>
+            <p className="font-body mt-6 text-sm font-light leading-relaxed text-[#d4d4d4] md:mt-8 md:text-base">
+              Мы создаём комплексную стратегию, комбинируем методы, чтобы на десятилетия сохранять вашу естественную молодость и индивидуальность.
+            </p>
+            <p className="font-body mt-4 text-sm font-light leading-relaxed text-[#d4d4d4] md:text-base">
+              Поэтому мы не бросаем вас после процедуры, а строго проверяем результат и следим за тем, как услуга интегрировалась в ваш организм.
+            </p>
+          </div>
+        </div>
+
+        {/* Правая половина — изображение */}
+        <div className="relative h-[60vh] w-full md:h-auto md:w-1/2">
+          <img
+            className="absolute inset-0 h-full w-full object-cover"
+            src={productPhilosophy.url}
+            alt="Косметологическая процедура в клинике Комильфо"
+            decoding="async"
+          />
+        </div>
+      </section>
+
+      {/* Сравнительная таблица — Комильфо vs подвальные кабинеты */}
       <section className="relative overflow-hidden">
         <img
           src={comparisonBg.url}
@@ -435,7 +467,7 @@ function Index() {
 
         <div className="relative z-10 mx-auto max-w-6xl px-6 py-20 md:px-8 md:py-28">
           <h2 className="font-display text-3xl leading-[1.1] tracking-[0.01em] text-[#e5e5e5] drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)] md:text-5xl lg:text-6xl">
-            Почему <span style={{ color: BRAND }}>Камильфо</span>,
+            Почему <span style={{ color: BRAND }}>Комильфо</span>,
             <br />а не подвальные кабинеты
           </h2>
 
@@ -445,7 +477,7 @@ function Index() {
                 Критерий
               </div>
               <div className="col-span-5 font-display text-lg tracking-[0.01em]" style={{ color: BRAND }}>
-                Профессиональная медицина «Камильфо»
+                Профессиональная медицина «Комильфо»
               </div>
               <div className="col-span-4 font-caption text-[10px] uppercase tracking-[0.18em] text-white/60">
                 Нелегальные кабинеты и «шабашники»
@@ -494,7 +526,7 @@ function Index() {
                   </div>
                   <div className="font-body text-sm font-light leading-relaxed text-[#e5e5e5] md:col-span-5 md:text-base">
                     <div className="mb-1 font-caption text-[10px] uppercase tracking-[0.18em] md:hidden" style={{ color: BRAND }}>
-                      Камильфо
+                      Комильфо
                     </div>
                     {row.us}
                   </div>
@@ -508,38 +540,6 @@ function Index() {
               ))}
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* Четвёртый экран — философия продукта: текст / изображение */}
-      <section className="relative flex min-h-screen flex-col overflow-hidden md:flex-row">
-        {/* Левая половина — розовый фон с текстом */}
-        <div
-          className="flex w-full items-center justify-center px-8 py-16 md:w-1/2 md:px-12 lg:px-20"
-          style={{ backgroundColor: BRAND }}
-        >
-          <div className="max-w-xl">
-            <h2 className="font-display text-2xl leading-[1.15] tracking-[0.01em] text-[#f5f5f5] drop-shadow-[0_2px_12px_rgba(0,0,0,0.15)] md:text-3xl lg:text-4xl">
-              Наш продукт — не препарат в шприце,{"\n"}
-              а ваше уверенное отражение в зеркале
-            </h2>
-            <p className="font-body mt-6 text-sm font-light leading-relaxed text-[#d4d4d4] md:mt-8 md:text-base">
-              Мы создаём комплексную стратегию, комбинируем методы, чтобы на десятилетия сохранять вашу естественную молодость и индивидуальность.
-            </p>
-            <p className="font-body mt-4 text-sm font-light leading-relaxed text-[#d4d4d4] md:text-base">
-              Поэтому мы не бросаем вас после процедуры, а строго проверяем результат и следим за тем, как услуга интегрировалась в ваш организм.
-            </p>
-          </div>
-        </div>
-
-        {/* Правая половина — изображение */}
-        <div className="relative h-[60vh] w-full md:h-auto md:w-1/2">
-          <img
-            className="absolute inset-0 h-full w-full object-cover"
-            src={productPhilosophy.url}
-            alt="Косметологическая процедура в клинике Комильфо"
-            decoding="async"
-          />
         </div>
       </section>
     </div>
