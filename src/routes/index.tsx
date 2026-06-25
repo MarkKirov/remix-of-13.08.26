@@ -181,7 +181,7 @@ function Index() {
                     <div>
                       <button
                         type="button"
-                        className="group inline-flex items-center gap-2 rounded-full border-2 px-6 py-3 text-xs font-medium uppercase tracking-[0.1em] transition-all"
+                        className="group inline-flex items-center gap-2 rounded-full border-2 px-6 py-3 text-xs font-normal uppercase tracking-[0.1em] transition-all"
                         style={{
                           borderColor: BRAND,
                           color: "#fff",
