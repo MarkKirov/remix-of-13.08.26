@@ -47,6 +47,7 @@ type Procedure = {
   price: string;
   preparations: string[];
   detailsLabel?: string;
+  device?: string;
 };
 
 const medicalProcedures: Procedure[] = [
