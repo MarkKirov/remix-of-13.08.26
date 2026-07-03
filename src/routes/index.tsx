@@ -505,7 +505,7 @@ function Index() {
         <div className="absolute inset-0 bg-gradient-to-l from-black/70 via-black/25 to-transparent" />
 
         {/* Контент */}
-        <div className="relative z-10 mx-auto flex min-h-[80vh] max-w-6xl flex-col items-end justify-center px-6 py-16 text-right md:px-8 md:py-20">
+        <div className="relative z-10 mx-auto flex min-h-[80vh] max-w-6xl flex-col items-end justify-center px-6 py-16 text-left md:px-8 md:py-20">
           <h2 className="font-display max-w-xl whitespace-normal text-2xl leading-[1.15] tracking-[0.01em] drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)] md:text-3xl lg:text-4xl" style={{ color: BRAND }}>
             Вы достойны профессионального отношения к вашему здоровью
           </h2>
