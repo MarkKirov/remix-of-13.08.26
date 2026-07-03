@@ -64,8 +64,8 @@ const slides: Slide[] = [
   {
     title: (
       <>
-        Чистая медицина и абсолютная безопасность{"\n"}
-        <span style={{ color: BRAND }}>вместо подвальных рисков</span>
+        Медицинский подход и безопасность{"\n"}
+        <span style={{ color: BRAND }}>вместо подпольных процедур</span>
       </>
     ),
     paragraphs: [
