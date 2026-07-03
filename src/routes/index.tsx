@@ -46,6 +46,7 @@ type Procedure = {
   name: string;
   price: string;
   preparations: string[];
+  detailsLabel?: string;
 };
 
 const medicalProcedures: Procedure[] = [
@@ -137,7 +138,7 @@ function ProcedureRow({ procedure }: { procedure: Procedure }) {
         <div className="overflow-hidden">
           <div className="mx-4 mt-2 rounded-2xl bg-neutral-100 px-5 py-4 md:mx-8 md:px-6 md:py-5">
             <p className="font-caption mb-2 text-[10px] uppercase tracking-[0.18em] text-neutral-500">
-              Препараты
+              {procedure.detailsLabel ?? "Препараты"}
             </p>
             <ul className="space-y-1.5">
               {procedure.preparations.map((p, i) => (
@@ -168,6 +169,55 @@ function MedicalCosmetologyContent() {
   return (
     <div className="space-y-2.5">
       {medicalProcedures.map((p) => (
+        <ProcedureRow key={p.name} procedure={p} />
+      ))}
+    </div>
+  );
+}
+
+const hardwareProcedures: Procedure[] = [
+  {
+    name: "Лазерное удаление папиллом, кератом, фибром",
+    price: "по запросу",
+    detailsLabel: "Показания",
+    preparations: ["Папилломы", "Кератомы", "Фибромы"],
+  },
+  {
+    name: "Лазерное удаление сосудов",
+    price: "по запросу",
+    detailsLabel: "Показания",
+    preparations: ["Купероз", "Сосудистые звёздочки"],
+  },
+  {
+    name: "Лазерное омоложение",
+    price: "по запросу",
+    detailsLabel: "Эффект",
+    preparations: ["Выравнивание рельефа кожи", "Улучшение тонуса и текстуры"],
+  },
+  {
+    name: "Лазерная шлифовка рубцов",
+    price: "по запросу",
+    detailsLabel: "Показания",
+    preparations: ["Постакне", "Рубцы", "Растяжки"],
+  },
+  {
+    name: "СМАС-лифтинг на аппарате Ulthera",
+    price: "по запросу",
+    detailsLabel: "Аппарат",
+    preparations: ["Ulthera — ультразвуковой SMAS-лифтинг"],
+  },
+  {
+    name: "Фототерапия IPL на аппарате Viora V30",
+    price: "по запросу",
+    detailsLabel: "Аппарат",
+    preparations: ["Viora V30 — IPL-фототерапия"],
+  },
+];
+
+function HardwareCosmetologyContent() {
+  return (
+    <div className="space-y-2.5">
+      {hardwareProcedures.map((p) => (
         <ProcedureRow key={p.name} procedure={p} />
       ))}
     </div>
@@ -525,6 +575,23 @@ function Index() {
                     </DialogHeader>
                     <div className="mt-5">
                       <MedicalCosmetologyContent />
+                    </div>
+                  </DialogContent>
+                ) : s.title === "Аппаратная\nкосметология" ? (
+                  <DialogContent className="max-h-[90vh] max-w-4xl overflow-y-auto">
+                    <DialogHeader>
+                      <DialogTitle
+                        className="font-display text-2xl md:text-3xl"
+                        style={{ color: BRAND }}
+                      >
+                        Аппаратная косметология
+                      </DialogTitle>
+                      <DialogDescription className="font-body pt-1 text-sm leading-relaxed text-neutral-500">
+                        Выберите процедуру, чтобы увидеть подробности и записаться на приём.
+                      </DialogDescription>
+                    </DialogHeader>
+                    <div className="mt-5">
+                      <HardwareCosmetologyContent />
                     </div>
                   </DialogContent>
                 ) : (
