@@ -505,14 +505,14 @@ function Index() {
         <div className="absolute inset-0 bg-gradient-to-l from-black/70 via-black/25 to-transparent" />
 
         {/* Контент */}
-        <div className="relative z-10 mx-auto flex min-h-[80vh] max-w-6xl flex-col items-end justify-center px-6 py-16 text-left md:px-8 md:py-20">
+        <div className="relative z-10 mx-auto flex min-h-[80vh] max-w-6xl flex-col items-start justify-center px-6 py-16 text-left md:px-8 md:py-20">
           <h2 className="font-display max-w-xl whitespace-pre-line text-2xl leading-[1.15] tracking-[0.01em] drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)] md:text-3xl lg:text-4xl" style={{ color: BRAND }}>
             Вы достойны профессионального{"\n"}
             отношения к вашему здоровью
           </h2>
           <p className="font-body mt-4 max-w-lg whitespace-pre-line text-base font-light leading-relaxed text-[#c4c4c4] md:mt-5 md:text-lg">
             Подберём персональную стратегию{"\n"}
-            вашей красоты на встрече с косметологом
+            вашей естественной красоты на встрече с косметологом
           </p>
 
           <button
