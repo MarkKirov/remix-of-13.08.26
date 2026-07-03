@@ -399,8 +399,8 @@ function Index() {
         >
           <div className="max-w-xl">
             <h2 className="font-display text-2xl leading-[1.15] tracking-[0.01em] text-[#f5f5f5] drop-shadow-[0_2px_12px_rgba(0,0,0,0.15)] md:text-3xl lg:text-4xl">
-              Наш продукт — не просто «укол красоты»,{"\n"}
-              а ваше уверенное отражение в зеркале
+              Ваше желанное отражение в зеркале —{"\n"}
+              это не просто «укол красоты»
             </h2>
             <p className="font-body mt-6 text-sm font-light leading-relaxed text-[#d4d4d4] md:mt-8 md:text-base">
               Мы создаём комплексную стратегию, комбинируем методы, чтобы на десятилетия сохранять вашу естественную молодость и индивидуальность.
