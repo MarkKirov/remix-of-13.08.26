@@ -228,6 +228,34 @@ const hardwareProcedures: Procedure[] = [
     detailsLabel: "Аппарат",
     preparations: ["Viora V30 — IPL-фототерапия"],
   },
+  {
+    name: "Аппаратный массаж Icon",
+    price: "по запросу",
+    detailsLabel: "Аппарат",
+    preparations: [],
+    device: "LaserMed",
+  },
+  {
+    name: "Аппаратный массаж Beauty Liner",
+    price: "по запросу",
+    detailsLabel: "Аппарат",
+    preparations: [],
+    device: "Beauty Liner",
+  },
+  {
+    name: "Аппаратный массаж для лица и шеи LPG",
+    price: "по запросу",
+    detailsLabel: "Аппарат",
+    preparations: [],
+    device: "LPG",
+  },
+  {
+    name: "Микротоковая терапия",
+    price: "по запросу",
+    detailsLabel: "Аппарат",
+    preparations: [],
+    device: "Аппарат уточняется",
+  },
 ];
 
 function HardwareCosmetologyContent() {
