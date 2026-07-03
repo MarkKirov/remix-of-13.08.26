@@ -290,7 +290,7 @@ function Index() {
           src={consultationBg.url}
           alt=""
           className="absolute inset-0 h-full w-full object-cover"
-          style={{ objectPosition: "center 55%" }}
+          style={{ objectPosition: "center calc(55% - 60px)" }}
           decoding="async"
         />
         <div className="absolute inset-0 bg-black/55" />
