@@ -110,7 +110,7 @@ function ProcedureRow({ procedure }: { procedure: Procedure }) {
             {procedure.name}
           </span>
           <span
-            className="font-caption hidden shrink-0 text-[11px] uppercase tracking-[0.14em] md:inline"
+            className="font-caption hidden shrink-0 text-sm font-bold uppercase tracking-[0.14em] md:inline"
             style={{ color: BRAND }}
           >
             {procedure.price}
@@ -511,7 +511,7 @@ function Index() {
                   </button>
                 </DialogTrigger>
                 {s.title === "Врачебная\nкосметология" ? (
-                  <DialogContent className="max-h-[85vh] max-w-2xl overflow-y-auto">
+                  <DialogContent className="max-h-[90vh] max-w-4xl overflow-y-auto">
                     <DialogHeader>
                       <DialogTitle
                         className="font-display text-2xl md:text-3xl"
