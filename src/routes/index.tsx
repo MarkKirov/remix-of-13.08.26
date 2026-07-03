@@ -505,36 +505,38 @@ function Index() {
         <div className="absolute inset-0 bg-gradient-to-l from-black/70 via-black/25 to-transparent" />
 
         {/* Контент */}
-        <div className="relative z-10 mx-auto flex min-h-[80vh] max-w-6xl flex-col items-start justify-center px-6 py-16 text-left md:px-8 md:py-20">
-          <h2 className="font-display max-w-xl whitespace-pre-line text-2xl leading-[1.15] tracking-[0.01em] drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)] md:text-3xl lg:text-4xl" style={{ color: BRAND }}>
-            Вы достойны профессионального{"\n"}
-            отношения к вашему здоровью
-          </h2>
-          <p className="font-body mt-4 max-w-lg whitespace-pre-line text-base font-light leading-relaxed text-[#c4c4c4] md:mt-5 md:text-lg">
-            Подберём персональную стратегию{"\n"}
-            вашей естественной красоты на встрече с косметологом
-          </p>
+        <div className="relative z-10 mx-auto flex min-h-[80vh] max-w-6xl flex-col items-end justify-center px-6 py-16 text-left md:px-8 md:py-20">
+          <div className="text-left">
+            <h2 className="font-display max-w-xl whitespace-pre-line text-2xl leading-[1.15] tracking-[0.01em] drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)] md:text-3xl lg:text-4xl" style={{ color: BRAND }}>
+              Вы достойны профессионального{"\n"}
+              отношения к вашему здоровью
+            </h2>
+            <p className="font-body mt-4 max-w-lg whitespace-pre-line text-base font-light leading-relaxed text-[#c4c4c4] md:mt-5 md:text-lg">
+              Подберём персональную стратегию{"\n"}
+              вашей естественной красоты на встрече с косметологом
+            </p>
 
-          <button
-            type="button"
-            className="group mt-8 inline-flex items-center gap-2 rounded-full border-2 px-5 py-2.5 text-xs font-normal uppercase tracking-[0.1em] transition-all md:mt-10 md:px-7 md:py-3 md:text-sm"
-            style={{
-              borderColor: BRAND,
-              color: "#fff",
-              backgroundColor: "transparent",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = BRAND;
-              e.currentTarget.style.borderColor = BRAND;
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = "transparent";
-              e.currentTarget.style.borderColor = BRAND;
-            }}
-          >
-            <span>Записаться на консультацию</span>
-            <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
-          </button>
+            <button
+              type="button"
+              className="group mt-8 inline-flex items-center gap-2 rounded-full border-2 px-5 py-2.5 text-xs font-normal uppercase tracking-[0.1em] transition-all md:mt-10 md:px-7 md:py-3 md:text-sm"
+              style={{
+                borderColor: BRAND,
+                color: "#fff",
+                backgroundColor: "transparent",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = BRAND;
+                e.currentTarget.style.borderColor = BRAND;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = "transparent";
+                e.currentTarget.style.borderColor = BRAND;
+              }}
+            >
+              <span>Записаться на консультацию</span>
+              <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
+            </button>
+          </div>
         </div>
       </section>
     </div>
