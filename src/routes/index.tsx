@@ -229,11 +229,11 @@ const hardwareProcedures: Procedure[] = [
     preparations: ["Viora V30 — IPL-фототерапия"],
   },
   {
-    name: "Аппаратный массаж Icon",
+    name: "Аппаратный массаж Icoon Laser Med",
     price: "по запросу",
     detailsLabel: "Аппарат",
     preparations: [],
-    device: "LaserMed",
+    device: "Laser Med",
   },
   {
     name: "Аппаратный массаж Beauty Liner",
@@ -255,6 +255,27 @@ const hardwareProcedures: Procedure[] = [
     detailsLabel: "Аппарат",
     preparations: [],
     device: "Аппарат уточняется",
+  },
+  {
+    name: "Лазерная эпиляция на аппарате Mediostar Monolith",
+    price: "по запросу",
+    detailsLabel: "Аппарат",
+    preparations: [],
+    device: "Mediostar Monolith",
+  },
+  {
+    name: "Биостимуляция для коррекции фигуры на аппарате Futura Pro",
+    price: "по запросу",
+    detailsLabel: "Аппарат",
+    preparations: [],
+    device: "Futura Pro",
+  },
+  {
+    name: "Водная чистка лица HydraFacial",
+    price: "по запросу",
+    detailsLabel: "Аппарат",
+    preparations: [],
+    device: "HydraFacial",
   },
 ];
 
