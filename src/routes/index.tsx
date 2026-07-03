@@ -182,6 +182,7 @@ const hardwareProcedures: Procedure[] = [
     price: "по запросу",
     detailsLabel: "Показания",
     preparations: ["Папилломы", "Кератомы", "Фибромы"],
+    device: "Fotona (Фотона)",
   },
   {
     name: "Лазерное удаление сосудов",
