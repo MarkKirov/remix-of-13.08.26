@@ -507,10 +507,10 @@ function Index() {
         {/* Контент */}
         <div className="relative z-10 mx-auto flex min-h-[80vh] max-w-6xl flex-col items-end justify-center px-6 py-16 text-right md:px-8 md:py-20">
           <h2 className="font-display max-w-xl whitespace-normal text-2xl leading-[1.15] tracking-[0.01em] drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)] md:text-3xl lg:text-4xl" style={{ color: BRAND }}>
-            Не рискуйте здоровьем
+            Вы достойны профессионального отношения к вашему здоровью
           </h2>
           <p className="font-body mt-4 max-w-lg text-base font-light leading-relaxed text-[#c4c4c4] md:mt-5 md:text-lg">
-            мы бесплатно подберём персональную стратегию вашей красоты на встрече с косметологом
+            Подберём персональную стратегию вашей красоты на встрече с косметологом
           </p>
 
           <button
