@@ -52,7 +52,7 @@ const slides: Slide[] = [
     title: (
       <>
         Не меняем внешность, а{"\n"}
-        <span style={{ color: BRAND }}>сохраняем</span> красоту
+        <span style={{ color: BRAND }}>сохраняем</span> естественную красоту
       </>
     ),
     paragraphs: [
