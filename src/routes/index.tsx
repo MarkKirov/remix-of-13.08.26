@@ -154,7 +154,7 @@ function Index() {
             />
             <div className="flex-1 text-center">
               <p className="font-caption text-[9px] uppercase tracking-[0.14em] text-white/90 md:text-[10px]">
-                17 лет сохраняем вашу природную красоту и индивидуальность
+                17 лет сохраняем вашу естественную красоту и индивидуальность
               </p>
               <p className="font-caption text-[9px] uppercase tracking-[0.14em] text-white/75 mt-1 md:text-[10px]">
                 без комплексов и рисков для здоровья
