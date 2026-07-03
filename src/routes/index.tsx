@@ -438,8 +438,7 @@ function Index() {
             <span style={{ color: BRAND }}>— это тоже часть красивого отражения</span>
           </h2>
           <p className="font-body mt-6 max-w-4xl whitespace-pre-line text-sm font-light leading-relaxed text-[#c4c4c4] md:mt-8 md:text-base">
-            Настоящий психологический комфорт появляется тогда, когда вы на 100% уверены в стерильности, подлинности препаратов и квалификации врача.{"\n"}
-            У нелегальных кабинетов правила игры совершенно другие.
+            Настоящий психологический комфорт появляется тогда, когда вы на сто процентов уверены в квалифицированных специалистах, подлинных препаратах, соблюдении санитарных норм.
           </p>
 
           <div className="mt-10 rounded-3xl bg-black/40 p-6 backdrop-blur-md ring-1 ring-white/10 md:mt-14 md:p-10">
