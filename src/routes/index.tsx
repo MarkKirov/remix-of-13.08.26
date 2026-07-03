@@ -191,7 +191,7 @@ const hardwareProcedures: Procedure[] = [
     name: "Лазерное удаление папиллом, кератом, фибром",
     price: "по запросу",
     detailsLabel: "Показания",
-    preparations: ["Папилломы", "Кератомы", "Фибромы"],
+    preparations: [],
     device: "Fotona (Фотона)",
   },
   {
