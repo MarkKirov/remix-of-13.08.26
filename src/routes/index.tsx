@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import { ChevronLeft, ChevronRight, ArrowRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, ArrowRight, Plus } from "lucide-react";
 import heroVideo from "@/assets/komilfo_hero_v2.mp4.asset.json";
 import doctorConsultation from "@/assets/doctor-consultation.jpg.asset.json";
 import productPhilosophy from "@/assets/product-philosophy.png.asset.json";
@@ -41,6 +41,138 @@ export const Route = createFileRoute("/")({
 });
 
 const BRAND = "#AE31A6";
+
+type Procedure = {
+  name: string;
+  price: string;
+  preparations: string[];
+};
+
+const medicalProcedures: Procedure[] = [
+  {
+    name: "Ботулинотерапия",
+    price: "от 3 900 ₽",
+    preparations: ["Препарат — уточняется", "Препарат — уточняется"],
+  },
+  {
+    name: "Биоревитализация. Биорепарация",
+    price: "от 6 500 ₽",
+    preparations: ["Препарат — уточняется", "Препарат — уточняется"],
+  },
+  {
+    name: "Гидрорезерв губ",
+    price: "от 8 900 ₽",
+    preparations: ["Препарат — уточняется"],
+  },
+  {
+    name: "Увеличение объёма губ",
+    price: "от 12 000 ₽",
+    preparations: ["Препарат — уточняется"],
+  },
+  {
+    name: "Лечение гипергидроза",
+    price: "от 15 000 ₽",
+    preparations: ["Препарат — уточняется"],
+  },
+  {
+    name: "Армирование кожи полимолочной кислотой",
+    price: "от 18 000 ₽",
+    preparations: ["Препарат — уточняется"],
+  },
+];
+
+function ProcedureRow({ procedure }: { procedure: Procedure }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="group">
+      <div
+        className="flex items-center gap-3 rounded-full border border-neutral-200 bg-white pl-5 pr-2 py-2 transition-all hover:border-[color:var(--brand-color)]"
+        style={{ ["--brand-color" as string]: BRAND }}
+      >
+        <button
+          type="button"
+          onClick={() => setOpen((v) => !v)}
+          className="flex flex-1 items-center gap-3 text-left"
+          aria-expanded={open}
+        >
+          <span
+            className="grid h-7 w-7 shrink-0 place-items-center rounded-full border transition-all"
+            style={{
+              borderColor: BRAND,
+              color: BRAND,
+              transform: open ? "rotate(45deg)" : "rotate(0deg)",
+            }}
+            aria-hidden
+          >
+            <Plus className="h-3.5 w-3.5" />
+          </span>
+          <span className="font-body flex-1 text-sm font-normal text-neutral-900 md:text-base">
+            {procedure.name}
+          </span>
+          <span
+            className="font-caption hidden shrink-0 text-[11px] uppercase tracking-[0.14em] md:inline"
+            style={{ color: BRAND }}
+          >
+            {procedure.price}
+          </span>
+        </button>
+        <button
+          type="button"
+          className="font-caption ml-2 shrink-0 rounded-full px-4 py-2 text-[10px] font-normal uppercase tracking-[0.14em] text-white transition-colors md:px-5 md:text-[11px]"
+          style={{ backgroundColor: BRAND }}
+          onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#C24CBA")}
+          onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = BRAND)}
+        >
+          Записаться
+        </button>
+      </div>
+
+      <div
+        className="grid transition-all duration-500 ease-out"
+        style={{
+          gridTemplateRows: open ? "1fr" : "0fr",
+          opacity: open ? 1 : 0,
+        }}
+      >
+        <div className="overflow-hidden">
+          <div className="mx-4 mt-2 rounded-2xl bg-neutral-100 px-5 py-4 md:mx-8 md:px-6 md:py-5">
+            <p className="font-caption mb-2 text-[10px] uppercase tracking-[0.18em] text-neutral-500">
+              Препараты
+            </p>
+            <ul className="space-y-1.5">
+              {procedure.preparations.map((p, i) => (
+                <li
+                  key={i}
+                  className="font-body flex items-center gap-2 text-sm text-neutral-700"
+                >
+                  <span
+                    aria-hidden
+                    className="h-1.5 w-1.5 rounded-full"
+                    style={{ backgroundColor: BRAND }}
+                  />
+                  {p}
+                </li>
+              ))}
+              <li className="font-caption pt-1 text-[10px] uppercase tracking-[0.14em] text-neutral-400">
+                Список пополняется
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function MedicalCosmetologyContent() {
+  return (
+    <div className="space-y-2.5">
+      {medicalProcedures.map((p) => (
+        <ProcedureRow key={p.name} procedure={p} />
+      ))}
+    </div>
+  );
+}
 
 type Slide = {
   title: React.ReactNode;
@@ -378,17 +510,36 @@ function Index() {
                     </div>
                   </button>
                 </DialogTrigger>
-                <DialogContent className="max-w-lg">
-                  <DialogHeader>
-                    <DialogTitle className="font-display text-2xl" style={{ color: BRAND }}>
-                      {s.title.replace("\n", " ")}
-                    </DialogTitle>
-                    <DialogDescription className="font-body pt-2 text-sm leading-relaxed text-neutral-600">
-                      Здесь скоро появится подробное описание услуг, методик и
-                      специалистов этого направления. Заглушка для предпросмотра.
-                    </DialogDescription>
-                  </DialogHeader>
-                </DialogContent>
+                {s.title === "Врачебная\nкосметология" ? (
+                  <DialogContent className="max-h-[85vh] max-w-2xl overflow-y-auto">
+                    <DialogHeader>
+                      <DialogTitle
+                        className="font-display text-2xl md:text-3xl"
+                        style={{ color: BRAND }}
+                      >
+                        Врачебная косметология
+                      </DialogTitle>
+                      <DialogDescription className="font-body pt-1 text-sm leading-relaxed text-neutral-500">
+                        Выберите процедуру, чтобы увидеть используемые препараты и записаться на приём.
+                      </DialogDescription>
+                    </DialogHeader>
+                    <div className="mt-5">
+                      <MedicalCosmetologyContent />
+                    </div>
+                  </DialogContent>
+                ) : (
+                  <DialogContent className="max-w-lg">
+                    <DialogHeader>
+                      <DialogTitle className="font-display text-2xl" style={{ color: BRAND }}>
+                        {s.title.replace("\n", " ")}
+                      </DialogTitle>
+                      <DialogDescription className="font-body pt-2 text-sm leading-relaxed text-neutral-600">
+                        Здесь скоро появится подробное описание услуг, методик и
+                        специалистов этого направления. Заглушка для предпросмотра.
+                      </DialogDescription>
+                    </DialogHeader>
+                  </DialogContent>
+                )}
               </Dialog>
             ))}
           </div>
