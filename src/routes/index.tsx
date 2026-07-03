@@ -530,7 +530,7 @@ function Index() {
               e.currentTarget.style.borderColor = BRAND;
             }}
           >
-            <span>Записаться на бесплатную консультацию</span>
+            <span>Записаться на консультацию</span>
             <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
           </button>
         </div>
