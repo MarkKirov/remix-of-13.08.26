@@ -469,18 +469,6 @@ function Index() {
                   us: "Медицинский подход, сертифицированные специалисты, строгое ведение медицинской документации на каждом приёме.",
                   them: "Работа «вслепую» без документов на руках, фальшивые дипломы из принтера.",
                 },
-                {
-                  us: (
-                    <>
-                      <span className="font-medium" style={{ color: BRAND }}>Исключён:</span> тактика подбирается индивидуально по генотипу, без рисков шрамирования.
-                    </>
-                  ),
-                  them: (
-                    <>
-                      В лучшем случае — <span className="font-medium text-white">пожизненный шрам</span>, внутренние рубцы, в худшем — смерть.
-                    </>
-                  ),
-                },
               ].map((row, idx) => (
                 <div key={idx} className="grid grid-cols-1 gap-3 py-6 md:grid-cols-2 md:gap-8 md:py-7">
                   <div className="font-body text-sm font-light leading-relaxed text-[#e5e5e5] md:text-base">
