@@ -510,7 +510,6 @@ function Index() {
                     </div>
                   </button>
                 </DialogTrigger>
-                <DialogContent className="max-w-lg">
                 {s.title === "Врачебная\nкосметология" ? (
                   <DialogContent className="max-h-[85vh] max-w-2xl overflow-y-auto">
                     <DialogHeader>
