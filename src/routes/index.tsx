@@ -309,7 +309,7 @@ function Index() {
               onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = BRAND; }}
               onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent"; }}
             >
-              <span>Записаться на бесплатную консультацию</span>
+              <span>Записаться на консультацию</span>
               <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
             </button>
           </div>
