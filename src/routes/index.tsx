@@ -136,31 +136,41 @@ function ProcedureRow({ procedure }: { procedure: Procedure }) {
           opacity: open ? 1 : 0,
         }}
       >
-        <div className="overflow-hidden">
-          <div className="mx-4 mt-2 rounded-2xl bg-neutral-100 px-5 py-4 md:mx-8 md:px-6 md:py-5">
-            <p className="font-caption mb-2 text-[10px] uppercase tracking-[0.18em] text-neutral-500">
-              {procedure.detailsLabel ?? "Препараты"}
-            </p>
-            <ul className="space-y-1.5">
-              {procedure.preparations.map((p, i) => (
-                <li
-                  key={i}
-                  className="font-body flex items-center gap-2 text-sm text-neutral-700"
-                >
-                  <span
-                    aria-hidden
-                    className="h-1.5 w-1.5 rounded-full"
-                    style={{ backgroundColor: BRAND }}
-                  />
-                  {p}
+          <div className="overflow-hidden">
+            <div className="mx-4 mt-2 rounded-2xl bg-neutral-100 px-5 py-4 md:mx-8 md:px-6 md:py-5">
+              <p className="font-caption mb-2 text-[10px] uppercase tracking-[0.18em] text-neutral-500">
+                {procedure.detailsLabel ?? "Препараты"}
+              </p>
+              <ul className="space-y-1.5">
+                {procedure.preparations.map((p, i) => (
+                  <li
+                    key={i}
+                    className="font-body flex items-center gap-2 text-sm text-neutral-700"
+                  >
+                    <span
+                      aria-hidden
+                      className="h-1.5 w-1.5 rounded-full"
+                      style={{ backgroundColor: BRAND }}
+                    />
+                    {p}
+                  </li>
+                ))}
+                <li className="font-caption pt-1 text-[10px] uppercase tracking-[0.14em] text-neutral-400">
+                  Список пополняется
                 </li>
-              ))}
-              <li className="font-caption pt-1 text-[10px] uppercase tracking-[0.14em] text-neutral-400">
-                Список пополняется
-              </li>
-            </ul>
+              </ul>
+              {procedure.device && (
+                <div className="mt-4 border-t border-neutral-200 pt-3">
+                  <p className="font-caption mb-1 text-[10px] uppercase tracking-[0.18em] text-neutral-500">
+                    Аппарат
+                  </p>
+                  <p className="font-body text-sm text-neutral-700">
+                    {procedure.device}
+                  </p>
+                </div>
+              )}
+            </div>
           </div>
-        </div>
       </div>
     </div>
   );
