@@ -434,7 +434,7 @@ function Index() {
 
         <div className="relative z-10 mx-auto max-w-6xl px-6 py-20 md:px-8 md:py-28">
           <h2 className="font-display text-2xl leading-[1.1] tracking-[0.01em] text-[#e5e5e5] drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)] md:text-4xl lg:text-5xl">
-            Ваше спокойствие и безопасность{"\n"}
+            Ваша уверенность в безопасности{"\n"}
             <span style={{ color: BRAND }}>— это тоже часть красивого отражения</span>
           </h2>
           <p className="font-body mt-6 max-w-4xl whitespace-pre-line text-sm font-light leading-relaxed text-[#c4c4c4] md:mt-8 md:text-base">
