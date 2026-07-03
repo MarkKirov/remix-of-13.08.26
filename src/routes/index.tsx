@@ -78,8 +78,7 @@ const slides: Slide[] = [
   {
     title: (
       <>
-        Создаём <span style={{ color: BRAND }}>индивидуальный</span> план жизни для кожи{"\n"}
-        вместо разовых уколов
+        Создаём <span style={{ color: BRAND }}>индивидуальный</span> план жизни для кожи
       </>
     ),
     paragraphs: [
