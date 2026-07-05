@@ -1080,6 +1080,9 @@ function Index() {
 
       {/* Блок наших специалистов */}
       <SpecialistsBlock />
+
+      {/* Блок с подругой — editorial split showcase */}
+      <TeamTrustBlock />
     </div>
   );
 }
