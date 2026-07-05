@@ -341,6 +341,169 @@ const slides: Slide[] = [
   },
 ];
 
+type Specialist = {
+  id: number;
+  name: string;
+  role: string;
+  focus: string;
+  about: string;
+  education: string;
+  image: string;
+};
+
+const specialists: Specialist[] = [
+  {
+    id: 1,
+    name: "Иван Иванов",
+    role: "Врач-косметолог",
+    focus: "Инъекционная косметология, лазерные методики, anti-age медицина.",
+    about: "Более 10 лет клинического опыта. Разрабатывает персональные протоколы омоложения и коррекции эстетических недостатков.",
+    education: "Первый МГМУ им. И.М. Сеченова; повышение квалификации в области лазерной и инъекционной косметологии.",
+    image: specialist1,
+  },
+  {
+    id: 2,
+    name: "Елена Смирнова",
+    role: "Главный врач",
+    focus: "Комплексная anti-age терапия, медицинская косметология, регенеративная эстетика.",
+    about: "15 лет в эстетической медицине. Создаёт индивидуальные стратегии сохранения молодости и естественной красоты.",
+    education: "РМАПО; стажировка в клиниках Швейцарии и Франции по нитевым и инъекционным методикам.",
+    image: specialist2,
+  },
+  {
+    id: 3,
+    name: "Анна Кузнецова",
+    role: "Косметолог-эстетист",
+    focus: "Аппаратная косметология, уходовые программы, подготовка к инъекционным процедурам.",
+    about: "Помогает клиентам поддерживать результаты процедур через домашний уход и регулярные аппаратные курсы.",
+    education: "Медицинский колледж; сертифицированные курсы по аппаратным методикам и профессиональной косметике.",
+    image: specialist3,
+  },
+  {
+    id: 4,
+    name: "Мария Волкова",
+    role: "Массажист",
+    focus: "Аппаратный и ручной массаж лица и тела, лимфодренаж, коррекция фигуры.",
+    about: "Подбирает программы для профилактики возрастных изменений и поддержания тонуса кожи и мышц.",
+    education: "Медицинский университет; курсы аппаратного массажа LPG и миостимуляции.",
+    image: specialist4,
+  },
+];
+
+function SpecialistsBlock() {
+  const [active, setActive] = useState(0);
+  const s = specialists[active];
+  const go = (dir: 1 | -1) => setActive((i) => (i + dir + specialists.length) % specialists.length);
+
+  return (
+    <section className="relative bg-neutral-950 py-20 text-white md:py-28">
+      <div className="mx-auto max-w-7xl px-6 md:px-8 lg:px-12">
+        <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-12">
+          {/* Текст */}
+          <div className="order-2 lg:order-1 lg:col-span-5">
+            <span className="font-caption mb-6 inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-white/50">
+              <span className="h-px w-10 bg-current" />
+              Наши специалисты
+            </span>
+            <div>
+              <h2 className="font-display text-3xl font-bold uppercase leading-tight md:text-4xl lg:text-5xl">
+                {s.name.split(" ").map((part, i) => (
+                  <span key={i} className="block">
+                    {part}
+                  </span>
+                ))}
+              </h2>
+              <p className="font-body mt-3 text-base font-light" style={{ color: BRAND }}>
+                {s.focus}
+              </p>
+              <div className="my-6 h-px bg-white/20 md:my-8" />
+              <div className="space-y-5">
+                <div>
+                  <p className="font-caption text-[10px] uppercase tracking-[0.18em] text-white/50">
+                    Специализация
+                  </p>
+                  <p className="font-body mt-1 text-sm font-light leading-relaxed text-white/80">
+                    {s.about}
+                  </p>
+                </div>
+                <div>
+                  <p className="font-caption text-[10px] uppercase tracking-[0.18em] text-white/50">
+                    Образование
+                  </p>
+                  <p className="font-body mt-1 text-sm font-light leading-relaxed text-white/80">
+                    {s.education}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Фото + подпись */}
+          <div className="order-1 lg:order-2 lg:col-span-6">
+            <div className="relative mx-auto max-w-md lg:max-w-none">
+              <div className="aspect-[4/5] overflow-hidden rounded-2xl">
+                <img
+                  src={s.image}
+                  alt={s.name}
+                  width={1024}
+                  height={1280}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <div className="mt-4 text-center">
+                <p className="font-display text-lg text-white">{s.name}</p>
+                <p className="font-caption text-[10px] uppercase tracking-[0.18em] text-white/60">
+                  {s.role}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Аватарки-переключатели */}
+          <div className="order-3 lg:col-span-1">
+            <div className="flex flex-row items-center justify-center gap-3 lg:flex-col lg:gap-4">
+              <button
+                type="button"
+                aria-label="Предыдущий специалист"
+                onClick={() => go(-1)}
+                className="hidden h-8 w-8 items-center justify-center rounded-full border border-white/30 text-white/60 transition-colors hover:border-white hover:text-white lg:inline-flex"
+              >
+                <ChevronUp className="h-4 w-4" />
+              </button>
+              {specialists.map((sp, i) => (
+                <button
+                  key={sp.id}
+                  type="button"
+                  aria-label={`Показать ${sp.name}`}
+                  onClick={() => setActive(i)}
+                  className={`relative h-12 w-12 overflow-hidden rounded-full transition-all md:h-14 md:w-14 ${i === active ? "ring-2 ring-offset-2 ring-offset-neutral-950" : "opacity-60 hover:opacity-100"}`}
+                  style={i === active ? { ["--tw-ring-color" as string]: BRAND } : undefined}
+                >
+                  <img
+                    src={sp.image}
+                    alt={sp.name}
+                    className="h-full w-full object-cover"
+                  />
+                </button>
+              ))}
+              <button
+                type="button"
+                aria-label="Следующий специалист"
+                onClick={() => go(1)}
+                className="hidden h-8 w-8 items-center justify-center rounded-full border border-white/30 text-white/60 transition-colors hover:border-white hover:text-white lg:inline-flex"
+              >
+                <ChevronDown className="h-4 w-4" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Index() {
   const [active, setActive] = useState(0);
   const videoRef = useRef<HTMLVideoElement | null>(null);
