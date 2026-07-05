@@ -1078,11 +1078,11 @@ function Index() {
         </div>
       </section>
 
-      {/* Блок наших специалистов */}
-      <SpecialistsBlock />
-
       {/* Блок с подругой — editorial split showcase */}
       <TeamTrustBlock />
+
+      {/* Блок наших специалистов */}
+      <SpecialistsBlock />
     </div>
   );
 }
