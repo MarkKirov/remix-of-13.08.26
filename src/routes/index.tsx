@@ -940,7 +940,7 @@ function Index() {
               Ваше желанное отражение в зеркале —{"\n"}
               это не просто «уколы красоты»
             </h2>
-            <p className="font-body mt-6 text-sm font-light leading-relaxed text-[#d4d4d4] md:mt-8 md:text-base">
+            <p className="font-body mt-6 text-sm font-light leading-relaxed text-white md:mt-8 md:text-base">
               Мы создаём комплексную стратегию, комбинируем методики, чтобы сохранять вашу естественную молодость и индивидуальность.
             </p>
           </div>
