@@ -7,6 +7,7 @@ import productPhilosophy from "@/assets/product-philosophy.png.asset.json";
 import serviceEsthetic from "@/assets/service_esthetic.png.asset.json";
 import serviceMedical from "@/assets/service_medical.png.asset.json";
 import serviceHardware from "@/assets/service_hardware.png.asset.json";
+import serviceVrachebnaya from "@/assets/service_vrachebnaya.png.asset.json";
 import serviceMassage from "@/assets/service-massage.jpeg.asset.json";
 import comparisonBg from "@/assets/comparison-bg.png.asset.json";
 import headerLogo from "@/assets/header_logo.svg.asset.json";
@@ -607,7 +608,7 @@ function Index() {
   const services = [
     {
       title: "Врачебная\nкосметология",
-      image: serviceHardware.url,
+      image: serviceVrachebnaya.url,
     },
     {
       title: "Эстетическая\nкосметология",
