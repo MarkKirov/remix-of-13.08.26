@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import { ChevronLeft, ChevronRight, ArrowRight, Plus } from "lucide-react";
+import { ChevronLeft, ChevronRight, ArrowRight, Plus, ChevronUp, ChevronDown } from "lucide-react";
 import heroVideo from "@/assets/komilfo_hero_v2.mp4.asset.json";
 import doctorConsultation from "@/assets/doctor-consultation.jpg.asset.json";
 import productPhilosophy from "@/assets/product-philosophy.png.asset.json";
@@ -11,7 +11,10 @@ import serviceMassage from "@/assets/service-massage.jpeg.asset.json";
 import comparisonBg from "@/assets/comparison-bg.png.asset.json";
 import headerLogo from "@/assets/header_logo.svg.asset.json";
 import consultationBg from "@/assets/consultation-bg.png.asset.json";
-import teamPhoto from "@/assets/team.jpg";
+import specialist1 from "@/assets/specialist-1.jpg";
+import specialist2 from "@/assets/specialist-2.jpg";
+import specialist3 from "@/assets/specialist-3.jpg";
+import specialist4 from "@/assets/specialist-4.jpg";
 import {
   Dialog,
   DialogContent,
@@ -337,6 +340,169 @@ const slides: Slide[] = [
     cta: "Получить план сохранения молодости на десятилетия",
   },
 ];
+
+type Specialist = {
+  id: number;
+  name: string;
+  role: string;
+  focus: string;
+  about: string;
+  education: string;
+  image: string;
+};
+
+const specialists: Specialist[] = [
+  {
+    id: 1,
+    name: "Иван Иванов",
+    role: "Врач-косметолог",
+    focus: "Инъекционная косметология, лазерные методики, anti-age медицина.",
+    about: "Более 10 лет клинического опыта. Разрабатывает персональные протоколы омоложения и коррекции эстетических недостатков.",
+    education: "Первый МГМУ им. И.М. Сеченова; повышение квалификации в области лазерной и инъекционной косметологии.",
+    image: specialist1,
+  },
+  {
+    id: 2,
+    name: "Елена Смирнова",
+    role: "Главный врач",
+    focus: "Комплексная anti-age терапия, медицинская косметология, регенеративная эстетика.",
+    about: "15 лет в эстетической медицине. Создаёт индивидуальные стратегии сохранения молодости и естественной красоты.",
+    education: "РМАПО; стажировка в клиниках Швейцарии и Франции по нитевым и инъекционным методикам.",
+    image: specialist2,
+  },
+  {
+    id: 3,
+    name: "Анна Кузнецова",
+    role: "Косметолог-эстетист",
+    focus: "Аппаратная косметология, уходовые программы, подготовка к инъекционным процедурам.",
+    about: "Помогает клиентам поддерживать результаты процедур через домашний уход и регулярные аппаратные курсы.",
+    education: "Медицинский колледж; сертифицированные курсы по аппаратным методикам и профессиональной косметике.",
+    image: specialist3,
+  },
+  {
+    id: 4,
+    name: "Мария Волкова",
+    role: "Массажист",
+    focus: "Аппаратный и ручной массаж лица и тела, лимфодренаж, коррекция фигуры.",
+    about: "Подбирает программы для профилактики возрастных изменений и поддержания тонуса кожи и мышц.",
+    education: "Медицинский университет; курсы аппаратного массажа LPG и миостимуляции.",
+    image: specialist4,
+  },
+];
+
+function SpecialistsBlock() {
+  const [active, setActive] = useState(0);
+  const s = specialists[active];
+  const go = (dir: 1 | -1) => setActive((i) => (i + dir + specialists.length) % specialists.length);
+
+  return (
+    <section className="relative bg-neutral-950 py-20 text-white md:py-28">
+      <div className="mx-auto max-w-7xl px-6 md:px-8 lg:px-12">
+        <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-12">
+          {/* Текст */}
+          <div className="order-2 lg:order-1 lg:col-span-5">
+            <span className="font-caption mb-6 inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-white/50">
+              <span className="h-px w-10 bg-current" />
+              Наши специалисты
+            </span>
+            <div>
+              <h2 className="font-display text-3xl font-bold uppercase leading-tight md:text-4xl lg:text-5xl">
+                {s.name.split(" ").map((part, i) => (
+                  <span key={i} className="block">
+                    {part}
+                  </span>
+                ))}
+              </h2>
+              <p className="font-body mt-3 text-base font-light" style={{ color: BRAND }}>
+                {s.focus}
+              </p>
+              <div className="my-6 h-px bg-white/20 md:my-8" />
+              <div className="space-y-5">
+                <div>
+                  <p className="font-caption text-[10px] uppercase tracking-[0.18em] text-white/50">
+                    Специализация
+                  </p>
+                  <p className="font-body mt-1 text-sm font-light leading-relaxed text-white/80">
+                    {s.about}
+                  </p>
+                </div>
+                <div>
+                  <p className="font-caption text-[10px] uppercase tracking-[0.18em] text-white/50">
+                    Образование
+                  </p>
+                  <p className="font-body mt-1 text-sm font-light leading-relaxed text-white/80">
+                    {s.education}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Фото + подпись */}
+          <div className="order-1 lg:order-2 lg:col-span-6">
+            <div className="relative mx-auto max-w-md lg:max-w-none">
+              <div className="aspect-[4/5] overflow-hidden rounded-2xl">
+                <img
+                  src={s.image}
+                  alt={s.name}
+                  width={1024}
+                  height={1280}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <div className="mt-4 text-center">
+                <p className="font-display text-lg text-white">{s.name}</p>
+                <p className="font-caption text-[10px] uppercase tracking-[0.18em] text-white/60">
+                  {s.role}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Аватарки-переключатели */}
+          <div className="order-3 lg:col-span-1">
+            <div className="flex flex-row items-center justify-center gap-3 lg:flex-col lg:gap-4">
+              <button
+                type="button"
+                aria-label="Предыдущий специалист"
+                onClick={() => go(-1)}
+                className="hidden h-8 w-8 items-center justify-center rounded-full border border-white/30 text-white/60 transition-colors hover:border-white hover:text-white lg:inline-flex"
+              >
+                <ChevronUp className="h-4 w-4" />
+              </button>
+              {specialists.map((sp, i) => (
+                <button
+                  key={sp.id}
+                  type="button"
+                  aria-label={`Показать ${sp.name}`}
+                  onClick={() => setActive(i)}
+                  className={`relative h-12 w-12 overflow-hidden rounded-full transition-all md:h-14 md:w-14 ${i === active ? "ring-2 ring-offset-2 ring-offset-neutral-950" : "opacity-60 hover:opacity-100"}`}
+                  style={i === active ? { ["--tw-ring-color" as string]: BRAND } : undefined}
+                >
+                  <img
+                    src={sp.image}
+                    alt={sp.name}
+                    className="h-full w-full object-cover"
+                  />
+                </button>
+              ))}
+              <button
+                type="button"
+                aria-label="Следующий специалист"
+                onClick={() => go(1)}
+                className="hidden h-8 w-8 items-center justify-center rounded-full border border-white/30 text-white/60 transition-colors hover:border-white hover:text-white lg:inline-flex"
+              >
+                <ChevronDown className="h-4 w-4" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 function Index() {
   const [active, setActive] = useState(0);
@@ -830,95 +996,8 @@ function Index() {
         </div>
       </section>
 
-      {/* Блок знакомства с командой */}
-      <section className="relative bg-white py-20 text-neutral-900 md:py-28">
-        <div className="mx-auto max-w-7xl px-6 md:px-8 lg:px-12">
-          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-24">
-            {/* Текст */}
-            <div className="order-2 lg:order-1">
-              <div className="space-y-6 md:space-y-8">
-                <div className="inline-block">
-                  <span className="font-caption flex items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-neutral-500">
-                    <span className="h-px w-12 bg-current" />
-                    Доверие и красота
-                  </span>
-                </div>
-                <h2 className="font-display text-3xl leading-tight text-neutral-900 md:text-4xl lg:text-5xl">
-                  Ваша лучшая подруга{" "}
-                  <span style={{ color: BRAND }}>порекомендует</span> нас вам
-                </h2>
-                <p className="font-body text-lg font-light leading-relaxed text-neutral-600 md:text-xl">
-                  В вопросе красоты вашей лучшей подругой станет наш специалист.
-                </p>
-                <div className="pt-2">
-                  <button
-                    type="button"
-                    className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full px-8 py-4 text-sm font-semibold uppercase tracking-widest text-white transition-all duration-300 hover:scale-105 active:scale-95"
-                    style={{ backgroundColor: BRAND }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.backgroundColor = "#C24CBA";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.backgroundColor = BRAND;
-                    }}
-                  >
-                    <span className="font-caption">Давайте познакомимся</span>
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </button>
-                </div>
-              </div>
-            </div>
-
-            {/* Фото команды */}
-            <div className="relative order-1 lg:order-2">
-              <div
-                className="absolute -top-10 -right-10 h-64 w-64 rounded-full opacity-10 blur-3xl"
-                style={{ backgroundColor: BRAND }}
-              />
-              <div className="relative z-10">
-                <div className="rotate-[-1deg] overflow-hidden rounded-3xl shadow-[0_32px_64px_-16px_rgba(174,49,166,0.2)] transition-transform duration-700 hover:rotate-0">
-                  <img
-                    src={teamPhoto}
-                    alt="Команда специалистов клиники Комильфо"
-                    width={1024}
-                    height={1280}
-                    loading="lazy"
-                    decoding="async"
-                    className="aspect-[4/5] w-full object-cover"
-                  />
-                </div>
-                <div className="absolute -bottom-8 -left-8 max-w-xs rotate-2 rounded-2xl border border-neutral-100 bg-white/90 p-6 shadow-xl backdrop-blur-xl md:-left-12 md:p-8">
-                  <div className="flex flex-col gap-4">
-                    <div className="flex -space-x-3">
-                      <div className="h-10 w-10 rounded-full border-2 border-white bg-neutral-200" />
-                      <div className="h-10 w-10 rounded-full border-2 border-white bg-neutral-300" />
-                      <div className="h-10 w-10 rounded-full border-2 border-white bg-neutral-400" />
-                      <div
-                        className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-white text-[10px] font-bold text-white"
-                        style={{ backgroundColor: BRAND }}
-                      >
-                        +12
-                      </div>
-                    </div>
-                    <div>
-                      <p className="font-display text-base font-semibold text-neutral-900">
-                        Наши специалисты
-                      </p>
-                      <p className="font-caption mt-1 text-[10px] uppercase tracking-wider text-neutral-500">
-                        Комильфо Эксперт
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div
-                  className="absolute -top-6 -right-6 h-24 w-24 rounded-tr-3xl border-t-2 border-r-2"
-                  style={{ borderColor: BRAND }}
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Блок наших специалистов */}
+      <SpecialistsBlock />
     </div>
   );
 }
