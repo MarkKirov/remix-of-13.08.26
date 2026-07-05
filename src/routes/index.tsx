@@ -11,6 +11,7 @@ import serviceMassage from "@/assets/service-massage.jpeg.asset.json";
 import comparisonBg from "@/assets/comparison-bg.png.asset.json";
 import headerLogo from "@/assets/header_logo.svg.asset.json";
 import consultationBg from "@/assets/consultation-bg.png.asset.json";
+import teamPhoto from "@/assets/team.jpg";
 import {
   Dialog,
   DialogContent,
@@ -704,6 +705,96 @@ function Index() {
             alt="Косметологическая процедура в клинике Комильфо"
             decoding="async"
           />
+        </div>
+      </section>
+
+      {/* Блок знакомства с командой */}
+      <section className="relative bg-white py-20 text-neutral-900 md:py-28">
+        <div className="mx-auto max-w-7xl px-6 md:px-8 lg:px-12">
+          <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-24">
+            {/* Текст */}
+            <div className="order-2 lg:order-1">
+              <div className="space-y-6 md:space-y-8">
+                <div className="inline-block">
+                  <span className="font-caption flex items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-neutral-500">
+                    <span className="h-px w-12 bg-current" />
+                    Доверие и красота
+                  </span>
+                </div>
+                <h2 className="font-display text-3xl leading-tight text-neutral-900 md:text-4xl lg:text-5xl">
+                  Ваша лучшая подруга{" "}
+                  <span style={{ color: BRAND }}>порекомендует</span> нас вам
+                </h2>
+                <p className="font-body text-lg font-light leading-relaxed text-neutral-600 md:text-xl">
+                  В вопросе красоты вашей лучшей подругой станет наш специалист.
+                </p>
+                <div className="pt-2">
+                  <button
+                    type="button"
+                    className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full px-8 py-4 text-sm font-semibold uppercase tracking-widest text-white transition-all duration-300 hover:scale-105 active:scale-95"
+                    style={{ backgroundColor: BRAND }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.backgroundColor = "#C24CBA";
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.backgroundColor = BRAND;
+                    }}
+                  >
+                    <span className="font-caption">Давайте познакомимся</span>
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* Фото команды */}
+            <div className="relative order-1 lg:order-2">
+              <div
+                className="absolute -top-10 -right-10 h-64 w-64 rounded-full opacity-10 blur-3xl"
+                style={{ backgroundColor: BRAND }}
+              />
+              <div className="relative z-10">
+                <div className="rotate-[-1deg] overflow-hidden rounded-3xl shadow-[0_32px_64px_-16px_rgba(174,49,166,0.2)] transition-transform duration-700 hover:rotate-0">
+                  <img
+                    src={teamPhoto}
+                    alt="Команда специалистов клиники Комильфо"
+                    width={1024}
+                    height={1280}
+                    loading="lazy"
+                    decoding="async"
+                    className="aspect-[4/5] w-full object-cover"
+                  />
+                </div>
+                <div className="absolute -bottom-8 -left-8 max-w-xs rotate-2 rounded-2xl border border-neutral-100 bg-white/90 p-6 shadow-xl backdrop-blur-xl md:-left-12 md:p-8">
+                  <div className="flex flex-col gap-4">
+                    <div className="flex -space-x-3">
+                      <div className="h-10 w-10 rounded-full border-2 border-white bg-neutral-200" />
+                      <div className="h-10 w-10 rounded-full border-2 border-white bg-neutral-300" />
+                      <div className="h-10 w-10 rounded-full border-2 border-white bg-neutral-400" />
+                      <div
+                        className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-white text-[10px] font-bold text-white"
+                        style={{ backgroundColor: BRAND }}
+                      >
+                        +12
+                      </div>
+                    </div>
+                    <div>
+                      <p className="font-display text-base font-semibold text-neutral-900">
+                        Наши специалисты
+                      </p>
+                      <p className="font-caption mt-1 text-[10px] uppercase tracking-wider text-neutral-500">
+                        Комильфо Эксперт
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  className="absolute -top-6 -right-6 h-24 w-24 rounded-tr-3xl border-t-2 border-r-2"
+                  style={{ borderColor: BRAND }}
+                />
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
