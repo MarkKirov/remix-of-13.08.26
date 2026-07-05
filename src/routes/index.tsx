@@ -11,7 +11,10 @@ import serviceMassage from "@/assets/service-massage.jpeg.asset.json";
 import comparisonBg from "@/assets/comparison-bg.png.asset.json";
 import headerLogo from "@/assets/header_logo.svg.asset.json";
 import consultationBg from "@/assets/consultation-bg.png.asset.json";
-import teamPhoto from "@/assets/team.jpg";
+import specialist1 from "@/assets/specialist-1.jpg";
+import specialist2 from "@/assets/specialist-2.jpg";
+import specialist3 from "@/assets/specialist-3.jpg";
+import specialist4 from "@/assets/specialist-4.jpg";
 import {
   Dialog,
   DialogContent,
