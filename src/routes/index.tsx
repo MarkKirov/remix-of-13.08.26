@@ -15,6 +15,7 @@ import specialist1 from "@/assets/specialist-1.jpg";
 import specialist2 from "@/assets/specialist-2.jpg";
 import specialist3 from "@/assets/specialist-3.jpg";
 import specialist4 from "@/assets/specialist-4.jpg";
+import teamImage from "@/assets/team.jpg";
 import {
   Dialog,
   DialogContent,
@@ -503,6 +504,87 @@ function SpecialistsBlock() {
     </section>
   );
 }
+
+function TeamTrustBlock() {
+  return (
+    <section className="relative overflow-hidden bg-white py-20 md:py-28">
+      <div className="mx-auto max-w-7xl px-6 md:px-8 lg:px-12">
+        <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-16">
+          {/* Текст */}
+          <div className="lg:col-span-5">
+            <span className="font-caption mb-6 inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-neutral-500">
+              <span className="h-px w-10 bg-current" />
+              Наша команда
+            </span>
+            <h2 className="font-display text-3xl font-bold uppercase leading-tight text-neutral-900 md:text-4xl lg:text-5xl">
+              Ваша лучшая подруга{" "}
+              <span style={{ color: BRAND }}>порекомендует</span>{" "}
+              нас вам
+            </h2>
+            <p className="font-body mt-6 text-base font-light leading-relaxed text-neutral-600 md:text-lg">
+              А в вопросе красоты вашей лучшей подругой станет наш специалист. Мы подбираем
+              протоколы, которые сохраняют вашу естественность, и сопровождаем вас на каждом
+              этапе — от первой диагностики до долгосрочной стратегии.
+            </p>
+            <button
+              type="button"
+              className="group mt-8 inline-flex items-center gap-2 rounded-full border-2 px-6 py-3 text-xs font-normal uppercase tracking-[0.1em] text-white transition-all md:mt-10"
+              style={{ borderColor: BRAND, backgroundColor: BRAND }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = "#C24CBA";
+                e.currentTarget.style.borderColor = "#C24CBA";
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = BRAND;
+                e.currentTarget.style.borderColor = BRAND;
+              }}
+            >
+              <span>Давайте познакомимся</span>
+              <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
+            </button>
+          </div>
+
+          {/* Изображение с плавающей карточкой */}
+          <div className="relative lg:col-span-7">
+            <div className="relative mx-auto max-w-lg lg:max-w-none">
+              <div className="aspect-[4/5] overflow-hidden rounded-2xl shadow-[0_24px_60px_-20px_rgba(0,0,0,0.25)]">
+                <img
+                  src={teamImage}
+                  alt="Команда клиники Комильфо"
+                  width={1024}
+                  height={1280}
+                  loading="lazy"
+                  decoding="async"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <div className="absolute -bottom-5 -left-5 rounded-2xl bg-white p-4 shadow-[0_16px_40px_-12px_rgba(0,0,0,0.2)] md:-bottom-6 md:-left-6 md:p-5">
+                <p className="font-caption text-[10px] uppercase tracking-[0.14em] text-neutral-500">
+                  Наши специалисты
+                </p>
+                <p className="font-display mt-1 text-lg uppercase tracking-wide text-neutral-900 md:text-xl">
+                  Комильфо Эксперт
+                </p>
+              </div>
+              <div
+                className="absolute -top-4 -right-4 grid h-20 w-20 place-items-center rounded-2xl text-white shadow-[0_16px_40px_-12px_rgba(0,0,0,0.25)] md:-top-6 md:-right-6 md:h-24 md:w-24"
+                style={{ backgroundColor: BRAND }}
+              >
+                <div className="text-center">
+                  <p className="font-display text-2xl font-bold leading-none md:text-3xl">+12</p>
+                  <p className="font-caption mt-1 text-[8px] uppercase tracking-[0.14em] md:text-[9px]">
+                    специалистов
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 
 function Index() {
   const [active, setActive] = useState(0);
