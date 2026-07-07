@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "85030fa4-6594-44a2-9e74-bfdcd37367bd",
-  "project_id": "96187c12-647e-4b7d-a564-8edcbe4d0b52",
-  "url": "/__l5e/assets-v1/85030fa4-6594-44a2-9e74-bfdcd37367bd/service_hardware.png",
-  "r2_key": "a/v1/96187c12-647e-4b7d-a564-8edcbe4d0b52/85030fa4-6594-44a2-9e74-bfdcd37367bd/service_hardware.png",
-  "original_filename": "service_hardware.png",
-  "size": 2765335,
   "content_type": "image/png",
-  "created_at": "2026-06-25T15:40:45Z"
+  "created_at": "2026-06-25T15:40:45Z",
+  "original_filename": "service_hardware.png",
+  "project_id": "b9c26e5c-5749-46b7-bd80-c30262d82227",
+  "r2_key": "a/v1/b9c26e5c-5749-46b7-bd80-c30262d82227/85030fa4-6594-44a2-9e74-bfdcd37367bd/service_hardware.png",
+  "size": 2765335,
+  "url": "/__l5e/assets-v1/85030fa4-6594-44a2-9e74-bfdcd37367bd/service_hardware.png",
+  "version": 1
 }

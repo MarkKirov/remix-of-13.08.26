@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "614c0302-382d-4d34-914f-8fa7f97ce14f",
-  "project_id": "96187c12-647e-4b7d-a564-8edcbe4d0b52",
-  "url": "/__l5e/assets-v1/614c0302-382d-4d34-914f-8fa7f97ce14f/product-philosophy.png",
-  "r2_key": "a/v1/96187c12-647e-4b7d-a564-8edcbe4d0b52/614c0302-382d-4d34-914f-8fa7f97ce14f/product-philosophy.png",
-  "original_filename": "product-philosophy.png",
-  "size": 2723944,
   "content_type": "image/png",
-  "created_at": "2026-06-25T15:23:08Z"
+  "created_at": "2026-06-25T15:23:08Z",
+  "original_filename": "product-philosophy.png",
+  "project_id": "b9c26e5c-5749-46b7-bd80-c30262d82227",
+  "r2_key": "a/v1/b9c26e5c-5749-46b7-bd80-c30262d82227/614c0302-382d-4d34-914f-8fa7f97ce14f/product-philosophy.png",
+  "size": 2723944,
+  "url": "/__l5e/assets-v1/614c0302-382d-4d34-914f-8fa7f97ce14f/product-philosophy.png",
+  "version": 1
 }
