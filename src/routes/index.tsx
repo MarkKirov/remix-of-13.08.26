@@ -1131,8 +1131,8 @@ function TeamTrustBlock() {
                 style={{ backgroundColor: BRAND }}
               >
                 <div className="text-center">
-                  <p className="font-display text-3xl font-bold leading-none md:text-4xl">12+</p>
-                  <p className="font-caption mt-1 text-[9px] uppercase tracking-[0.12em] md:text-[10px]">
+                  <p className="font-display text-2xl font-bold leading-none md:text-3xl">12+</p>
+                  <p className="font-caption mt-1 text-[8px] uppercase tracking-[0.12em] md:text-[9px]">
                     специалистов
                   </p>
                 </div>
