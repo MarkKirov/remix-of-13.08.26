@@ -1250,6 +1250,7 @@ function TeamTrustBlock() {
 function Index() {
   const [active, setActive] = useState(0);
   const videoRef = useRef<HTMLVideoElement | null>(null);
+  const { open: openLead } = useLeadDialog();
 
   useEffect(() => {
     if (videoRef.current) {
