@@ -1127,12 +1127,12 @@ function TeamTrustBlock() {
                 </p>
               </div>
               <div
-                className="absolute -top-4 -right-4 grid h-20 w-20 place-items-center rounded-2xl text-white shadow-[0_16px_40px_-12px_rgba(0,0,0,0.25)] md:-top-6 md:-right-6 md:h-24 md:w-24"
+                className="absolute -top-4 -right-4 grid h-[88px] w-[88px] place-items-center rounded-2xl text-white shadow-[0_16px_40px_-12px_rgba(0,0,0,0.25)] md:-top-6 md:-right-6 md:h-24 md:w-24"
                 style={{ backgroundColor: BRAND }}
               >
                 <div className="text-center">
                   <p className="font-display text-2xl font-bold leading-none md:text-3xl">12+</p>
-                  <p className="font-caption mt-1 text-[8px] uppercase tracking-[0.12em] md:text-[9px]">
+                  <p className="font-caption mt-1 text-[7px] uppercase tracking-[0.1em] md:text-[9px]">
                     специалистов
                   </p>
                 </div>
