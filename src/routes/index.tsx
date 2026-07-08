@@ -1109,7 +1109,7 @@ function TeamTrustBlock() {
             <div className="relative mx-auto max-w-lg lg:max-w-none">
               <div className="aspect-[4/5] overflow-hidden rounded-2xl shadow-[0_24px_60px_-20px_rgba(0,0,0,0.25)]">
                 <img
-                  src={teamImage}
+                  src={teamImage.url}
                   alt="Команда клиники Комильфо"
                   width={1024}
                   height={1280}
