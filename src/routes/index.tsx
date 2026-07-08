@@ -16,7 +16,7 @@ import specialist1 from "@/assets/specialist-1.jpg";
 import specialist2 from "@/assets/specialist-2.jpg";
 import specialist3 from "@/assets/specialist-3.jpg";
 import specialist4 from "@/assets/specialist-4.jpg";
-import teamImage from "@/assets/team.jpg";
+import teamImage from "@/assets/team.jpg.asset.json";
 import {
   Dialog,
   DialogContent,
@@ -1100,7 +1100,7 @@ function TeamTrustBlock() {
               }}
             >
               <span>Давайте познакомимся</span>
-              <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
+              <ChevronDown className="h-3 w-3 transition-transform group-hover:translate-y-1" />
             </button>
           </div>
 
@@ -1131,8 +1131,8 @@ function TeamTrustBlock() {
                 style={{ backgroundColor: BRAND }}
               >
                 <div className="text-center">
-                  <p className="font-display text-2xl font-bold leading-none md:text-3xl">+12</p>
-                  <p className="font-caption mt-1 text-[8px] uppercase tracking-[0.14em] md:text-[9px]">
+                  <p className="font-display text-3xl font-bold leading-none md:text-4xl">12+</p>
+                  <p className="font-caption mt-1 text-[9px] uppercase tracking-[0.12em] md:text-[10px]">
                     специалистов
                   </p>
                 </div>
