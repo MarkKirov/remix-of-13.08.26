@@ -29,6 +29,7 @@ import spec5 from "@/assets/spec-5.jpg.asset.json";
 import spec10 from "@/assets/spec-10.jpg.asset.json";
 import spec14 from "@/assets/spec-14.jpg.asset.json";
 import teamImage from "@/assets/team.jpg.asset.json";
+import privacyPolicy from "@/assets/privacy-policy.pdf.asset.json";
 import {
   Dialog,
   DialogContent,
