@@ -1657,7 +1657,9 @@ function Index() {
       <TeamTrustBlock />
 
       {/* Блок наших специалистов */}
-      <SpecialistsBlock />
+      <div id="specialists">
+        <SpecialistsBlock />
+      </div>
     </div>
   );
 }
