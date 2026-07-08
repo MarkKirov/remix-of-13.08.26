@@ -1079,6 +1079,22 @@ function SpecialistsBlock() {
                   style={{ objectPosition: active === 0 ? "center 20%" : active === 1 ? "center 15%" : active === 2 ? "center 15%" : active === 3 ? "center 15%" : active === 4 ? "center 15%" : "center" }}
                 />
               </div>
+              <button
+                type="button"
+                aria-label="Предыдущий специалист"
+                onClick={() => go(-1)}
+                className="absolute left-2 top-1/2 -translate-y-1/2 inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/80 text-neutral-900 shadow-sm backdrop-blur transition-colors hover:bg-white md:left-3 md:h-10 md:w-10"
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </button>
+              <button
+                type="button"
+                aria-label="Следующий специалист"
+                onClick={() => go(1)}
+                className="absolute right-2 top-1/2 -translate-y-1/2 inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/80 text-neutral-900 shadow-sm backdrop-blur transition-colors hover:bg-white md:right-3 md:h-10 md:w-10"
+              >
+                <ChevronRight className="h-5 w-5" />
+              </button>
             </div>
           </div>
 
