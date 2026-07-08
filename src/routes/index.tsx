@@ -245,7 +245,7 @@ function ProcedureRow({ procedure }: { procedure: Procedure }) {
         <div
           role="button"
           tabIndex={0}
-          onClick={() => setOpen(false)}
+          onMouseDown={() => setOpen(false)}
           className="relative z-10 mx-auto mb-1 mt-2 flex cursor-pointer items-center gap-1.5 rounded-full px-3 py-1.5 font-caption text-[10px] uppercase tracking-[0.14em] text-neutral-500 transition-colors hover:text-neutral-900"
         >
           <ChevronUp className="h-3.5 w-3.5" />
