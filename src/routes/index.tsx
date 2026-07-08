@@ -226,7 +226,18 @@ function ProcedureRow({ procedure }: { procedure: Procedure }) {
                   </ul>
                 </div>
               )}
+              {procedure.note && (
+                <div
+                  className="mt-4 rounded-xl border-l-2 px-4 py-3"
+                  style={{ borderColor: BRAND, backgroundColor: "rgba(174,49,166,0.06)" }}
+                >
+                  <p className="font-body text-[13px] leading-relaxed text-neutral-700 md:text-sm">
+                    {procedure.note}
+                  </p>
+                </div>
+              )}
             </div>
+
           </div>
       </div>
     </div>
