@@ -18,6 +18,7 @@ import specialist3 from "@/assets/specialist-3.jpg";
 import specialist4 from "@/assets/specialist-4.jpg";
 import specialistZhuravleva from "@/assets/specialist-zhuravleva.jpg.asset.json";
 import specialistTonkih from "@/assets/specialist-tonkih.jpg.asset.json";
+import specialistKorabelshchikova from "@/assets/specialist-korabelshchikova.jpg.asset.json";
 import teamImage from "@/assets/team.jpg.asset.json";
 import {
   Dialog,
@@ -932,12 +933,12 @@ const specialists: Specialist[] = [
   },
   {
     id: 3,
-    name: "Анна Кузнецова",
-    role: "Косметолог-эстетист",
-    focus: "Аппаратная косметология, уходовые программы, подготовка к инъекционным процедурам.",
-    about: "Помогает клиентам поддерживать результаты процедур через домашний уход и регулярные аппаратные курсы.",
-    education: "Медицинский колледж; сертифицированные курсы по аппаратным методикам и профессиональной косметике.",
-    image: specialist3,
+    name: "Корабельщикова Анна",
+    role: "Медицинская сестра по косметологии",
+    focus: "",
+    about: "",
+    education: "",
+    image: specialistKorabelshchikova.url,
   },
   {
     id: 4,
@@ -994,7 +995,7 @@ function SpecialistsBlock() {
                   loading="lazy"
                   decoding="async"
                   className="h-full w-full object-cover"
-                  style={{ objectPosition: active === 0 ? "center 20%" : active === 1 ? "center 15%" : "center" }}
+                  style={{ objectPosition: active === 0 ? "center 20%" : active === 1 ? "center 15%" : active === 2 ? "center 15%" : "center" }}
                 />
               </div>
             </div>
