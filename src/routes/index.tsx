@@ -20,6 +20,7 @@ import specialistZhuravleva from "@/assets/specialist-zhuravleva.jpg.asset.json"
 import specialistTonkih from "@/assets/specialist-tonkih.jpg.asset.json";
 import specialistKorabelshchikova from "@/assets/specialist-korabelshchikova.jpg.asset.json";
 import specialistVolokitina from "@/assets/specialist-volokitina.jpg.asset.json";
+import specialistSushkova from "@/assets/specialist-sushkova.jpg.asset.json";
 import teamImage from "@/assets/team.jpg.asset.json";
 import {
   Dialog,
@@ -950,6 +951,15 @@ const specialists: Specialist[] = [
     education: "",
     image: specialistVolokitina.url,
   },
+  {
+    id: 5,
+    name: "Сушкова Юлия",
+    role: "Администратор-кассир",
+    focus: "",
+    about: "",
+    education: "",
+    image: specialistSushkova.url,
+  },
 ];
 
 function SpecialistsBlock() {
@@ -996,7 +1006,7 @@ function SpecialistsBlock() {
                   loading="lazy"
                   decoding="async"
                   className="h-full w-full object-cover"
-                  style={{ objectPosition: active === 0 ? "center 20%" : active === 1 ? "center 15%" : active === 2 ? "center 15%" : "center" }}
+                  style={{ objectPosition: active === 0 ? "center 20%" : active === 1 ? "center 15%" : active === 2 ? "center 15%" : active === 3 ? "center 15%" : active === 4 ? "center 15%" : "center" }}
                 />
               </div>
             </div>
