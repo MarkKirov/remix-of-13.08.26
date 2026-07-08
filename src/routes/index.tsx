@@ -1884,11 +1884,13 @@ function Index() {
             </p>
           </div>
           <div className="overflow-hidden rounded-xl border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.35)]">
-            <script
-              type="text/javascript"
-              charSet="utf-8"
-              async
-              src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ab9ee1753cb92e83ab8ba25232ea59f804fea405124fc08ebe98e9d61af17ce3b&width=100%25&height=400&lang=ru_RU&scroll=true"
+            <iframe
+              src="https://yandex.ru/map-widget/v1/?um=constructor%3Ab9ee1753cb92e83ab8ba25232ea59f804fea405124fc08ebe98e9d61af17ce3b&source=constructor"
+              width="100%"
+              height="400"
+              frameBorder="0"
+              title="Карта проезда к МД «Комильфо»"
+              className="block h-[300px] w-full md:h-[400px]"
             />
           </div>
         </div>
