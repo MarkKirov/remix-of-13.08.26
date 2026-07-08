@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight, ArrowRight, Plus, ChevronUp, ChevronDown } f
 import heroVideo from "@/assets/komilfo_hero_v2.mp4.asset.json";
 import doctorConsultation from "@/assets/doctor-consultation.jpg.asset.json";
 import productPhilosophy from "@/assets/injection-beauty.png.asset.json";
-import serviceEsthetic from "@/assets/service_esthetic.png.asset.json";
+import serviceEsthetic from "@/assets/esthetic-cosmetology.png.asset.json";
 import serviceMedical from "@/assets/service_medical.png.asset.json";
 import serviceHardware from "@/assets/service_hardware.png.asset.json";
 import serviceVrachebnaya from "@/assets/service_vrachebnaya.png.asset.json";
