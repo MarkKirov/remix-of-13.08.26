@@ -369,15 +369,14 @@ function SubGroupRow({ group }: { group: SubGroup }) {
         aria-expanded={open}
       >
         <span
-          className="grid h-6 w-6 shrink-0 place-items-center rounded-full border transition-transform"
+          className="inline-flex h-4 w-4 shrink-0 items-center justify-center transition-transform"
           style={{
-            borderColor: BRAND,
             color: BRAND,
-            transform: open ? "rotate(45deg)" : "rotate(0deg)",
+            transform: open ? "rotate(180deg)" : "rotate(0deg)",
           }}
           aria-hidden
         >
-          <Plus className="h-3 w-3" />
+          <ChevronDown className="h-3.5 w-3.5" strokeWidth={2.5} />
         </span>
         <span className="font-body flex-1 text-sm font-medium text-neutral-900">
           {group.title}
