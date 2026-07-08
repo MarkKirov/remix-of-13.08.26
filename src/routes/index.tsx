@@ -1095,6 +1095,9 @@ function TeamTrustBlock() {
                 e.currentTarget.style.backgroundColor = BRAND;
                 e.currentTarget.style.borderColor = BRAND;
               }}
+              onClick={() => {
+                document.getElementById("specialists")?.scrollIntoView({ behavior: "smooth", block: "start" });
+              }}
             >
               <span>Давайте познакомимся</span>
               <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
@@ -1657,7 +1660,9 @@ function Index() {
       <TeamTrustBlock />
 
       {/* Блок наших специалистов */}
-      <SpecialistsBlock />
+      <div id="specialists">
+        <SpecialistsBlock />
+      </div>
     </div>
   );
 }
