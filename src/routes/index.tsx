@@ -1738,6 +1738,7 @@ function Index() {
 
             <button
               type="button"
+              onClick={() => openLead("Записаться на консультацию")}
               className="group mt-8 inline-flex items-center gap-2 rounded-full border-2 px-5 py-2.5 text-xs font-normal uppercase tracking-[0.1em] transition-all md:mt-10 md:px-7 md:py-3 md:text-sm"
               style={{
                 borderColor: BRAND,
