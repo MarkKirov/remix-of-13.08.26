@@ -275,6 +275,18 @@ function ProcedureRow({ procedure }: { procedure: Procedure }) {
                   </ul>
                 </div>
               )}
+              {procedure.groups && procedure.groups.length > 0 && (
+                <div className={procedure.preparations.length > 0 || procedure.device || procedure.subServices ? "mt-4 border-t border-neutral-200 pt-3" : ""}>
+                  <p className="font-caption mb-2 text-[10px] uppercase tracking-[0.18em] text-neutral-500">
+                    Категории
+                  </p>
+                  <div className="space-y-2">
+                    {procedure.groups.map((g) => (
+                      <SubGroupRow key={g.title} group={g} />
+                    ))}
+                  </div>
+                </div>
+              )}
               {procedure.note && (
                 <div
                   className="mt-4 rounded-xl border-l-2 px-4 py-3"
