@@ -19,6 +19,7 @@ import specialist4 from "@/assets/specialist-4.jpg";
 import specialistZhuravleva from "@/assets/specialist-zhuravleva.jpg.asset.json";
 import specialistTonkih from "@/assets/specialist-tonkih.jpg.asset.json";
 import specialistKorabelshchikova from "@/assets/specialist-korabelshchikova.jpg.asset.json";
+import specialistVolokitina from "@/assets/specialist-volokitina.jpg.asset.json";
 import teamImage from "@/assets/team.jpg.asset.json";
 import {
   Dialog,
@@ -942,12 +943,12 @@ const specialists: Specialist[] = [
   },
   {
     id: 4,
-    name: "Мария Волкова",
-    role: "Массажист",
-    focus: "Аппаратный и ручной массаж лица и тела, лимфодренаж, коррекция фигуры.",
-    about: "Подбирает программы для профилактики возрастных изменений и поддержания тонуса кожи и мышц.",
-    education: "Медицинский университет; курсы аппаратного массажа LPG и миостимуляции.",
-    image: specialist4,
+    name: "Волокитина Ольга",
+    role: "Медицинская сестра процедурного кабинета и кабинета озонотерапии",
+    focus: "",
+    about: "",
+    education: "",
+    image: specialistVolokitina.url,
   },
 ];
 
