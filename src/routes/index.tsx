@@ -1038,8 +1038,23 @@ function SpecialistsBlock() {
   const go = (dir: 1 | -1) => setActive((i) => (i + dir + specialists.length) % specialists.length);
 
   return (
-    <section className="relative py-20 text-neutral-900 md:py-28" style={{ backgroundColor: "#F0A8DC" }}>
-      <div className="mx-auto max-w-7xl px-6 md:px-8 lg:px-12">
+    <section
+      className="relative overflow-hidden py-20 text-neutral-900 md:py-28"
+      style={{ background: "linear-gradient(135deg, #F0A8DC 0%, #F6C4E3 50%, #EC8BC9 100%)" }}
+    >
+      {/* Soft background glows */}
+      <div className="pointer-events-none absolute inset-0 opacity-40">
+        <div
+          className="absolute -left-32 top-1/4 h-[28rem] w-[28rem] rounded-full blur-3xl"
+          style={{ background: "radial-gradient(circle, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0) 70%)" }}
+        />
+        <div
+          className="absolute -right-40 bottom-0 h-[32rem] w-[32rem] rounded-full blur-3xl"
+          style={{ background: "radial-gradient(circle, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 70%)" }}
+        />
+      </div>
+
+      <div className="relative mx-auto max-w-7xl px-6 md:px-8 lg:px-12">
         <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-12">
           {/* Текст */}
           <div className="order-2 lg:order-1 lg:col-span-5">
@@ -1048,7 +1063,7 @@ function SpecialistsBlock() {
               Наши специалисты
             </span>
             <div>
-              <h2 className="font-display text-3xl font-black uppercase leading-tight text-neutral-200 md:text-4xl lg:text-5xl">
+              <h2 className="font-display text-3xl font-black uppercase leading-tight text-neutral-900 md:text-4xl lg:text-5xl">
                 {s.name.split(" ").map((part, i) => (
                   <span key={i} className="block">
                     {part}
@@ -1067,7 +1082,7 @@ function SpecialistsBlock() {
           {/* Фото + подпись */}
           <div className="order-1 lg:order-2 lg:col-span-6">
             <div className="relative mx-auto max-w-md lg:max-w-none">
-              <div className="aspect-[4/5] overflow-hidden rounded-2xl">
+              <div className="aspect-[4/5] overflow-hidden rounded-2xl shadow-[0_24px_60px_-20px_rgba(86,28,74,0.35)] ring-1 ring-white/40">
                 <img
                   src={s.image}
                   alt={s.name}
@@ -1083,7 +1098,7 @@ function SpecialistsBlock() {
                 type="button"
                 aria-label="Предыдущий специалист"
                 onClick={() => go(-1)}
-                className="absolute left-2 top-1/2 -translate-y-1/2 inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/80 text-neutral-900 shadow-sm backdrop-blur transition-colors hover:bg-white md:left-3 md:h-10 md:w-10"
+                className="absolute left-2 top-1/2 -translate-y-1/2 inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-neutral-900 shadow-lg shadow-black/10 backdrop-blur transition-all hover:scale-105 hover:bg-white md:left-3 md:h-10 md:w-10"
               >
                 <ChevronLeft className="h-5 w-5" />
               </button>
@@ -1091,7 +1106,7 @@ function SpecialistsBlock() {
                 type="button"
                 aria-label="Следующий специалист"
                 onClick={() => go(1)}
-                className="absolute right-2 top-1/2 -translate-y-1/2 inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/80 text-neutral-900 shadow-sm backdrop-blur transition-colors hover:bg-white md:right-3 md:h-10 md:w-10"
+                className="absolute right-2 top-1/2 -translate-y-1/2 inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-neutral-900 shadow-lg shadow-black/10 backdrop-blur transition-all hover:scale-105 hover:bg-white md:right-3 md:h-10 md:w-10"
               >
                 <ChevronRight className="h-5 w-5" />
               </button>
@@ -1115,8 +1130,8 @@ function SpecialistsBlock() {
                   type="button"
                   aria-label={`Показать ${sp.name}`}
                   onClick={() => setActive(i)}
-                  className={`relative h-12 w-12 overflow-hidden rounded-full transition-all md:h-14 md:w-14 ${i === active ? "ring-2 ring-offset-2 ring-offset-[#F0A8DC]" : "opacity-60 hover:opacity-100"}`}
-                  style={i === active ? { ["--tw-ring-color" as string]: BRAND } : undefined}
+                  className={`relative h-12 w-12 overflow-hidden rounded-full transition-all md:h-14 md:w-14 ${i === active ? "ring-2 ring-white ring-offset-2 shadow-[0_0_20px_rgba(174,49,166,0.55)]" : "opacity-60 hover:opacity-100"}`}
+                  style={i === active ? { ["--tw-ring-offset-color" as string]: "#F0A8DC", ["--tw-ring-color" as string]: "#ffffff" } : undefined}
                 >
                   <img
                     src={sp.image}
