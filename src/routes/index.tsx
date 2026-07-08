@@ -8,7 +8,7 @@ import serviceEsthetic from "@/assets/esthetic-cosmetology.png.asset.json";
 import serviceMedical from "@/assets/apparatnaya-cosmetology.png.asset.json";
 import serviceHardware from "@/assets/service_hardware.png.asset.json";
 import serviceVrachebnaya from "@/assets/service_vrachebnaya.png.asset.json";
-import serviceMassage from "@/assets/service-massage.jpeg.asset.json";
+import serviceMassage from "@/assets/massage.png.asset.json";
 import comparisonBg from "@/assets/comparison-bg.png.asset.json";
 import headerLogo from "@/assets/header_logo.svg.asset.json";
 import consultationBg from "@/assets/consultation-bg.png.asset.json";
