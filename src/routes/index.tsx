@@ -37,6 +37,7 @@ import {
   DialogDescription,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { LeadDialogProvider, useLeadDialog } from "@/components/LeadDialog";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -55,7 +56,11 @@ export const Route = createFileRoute("/")({
       },
     ],
   }),
-  component: Index,
+  component: () => (
+    <LeadDialogProvider>
+      <Index />
+    </LeadDialogProvider>
+  ),
 });
 
 const BRAND = "#AE31A6";
@@ -331,6 +336,7 @@ const medicalProcedures: Procedure[] = [
 
 function ProcedureRow({ procedure }: { procedure: Procedure }) {
   const [open, setOpen] = useState(false);
+  const { open: openLead } = useLeadDialog();
   return (
     <div className="group">
       <div
@@ -385,6 +391,7 @@ function ProcedureRow({ procedure }: { procedure: Procedure }) {
         )}
         <button
           type="button"
+          onClick={() => openLead(`Записаться: ${procedure.name}`)}
           className="font-caption ml-2 shrink-0 rounded-full px-4 py-2 text-[10px] font-normal uppercase tracking-[0.14em] text-white transition-colors md:px-5 md:text-[11px]"
           style={{ backgroundColor: BRAND }}
           onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#C24CBA")}
@@ -1243,6 +1250,7 @@ function TeamTrustBlock() {
 function Index() {
   const [active, setActive] = useState(0);
   const videoRef = useRef<HTMLVideoElement | null>(null);
+  const { open: openLead } = useLeadDialog();
 
   useEffect(() => {
     if (videoRef.current) {
@@ -1372,6 +1380,7 @@ function Index() {
                     <div>
                       <button
                         type="button"
+                        onClick={() => openLead(s.cta)}
                         className="group inline-flex items-center gap-2 rounded-full border-2 px-6 py-3 text-xs font-normal uppercase tracking-[0.1em] transition-all"
                         style={{
                           borderColor: BRAND,
@@ -1459,6 +1468,7 @@ function Index() {
             </h2>
             <button
               type="button"
+              onClick={() => openLead("Записаться на консультацию")}
               className="group mt-8 inline-flex items-center gap-2 rounded-full border-2 px-5 py-2.5 text-xs font-normal uppercase tracking-[0.1em] transition-all md:mt-10 md:px-6 md:py-3"
               style={{ borderColor: BRAND, color: "#fff", backgroundColor: "transparent" }}
               onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = BRAND; }}
@@ -1728,6 +1738,7 @@ function Index() {
 
             <button
               type="button"
+              onClick={() => openLead("Записаться на консультацию")}
               className="group mt-8 inline-flex items-center gap-2 rounded-full border-2 px-5 py-2.5 text-xs font-normal uppercase tracking-[0.1em] transition-all md:mt-10 md:px-7 md:py-3 md:text-sm"
               style={{
                 borderColor: BRAND,
