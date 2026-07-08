@@ -50,6 +50,8 @@ const BRAND = "#AE31A6";
 
 type SubService = { name: string; price: string };
 
+type SubGroup = { title: string; items: SubService[] };
+
 type Procedure = {
   name: string;
   price: string;
@@ -57,6 +59,7 @@ type Procedure = {
   detailsLabel?: string;
   device?: string;
   subServices?: SubService[];
+  groups?: SubGroup[];
   note?: string;
 };
 
