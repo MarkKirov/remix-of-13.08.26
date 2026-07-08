@@ -1870,6 +1870,46 @@ function Index() {
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="bg-neutral-950 text-white/70">
+        <div className="mx-auto max-w-6xl px-6 py-10 md:px-8 md:py-12">
+          <div className="grid gap-8 md:grid-cols-2">
+            <div>
+              <p className="text-sm text-white/80">© Медико-эстетический центр «Комильфо», 2010–2026</p>
+              <p className="mt-4 max-w-md text-xs leading-relaxed text-white/50">
+                Необходима консультация специалиста. Имеются противопоказания. Данный интернет-сайт носит исключительно справочно-информационный характер, все предложения не являются публичной офертой.
+              </p>
+              <p className="mt-4 text-xs text-white/60">
+                г. Липецк, ул. Гагарина, д. 45А, 5 этаж
+              </p>
+              <a
+                href={privacyPolicy.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 inline-block text-xs underline underline-offset-4 hover:text-white"
+                style={{ color: BRAND }}
+              >
+                Политика конфиденциальности
+              </a>
+            </div>
+            <div className="md:text-right">
+              <a href="tel:+74742900909" className="text-2xl font-light text-white hover:opacity-80 md:text-3xl">
+                +7 (4742) 90-09-09
+              </a>
+              <div className="mt-4">
+                <a
+                  href="mailto:info@komilfocentr.ru"
+                  className="text-sm hover:opacity-80"
+                  style={{ color: BRAND }}
+                >
+                  info@komilfocentr.ru
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
