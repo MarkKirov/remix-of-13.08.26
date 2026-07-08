@@ -317,6 +317,62 @@ function ProcedureRow({ procedure }: { procedure: Procedure }) {
   );
 }
 
+function SubGroupRow({ group }: { group: SubGroup }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="rounded-xl border border-neutral-200 bg-white">
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        className="flex w-full items-center gap-3 px-4 py-2.5 text-left"
+        aria-expanded={open}
+      >
+        <span
+          className="grid h-6 w-6 shrink-0 place-items-center rounded-full border transition-transform"
+          style={{
+            borderColor: BRAND,
+            color: BRAND,
+            transform: open ? "rotate(45deg)" : "rotate(0deg)",
+          }}
+          aria-hidden
+        >
+          <Plus className="h-3 w-3" />
+        </span>
+        <span className="font-body flex-1 text-sm font-medium text-neutral-900">
+          {group.title}
+        </span>
+        <span className="font-caption text-[10px] uppercase tracking-[0.14em] text-neutral-400">
+          {group.items.length}
+        </span>
+      </button>
+      <div
+        className="grid transition-all duration-500 ease-out"
+        style={{ gridTemplateRows: open ? "1fr" : "0fr", opacity: open ? 1 : 0 }}
+      >
+        <div className="overflow-hidden">
+          <ul className="divide-y divide-neutral-200 border-t border-neutral-200 px-4 py-2">
+            {group.items.map((s, i) => (
+              <li
+                key={i}
+                className="font-body flex items-start justify-between gap-4 py-2 text-sm text-neutral-700"
+              >
+                <span className="flex-1">{s.name}</span>
+                <span
+                  className="font-caption shrink-0 text-xs font-bold uppercase tracking-[0.12em]"
+                  style={{ color: BRAND }}
+                >
+                  {s.price}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+
 function MedicalCosmetologyContent() {
   return (
     <div className="space-y-2.5">
