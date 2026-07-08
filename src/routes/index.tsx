@@ -972,6 +972,9 @@ function SpecialistsBlock() {
                   </span>
                 ))}
               </h2>
+              <p className="font-body mt-3 text-sm font-medium uppercase tracking-wider text-neutral-900/80">
+                {s.role}
+              </p>
               <p className="font-body mt-6 text-base font-light leading-relaxed text-neutral-900">
                 {s.focus}
               </p>
