@@ -1768,6 +1768,88 @@ function Index() {
       <div id="specialists">
         <SpecialistsBlock />
       </div>
+
+      {/* Экран призыва подписаться на группу ВКонтакте */}
+      <section className="relative overflow-hidden">
+        <img
+          className="absolute inset-0 h-full w-full object-cover"
+          src={teamImage.url}
+          alt="Команда клиники Комильфо"
+          decoding="async"
+        />
+        <div className="absolute inset-0 bg-black/55" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
+
+        <div className="relative z-10 mx-auto flex min-h-[75vh] max-w-6xl flex-col items-start justify-center px-6 py-16 md:px-8 md:py-20">
+          <div className="max-w-xl">
+            <h2 className="font-display max-w-xl whitespace-pre-line text-2xl leading-[1.15] tracking-[0.01em] text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)] md:text-3xl lg:text-4xl">
+              Найдите своего специалиста —{"\n"}
+              человека, которому доверяете
+            </h2>
+            <p className="font-body mt-4 whitespace-pre-line text-base font-light leading-relaxed text-white/85 md:mt-5 md:text-lg">
+              Самое главное в работе с косметологом — найти того, кому вы доверите свою красоту, тело и здоровье. Мы хотим стать таким специалистом для вас.
+            </p>
+            <p className="font-body mt-4 whitespace-pre-line text-base font-light leading-relaxed text-white/85 md:text-lg">
+              Сейчас мы уже такие специалисты для тысяч женщин в Липецке. А в нашей группе ВКонтакте мы бесплатно делимся советами, разборами и рекомендациями — познавательно, интересно и помогает решиться на встречу-знакомство.
+            </p>
+
+            <div className="mt-8 flex flex-wrap items-center gap-4 md:mt-10">
+              <a
+                href="https://vk.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-2 rounded-full border-2 px-5 py-2.5 text-xs font-normal uppercase tracking-[0.1em] transition-all md:px-7 md:py-3 md:text-sm"
+                style={{
+                  borderColor: "#fff",
+                  color: "#fff",
+                  backgroundColor: "transparent",
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = "#fff";
+                  e.currentTarget.style.color = BRAND;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = "transparent";
+                  e.currentTarget.style.color = "#fff";
+                }}
+              >
+                <svg
+                  className="h-4 w-4"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path d="M12.785 16.241s.288-.032.437-.194c.136-.148.132-.427.132-.427s-.02-1.304.585-1.496c.597-.19 1.363 1.26 2.178 1.817.615.42 1.082.328 1.082.328l2.177-.03s1.14-.071.599-.968c-.044-.074-.314-.66-1.617-1.868-1.365-1.264-1.182-1.058.462-3.24.998-1.332 1.397-2.145 1.272-2.494-.12-.327-.861-.24-.861-.24l-2.45.015s-.181-.025-.316.056c-.132.08-.217.264-.217.264s-.39 1.037-.91 1.921c-1.095 1.871-1.534 1.971-1.713 1.852-.418-.27-.314-1.085-.314-1.663 0-1.808.274-2.562-.534-2.756-.268-.065-.465-.108-1.148-.115-.876-.01-1.618.003-2.04.208-.28.139-.496.448-.364.466.163.022.533.1.729.363.254.34.244 1.103.244 1.103s.163 2.13-.38 2.395c-.373.18-.884-.187-1.982-1.865-.562-.858-.987-1.808-.987-1.808s-.082-.18-.229-.277c-.179-.12-.429-.158-.429-.158l-2.335.016s-.351.01-.48.162c-.116.137-.009.42-.009.42s1.835 4.317 3.912 6.493c1.907 1.999 4.075 1.864 4.075 1.864h.982z" />
+                </svg>
+                <span>Подписаться на группу ВКонтакте</span>
+                <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
+              </a>
+
+              <button
+                type="button"
+                onClick={() => openLead("Записаться на встречу-знакомство")}
+                className="group inline-flex items-center gap-2 rounded-full border-2 px-5 py-2.5 text-xs font-normal uppercase tracking-[0.1em] transition-all md:px-7 md:py-3 md:text-sm"
+                style={{
+                  borderColor: BRAND,
+                  color: "#fff",
+                  backgroundColor: BRAND,
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = "transparent";
+                  e.currentTarget.style.color = "#fff";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = BRAND;
+                  e.currentTarget.style.color = "#fff";
+                }}
+              >
+                <span>Записаться на встречу-знакомство</span>
+                <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
