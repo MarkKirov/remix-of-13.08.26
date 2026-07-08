@@ -57,7 +57,9 @@ type Procedure = {
   detailsLabel?: string;
   device?: string;
   subServices?: SubService[];
+  note?: string;
 };
+
 
 const medicalProcedures: Procedure[] = [
   {
