@@ -990,13 +990,8 @@ function SpecialistsBlock() {
                   loading="lazy"
                   decoding="async"
                   className="h-full w-full object-cover"
+                  style={{ objectPosition: active === 0 ? "center 20%" : "center" }}
                 />
-              </div>
-              <div className="mt-4 text-center">
-                <p className="font-display text-lg text-neutral-900">{s.name}</p>
-                <p className="font-caption text-[10px] uppercase tracking-[0.18em] text-neutral-900/70">
-                  {s.role}
-                </p>
               </div>
             </div>
           </div>
