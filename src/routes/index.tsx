@@ -1318,6 +1318,10 @@ function Index() {
               <p className="font-caption text-[9px] uppercase tracking-[0.14em] text-white/75 mt-1 md:text-[10px]">
                 без комплексов и рисков для здоровья
               </p>
+              <span className="mx-auto my-1.5 block h-px w-5 bg-white/40 md:my-2 md:w-6" />
+              <p className="font-caption text-[9px] uppercase tracking-[0.12em] text-white/70 md:text-[10px]">
+                г.Липецк ул.Гагарина д.45А 5 этаж
+              </p>
             </div>
             <div className="flex shrink-0 flex-col items-end text-right">
               <a
@@ -1337,9 +1341,6 @@ function Index() {
                 </svg>
                 <span>ВКонтакте</span>
               </a>
-              <p className="font-caption mt-2 max-w-[180px] text-[9px] uppercase leading-relaxed tracking-[0.12em] text-white/70 md:max-w-[220px] md:text-[10px]">
-                г.Липецк ул.Гагарина д.45А 5 этаж
-              </p>
             </div>
           </div>
         </header>
