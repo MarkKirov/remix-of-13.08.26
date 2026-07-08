@@ -67,7 +67,7 @@ type Procedure = {
 const medicalProcedures: Procedure[] = [
   {
     name: "Ботулинотерапия",
-    price: "от 3 900 ₽",
+    price: "150 ₽ / 1 ед.",
     preparations: ["Препарат — уточняется", "Препарат — уточняется"],
   },
   {
