@@ -37,6 +37,7 @@ import {
   DialogDescription,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { LeadDialogProvider, useLeadDialog } from "@/components/LeadDialog";
 
 export const Route = createFileRoute("/")({
   head: () => ({
