@@ -21,6 +21,13 @@ import specialistTonkih from "@/assets/specialist-tonkih.jpg.asset.json";
 import specialistKorabelshchikova from "@/assets/specialist-korabelshchikova.jpg.asset.json";
 import specialistVolokitina from "@/assets/specialist-volokitina.jpg.asset.json";
 import specialistSushkova from "@/assets/specialist-sushkova.jpg.asset.json";
+import specDmitrievskaya from "@/assets/spec-dmitrievskaya.jpg.asset.json";
+import specMoiseenko from "@/assets/spec-moiseenko.jpg.asset.json";
+import specPopova from "@/assets/spec-popova.jpg.asset.json";
+import specBakhtur from "@/assets/spec-bakhtur.jpg.asset.json";
+import spec5 from "@/assets/spec-5.jpg.asset.json";
+import spec10 from "@/assets/spec-10.jpg.asset.json";
+import spec14 from "@/assets/spec-14.jpg.asset.json";
 import teamImage from "@/assets/team.jpg.asset.json";
 import {
   Dialog,
@@ -959,6 +966,69 @@ const specialists: Specialist[] = [
     about: "",
     education: "",
     image: specialistSushkova.url,
+  },
+  {
+    id: 6,
+    name: "Дмитриевская Анна",
+    role: "Медицинская сестра по косметологии",
+    focus: "",
+    about: "",
+    education: "",
+    image: specDmitrievskaya.url,
+  },
+  {
+    id: 7,
+    name: "Моисеенко Мария",
+    role: "Администратор",
+    focus: "",
+    about: "",
+    education: "",
+    image: specMoiseenko.url,
+  },
+  {
+    id: 8,
+    name: "Попова Наталья",
+    role: "Специалист центра",
+    focus: "",
+    about: "",
+    education: "",
+    image: specPopova.url,
+  },
+  {
+    id: 9,
+    name: "Ирина Евгеньевна",
+    role: "Администратор",
+    focus: "",
+    about: "",
+    education: "",
+    image: specBakhtur.url,
+  },
+  {
+    id: 10,
+    name: "Специалист центра",
+    role: "Специалист",
+    focus: "",
+    about: "",
+    education: "",
+    image: spec5.url,
+  },
+  {
+    id: 11,
+    name: "Специалист центра",
+    role: "Специалист",
+    focus: "",
+    about: "",
+    education: "",
+    image: spec10.url,
+  },
+  {
+    id: 12,
+    name: "Специалист центра",
+    role: "Специалист",
+    focus: "",
+    about: "",
+    education: "",
+    image: spec14.url,
   },
 ];
 
