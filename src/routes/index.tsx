@@ -972,6 +972,9 @@ function SpecialistsBlock() {
                   </span>
                 ))}
               </h2>
+              <p className="font-body mt-3 text-sm font-medium uppercase tracking-wider text-neutral-900/80">
+                {s.role}
+              </p>
               <p className="font-body mt-6 text-base font-light leading-relaxed text-neutral-900">
                 {s.focus}
               </p>
@@ -990,13 +993,8 @@ function SpecialistsBlock() {
                   loading="lazy"
                   decoding="async"
                   className="h-full w-full object-cover"
+                  style={{ objectPosition: active === 0 ? "center 20%" : "center" }}
                 />
-              </div>
-              <div className="mt-4 text-center">
-                <p className="font-display text-lg text-neutral-900">{s.name}</p>
-                <p className="font-caption text-[10px] uppercase tracking-[0.18em] text-neutral-900/70">
-                  {s.role}
-                </p>
               </div>
             </div>
           </div>
