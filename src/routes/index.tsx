@@ -1026,7 +1026,7 @@ function SpecialistsBlock() {
                 type="button"
                 aria-label="Предыдущий специалист"
                 onClick={() => go(-1)}
-                className="hidden h-8 w-8 items-center justify-center rounded-full border border-white/30 text-white/60 transition-colors hover:border-white hover:text-white lg:inline-flex"
+                className="hidden h-8 w-8 items-center justify-center rounded-full border border-neutral-900/30 text-neutral-900/70 transition-colors hover:border-neutral-900 hover:text-neutral-900 lg:inline-flex"
               >
                 <ChevronUp className="h-4 w-4" />
               </button>
@@ -1036,7 +1036,7 @@ function SpecialistsBlock() {
                   type="button"
                   aria-label={`Показать ${sp.name}`}
                   onClick={() => setActive(i)}
-                  className={`relative h-12 w-12 overflow-hidden rounded-full transition-all md:h-14 md:w-14 ${i === active ? "ring-2 ring-offset-2 ring-offset-neutral-950" : "opacity-60 hover:opacity-100"}`}
+                  className={`relative h-12 w-12 overflow-hidden rounded-full transition-all md:h-14 md:w-14 ${i === active ? "ring-2 ring-offset-2 ring-offset-[#F0A8DC]" : "opacity-60 hover:opacity-100"}`}
                   style={i === active ? { ["--tw-ring-color" as string]: BRAND } : undefined}
                 >
                   <img
@@ -1050,7 +1050,7 @@ function SpecialistsBlock() {
                 type="button"
                 aria-label="Следующий специалист"
                 onClick={() => go(1)}
-                className="hidden h-8 w-8 items-center justify-center rounded-full border border-white/30 text-white/60 transition-colors hover:border-white hover:text-white lg:inline-flex"
+                className="hidden h-8 w-8 items-center justify-center rounded-full border border-neutral-900/30 text-neutral-900/70 transition-colors hover:border-neutral-900 hover:text-neutral-900 lg:inline-flex"
               >
                 <ChevronDown className="h-4 w-4" />
               </button>
