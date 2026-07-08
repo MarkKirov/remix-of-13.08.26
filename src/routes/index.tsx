@@ -1303,7 +1303,6 @@ function Index() {
         <div className="absolute inset-0 bg-black/60" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
 
-        {/* Дескриптор и логотип — тонким начертанием прямо поверх видео */}
         <header className="absolute inset-x-0 top-0 z-20 w-full pt-4 md:pt-6">
           <div className="mx-auto flex max-w-6xl items-start px-6 md:px-8">
             <img
@@ -1320,7 +1319,28 @@ function Index() {
                 без комплексов и рисков для здоровья
               </p>
             </div>
-            <div className="w-24 shrink-0 md:w-36" aria-hidden="true" />
+            <div className="flex shrink-0 flex-col items-end text-right">
+              <a
+                href="tel:+74742900909"
+                className="font-display text-sm tracking-[0.04em] text-white transition-colors hover:text-white/80 md:text-base"
+              >
+                +7 (4742) 90-09-09
+              </a>
+              <a
+                href="https://vk.com/mdkomilfolip"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-2 inline-flex items-center gap-1.5 rounded-full border border-white/40 bg-white/10 px-3 py-1.5 text-[10px] uppercase tracking-[0.08em] text-white transition-colors hover:bg-white/20 md:px-4 md:py-2 md:text-[11px]"
+              >
+                <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12.785 16.241s.288-.032.437-.194c.136-.148.132-.427.132-.427s-.02-1.304.585-1.496c.597-.19 1.363 1.26 2.178 1.817.615.42 1.082.328 1.082.328l2.177-.03s1.14-.071.599-.968c-.044-.074-.314-.66-1.617-1.868-1.365-1.264-1.182-1.058.462-3.24.998-1.332 1.397-2.145 1.272-2.494-.12-.327-.861-.24-.861-.24l-2.45.015s-.181-.025-.316.056c-.132.08-.217.264-.217.264s-.39 1.037-.91 1.921c-1.095 1.871-1.534 1.971-1.713 1.852-.418-.27-.314-1.085-.314-1.663 0-1.808.274-2.562-.534-2.756-.268-.065-.465-.108-1.148-.115-.876-.01-1.618.003-2.04.208-.28.139-.496.448-.364.466.163.022.533.1.729.363.254.34.244 1.103.244 1.103s.163 2.13-.38 2.395c-.373.18-.884-.187-1.982-1.865-.562-.858-.987-1.808-.987-1.808s-.082-.18-.229-.277c-.179-.12-.429-.158-.429-.158l-2.335.016s-.351.01-.48.162c-.116.137-.009.42-.009.42s1.835 4.317 3.912 6.493c1.907 1.999 4.075 1.864 4.075 1.864h.982z" />
+                </svg>
+                <span>ВКонтакте</span>
+              </a>
+              <p className="font-caption mt-2 max-w-[180px] text-[9px] uppercase leading-relaxed tracking-[0.12em] text-white/70 md:max-w-[220px] md:text-[10px]">
+                г.Липецк ул.Гагарина д.45А 5 этаж
+              </p>
+            </div>
           </div>
         </header>
 
