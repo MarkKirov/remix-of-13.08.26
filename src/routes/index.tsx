@@ -16,7 +16,7 @@ import specialist1 from "@/assets/specialist-1.jpg";
 import specialist2 from "@/assets/specialist-2.jpg";
 import specialist3 from "@/assets/specialist-3.jpg";
 import specialist4 from "@/assets/specialist-4.jpg";
-import teamImage from "@/assets/team.jpg";
+import teamImage from "@/assets/team.jpg.asset.json";
 import {
   Dialog,
   DialogContent,
@@ -1100,7 +1100,7 @@ function TeamTrustBlock() {
               }}
             >
               <span>Давайте познакомимся</span>
-              <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
+              <ChevronDown className="h-3 w-3 transition-transform group-hover:translate-y-1" />
             </button>
           </div>
 
@@ -1109,7 +1109,7 @@ function TeamTrustBlock() {
             <div className="relative mx-auto max-w-lg lg:max-w-none">
               <div className="aspect-[4/5] overflow-hidden rounded-2xl shadow-[0_24px_60px_-20px_rgba(0,0,0,0.25)]">
                 <img
-                  src={teamImage}
+                  src={teamImage.url}
                   alt="Команда клиники Комильфо"
                   width={1024}
                   height={1280}
@@ -1127,12 +1127,12 @@ function TeamTrustBlock() {
                 </p>
               </div>
               <div
-                className="absolute -top-4 -right-4 grid h-20 w-20 place-items-center rounded-2xl text-white shadow-[0_16px_40px_-12px_rgba(0,0,0,0.25)] md:-top-6 md:-right-6 md:h-24 md:w-24"
+                className="absolute -top-6 -right-4 grid h-28 w-28 place-items-center rounded-2xl text-white shadow-[0_16px_40px_-12px_rgba(0,0,0,0.25)] md:-top-7 md:-right-7 md:h-32 md:w-32"
                 style={{ backgroundColor: BRAND }}
               >
                 <div className="text-center">
-                  <p className="font-display text-2xl font-bold leading-none md:text-3xl">+12</p>
-                  <p className="font-caption mt-1 text-[8px] uppercase tracking-[0.14em] md:text-[9px]">
+                  <p className="font-display text-3xl font-bold leading-none md:text-4xl">12+</p>
+                  <p className="font-caption mt-1 text-[8px] uppercase tracking-[0.06em] md:text-[9px] md:tracking-[0.08em]">
                     специалистов
                   </p>
                 </div>
