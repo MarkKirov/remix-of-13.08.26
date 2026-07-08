@@ -1803,15 +1803,14 @@ function Index() {
 
         <div className="relative z-10 mx-auto flex min-h-[75vh] max-w-6xl flex-col items-start justify-center px-6 py-16 md:px-8 md:py-20">
           <div className="max-w-xl">
-            <h2 className="font-display max-w-xl whitespace-pre-line text-2xl leading-[1.15] tracking-[0.01em] text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)] md:text-3xl lg:text-4xl">
-              Найдите своего специалиста —{"\n"}
-              человека, которому доверяете
+            <h2 className="font-display max-w-xl text-2xl leading-[1.15] tracking-[0.01em] text-[#F5C1E2] drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)] md:text-3xl lg:text-4xl">
+              Найдите своего специалиста
             </h2>
-            <p className="font-body mt-4 whitespace-pre-line text-base font-light leading-relaxed text-white/85 md:mt-5 md:text-lg">
-              Самое главное в работе с косметологом — найти того, кому вы доверите свою красоту, тело и здоровье. Мы хотим стать таким специалистом для вас.
+            <p className="font-body mt-4 text-sm font-light leading-relaxed text-white/85 md:mt-5 md:text-base">
+              Тысячи женщин Липецка доверяют нам свою красоту, тело и здоровье — и мы станем такими же специалистами для вас.
             </p>
-            <p className="font-body mt-4 whitespace-pre-line text-base font-light leading-relaxed text-white/85 md:text-lg">
-              Сейчас мы уже такие специалисты для тысяч женщин в Липецке. А в нашей группе ВКонтакте мы бесплатно делимся советами, разборами и рекомендациями — познавательно, интересно и помогает решиться на встречу-знакомство.
+            <p className="font-body mt-3 text-sm font-light leading-relaxed text-white/85 md:text-base">
+              В нашей группе ВКонтакте мы бесплатно делимся советами, разборами и рекомендациями — познавательно, интересно и помогает решиться на встречу-знакомство.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-4 md:mt-10">
