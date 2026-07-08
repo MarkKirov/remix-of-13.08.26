@@ -48,12 +48,15 @@ export const Route = createFileRoute("/")({
 
 const BRAND = "#AE31A6";
 
+type SubService = { name: string; price: string };
+
 type Procedure = {
   name: string;
   price: string;
   preparations: string[];
   detailsLabel?: string;
   device?: string;
+  subServices?: SubService[];
 };
 
 const medicalProcedures: Procedure[] = [
