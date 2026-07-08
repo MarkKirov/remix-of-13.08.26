@@ -172,7 +172,7 @@ function ProcedureRow({ procedure }: { procedure: Procedure }) {
             {procedure.name}
           </span>
         </button>
-        {procedure.subServices ? (
+        {procedure.subServices || procedure.groups ? (
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
