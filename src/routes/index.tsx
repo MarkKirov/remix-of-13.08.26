@@ -1217,7 +1217,7 @@ function TeamTrustBlock() {
                   Наши специалисты
                 </p>
                 <p className="font-display mt-1 text-lg uppercase tracking-wide text-neutral-900 md:text-xl">
-                  Комильфо Эксперт
+                  МД «Комильфо»
                 </p>
               </div>
               <div
