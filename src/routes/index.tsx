@@ -50,6 +50,8 @@ const BRAND = "#AE31A6";
 
 type SubService = { name: string; price: string };
 
+type SubGroup = { title: string; items: SubService[] };
+
 type Procedure = {
   name: string;
   price: string;
@@ -57,6 +59,7 @@ type Procedure = {
   detailsLabel?: string;
   device?: string;
   subServices?: SubService[];
+  groups?: SubGroup[];
   note?: string;
 };
 
@@ -138,6 +141,47 @@ const medicalProcedures: Procedure[] = [
     ],
     note: "Точную цену вы узнаете на первичной консультации — она бесплатна. Наш специалист подберёт подходящую услугу, рассчитает стоимость и определит нужное количество процедур. Не назначайте курс себе самостоятельно — сначала проконсультируйтесь, и мы составим ваш персональный план создания естественной красоты.",
   },
+  {
+    name: "Анализы крови",
+    price: "по запросу",
+    detailsLabel: "Категории анализов",
+    preparations: [],
+    groups: [
+      {
+        title: "Вирусные инфекции",
+        items: [
+          { name: "Определение антител класса M (Anti-HAV IgM) к вирусному гепатиту A (Hepatitis A virus) в крови", price: "660 ₽" },
+          { name: "Определение иммуноглобулин E (IgE общий) в крови", price: "570 ₽" },
+          { name: "Определение антител к вирусному гепатиту A (Hepatitis A virus) в крови суммарно", price: "810 ₽" },
+          { name: "Определение антигена (HbsAg) к вирусу гепатита B (Hepatitis B virus) в крови, качественное исследование", price: "250 ₽" },
+          { name: "Определение антигена (HbsAg) к вирусу гепатита B (Hepatitis B virus) в крови, количественное исследование", price: "1 500 ₽" },
+          { name: "Определение антигена (HbsAg) к вирусу гепатита B (Hepatitis B virus) в крови суммарно", price: "510 ₽" },
+          { name: "Определение антител к e-антигену (Anti-HBe) вируса гепатита B (Hepatitis B virus) в крови суммарно", price: "850 ₽" },
+          { name: "Определение антител к e-антигену (Anti-HBe) вируса гепатита B (Hepatitis B virus) в крови", price: "800 ₽" },
+          { name: "Определение антител класса M (Anti-HBc IgM) к ядерному антигену (HbcAg) вируса гепатита B (Hepatitis B virus) в крови", price: "600 ₽" },
+          { name: "Определение антител классов к ядерному антигену (HbcAg) вируса гепатита B (Hepatitis B virus) в крови суммарно", price: "500 ₽" },
+          { name: "Определение суммарных антител классов M и G (anti-HCV IgM и anti-HCV IgG) к вирусному гепатиту C (Hepatitis C virus) в крови", price: "300 ₽" },
+          { name: "Определение антител классов G (anti-HCV IgG) к вирусному гепатиту C (Hepatitis C virus) в крови иммуноблоттинг", price: "6 300 ₽" },
+          { name: "Определение антител классов M (anti-HCV IgM) к вирусному гепатиту C (Hepatitis C virus) в крови", price: "510 ₽" },
+          { name: "Определение антител класса G (IgG) к коронавирусу SARS-CoV-2 (COVID-19) количественное исследование", price: "1 125 ₽" },
+          { name: "Определение антител класса M (IgM) к коронавирусу SARS-CoV-2 (COVID-19) методом ИФА (определение острой фазы коронавируса) качественное исследование", price: "975 ₽" },
+          { name: "Определение антител класса G (IgG) к коронавирусу SARS-CoV-2 (COVID-19) методом ИФА (определение иммунного ответа к коронавирусу) качественное исследование", price: "975 ₽" },
+          { name: "Определение антител класса G к вирусу простого герпеса 2 типа (Herpes simplex virus 2) в крови", price: "540 ₽" },
+          { name: "Определение антител класса M к вирусу простого герпеса 1 и 2 типа (Herpes simplex virus 1,2) в крови", price: "510 ₽" },
+          { name: "Исследование уровня антител классов M, G (IgM, IgG) к вирусу иммунодефицита человека ВИЧ-1/2 и антигена p24 (Human immunodeficiency virus HIV 1/2 + Agp24) в крови", price: "300 ₽" },
+          { name: "Определение антител к бледной трепонеме (Treponema pallidum) в реакции пассивной гемагглютинации (РПГА) в сыворотке крови", price: "720 ₽" },
+          { name: "Определение антител к бледной трепонеме (Treponema pallidum) в крови (IgG+IgM)", price: "480 ₽" },
+          { name: "Определение антител к бледной трепонеме (Treponema pallidum) в крови (IgM)", price: "720 ₽" },
+          { name: "Определение антител класса G (igG) к цитомегаловирусу в крови", price: "450 ₽" },
+          { name: "Определение антител класса M IgM к цитомегаловирусу в крови", price: "500 ₽" },
+          { name: "Определение антител класса IgG к вирусу кори в крови", price: "570 ₽" },
+          { name: "Определение антител класса IgG к вирусу краснухи (Rubella virus) в крови", price: "735 ₽" },
+          { name: "Определение антител класса IgM к вирусу краснухи (Rubella virus) в крови", price: "825 ₽" },
+        ],
+      },
+    ],
+    note: "Точную цену вы узнаете на первичной консультации — она бесплатна. Наш специалист подберёт подходящую услугу, рассчитает стоимость и определит нужное количество процедур. Не назначайте курс себе самостоятельно — сначала проконсультируйтесь, и мы составим ваш персональный план создания естественной красоты.",
+  },
 ];
 
 function ProcedureRow({ procedure }: { procedure: Procedure }) {
@@ -169,7 +213,7 @@ function ProcedureRow({ procedure }: { procedure: Procedure }) {
             {procedure.name}
           </span>
         </button>
-        {procedure.subServices ? (
+        {procedure.subServices || procedure.groups ? (
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
@@ -272,6 +316,18 @@ function ProcedureRow({ procedure }: { procedure: Procedure }) {
                   </ul>
                 </div>
               )}
+              {procedure.groups && procedure.groups.length > 0 && (
+                <div className={procedure.preparations.length > 0 || procedure.device || procedure.subServices ? "mt-4 border-t border-neutral-200 pt-3" : ""}>
+                  <p className="font-caption mb-2 text-[10px] uppercase tracking-[0.18em] text-neutral-500">
+                    Категории
+                  </p>
+                  <div className="space-y-2">
+                    {procedure.groups.map((g) => (
+                      <SubGroupRow key={g.title} group={g} />
+                    ))}
+                  </div>
+                </div>
+              )}
               {procedure.note && (
                 <div
                   className="mt-4 rounded-xl border-l-2 px-4 py-3"
@@ -301,6 +357,62 @@ function ProcedureRow({ procedure }: { procedure: Procedure }) {
     </div>
   );
 }
+
+function SubGroupRow({ group }: { group: SubGroup }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="rounded-xl border border-neutral-200 bg-white">
+      <button
+        type="button"
+        onClick={() => setOpen((v) => !v)}
+        className="flex w-full items-center gap-3 px-4 py-2.5 text-left"
+        aria-expanded={open}
+      >
+        <span
+          className="grid h-6 w-6 shrink-0 place-items-center rounded-full border transition-transform"
+          style={{
+            borderColor: BRAND,
+            color: BRAND,
+            transform: open ? "rotate(45deg)" : "rotate(0deg)",
+          }}
+          aria-hidden
+        >
+          <Plus className="h-3 w-3" />
+        </span>
+        <span className="font-body flex-1 text-sm font-medium text-neutral-900">
+          {group.title}
+        </span>
+        <span className="font-caption text-[10px] uppercase tracking-[0.14em] text-neutral-400">
+          {group.items.length}
+        </span>
+      </button>
+      <div
+        className="grid transition-all duration-500 ease-out"
+        style={{ gridTemplateRows: open ? "1fr" : "0fr", opacity: open ? 1 : 0 }}
+      >
+        <div className="overflow-hidden">
+          <ul className="divide-y divide-neutral-200 border-t border-neutral-200 px-4 py-2">
+            {group.items.map((s, i) => (
+              <li
+                key={i}
+                className="font-body flex items-start justify-between gap-4 py-2 text-sm text-neutral-700"
+              >
+                <span className="flex-1">{s.name}</span>
+                <span
+                  className="font-caption shrink-0 text-xs font-bold uppercase tracking-[0.12em]"
+                  style={{ color: BRAND }}
+                >
+                  {s.price}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 
 function MedicalCosmetologyContent() {
   return (
