@@ -1872,6 +1872,28 @@ function Index() {
         </div>
       </section>
 
+      {/* Map */}
+      <section className="bg-neutral-950 py-10 md:py-14">
+        <div className="mx-auto max-w-6xl px-6 md:px-8">
+          <div className="mb-6 md:mb-8">
+            <h2 className="font-display text-xl uppercase tracking-[0.08em] text-[#F5C1E2] md:text-2xl">
+              Как добраться
+            </h2>
+            <p className="font-body mt-2 text-sm text-white/70 md:text-base">
+              г. Липецк, ул. Гагарина, д. 45А, 5 этаж
+            </p>
+          </div>
+          <div className="overflow-hidden rounded-xl border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.35)]">
+            <script
+              type="text/javascript"
+              charSet="utf-8"
+              async
+              src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ab9ee1753cb92e83ab8ba25232ea59f804fea405124fc08ebe98e9d61af17ce3b&width=100%25&height=400&lang=ru_RU&scroll=true"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-neutral-950 text-white/70">
         <div className="mx-auto max-w-6xl px-6 py-10 md:px-8 md:py-12">
