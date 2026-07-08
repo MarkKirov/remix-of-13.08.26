@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, ArrowRight, Plus, ChevronUp, ChevronDown } from "lucide-react";
 import heroVideo from "@/assets/komilfo_hero_v2.mp4.asset.json";
 import doctorConsultation from "@/assets/doctor-consultation.jpg.asset.json";
-import productPhilosophy from "@/assets/product-philosophy.png.asset.json";
+import productPhilosophy from "@/assets/injection-beauty.png.asset.json";
 import serviceEsthetic from "@/assets/service_esthetic.png.asset.json";
 import serviceMedical from "@/assets/service_medical.png.asset.json";
 import serviceHardware from "@/assets/service_hardware.png.asset.json";
