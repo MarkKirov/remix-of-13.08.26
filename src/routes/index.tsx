@@ -238,6 +238,17 @@ function ProcedureRow({ procedure }: { procedure: Procedure }) {
               )}
             </div>
 
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                setOpen(false);
+              }}
+              className="relative z-10 mx-auto mb-2 mt-2 flex items-center gap-1.5 rounded-full px-3 py-1.5 font-caption text-[10px] uppercase tracking-[0.14em] text-neutral-500 transition-colors hover:text-neutral-900"
+            >
+              <ChevronUp className="h-3.5 w-3.5" />
+              Свернуть
+            </button>
           </div>
       </div>
     </div>
