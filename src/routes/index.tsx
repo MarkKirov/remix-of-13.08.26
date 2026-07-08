@@ -954,12 +954,12 @@ function SpecialistsBlock() {
   const go = (dir: 1 | -1) => setActive((i) => (i + dir + specialists.length) % specialists.length);
 
   return (
-    <section className="relative bg-neutral-950 py-20 text-white md:py-28">
+    <section className="relative py-20 text-neutral-900 md:py-28" style={{ backgroundColor: "#F0A8DC" }}>
       <div className="mx-auto max-w-7xl px-6 md:px-8 lg:px-12">
         <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-12">
           {/* Текст */}
           <div className="order-2 lg:order-1 lg:col-span-5">
-            <span className="font-caption mb-6 inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-white/50">
+            <span className="font-caption mb-6 inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-neutral-900/70">
               <span className="h-px w-10 bg-current" />
               Наши специалисты
             </span>
@@ -971,24 +971,24 @@ function SpecialistsBlock() {
                   </span>
                 ))}
               </h2>
-              <p className="font-body mt-3 text-base font-light" style={{ color: BRAND }}>
+              <p className="font-body mt-3 text-base font-light text-neutral-900">
                 {s.focus}
               </p>
-              <div className="my-6 h-px bg-white/20 md:my-8" />
+              <div className="my-6 h-px bg-neutral-900/25 md:my-8" />
               <div className="space-y-5">
                 <div>
-                  <p className="font-caption text-[10px] uppercase tracking-[0.18em] text-white/50">
+                  <p className="font-caption text-[10px] uppercase tracking-[0.18em] text-neutral-900/70">
                     Специализация
                   </p>
-                  <p className="font-body mt-1 text-sm font-light leading-relaxed text-white/80">
+                  <p className="font-body mt-1 text-sm font-light leading-relaxed text-neutral-900/85">
                     {s.about}
                   </p>
                 </div>
                 <div>
-                  <p className="font-caption text-[10px] uppercase tracking-[0.18em] text-white/50">
+                  <p className="font-caption text-[10px] uppercase tracking-[0.18em] text-neutral-900/70">
                     Образование
                   </p>
-                  <p className="font-body mt-1 text-sm font-light leading-relaxed text-white/80">
+                  <p className="font-body mt-1 text-sm font-light leading-relaxed text-neutral-900/85">
                     {s.education}
                   </p>
                 </div>
@@ -1011,8 +1011,8 @@ function SpecialistsBlock() {
                 />
               </div>
               <div className="mt-4 text-center">
-                <p className="font-display text-lg text-white">{s.name}</p>
-                <p className="font-caption text-[10px] uppercase tracking-[0.18em] text-white/60">
+                <p className="font-display text-lg text-neutral-900">{s.name}</p>
+                <p className="font-caption text-[10px] uppercase tracking-[0.18em] text-neutral-900/70">
                   {s.role}
                 </p>
               </div>
@@ -1026,7 +1026,7 @@ function SpecialistsBlock() {
                 type="button"
                 aria-label="Предыдущий специалист"
                 onClick={() => go(-1)}
-                className="hidden h-8 w-8 items-center justify-center rounded-full border border-white/30 text-white/60 transition-colors hover:border-white hover:text-white lg:inline-flex"
+                className="hidden h-8 w-8 items-center justify-center rounded-full border border-neutral-900/30 text-neutral-900/70 transition-colors hover:border-neutral-900 hover:text-neutral-900 lg:inline-flex"
               >
                 <ChevronUp className="h-4 w-4" />
               </button>
@@ -1036,7 +1036,7 @@ function SpecialistsBlock() {
                   type="button"
                   aria-label={`Показать ${sp.name}`}
                   onClick={() => setActive(i)}
-                  className={`relative h-12 w-12 overflow-hidden rounded-full transition-all md:h-14 md:w-14 ${i === active ? "ring-2 ring-offset-2 ring-offset-neutral-950" : "opacity-60 hover:opacity-100"}`}
+                  className={`relative h-12 w-12 overflow-hidden rounded-full transition-all md:h-14 md:w-14 ${i === active ? "ring-2 ring-offset-2 ring-offset-[#F0A8DC]" : "opacity-60 hover:opacity-100"}`}
                   style={i === active ? { ["--tw-ring-color" as string]: BRAND } : undefined}
                 >
                   <img
@@ -1050,7 +1050,7 @@ function SpecialistsBlock() {
                 type="button"
                 aria-label="Следующий специалист"
                 onClick={() => go(1)}
-                className="hidden h-8 w-8 items-center justify-center rounded-full border border-white/30 text-white/60 transition-colors hover:border-white hover:text-white lg:inline-flex"
+                className="hidden h-8 w-8 items-center justify-center rounded-full border border-neutral-900/30 text-neutral-900/70 transition-colors hover:border-neutral-900 hover:text-neutral-900 lg:inline-flex"
               >
                 <ChevronDown className="h-4 w-4" />
               </button>
