@@ -1136,6 +1136,24 @@ function Index() {
                       <HardwareCosmetologyContent />
                     </div>
                   </DialogContent>
+                ) : s.title === "Эстетическая\nкосметология" ? (
+                  <DialogContent className="max-h-[90vh] max-w-4xl overflow-y-auto">
+                    <DialogHeader>
+                      <DialogTitle
+                        className="font-display text-2xl md:text-3xl"
+                        style={{ color: BRAND }}
+                      >
+                        Эстетическая косметология
+                      </DialogTitle>
+                      <DialogDescription className="font-body pt-1 text-sm leading-relaxed text-neutral-500">
+                        Выберите процедуру, чтобы увидеть подробности и записаться на приём.
+                      </DialogDescription>
+                    </DialogHeader>
+                    <div className="mt-5">
+                      <EstheticCosmetologyContent />
+                    </div>
+                  </DialogContent>
+
                 ) : (
                   <DialogContent className="max-w-lg">
                     <DialogHeader>
