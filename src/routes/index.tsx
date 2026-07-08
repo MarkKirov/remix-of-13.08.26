@@ -201,6 +201,29 @@ function ProcedureRow({ procedure }: { procedure: Procedure }) {
                   </p>
                 </div>
               )}
+              {procedure.subServices && procedure.subServices.length > 0 && (
+                <div className={procedure.preparations.length > 0 || procedure.device ? "mt-4 border-t border-neutral-200 pt-3" : ""}>
+                  <p className="font-caption mb-2 text-[10px] uppercase tracking-[0.18em] text-neutral-500">
+                    Весь список услуг
+                  </p>
+                  <ul className="divide-y divide-neutral-200">
+                    {procedure.subServices.map((s, i) => (
+                      <li
+                        key={i}
+                        className="font-body flex items-start justify-between gap-4 py-2 text-sm text-neutral-700"
+                      >
+                        <span className="flex-1">{s.name}</span>
+                        <span
+                          className="font-caption shrink-0 text-xs font-bold uppercase tracking-[0.12em]"
+                          style={{ color: BRAND }}
+                        >
+                          {s.price}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </div>
           </div>
       </div>
