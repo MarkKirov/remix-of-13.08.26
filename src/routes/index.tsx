@@ -387,6 +387,7 @@ function ProcedureRow({ procedure }: { procedure: Procedure }) {
         )}
         <button
           type="button"
+          onClick={() => openLead(`Записаться: ${procedure.name}`)}
           className="font-caption ml-2 shrink-0 rounded-full px-4 py-2 text-[10px] font-normal uppercase tracking-[0.14em] text-white transition-colors md:px-5 md:text-[11px]"
           style={{ backgroundColor: BRAND }}
           onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#C24CBA")}
