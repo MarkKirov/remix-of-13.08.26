@@ -16,6 +16,7 @@ import specialist1 from "@/assets/specialist-1.jpg";
 import specialist2 from "@/assets/specialist-2.jpg";
 import specialist3 from "@/assets/specialist-3.jpg";
 import specialist4 from "@/assets/specialist-4.jpg";
+import specialistZhuravleva from "@/assets/specialist-zhuravleva.jpg.asset.json";
 import teamImage from "@/assets/team.jpg.asset.json";
 import {
   Dialog,
@@ -912,12 +913,12 @@ type Specialist = {
 const specialists: Specialist[] = [
   {
     id: 1,
-    name: "Иван Иванов",
-    role: "Врач-косметолог",
-    focus: "Инъекционная косметология, лазерные методики, anti-age медицина.",
-    about: "Более 10 лет клинического опыта. Разрабатывает персональные протоколы омоложения и коррекции эстетических недостатков.",
-    education: "Первый МГМУ им. И.М. Сеченова; повышение квалификации в области лазерной и инъекционной косметологии.",
-    image: specialist1,
+    name: "Журавлёва Евгения",
+    role: "Главный врач, врач-косметолог",
+    focus: "Главный врач центра, врач-косметолог, специалист по лазерным технологиям, инъекционным методикам, методикам нитевого лифтинга APTOS и методике плазмолифтинга, озонотерапевт.",
+    about: "",
+    education: "",
+    image: specialistZhuravleva.url,
   },
   {
     id: 2,
