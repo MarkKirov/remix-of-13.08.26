@@ -1795,7 +1795,7 @@ function Index() {
 
             <div className="mt-8 flex flex-wrap items-center gap-4 md:mt-10">
               <a
-                href="https://vk.com/"
+                href="https://vk.com/mdkomilfolip"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center gap-2 rounded-full border-2 px-5 py-2.5 text-xs font-normal uppercase tracking-[0.1em] transition-all md:px-7 md:py-3 md:text-sm"
