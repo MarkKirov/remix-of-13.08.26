@@ -48,12 +48,15 @@ export const Route = createFileRoute("/")({
 
 const BRAND = "#AE31A6";
 
+type SubService = { name: string; price: string };
+
 type Procedure = {
   name: string;
   price: string;
   preparations: string[];
   detailsLabel?: string;
   device?: string;
+  subServices?: SubService[];
 };
 
 const medicalProcedures: Procedure[] = [
@@ -117,13 +120,32 @@ function ProcedureRow({ procedure }: { procedure: Procedure }) {
           <span className="font-body flex-1 text-sm font-normal text-neutral-900 md:text-base">
             {procedure.name}
           </span>
+        </button>
+        {procedure.subServices ? (
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            className="font-caption hidden shrink-0 rounded-full border px-3 py-1.5 text-[10px] font-normal uppercase tracking-[0.14em] transition-colors md:inline-block"
+            style={{ borderColor: BRAND, color: BRAND }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = BRAND;
+              e.currentTarget.style.color = "#fff";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = "transparent";
+              e.currentTarget.style.color = BRAND;
+            }}
+          >
+            Весь список
+          </button>
+        ) : (
           <span
             className="font-caption hidden shrink-0 text-sm font-bold uppercase tracking-[0.14em] md:inline"
             style={{ color: BRAND }}
           >
             {procedure.price}
           </span>
-        </button>
+        )}
         <button
           type="button"
           className="font-caption ml-2 shrink-0 rounded-full px-4 py-2 text-[10px] font-normal uppercase tracking-[0.14em] text-white transition-colors md:px-5 md:text-[11px]"
@@ -177,6 +199,29 @@ function ProcedureRow({ procedure }: { procedure: Procedure }) {
                   <p className="font-body text-sm text-neutral-700">
                     {procedure.device}
                   </p>
+                </div>
+              )}
+              {procedure.subServices && procedure.subServices.length > 0 && (
+                <div className={procedure.preparations.length > 0 || procedure.device ? "mt-4 border-t border-neutral-200 pt-3" : ""}>
+                  <p className="font-caption mb-2 text-[10px] uppercase tracking-[0.18em] text-neutral-500">
+                    Весь список услуг
+                  </p>
+                  <ul className="divide-y divide-neutral-200">
+                    {procedure.subServices.map((s, i) => (
+                      <li
+                        key={i}
+                        className="font-body flex items-start justify-between gap-4 py-2 text-sm text-neutral-700"
+                      >
+                        <span className="flex-1">{s.name}</span>
+                        <span
+                          className="font-caption shrink-0 text-xs font-bold uppercase tracking-[0.12em]"
+                          style={{ color: BRAND }}
+                        >
+                          {s.price}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               )}
             </div>
@@ -282,6 +327,22 @@ const hardwareProcedures: Procedure[] = [
     detailsLabel: "Аппарат",
     preparations: [],
     device: "HydraFacial",
+    subServices: [
+      { name: "Очищение кожи лица и шеи — программа для мужчин на аппарате HydraFacial® (специальная)", price: "8 500 ₽" },
+      { name: "Очищение кожи лица и шеи — программа лечение пигментации на аппарате HydraFacial®", price: "7 200 ₽" },
+      { name: "Очищение кожи лица и шеи — программа лечение проблемной кожи на аппарате HydraFacial® (с ручной чисткой)", price: "7 200 ₽" },
+      { name: "Очищение кожи лица и шеи — программа очищение и обновление на аппарате HydraFacial® (с гликолевым пилингом)", price: "6 600 ₽" },
+      { name: "Очищение кожи лица и шеи — программа очищение и увлажнение на аппарате HydraFacial® (базовая)", price: "6 000 ₽" },
+      { name: "Очищение кожи лица и шеи — программа очищение, увлажнение и питание на аппарате HydraFacial®", price: "6 600 ₽" },
+      { name: 'Очищение кожи лица и шеи — программа "Перед балом" на аппарате HydraFacial®', price: "6 600 ₽" },
+      { name: "Очищение кожи лица и шеи — программа по телу декольте на аппарате HydraFacial®", price: "4 900 ₽" },
+      { name: "Очищение кожи лица и шеи — программа по телу кисти рук на аппарате HydraFacial®", price: "4 900 ₽" },
+      { name: "Очищение кожи лица и шеи — программа по телу колени на аппарате HydraFacial®", price: "4 900 ₽" },
+      { name: "Очищение кожи лица и шеи — программа по телу локти на аппарате HydraFacial®", price: "4 900 ₽" },
+      { name: "Очищение кожи лица и шеи — программа по телу шея на аппарате HydraFacial®", price: "4 900 ₽" },
+      { name: "Очищение кожи лица и шеи — программа революционное обновление и омоложение на аппарате HydraFacial® (полная программа)", price: "8 500 ₽" },
+      { name: "Очищение кожи лица и шеи — программа экспресс очищение на аппарате HydraFacial® (подготовка к инъекционным и уходовым процедурам)", price: "2 950 ₽" },
+    ],
   },
 ];
 
