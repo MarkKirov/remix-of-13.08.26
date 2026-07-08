@@ -120,33 +120,32 @@ function ProcedureRow({ procedure }: { procedure: Procedure }) {
           <span className="font-body flex-1 text-sm font-normal text-neutral-900 md:text-base">
             {procedure.name}
           </span>
-          {procedure.subServices ? (
-            <span
-              onClick={(e) => {
-                e.stopPropagation();
-                setOpen((v) => !v);
-              }}
-              className="font-caption hidden shrink-0 rounded-full border px-3 py-1.5 text-[10px] font-normal uppercase tracking-[0.14em] transition-colors md:inline-block"
-              style={{ borderColor: BRAND, color: BRAND }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = BRAND;
-                e.currentTarget.style.color = "#fff";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = "transparent";
-                e.currentTarget.style.color = BRAND;
-              }}
-            >
-              Весь список
-            </span>
-          ) : (
-            <span
-              className="font-caption hidden shrink-0 text-sm font-bold uppercase tracking-[0.14em] md:inline"
-              style={{ color: BRAND }}
-            >
-              {procedure.price}
-            </span>
-          )}
+        </button>
+        {procedure.subServices ? (
+          <button
+            type="button"
+            onClick={() => setOpen((v) => !v)}
+            className="font-caption hidden shrink-0 rounded-full border px-3 py-1.5 text-[10px] font-normal uppercase tracking-[0.14em] transition-colors md:inline-block"
+            style={{ borderColor: BRAND, color: BRAND }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.backgroundColor = BRAND;
+              e.currentTarget.style.color = "#fff";
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.backgroundColor = "transparent";
+              e.currentTarget.style.color = BRAND;
+            }}
+          >
+            Весь список
+          </button>
+        ) : (
+          <span
+            className="font-caption hidden shrink-0 text-sm font-bold uppercase tracking-[0.14em] md:inline"
+            style={{ color: BRAND }}
+          >
+            {procedure.price}
+          </span>
+        )}
         <button
           type="button"
           className="font-caption ml-2 shrink-0 rounded-full px-4 py-2 text-[10px] font-normal uppercase tracking-[0.14em] text-white transition-colors md:px-5 md:text-[11px]"
