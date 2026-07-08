@@ -56,7 +56,11 @@ export const Route = createFileRoute("/")({
       },
     ],
   }),
-  component: Index,
+  component: () => (
+    <LeadDialogProvider>
+      <Index />
+    </LeadDialogProvider>
+  ),
 });
 
 const BRAND = "#AE31A6";
