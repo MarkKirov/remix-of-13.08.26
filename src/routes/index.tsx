@@ -965,35 +965,16 @@ function SpecialistsBlock() {
               Наши специалисты
             </span>
             <div>
-              <h2 className="font-display text-3xl font-bold uppercase leading-tight md:text-4xl lg:text-5xl">
+              <h2 className="font-display text-3xl font-black uppercase leading-tight text-neutral-200 md:text-4xl lg:text-5xl">
                 {s.name.split(" ").map((part, i) => (
                   <span key={i} className="block">
                     {part}
                   </span>
                 ))}
               </h2>
-              <p className="font-body mt-3 text-base font-light text-neutral-900">
+              <p className="font-body mt-6 text-base font-light leading-relaxed text-neutral-900">
                 {s.focus}
               </p>
-              <div className="my-6 h-px bg-neutral-900/25 md:my-8" />
-              <div className="space-y-5">
-                <div>
-                  <p className="font-caption text-[10px] uppercase tracking-[0.18em] text-neutral-900/70">
-                    Специализация
-                  </p>
-                  <p className="font-body mt-1 text-sm font-light leading-relaxed text-neutral-900/85">
-                    {s.about}
-                  </p>
-                </div>
-                <div>
-                  <p className="font-caption text-[10px] uppercase tracking-[0.18em] text-neutral-900/70">
-                    Образование
-                  </p>
-                  <p className="font-body mt-1 text-sm font-light leading-relaxed text-neutral-900/85">
-                    {s.education}
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
 
