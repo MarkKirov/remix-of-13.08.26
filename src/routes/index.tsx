@@ -332,6 +332,7 @@ const medicalProcedures: Procedure[] = [
 
 function ProcedureRow({ procedure }: { procedure: Procedure }) {
   const [open, setOpen] = useState(false);
+  const { open: openLead } = useLeadDialog();
   return (
     <div className="group">
       <div
