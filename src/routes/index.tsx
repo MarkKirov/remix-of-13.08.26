@@ -1091,7 +1091,7 @@ function SpecialistsBlock() {
                   loading="lazy"
                   decoding="async"
                   className="h-full w-full object-cover"
-                  style={{ objectPosition: active === 0 ? "center 20%" : active === 1 ? "center 15%" : active === 2 ? "center 15%" : active === 3 ? "center 15%" : active === 4 ? "center 15%" : "center" }}
+                  style={{ objectPosition: "center top" }}
                 />
               </div>
               <button
