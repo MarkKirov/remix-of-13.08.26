@@ -238,19 +238,20 @@ function ProcedureRow({ procedure }: { procedure: Procedure }) {
               )}
             </div>
 
-            <button
-              type="button"
-              onClick={(e) => {
-                e.stopPropagation();
-                setOpen(false);
-              }}
-              className="relative z-10 mx-auto mb-4 mt-2 flex items-center gap-1.5 rounded-full px-3 py-1.5 font-caption text-[10px] uppercase tracking-[0.14em] text-neutral-500 transition-colors hover:text-neutral-900"
-            >
-              <ChevronUp className="h-3.5 w-3.5" />
-              Свернуть
-            </button>
           </div>
       </div>
+
+      {open && (
+        <div
+          role="button"
+          tabIndex={0}
+          onMouseDown={() => setOpen(false)}
+          className="relative z-10 mx-auto mb-1 mt-2 flex cursor-pointer items-center gap-1.5 rounded-full px-3 py-1.5 font-caption text-[10px] uppercase tracking-[0.14em] text-neutral-500 transition-colors hover:text-neutral-900"
+        >
+          <ChevronUp className="h-3.5 w-3.5" />
+          Свернуть
+        </div>
+      )}
     </div>
   );
 }
@@ -286,22 +287,24 @@ const hardwareProcedures: Procedure[] = [
     preparations: ["Выравнивание рельефа кожи", "Улучшение тонуса и текстуры"],
   },
   {
-    name: "Лазерная шлифовка рубцов",
+    name: "Лазерная шлифовка",
     price: "по запросу",
     detailsLabel: "Показания",
     preparations: ["Постакне", "Рубцы", "Растяжки"],
   },
   {
-    name: "СМАС-лифтинг на аппарате Ulthera",
+    name: "СМАС-лифтинг",
     price: "по запросу",
     detailsLabel: "Аппарат",
-    preparations: ["Ulthera — ультразвуковой SMAS-лифтинг"],
+    preparations: [],
+    device: "Ulthera — ультразвуковой SMAS-лифтинг",
   },
   {
-    name: "Фототерапия IPL на аппарате Viora V30",
+    name: "Фототерапия IPL",
     price: "по запросу",
     detailsLabel: "Аппарат",
-    preparations: ["Viora V30 — IPL-фототерапия"],
+    preparations: [],
+    device: "Viora V30 — IPL-фототерапия",
   },
   {
     name: "Аппаратный массаж Icoon Laser Med",
