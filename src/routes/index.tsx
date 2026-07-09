@@ -1396,7 +1396,7 @@ function SpecialistsBlock() {
                   aria-label={`Показать ${sp.name}`}
                   onClick={() => setActive(i)}
                   className={`relative h-12 w-12 overflow-hidden rounded-full transition-all md:h-14 md:w-14 ${i === active ? "ring-2 ring-white ring-offset-2 shadow-[0_0_20px_rgba(174,49,166,0.55)]" : "opacity-60 hover:opacity-100"}`}
-                  style={i === active ? { ["--tw-ring-offset-color" as string]: "#F0A8DC", ["--tw-ring-color" as string]: "#ffffff" } : undefined}
+                  style={i === active ? { ["--tw-ring-offset-color" as string]: "#CFC5E0", ["--tw-ring-color" as string]: "#ffffff" } : undefined}
                 >
                   <img
                     src={sp.image}
