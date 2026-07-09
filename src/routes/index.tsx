@@ -1199,7 +1199,7 @@ const specialists: Specialist[] = [
     focus: "",
     about: "",
     education: "",
-    image: spec5.url,
+    image: specialist1,
   },
   {
     id: 3,
