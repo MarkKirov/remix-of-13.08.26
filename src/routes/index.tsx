@@ -79,6 +79,7 @@ type Procedure = {
   subServices?: SubService[];
   groups?: SubGroup[];
   note?: string;
+  description?: string;
 };
 
 
