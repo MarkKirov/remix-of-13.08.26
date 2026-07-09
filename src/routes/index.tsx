@@ -1039,8 +1039,10 @@ function EstheticCosmetologyContent() {
       </p>
     </div>
   );
+}
 
 const massageProcedures: Procedure[] = [
+
   {
     name: "Ручной эстетический массаж",
     price: "от 600 ₽",
