@@ -926,7 +926,7 @@ const estheticProcedures: Procedure[] = [
   },
   {
     name: "Чистка спины",
-    price: "4 000 ₽",
+    price: "от 4 000 ₽",
     detailsLabel: "Процедура",
     preparations: [],
     subServices: [
@@ -966,7 +966,7 @@ const estheticProcedures: Procedure[] = [
   },
   {
     name: "Окрашивание, коррекция и ламинирование бровей",
-    price: "по запросу",
+    price: "от 450 ₽",
     detailsLabel: "Услуги",
     preparations: [],
     description:
