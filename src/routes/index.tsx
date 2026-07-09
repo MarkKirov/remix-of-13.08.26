@@ -1913,10 +1913,26 @@ function Index() {
       <section className="relative flex min-h-screen flex-col overflow-hidden md:flex-row">
         {/* Левая половина — фон с цветом из бренд-изображения */}
         <div
-          className="flex w-full items-center justify-center px-8 py-16 md:w-1/2 md:px-12 lg:px-20"
-          style={{ backgroundColor: "#cbc1d9" }}
+          className="relative flex w-full items-center justify-center overflow-hidden px-8 py-16 md:w-1/2 md:px-12 lg:px-20"
+          style={{ background: "linear-gradient(160deg, #D6CCE3 0%, #CBC1D9 45%, #B8ADCE 100%)" }}
         >
-          <div className="max-w-xl">
+          {/* Soft dimensional glows */}
+          <div className="pointer-events-none absolute inset-0 opacity-60">
+            <div
+              className="absolute -left-20 top-1/4 h-[30rem] w-[30rem] rounded-full blur-3xl"
+              style={{ background: "radial-gradient(circle, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0) 70%)" }}
+            />
+            <div
+              className="absolute -bottom-32 -right-20 h-[28rem] w-[28rem] rounded-full blur-3xl"
+              style={{ background: "radial-gradient(circle, rgba(174,49,166,0.18) 0%, rgba(174,49,166,0) 70%)" }}
+            />
+            <div
+              className="absolute left-1/2 top-0 h-[22rem] w-[22rem] -translate-x-1/2 rounded-full blur-3xl"
+              style={{ background: "radial-gradient(circle, rgba(203,193,217,0.7) 0%, rgba(203,193,217,0) 70%)" }}
+            />
+          </div>
+
+          <div className="relative z-10 max-w-xl">
             <h2 className="font-display text-2xl leading-[1.15] tracking-[0.01em] text-[#f5f5f5] drop-shadow-[0_2px_12px_rgba(0,0,0,0.15)] md:text-3xl lg:text-4xl">
               Ваше желанное отражение в зеркале —{"\n"}
               это не просто «уколы красоты»
