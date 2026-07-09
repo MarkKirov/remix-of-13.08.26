@@ -1194,15 +1194,6 @@ const specialists: Specialist[] = [
   },
   {
     id: 2,
-    name: "Мамонтова Марина",
-    role: "Врач-косметолог",
-    focus: "",
-    about: "",
-    education: "",
-    image: specialist1,
-  },
-  {
-    id: 3,
     name: "Тонких Ирина",
     role: "Медицинская сестра по косметологии",
     focus: "",
@@ -1211,7 +1202,7 @@ const specialists: Specialist[] = [
     image: specialistTonkih.url,
   },
   {
-    id: 4,
+    id: 3,
     name: "Корабельщикова Анна",
     role: "Медицинская сестра по косметологии",
     focus: "",
@@ -1220,7 +1211,7 @@ const specialists: Specialist[] = [
     image: specialistKorabelshchikova.url,
   },
   {
-    id: 5,
+    id: 4,
     name: "Волокитина Ольга",
     role: "Медицинская сестра процедурного кабинета и кабинета озонотерапии",
     focus: "",
@@ -1229,7 +1220,7 @@ const specialists: Specialist[] = [
     image: specialistVolokitina.url,
   },
   {
-    id: 6,
+    id: 5,
     name: "Сушкова Юлия",
     role: "Администратор-кассир",
     focus: "",
@@ -1238,7 +1229,7 @@ const specialists: Specialist[] = [
     image: specialistSushkova.url,
   },
   {
-    id: 7,
+    id: 6,
     name: "Дмитриевская Анна",
     role: "Медицинская сестра по косметологии",
     focus: "",
@@ -1247,7 +1238,7 @@ const specialists: Specialist[] = [
     image: specDmitrievskaya.url,
   },
   {
-    id: 8,
+    id: 7,
     name: "Моисеенко Мария",
     role: "Администратор",
     focus: "",
@@ -1256,7 +1247,7 @@ const specialists: Specialist[] = [
     image: specMoiseenko.url,
   },
   {
-    id: 9,
+    id: 8,
     name: "Попова Наталья",
     role: "Специалист центра",
     focus: "",
@@ -1265,7 +1256,7 @@ const specialists: Specialist[] = [
     image: specPopova.url,
   },
   {
-    id: 10,
+    id: 9,
     name: "Ирина Евгеньевна",
     role: "Администратор",
     focus: "",
@@ -1274,7 +1265,7 @@ const specialists: Specialist[] = [
     image: specBakhtur.url,
   },
   {
-    id: 11,
+    id: 10,
     name: "Специалист центра",
     role: "Специалист",
     focus: "",
@@ -1283,7 +1274,7 @@ const specialists: Specialist[] = [
     image: spec5.url,
   },
   {
-    id: 12,
+    id: 11,
     name: "Специалист центра",
     role: "Специалист",
     focus: "",
@@ -1292,7 +1283,7 @@ const specialists: Specialist[] = [
     image: spec10.url,
   },
   {
-    id: 13,
+    id: 12,
     name: "Специалист центра",
     role: "Специалист",
     focus: "",
