@@ -20,7 +20,6 @@ import specialistSushkova from "@/assets/specialist-sushkova.jpg.asset.json";
 import specDmitrievskaya from "@/assets/spec-dmitrievskaya.jpg.asset.json";
 import specPopova from "@/assets/spec-popova.jpg.asset.json";
 import spec5 from "@/assets/spec-5.jpg.asset.json";
-import spec5 from "@/assets/spec-5.jpg.asset.json";
 import spec10 from "@/assets/spec-10.jpg.asset.json";
 import spec14 from "@/assets/spec-14.jpg.asset.json";
 import teamImage from "@/assets/team.jpg.asset.json";
