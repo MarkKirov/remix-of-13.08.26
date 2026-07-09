@@ -1301,17 +1301,21 @@ function SpecialistsBlock() {
   return (
     <section
       className="relative overflow-hidden py-20 text-neutral-900 md:py-28"
-      style={{ background: "linear-gradient(135deg, #F0A8DC 0%, #F6C4E3 50%, #EC8BC9 100%)" }}
+      style={{ background: "linear-gradient(135deg, #CFC5E0 0%, #E6DEEF 50%, #B8ADCE 100%)" }}
     >
-      {/* Soft background glows */}
-      <div className="pointer-events-none absolute inset-0 opacity-40">
+      {/* Soft lavender background glows */}
+      <div className="pointer-events-none absolute inset-0 opacity-50">
         <div
           className="absolute -left-32 top-1/4 h-[28rem] w-[28rem] rounded-full blur-3xl"
-          style={{ background: "radial-gradient(circle, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0) 70%)" }}
+          style={{ background: "radial-gradient(circle, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 70%)" }}
         />
         <div
           className="absolute -right-40 bottom-0 h-[32rem] w-[32rem] rounded-full blur-3xl"
-          style={{ background: "radial-gradient(circle, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 70%)" }}
+          style={{ background: "radial-gradient(circle, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0) 70%)" }}
+        />
+        <div
+          className="absolute left-1/3 top-0 h-[24rem] w-[24rem] rounded-full blur-3xl"
+          style={{ background: "radial-gradient(circle, rgba(203,193,217,0.55) 0%, rgba(203,193,217,0) 70%)" }}
         />
       </div>
 
