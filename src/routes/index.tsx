@@ -128,7 +128,7 @@ const medicalProcedures: Procedure[] = [
   },
   {
     name: "Лечение гипергидроза",
-    price: "от 120 ₽ / 1 ед.",
+    price: "от 100 ₽ / 1 ед.",
     preparations: ["Диспорт (Франция)", "Релатокс (Россия)"],
     description:
       "Современная инъекционная процедура для лечения повышенной потливости подмышек, стоп, постоянно холодных и влажных рук. Области повышенного потоотделения обкалывают точечными микроинъекциями препарата Ботокс, Диспорт.",
@@ -609,7 +609,7 @@ function MedicalCosmetologyContent() {
 const hardwareProcedures: Procedure[] = [
   {
     name: "Лазерное удаление папиллом, кератом, фибром",
-    price: "по запросу",
+    price: "от 310 ₽",
     detailsLabel: "Показания",
     preparations: [],
     device: "Fotona (Фотона)",
@@ -669,7 +669,7 @@ const hardwareProcedures: Procedure[] = [
   },
   {
     name: "Аппаратный массаж Icoon Laser Med",
-    price: "от 1 350 ₽",
+    price: "от 1 650 ₽",
     detailsLabel: "Аппарат",
     preparations: [],
     device: "Laser Med",
@@ -702,7 +702,7 @@ const hardwareProcedures: Procedure[] = [
 
   {
     name: "Аппаратный массаж для лица и шеи LPG Mobilift",
-    price: "от 1 000 ₽",
+    price: "от 1 400 ₽",
     detailsLabel: "Аппарат",
     preparations: [],
     device: "LPG Mobilift",
@@ -721,7 +721,7 @@ const hardwareProcedures: Procedure[] = [
   },
   {
     name: "Лазерная эпиляция на аппарате Mediostar Monolith",
-    price: "от 660 ₽",
+    price: "от 1 100 ₽",
     detailsLabel: "Аппарат",
     preparations: [],
     device: "Mediostar Monolith",
