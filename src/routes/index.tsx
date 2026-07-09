@@ -86,42 +86,42 @@ type Procedure = {
 const medicalProcedures: Procedure[] = [
   {
     name: "Ботулинотерапия",
-    price: "150 ₽ / 1 ед.",
+    price: "от 150 ₽ / 1 ед.",
     preparations: ["Диспорт (Франция)", "НовакутанБТА (Корея)", "Релатокс (Россия)"],
     description:
       "Современная инъекционная процедура локального расслабления мимических мышц препаратами на основе очищенного ботулотоксина, направленная на безопасное и эффективное разглаживание морщин с сохранением естественной мимики лица.",
   },
   {
     name: "Биоревитализация. Биорепарация",
-    price: "7 000 ₽",
+    price: "от 6 300 ₽",
     preparations: ["Novacutan (Франция)", "Atlantis (Россия)", "Bellarti (Россия)", "MiraLine (Корея)"],
     description:
       "Подкожные инъекции препарата на основе гиалуроновой кислоты для омоложения, оздоровления и улучшения тонуса кожи.",
   },
   {
     name: "Коллагентерапия",
-    price: "уточняется",
+    price: "от 6 800 ₽",
     preparations: ["Linerase (Италия)", "AgentCol (Италия)", "Сферо гель (Россия)"],
     description:
       "Инъекционная методика, направленная на стимуляцию собственного коллагена кожи для повышения плотности, упругости и естественного омоложения тканей.",
   },
   {
     name: "Контурная пластика и объёмное моделирование лица",
-    price: "уточняется",
+    price: "от 11 000 ₽",
     preparations: ["Belotero (Швейцария)", "QT fill plus (Корея)", "Radiesse (США)"],
     description:
       "Инъекционная коррекция черт лица и восстановление объёмов филлерами на основе гиалуроновой кислоты и гидроксиапатита кальция — для гармоничных, естественных пропорций.",
   },
   {
     name: "Гидрорезерв губ",
-    price: "от 14 250 ₽",
+    price: "от 11 000 ₽",
     preparations: ["Belotero (Швейцария)", "QT fill plus (Корея)"],
     description:
       "Инъекционная процедура глубокого увлажнения губ на основе гиалуроновой кислоты — восстанавливает водный баланс, возвращает мягкость и естественный цвет без изменения объёма.",
   },
   {
     name: "Увеличение объёма губ",
-    price: "от 14 250 ₽",
+    price: "от 11 000 ₽",
     preparations: ["Belotero (Швейцария)", "QT fill plus (Корея)"],
     description:
       "Безопасная инъекционная процедура на основе гиалуроновой кислоты, направленная на эстетическую коррекцию формы, глубокое увлажнение тканей и создание гармоничного, чувственного объёма с сохранением максимально естественного вида ваших губ.",
@@ -365,7 +365,7 @@ const medicalProcedures: Procedure[] = [
   },
   {
     name: "Плазмотерапия Cortexil PRP",
-    price: "уточняется",
+    price: "от 7 150 ₽",
     preparations: ["Cortexil PRP"],
     description:
       "Плазмотерапия Cortexil PRP — это инъекционная процедура, запускающая процесс регенерации, ревитализации (омоложения) кожи, нормализующая тканевое дыхание, водный баланс, стимулирующая выработку фибробластами кожи коллагена, эластина, гиалуроновой кислоты. Благодаря этому кожа молодеет, исчезают морщинки, рубцы, шрамы, пигментные пятна, веснушки. Отмечается подтяжка контура лица.",
@@ -406,31 +406,12 @@ function ProcedureRow({ procedure }: { procedure: Procedure }) {
             {procedure.name}
           </span>
         </button>
-        {procedure.subServices || procedure.groups ? (
-          <button
-            type="button"
-            onClick={() => setOpen((v) => !v)}
-            className="font-caption hidden shrink-0 rounded-full border px-3 py-1.5 text-[10px] font-normal uppercase tracking-[0.14em] transition-colors md:inline-block"
-            style={{ borderColor: BRAND, color: BRAND }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = BRAND;
-              e.currentTarget.style.color = "#fff";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = "transparent";
-              e.currentTarget.style.color = BRAND;
-            }}
-          >
-            Весь список
-          </button>
-        ) : (
-          <span
-            className="font-caption hidden shrink-0 text-sm font-bold uppercase tracking-[0.14em] md:inline"
-            style={{ color: BRAND }}
-          >
-            {procedure.price}
-          </span>
-        )}
+        <span
+          className="font-caption hidden shrink-0 text-sm font-bold uppercase tracking-[0.14em] md:inline"
+          style={{ color: BRAND }}
+        >
+          {procedure.price}
+        </span>
         <button
           type="button"
           onClick={() => openLead(`Записаться: ${procedure.name}`)}
@@ -637,7 +618,7 @@ const hardwareProcedures: Procedure[] = [
   },
   {
     name: "Лазерное удаление сосудов",
-    price: "по запросу",
+    price: "от 3 400 ₽",
     detailsLabel: "Показания",
     preparations: ["Купероз", "Сосудистые звёздочки"],
     description:
@@ -645,7 +626,7 @@ const hardwareProcedures: Procedure[] = [
   },
   {
     name: "Лазерное омоложение",
-    price: "по запросу",
+    price: "от 6 600 ₽",
     detailsLabel: "Эффект",
     preparations: ["Выравнивание рельефа кожи", "Улучшение тонуса и текстуры"],
     description:
@@ -653,7 +634,7 @@ const hardwareProcedures: Procedure[] = [
   },
   {
     name: "Лазерная шлифовка",
-    price: "по запросу",
+    price: "от 1 800 ₽",
     detailsLabel: "Показания",
     preparations: ["Постакне", "Рубцы", "Растяжки"],
     description:
@@ -661,7 +642,7 @@ const hardwareProcedures: Procedure[] = [
   },
   {
     name: "Эстетическая лазерная шлифовка",
-    price: "по запросу",
+    price: "от 5 800 ₽",
     detailsLabel: "Аппарат",
     preparations: [],
     device: "Fotona — эрбиевый YAG-лазер",
@@ -670,7 +651,7 @@ const hardwareProcedures: Procedure[] = [
   },
   {
     name: "СМАС-лифтинг",
-    price: "по запросу",
+    price: "от 13 200 ₽",
     detailsLabel: "Аппарат",
     preparations: [],
     device: "LIFTERA — ультразвуковой SMAS-лифтинг",
@@ -679,7 +660,7 @@ const hardwareProcedures: Procedure[] = [
   },
   {
     name: "Фототерапия IPL",
-    price: "по запросу",
+    price: "от 1 800 ₽",
     detailsLabel: "Аппарат",
     preparations: [],
     device: "Viora V30 — IPL-фототерапия",
@@ -688,7 +669,7 @@ const hardwareProcedures: Procedure[] = [
   },
   {
     name: "Аппаратный массаж Icoon Laser Med",
-    price: "по запросу",
+    price: "от 1 350 ₽",
     detailsLabel: "Аппарат",
     preparations: [],
     device: "Laser Med",
@@ -707,7 +688,7 @@ const hardwareProcedures: Procedure[] = [
   },
   {
     name: "Аппаратный массаж Beauty Liner",
-    price: "по запросу",
+    price: "от 1 350 ₽",
     detailsLabel: "Аппарат",
     preparations: [],
     device: "Beauty Liner",
@@ -721,7 +702,7 @@ const hardwareProcedures: Procedure[] = [
 
   {
     name: "Аппаратный массаж для лица и шеи LPG Mobilift",
-    price: "по запросу",
+    price: "от 1 000 ₽",
     detailsLabel: "Аппарат",
     preparations: [],
     device: "LPG Mobilift",
@@ -731,7 +712,7 @@ const hardwareProcedures: Procedure[] = [
 
   {
     name: "Микротоковая терапия",
-    price: "по запросу",
+    price: "от 900 ₽",
     detailsLabel: "Аппарат",
     preparations: [],
     device: "Аппарат уточняется",
@@ -740,7 +721,7 @@ const hardwareProcedures: Procedure[] = [
   },
   {
     name: "Лазерная эпиляция на аппарате Mediostar Monolith",
-    price: "по запросу",
+    price: "от 660 ₽",
     detailsLabel: "Аппарат",
     preparations: [],
     device: "Mediostar Monolith",
@@ -791,7 +772,7 @@ const hardwareProcedures: Procedure[] = [
   },
   {
     name: "Биостимуляция для коррекции фигуры на аппарате Futura Pro",
-    price: "по запросу",
+    price: "от 900 ₽",
     detailsLabel: "Аппарат",
     preparations: [],
     device: "Futura Pro",
@@ -800,7 +781,7 @@ const hardwareProcedures: Procedure[] = [
   },
   {
     name: "Водная чистка лица HydraFacial",
-    price: "по запросу",
+    price: "от 2 950 ₽",
     detailsLabel: "Аппарат",
     preparations: [],
     device: "HydraFacial",
@@ -827,7 +808,7 @@ const hardwareProcedures: Procedure[] = [
 
   {
     name: "Ультрафонофорез кожи, лица и шеи",
-    price: "по запросу",
+    price: "от 900 ₽",
     detailsLabel: "Аппарат",
     preparations: [],
     device: "Аппарат уточняется",
@@ -945,7 +926,7 @@ const estheticProcedures: Procedure[] = [
   },
   {
     name: "Чистка спины",
-    price: "4 000 ₽",
+    price: "от 4 000 ₽",
     detailsLabel: "Процедура",
     preparations: [],
     subServices: [
@@ -985,7 +966,7 @@ const estheticProcedures: Procedure[] = [
   },
   {
     name: "Окрашивание, коррекция и ламинирование бровей",
-    price: "по запросу",
+    price: "от 450 ₽",
     detailsLabel: "Услуги",
     preparations: [],
     description:
