@@ -1580,10 +1580,10 @@ function Index() {
             </div>
             <div className="flex shrink-0 flex-col items-end text-right">
               <a
-                href="tel:+74742900909"
+                href="tel:89623500909"
                 className="font-display text-sm tracking-[0.04em] text-white transition-colors hover:text-white/80 md:text-base"
               >
-                +7 (4742) 90-09-09
+                8(962)350-09-09
               </a>
               <a
                 href="https://vk.com/mdkomilfolip"
@@ -2210,8 +2210,8 @@ function Index() {
               </a>
             </div>
             <div className="md:text-right">
-              <a href="tel:+74742900909" className="text-2xl font-light text-white hover:opacity-80 md:text-3xl">
-                +7 (4742) 90-09-09
+              <a href="tel:89623500909" className="text-2xl font-light text-white hover:opacity-80 md:text-3xl">
+                8(962)350-09-09
               </a>
               <div className="mt-4">
                 <a
