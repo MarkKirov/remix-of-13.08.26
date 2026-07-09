@@ -1301,17 +1301,21 @@ function SpecialistsBlock() {
   return (
     <section
       className="relative overflow-hidden py-20 text-neutral-900 md:py-28"
-      style={{ background: "linear-gradient(135deg, #F0A8DC 0%, #F6C4E3 50%, #EC8BC9 100%)" }}
+      style={{ background: "linear-gradient(135deg, #CFC5E0 0%, #E6DEEF 50%, #B8ADCE 100%)" }}
     >
-      {/* Soft background glows */}
-      <div className="pointer-events-none absolute inset-0 opacity-40">
+      {/* Soft lavender background glows */}
+      <div className="pointer-events-none absolute inset-0 opacity-50">
         <div
           className="absolute -left-32 top-1/4 h-[28rem] w-[28rem] rounded-full blur-3xl"
-          style={{ background: "radial-gradient(circle, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0) 70%)" }}
+          style={{ background: "radial-gradient(circle, rgba(255,255,255,0.6) 0%, rgba(255,255,255,0) 70%)" }}
         />
         <div
           className="absolute -right-40 bottom-0 h-[32rem] w-[32rem] rounded-full blur-3xl"
-          style={{ background: "radial-gradient(circle, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0) 70%)" }}
+          style={{ background: "radial-gradient(circle, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0) 70%)" }}
+        />
+        <div
+          className="absolute left-1/3 top-0 h-[24rem] w-[24rem] rounded-full blur-3xl"
+          style={{ background: "radial-gradient(circle, rgba(203,193,217,0.55) 0%, rgba(203,193,217,0) 70%)" }}
         />
       </div>
 
@@ -1392,7 +1396,7 @@ function SpecialistsBlock() {
                   aria-label={`Показать ${sp.name}`}
                   onClick={() => setActive(i)}
                   className={`relative h-12 w-12 overflow-hidden rounded-full transition-all md:h-14 md:w-14 ${i === active ? "ring-2 ring-white ring-offset-2 shadow-[0_0_20px_rgba(174,49,166,0.55)]" : "opacity-60 hover:opacity-100"}`}
-                  style={i === active ? { ["--tw-ring-offset-color" as string]: "#F0A8DC", ["--tw-ring-color" as string]: "#ffffff" } : undefined}
+                  style={i === active ? { ["--tw-ring-offset-color" as string]: "#CFC5E0", ["--tw-ring-color" as string]: "#ffffff" } : undefined}
                 >
                   <img
                     src={sp.image}
@@ -1909,10 +1913,26 @@ function Index() {
       <section className="relative flex min-h-screen flex-col overflow-hidden md:flex-row">
         {/* Левая половина — фон с цветом из бренд-изображения */}
         <div
-          className="flex w-full items-center justify-center px-8 py-16 md:w-1/2 md:px-12 lg:px-20"
-          style={{ backgroundColor: "#cbc1d9" }}
+          className="relative flex w-full items-center justify-center overflow-hidden px-8 py-16 md:w-1/2 md:px-12 lg:px-20"
+          style={{ background: "linear-gradient(160deg, #D6CCE3 0%, #CBC1D9 45%, #B8ADCE 100%)" }}
         >
-          <div className="max-w-xl">
+          {/* Soft dimensional glows */}
+          <div className="pointer-events-none absolute inset-0 opacity-60">
+            <div
+              className="absolute -left-20 top-1/4 h-[30rem] w-[30rem] rounded-full blur-3xl"
+              style={{ background: "radial-gradient(circle, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0) 70%)" }}
+            />
+            <div
+              className="absolute -bottom-32 -right-20 h-[28rem] w-[28rem] rounded-full blur-3xl"
+              style={{ background: "radial-gradient(circle, rgba(174,49,166,0.18) 0%, rgba(174,49,166,0) 70%)" }}
+            />
+            <div
+              className="absolute left-1/2 top-0 h-[22rem] w-[22rem] -translate-x-1/2 rounded-full blur-3xl"
+              style={{ background: "radial-gradient(circle, rgba(203,193,217,0.7) 0%, rgba(203,193,217,0) 70%)" }}
+            />
+          </div>
+
+          <div className="relative z-10 max-w-xl">
             <h2 className="font-display text-2xl leading-[1.15] tracking-[0.01em] text-[#f5f5f5] drop-shadow-[0_2px_12px_rgba(0,0,0,0.15)] md:text-3xl lg:text-4xl">
               Ваше желанное отражение в зеркале —{"\n"}
               это не просто «уколы красоты»
