@@ -20,7 +20,7 @@ import specialistSushkova from "@/assets/specialist-sushkova.jpg.asset.json";
 import specDmitrievskaya from "@/assets/spec-dmitrievskaya.jpg.asset.json";
 import specSkachkova from "@/assets/specialist-skachkova.jpg.asset.json";
 import spec5 from "@/assets/spec-5.jpg.asset.json";
-import spec10 from "@/assets/spec-10.jpg.asset.json";
+import specialistDarmira from "@/assets/specialist-darmira.jpg.asset.json";
 import spec14 from "@/assets/spec-14.jpg.asset.json";
 import teamImage from "@/assets/team.jpg.asset.json";
 import teamSlide1 from "@/assets/team-slide-1.jpg.asset.json";
@@ -1250,7 +1250,7 @@ const specialists: Specialist[] = [
     focus: "",
     about: "",
     education: "",
-    image: spec10.url,
+    image: specialistDarmira.url,
   },
   {
     id: 9,
