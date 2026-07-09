@@ -1194,6 +1194,15 @@ const specialists: Specialist[] = [
   },
   {
     id: 2,
+    name: "Мамонтова Марина",
+    role: "Врач-косметолог",
+    focus: "",
+    about: "",
+    education: "",
+    image: spec5.url,
+  },
+  {
+    id: 3,
     name: "Тонких Ирина",
     role: "Медицинская сестра по косметологии",
     focus: "",
