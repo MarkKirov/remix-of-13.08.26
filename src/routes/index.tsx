@@ -1268,7 +1268,7 @@ const specialists: Specialist[] = [
     focus: "",
     about: "",
     education: "",
-    image: spec14.url,
+    image: specialistBescherevnykh.url,
   },
 ];
 
