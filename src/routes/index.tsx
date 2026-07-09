@@ -618,7 +618,7 @@ const hardwareProcedures: Procedure[] = [
   },
   {
     name: "Лазерное удаление сосудов",
-    price: "по запросу",
+    price: "от 3 400 ₽",
     detailsLabel: "Показания",
     preparations: ["Купероз", "Сосудистые звёздочки"],
     description:
@@ -626,7 +626,7 @@ const hardwareProcedures: Procedure[] = [
   },
   {
     name: "Лазерное омоложение",
-    price: "по запросу",
+    price: "от 6 600 ₽",
     detailsLabel: "Эффект",
     preparations: ["Выравнивание рельефа кожи", "Улучшение тонуса и текстуры"],
     description:
@@ -634,7 +634,7 @@ const hardwareProcedures: Procedure[] = [
   },
   {
     name: "Лазерная шлифовка",
-    price: "по запросу",
+    price: "от 1 800 ₽",
     detailsLabel: "Показания",
     preparations: ["Постакне", "Рубцы", "Растяжки"],
     description:
@@ -642,7 +642,7 @@ const hardwareProcedures: Procedure[] = [
   },
   {
     name: "Эстетическая лазерная шлифовка",
-    price: "по запросу",
+    price: "от 5 800 ₽",
     detailsLabel: "Аппарат",
     preparations: [],
     device: "Fotona — эрбиевый YAG-лазер",
@@ -651,7 +651,7 @@ const hardwareProcedures: Procedure[] = [
   },
   {
     name: "СМАС-лифтинг",
-    price: "по запросу",
+    price: "от 13 200 ₽",
     detailsLabel: "Аппарат",
     preparations: [],
     device: "LIFTERA — ультразвуковой SMAS-лифтинг",
@@ -660,7 +660,7 @@ const hardwareProcedures: Procedure[] = [
   },
   {
     name: "Фототерапия IPL",
-    price: "по запросу",
+    price: "от 1 800 ₽",
     detailsLabel: "Аппарат",
     preparations: [],
     device: "Viora V30 — IPL-фототерапия",
@@ -669,7 +669,7 @@ const hardwareProcedures: Procedure[] = [
   },
   {
     name: "Аппаратный массаж Icoon Laser Med",
-    price: "по запросу",
+    price: "от 1 350 ₽",
     detailsLabel: "Аппарат",
     preparations: [],
     device: "Laser Med",
@@ -688,7 +688,7 @@ const hardwareProcedures: Procedure[] = [
   },
   {
     name: "Аппаратный массаж Beauty Liner",
-    price: "по запросу",
+    price: "от 1 350 ₽",
     detailsLabel: "Аппарат",
     preparations: [],
     device: "Beauty Liner",
@@ -702,7 +702,7 @@ const hardwareProcedures: Procedure[] = [
 
   {
     name: "Аппаратный массаж для лица и шеи LPG Mobilift",
-    price: "по запросу",
+    price: "от 1 000 ₽",
     detailsLabel: "Аппарат",
     preparations: [],
     device: "LPG Mobilift",
@@ -712,7 +712,7 @@ const hardwareProcedures: Procedure[] = [
 
   {
     name: "Микротоковая терапия",
-    price: "по запросу",
+    price: "от 900 ₽",
     detailsLabel: "Аппарат",
     preparations: [],
     device: "Аппарат уточняется",
@@ -721,7 +721,7 @@ const hardwareProcedures: Procedure[] = [
   },
   {
     name: "Лазерная эпиляция на аппарате Mediostar Monolith",
-    price: "по запросу",
+    price: "от 660 ₽",
     detailsLabel: "Аппарат",
     preparations: [],
     device: "Mediostar Monolith",
@@ -772,7 +772,7 @@ const hardwareProcedures: Procedure[] = [
   },
   {
     name: "Биостимуляция для коррекции фигуры на аппарате Futura Pro",
-    price: "по запросу",
+    price: "от 900 ₽",
     detailsLabel: "Аппарат",
     preparations: [],
     device: "Futura Pro",
@@ -781,7 +781,7 @@ const hardwareProcedures: Procedure[] = [
   },
   {
     name: "Водная чистка лица HydraFacial",
-    price: "по запросу",
+    price: "от 2 950 ₽",
     detailsLabel: "Аппарат",
     preparations: [],
     device: "HydraFacial",
@@ -808,7 +808,7 @@ const hardwareProcedures: Procedure[] = [
 
   {
     name: "Ультрафонофорез кожи, лица и шеи",
-    price: "по запросу",
+    price: "от 900 ₽",
     detailsLabel: "Аппарат",
     preparations: [],
     device: "Аппарат уточняется",
