@@ -1227,12 +1227,12 @@ const specialists: Specialist[] = [
   },
   {
     id: 6,
-    name: "Попова Наталья",
-    role: "Мастер маникюра и педикюра, медицинская сестра, подолог",
+    name: "Скачкова Людмила",
+    role: "Специалист по эстетическому массажу",
     focus: "",
     about: "",
     education: "",
-    image: specPopova.url,
+    image: specSkachkova.url,
   },
   {
     id: 7,
