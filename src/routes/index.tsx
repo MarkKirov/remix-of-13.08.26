@@ -592,6 +592,9 @@ function MedicalCosmetologyContent() {
       {medicalProcedures.map((p) => (
         <ProcedureRow key={p.name} procedure={p} />
       ))}
+      <p className="font-body px-4 pt-4 text-[11px] leading-relaxed text-neutral-500 md:px-8">
+        Приведённая информация носит справочный характер. Если вам требуется медицинская консультация или постановка диагноза, обратитесь к специалисту.
+      </p>
     </div>
   );
 }
