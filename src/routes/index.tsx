@@ -2210,8 +2210,8 @@ function Index() {
               </a>
             </div>
             <div className="md:text-right">
-              <a href="tel:+74742900909" className="text-2xl font-light text-white hover:opacity-80 md:text-3xl">
-                +7 (4742) 90-09-09
+              <a href="tel:89623500909" className="text-2xl font-light text-white hover:opacity-80 md:text-3xl">
+                8(962)350-09-09
               </a>
               <div className="mt-4">
                 <a
