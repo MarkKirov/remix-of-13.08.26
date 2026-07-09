@@ -406,31 +406,12 @@ function ProcedureRow({ procedure }: { procedure: Procedure }) {
             {procedure.name}
           </span>
         </button>
-        {procedure.subServices || procedure.groups ? (
-          <button
-            type="button"
-            onClick={() => setOpen((v) => !v)}
-            className="font-caption hidden shrink-0 rounded-full border px-3 py-1.5 text-[10px] font-normal uppercase tracking-[0.14em] transition-colors md:inline-block"
-            style={{ borderColor: BRAND, color: BRAND }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.backgroundColor = BRAND;
-              e.currentTarget.style.color = "#fff";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = "transparent";
-              e.currentTarget.style.color = BRAND;
-            }}
-          >
-            Весь список
-          </button>
-        ) : (
-          <span
-            className="font-caption hidden shrink-0 text-sm font-bold uppercase tracking-[0.14em] md:inline"
-            style={{ color: BRAND }}
-          >
-            {procedure.price}
-          </span>
-        )}
+        <span
+          className="font-caption hidden shrink-0 text-sm font-bold uppercase tracking-[0.14em] md:inline"
+          style={{ color: BRAND }}
+        >
+          {procedure.price}
+        </span>
         <button
           type="button"
           onClick={() => openLead(`Записаться: ${procedure.name}`)}
