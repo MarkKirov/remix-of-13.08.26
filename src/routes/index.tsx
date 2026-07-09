@@ -426,6 +426,11 @@ function ProcedureRow({ procedure }: { procedure: Procedure }) {
       >
           <div className="overflow-hidden">
             <div className="mx-4 mt-2 rounded-2xl bg-neutral-100 px-5 py-4 md:mx-8 md:px-6 md:py-5">
+              {procedure.description && (
+                <p className={`font-body text-[13px] leading-relaxed text-neutral-700 md:text-sm${procedure.preparations.length > 0 || procedure.device || procedure.subServices || procedure.groups ? " mb-4 border-b border-neutral-200 pb-4" : ""}`}>
+                  {procedure.description}
+                </p>
+              )}
               {procedure.preparations.length > 0 && (
                 <>
                   <p className="font-caption mb-2 text-[10px] uppercase tracking-[0.18em] text-neutral-500">
