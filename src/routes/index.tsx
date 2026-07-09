@@ -1250,7 +1250,7 @@ const specialists: Specialist[] = [
     focus: "",
     about: "",
     education: "",
-    image: spec10.url,
+    image: specialistDarmira.url,
   },
   {
     id: 9,
