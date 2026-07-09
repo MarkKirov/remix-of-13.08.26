@@ -1395,7 +1395,7 @@ function SpecialistsBlock() {
                   type="button"
                   aria-label={`Показать ${sp.name}`}
                   onClick={() => setActive(i)}
-                  className={`relative h-12 w-12 overflow-hidden rounded-full transition-all md:h-14 md:w-14 ${i === active ? "ring-2 ring-white ring-offset-2 shadow-[0_0_20px_rgba(174,49,166,0.55)]" : "opacity-60 hover:opacity-100"}`}
+                  className={`relative h-12 w-12 overflow-hidden rounded-full transition-all md:h-14 md:w-14 ${i === active ? "ring-2 ring-white ring-offset-2 shadow-[0_0_20px_rgba(122,110,143,0.55)]" : "opacity-60 hover:opacity-100"}`}
                   style={i === active ? { ["--tw-ring-offset-color" as string]: "#CFC5E0", ["--tw-ring-color" as string]: "#ffffff" } : undefined}
                 >
                   <img
@@ -1924,7 +1924,7 @@ function Index() {
             />
             <div
               className="absolute -bottom-32 -right-20 h-[28rem] w-[28rem] rounded-full blur-3xl"
-              style={{ background: "radial-gradient(circle, rgba(174,49,166,0.18) 0%, rgba(174,49,166,0) 70%)" }}
+              style={{ background: "radial-gradient(circle, rgba(122,110,143,0.18) 0%, rgba(122,110,143,0) 70%)" }}
             />
             <div
               className="absolute left-1/2 top-0 h-[22rem] w-[22rem] -translate-x-1/2 rounded-full blur-3xl"
