@@ -1434,7 +1434,7 @@ function TeamTrustBlock() {
             </span>
             <h2 className="font-display text-3xl font-bold uppercase leading-tight text-neutral-900 md:text-4xl lg:text-5xl">
               Ваша лучшая подруга{" "}
-              <span style={{ color: BRAND }}>порекомендует</span> нас.
+              <span style={{ color: BRAND }}>порекомендует</span> нас
             </h2>
             <p className="font-body mt-6 text-base font-light leading-relaxed text-neutral-600 md:text-lg">
               А в вопросе красоты вашей лучшей подругой станет наш специалист. Мы подбираем
