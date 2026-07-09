@@ -64,7 +64,7 @@ export const Route = createFileRoute("/")({
   ),
 });
 
-const BRAND = "#AE31A6";
+const BRAND = "#7A6E8F";
 
 type SubService = { name: string; price: string };
 
@@ -436,7 +436,7 @@ function ProcedureRow({ procedure }: { procedure: Procedure }) {
           onClick={() => openLead(`Записаться: ${procedure.name}`)}
           className="font-caption ml-2 shrink-0 rounded-full px-4 py-2 text-[10px] font-normal uppercase tracking-[0.14em] text-white transition-colors md:px-5 md:text-[11px]"
           style={{ backgroundColor: BRAND }}
-          onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#C24CBA")}
+          onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#5E5470")}
           onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = BRAND)}
         >
           Записаться
@@ -530,7 +530,7 @@ function ProcedureRow({ procedure }: { procedure: Procedure }) {
               {procedure.note && (
                 <div
                   className="mt-4 rounded-xl border-l-2 px-4 py-3"
-                  style={{ borderColor: BRAND, backgroundColor: "rgba(174,49,166,0.06)" }}
+                  style={{ borderColor: BRAND, backgroundColor: "rgba(122,110,143,0.08)" }}
                 >
                   <p className="font-body text-[13px] leading-relaxed text-neutral-700 md:text-sm">
                     {procedure.note}
@@ -1395,7 +1395,7 @@ function SpecialistsBlock() {
                   type="button"
                   aria-label={`Показать ${sp.name}`}
                   onClick={() => setActive(i)}
-                  className={`relative h-12 w-12 overflow-hidden rounded-full transition-all md:h-14 md:w-14 ${i === active ? "ring-2 ring-white ring-offset-2 shadow-[0_0_20px_rgba(174,49,166,0.55)]" : "opacity-60 hover:opacity-100"}`}
+                  className={`relative h-12 w-12 overflow-hidden rounded-full transition-all md:h-14 md:w-14 ${i === active ? "ring-2 ring-white ring-offset-2 shadow-[0_0_20px_rgba(122,110,143,0.55)]" : "opacity-60 hover:opacity-100"}`}
                   style={i === active ? { ["--tw-ring-offset-color" as string]: "#CFC5E0", ["--tw-ring-color" as string]: "#ffffff" } : undefined}
                 >
                   <img
@@ -1447,8 +1447,8 @@ function TeamTrustBlock() {
               className="group mt-8 inline-flex items-center gap-2 rounded-full border-2 px-6 py-3 text-xs font-normal uppercase tracking-[0.1em] text-white transition-all md:mt-10"
               style={{ borderColor: BRAND, backgroundColor: BRAND }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = "#C24CBA";
-                e.currentTarget.style.borderColor = "#C24CBA";
+                e.currentTarget.style.backgroundColor = "#5E5470";
+                e.currentTarget.style.borderColor = "#5E5470";
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.backgroundColor = BRAND;
@@ -1667,8 +1667,8 @@ function Index() {
                           backgroundColor: BRAND,
                         }}
                         onMouseEnter={(e) => {
-                          e.currentTarget.style.backgroundColor = "#C24CBA";
-                          e.currentTarget.style.borderColor = "#C24CBA";
+                          e.currentTarget.style.backgroundColor = "#5E5470";
+                          e.currentTarget.style.borderColor = "#5E5470";
                         }}
                         onMouseLeave={(e) => {
                           e.currentTarget.style.backgroundColor = BRAND;
@@ -1737,7 +1737,7 @@ function Index() {
           decoding="async"
         />
         <div className="absolute inset-0 bg-black/55" />
-        <div className="absolute inset-0 bg-[#AE31A6]/25" />
+        <div className="absolute inset-0 bg-[#7A6E8F]/25" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
 
         <div className="relative z-10 mx-auto flex min-h-[80vh] max-w-5xl flex-col items-center justify-center px-6 py-16 text-center md:px-8 md:py-20">
@@ -1924,7 +1924,7 @@ function Index() {
             />
             <div
               className="absolute -bottom-32 -right-20 h-[28rem] w-[28rem] rounded-full blur-3xl"
-              style={{ background: "radial-gradient(circle, rgba(174,49,166,0.18) 0%, rgba(174,49,166,0) 70%)" }}
+              style={{ background: "radial-gradient(circle, rgba(122,110,143,0.18) 0%, rgba(122,110,143,0) 70%)" }}
             />
             <div
               className="absolute left-1/2 top-0 h-[22rem] w-[22rem] -translate-x-1/2 rounded-full blur-3xl"
@@ -1965,7 +1965,7 @@ function Index() {
           decoding="async"
         />
         <div className="absolute inset-0 bg-black/60" />
-        <div className="absolute inset-0 bg-[#AE31A6]/10" />
+        <div className="absolute inset-0 bg-[#7A6E8F]/10" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/80" />
 
         <div className="relative z-10 mx-auto max-w-6xl px-6 py-20 md:px-8 md:py-28">
@@ -2037,13 +2037,13 @@ function Index() {
         />
         {/* Затемнение с розоватым оттенком */}
         <div className="absolute inset-0 bg-black/35" />
-        <div className="absolute inset-0 bg-[#AE31A6]/10" />
+        <div className="absolute inset-0 bg-[#7A6E8F]/10" />
         <div className="absolute inset-0 bg-gradient-to-l from-black/70 via-black/25 to-transparent" />
 
         {/* Контент */}
         <div className="relative z-10 mx-auto flex min-h-[80vh] max-w-6xl flex-col items-end justify-center px-6 py-16 text-left md:px-8 md:py-20">
           <div className="text-left">
-            <h2 className="font-display max-w-xl whitespace-pre-line text-2xl leading-[1.15] tracking-[0.01em] drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)] md:text-3xl lg:text-4xl" style={{ color: "#F0A8DC" }}>
+            <h2 className="font-display max-w-xl whitespace-pre-line text-2xl leading-[1.15] tracking-[0.01em] drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)] md:text-3xl lg:text-4xl" style={{ color: "#D6CCE3" }}>
               Вы достойны профессионального{"\n"}
               отношения к вашему здоровью
             </h2>
