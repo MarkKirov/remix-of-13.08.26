@@ -1401,6 +1401,14 @@ function SpecialistsBlock() {
 }
 
 function TeamTrustBlock() {
+  const slides = [teamSlide1.url, teamSlide2.url, teamSlide3.url];
+  const [current, setCurrent] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => {
+      setCurrent((c) => (c + 1) % slides.length);
+    }, 4500);
+    return () => clearInterval(id);
+  }, [slides.length]);
   return (
     <section className="relative overflow-hidden bg-white py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-6 md:px-8 lg:px-12">
@@ -1444,16 +1452,27 @@ function TeamTrustBlock() {
           {/* Изображение с плавающей карточкой */}
           <div className="relative lg:col-span-7">
             <div className="relative mx-auto max-w-lg lg:max-w-none">
-              <div className="aspect-[4/5] overflow-hidden rounded-2xl shadow-[0_24px_60px_-20px_rgba(0,0,0,0.25)]">
-                <img
-                  src={teamImage.url}
-                  alt="Команда клиники Комильфо"
-                  width={1024}
-                  height={1280}
-                  loading="lazy"
-                  decoding="async"
-                  className="h-full w-full object-cover"
-                />
+              <div className="relative aspect-[4/5] overflow-hidden rounded-2xl shadow-[0_24px_60px_-20px_rgba(0,0,0,0.25)]">
+                {slides.map((src, i) => (
+                  <img
+                    key={src}
+                    src={src}
+                    alt="Специалисты клиники Комильфо"
+                    width={1024}
+                    height={1280}
+                    loading="lazy"
+                    decoding="async"
+                    className={`absolute inset-0 h-full w-full object-cover transition-opacity duration-[1400ms] ease-in-out ${i === current ? "opacity-100" : "opacity-0"}`}
+                  />
+                ))}
+                <div className="pointer-events-none absolute bottom-4 left-1/2 flex -translate-x-1/2 gap-2">
+                  {slides.map((_, i) => (
+                    <span
+                      key={i}
+                      className={`h-1.5 rounded-full transition-all duration-500 ${i === current ? "w-6 bg-white" : "w-1.5 bg-white/60"}`}
+                    />
+                  ))}
+                </div>
               </div>
               <div className="absolute -bottom-5 -left-5 rounded-2xl bg-white p-4 shadow-[0_16px_40px_-12px_rgba(0,0,0,0.2)] md:-bottom-6 md:-left-6 md:p-5">
                 <p className="font-caption text-[10px] uppercase tracking-[0.14em] text-neutral-500">
