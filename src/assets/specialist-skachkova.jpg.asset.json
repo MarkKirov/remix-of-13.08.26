@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "2c7c5867-7af3-42f8-b007-a7ecc70934c5",
-  "project_id": "b9c26e5c-5749-46b7-bd80-c30262d82227",
-  "url": "/__l5e/assets-v1/2c7c5867-7af3-42f8-b007-a7ecc70934c5/specialist-skachkova.jpg",
-  "r2_key": "a/v1/b9c26e5c-5749-46b7-bd80-c30262d82227/2c7c5867-7af3-42f8-b007-a7ecc70934c5/specialist-skachkova.jpg",
-  "original_filename": "specialist-skachkova.jpg",
-  "size": 2078954,
   "content_type": "image/jpeg",
-  "created_at": "2026-07-09T10:18:31Z"
+  "created_at": "2026-07-09T10:18:31Z",
+  "original_filename": "specialist-skachkova.jpg",
+  "project_id": "9e6cebfd-1a3b-4967-b204-6503712b8588",
+  "r2_key": "a/v1/9e6cebfd-1a3b-4967-b204-6503712b8588/2c7c5867-7af3-42f8-b007-a7ecc70934c5/specialist-skachkova.jpg",
+  "size": 2078954,
+  "url": "/__l5e/assets-v1/2c7c5867-7af3-42f8-b007-a7ecc70934c5/specialist-skachkova.jpg",
+  "version": 1
 }
