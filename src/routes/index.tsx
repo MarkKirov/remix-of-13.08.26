@@ -638,7 +638,7 @@ const hardwareProcedures: Procedure[] = [
   },
 
   {
-    name: "Лазерная шлифовка",
+    name: "Лазерная шлифовка рубцовой ткани на аппарате Fotona эрбиевый YAG лазер",
     price: "от 1 800 ₽",
     detailsLabel: "Показания",
     preparations: ["Постакне", "Рубцы", "Растяжки"],
