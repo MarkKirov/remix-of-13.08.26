@@ -1416,17 +1416,6 @@ function TeamTrustBlock() {
                   MD — «Комильфо»
                 </p>
               </div>
-              <div
-                className="absolute -top-6 -right-4 grid h-28 w-28 place-items-center rounded-2xl text-white shadow-[0_16px_40px_-12px_rgba(0,0,0,0.25)] md:-top-7 md:-right-7 md:h-32 md:w-32"
-                style={{ backgroundColor: BRAND }}
-              >
-                <div className="text-center">
-                  <p className="font-display text-3xl font-bold leading-none md:text-4xl">12+</p>
-                  <p className="font-caption mt-1 text-[8px] uppercase tracking-[0.06em] md:text-[9px] md:tracking-[0.08em]">
-                    специалистов
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
         </div>
