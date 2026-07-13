@@ -2003,6 +2003,7 @@ function Index() {
       {/* Блок наших специалистов */}
       <div id="specialists">
         <SpecialistsBlock />
+        <TeamDisclosureBlock />
       </div>
 
       {/* Экран призыва подписаться на группу ВКонтакте */}
