@@ -22,6 +22,7 @@ import specSkachkova from "@/assets/specialist-skachkova.jpg.asset.json";
 import spec5 from "@/assets/spec-5.jpg.asset.json";
 import specialistDarmira from "@/assets/specialist-darmira.jpg.asset.json";
 import specialistBescherevnykh from "@/assets/specialist-bescherevnykh.jpg.asset.json";
+import specialistMoiseenko from "@/assets/specialist-moiseenko.jpg.asset.json";
 import teamImage from "@/assets/team.jpg.asset.json";
 import teamSlide1 from "@/assets/team-slide-1.jpg.asset.json";
 import teamSlide2 from "@/assets/team-slide-2.jpg.asset.json";
@@ -1116,7 +1117,7 @@ const specialists: Specialist[] = [
   {
     id: 2,
     name: "Мамонтова Марина",
-    role: "Врач-косметолог, специалист по лазерным и инъекционным методикам",
+    role: "Врач дерматолог-венеролог, врач-косметолог, специалист по лазерным и инъекционным методикам",
     focus: "",
     about: "",
     education: "",
@@ -1125,7 +1126,7 @@ const specialists: Specialist[] = [
   {
     id: 3,
     name: "Тонких Ирина",
-    role: "Медицинская сестра по косметологии",
+    role: "Медицинская сестра",
     focus: "",
     about: "",
     education: "",
@@ -1134,7 +1135,7 @@ const specialists: Specialist[] = [
   {
     id: 4,
     name: "Корабельщикова Анна",
-    role: "Медицинская сестра по косметологии",
+    role: "Медицинская сестра",
     focus: "",
     about: "",
     education: "",
@@ -1143,7 +1144,7 @@ const specialists: Specialist[] = [
   {
     id: 5,
     name: "Дмитриевская Анна",
-    role: "Медицинская сестра по косметологии",
+    role: "Медицинская сестра",
     focus: "",
     about: "",
     education: "",
@@ -1193,6 +1194,15 @@ const specialists: Specialist[] = [
     about: "",
     education: "",
     image: specialistBescherevnykh.url,
+  },
+  {
+    id: 11,
+    name: "Моисеенко Мария",
+    role: "Администратор",
+    focus: "",
+    about: "",
+    education: "",
+    image: specialistMoiseenko.url,
   },
 ];
 
