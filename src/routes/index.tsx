@@ -29,6 +29,11 @@ import teamSlide1 from "@/assets/team-slide-1.jpg.asset.json";
 import teamSlide2 from "@/assets/team-slide-2.jpg.asset.json";
 import teamSlide3 from "@/assets/team-slide-3.jpg.asset.json";
 import privacyPolicy from "@/assets/privacy-policy.pdf.asset.json";
+import docFz323 from "@/assets/fz-323.docx.asset.json";
+import docPravila736 from "@/assets/pravila-736.docx.asset.json";
+import docZakon23001 from "@/assets/zakon-2300-1.docx.asset.json";
+import docPostanovlenie2463 from "@/assets/postanovlenie-2463.pdf.asset.json";
+import docPoryadokKosmetologiya from "@/assets/poryadok-kosmetologiya.docx.asset.json";
 import {
   Dialog,
   DialogContent,
@@ -2380,6 +2385,9 @@ function Index() {
               >
                 Политика конфиденциальности
               </a>
+              <div className="mt-4">
+                <ClientsInfoDialog />
+              </div>
             </div>
             <div className="md:text-right">
               <a href="tel:89623500909" className="text-2xl font-light text-white hover:opacity-80 md:text-3xl">
@@ -2399,5 +2407,55 @@ function Index() {
         </div>
       </footer>
     </div>
+  );
+}
+
+const clientDocs: { title: string; url: string }[] = [
+  { title: "Федеральный закон от 21.11.2011 № 323-ФЗ «Об основах охраны здоровья граждан в РФ»", url: docFz323.url },
+  { title: "Правила предоставления платных медицинских услуг, утв. Постановлением Правительства РФ от 11.05.2023 № 736", url: docPravila736.url },
+  { title: "Закон РФ от 07.02.1992 № 2300-1 «О защите прав потребителей»", url: docZakon23001.url },
+  { title: "Постановление Правительства РФ от 31.12.2020 № 2463 «Об утверждении правил продажи товаров по договору розничной купли-продажи»", url: docPostanovlenie2463.url },
+  { title: "Порядок оказания медицинской помощи населению по профилю «косметология»", url: docPoryadokKosmetologiya.url },
+];
+
+function ClientsInfoDialog() {
+  return (
+    <Dialog>
+      <DialogTrigger asChild>
+        <button
+          type="button"
+          className="group inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/5 px-4 py-2 text-[11px] uppercase tracking-[0.18em] text-white/80 transition-all hover:border-white/50 hover:bg-white/10 hover:text-white"
+        >
+          <FileText className="h-3.5 w-3.5" />
+          <span>Для клиентов</span>
+        </button>
+      </DialogTrigger>
+      <DialogContent className="max-w-2xl">
+        <DialogHeader>
+          <DialogTitle className="font-display text-lg uppercase tracking-wide md:text-xl">
+            Для пациентов «МЭЦ «MD-Комильфо»
+          </DialogTitle>
+          <DialogDescription>
+            Федеральное законодательство в сфере охраны здоровья граждан РФ.
+          </DialogDescription>
+        </DialogHeader>
+        <ul className="mt-2 divide-y divide-neutral-900/10">
+          {clientDocs.map((d) => (
+            <li key={d.url}>
+              <a
+                href={d.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-3 py-3 text-sm leading-snug transition-colors hover:opacity-80"
+                style={{ color: BRAND }}
+              >
+                <FileText className="mt-0.5 h-4 w-4 flex-none" />
+                <span className="underline underline-offset-4">{d.title}</span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </DialogContent>
+    </Dialog>
   );
 }
