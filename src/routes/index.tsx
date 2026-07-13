@@ -1330,7 +1330,21 @@ function SpecialistsBlock() {
             </div>
           </div>
         </div>
+
+        {/* Сноска — официальная информация */}
+        <div className="mt-14 flex justify-center md:mt-20">
+          <button
+            type="button"
+            onClick={() => setInfoOpen(true)}
+            className="group inline-flex items-center gap-2 rounded-full border border-neutral-900/25 bg-white/40 px-5 py-2.5 text-[11px] uppercase tracking-[0.18em] text-neutral-900 backdrop-blur-sm transition-all hover:border-neutral-900/60 hover:bg-white/70"
+          >
+            <FileText className="h-3.5 w-3.5" />
+            <span>Официальная информация</span>
+          </button>
+        </div>
       </div>
+
+      <TeamDisclosureDialog open={infoOpen} onClose={() => setInfoOpen(false)} />
     </section>
   );
 }
