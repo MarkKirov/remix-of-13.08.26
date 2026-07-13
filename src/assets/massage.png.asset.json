@@ -1,11 +1,11 @@
 {
-  "asset_id": "f85b20dd-141f-4211-ab0e-e31d3537766a",
-  "content_type": "image/png",
-  "created_at": "2026-07-08T09:24:58Z",
-  "original_filename": "massage.png",
+  "version": 1,
+  "asset_id": "1c2dbd95-d5c4-4512-9fb1-2aafbba3e5aa",
   "project_id": "e3ceabe4-9e55-4854-ae43-f35ddae56b99",
-  "r2_key": "a/v1/e3ceabe4-9e55-4854-ae43-f35ddae56b99/f85b20dd-141f-4211-ab0e-e31d3537766a/massage.png",
-  "size": 2934006,
-  "url": "/__l5e/assets-v1/f85b20dd-141f-4211-ab0e-e31d3537766a/massage.png",
-  "version": 1
+  "url": "/__l5e/assets-v1/1c2dbd95-d5c4-4512-9fb1-2aafbba3e5aa/massage.png",
+  "r2_key": "a/v1/e3ceabe4-9e55-4854-ae43-f35ddae56b99/1c2dbd95-d5c4-4512-9fb1-2aafbba3e5aa/massage.png",
+  "original_filename": "massage.png",
+  "size": 2998021,
+  "content_type": "image/png",
+  "created_at": "2026-07-13T14:13:49Z"
 }
