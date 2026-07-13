@@ -505,16 +505,15 @@ function ProcedureRow({ procedure }: { procedure: Procedure }) {
                   </div>
                 </div>
               )}
-              {procedure.note && (
-                <div
-                  className="mt-4 rounded-xl border-l-2 px-4 py-3"
-                  style={{ borderColor: BRAND, backgroundColor: "rgba(122,110,143,0.08)" }}
-                >
-                  <p className="font-body text-[13px] leading-relaxed text-neutral-700 md:text-sm">
-                    {procedure.note}
-                  </p>
-                </div>
-              )}
+              <div
+                className="mt-4 rounded-xl border-l-2 px-4 py-3"
+                style={{ borderColor: BRAND, backgroundColor: "rgba(122,110,143,0.08)" }}
+              >
+                <p className="font-body text-[13px] leading-relaxed text-neutral-700 md:text-sm">
+                  {procedure.note ??
+                    "Точную цену вы узнаете на первичной консультации. Наш специалист подберёт подходящую услугу, рассчитает стоимость и определит нужное количество процедур."}
+                </p>
+              </div>
             </div>
 
           </div>
