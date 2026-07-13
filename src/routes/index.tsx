@@ -29,6 +29,11 @@ import teamSlide1 from "@/assets/team-slide-1.jpg.asset.json";
 import teamSlide2 from "@/assets/team-slide-2.jpg.asset.json";
 import teamSlide3 from "@/assets/team-slide-3.jpg.asset.json";
 import privacyPolicy from "@/assets/privacy-policy.pdf.asset.json";
+import docFz323 from "@/assets/fz-323.docx.asset.json";
+import docPravila736 from "@/assets/pravila-736.docx.asset.json";
+import docZakon23001 from "@/assets/zakon-2300-1.docx.asset.json";
+import docPostanovlenie2463 from "@/assets/postanovlenie-2463.pdf.asset.json";
+import docPoryadokKosmetologiya from "@/assets/poryadok-kosmetologiya.docx.asset.json";
 import {
   Dialog,
   DialogContent,
