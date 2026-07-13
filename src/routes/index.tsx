@@ -1208,6 +1208,7 @@ const specialists: Specialist[] = [
 
 function SpecialistsBlock() {
   const [active, setActive] = useState(0);
+  const [infoOpen, setInfoOpen] = useState(false);
   const s = specialists[active];
   const go = (dir: 1 | -1) => setActive((i) => (i + dir + specialists.length) % specialists.length);
 
