@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import { ChevronLeft, ChevronRight, ArrowRight, Plus, ChevronUp, ChevronDown } from "lucide-react";
+import { ChevronLeft, ChevronRight, ArrowRight, Plus, ChevronUp, ChevronDown, X, FileText } from "lucide-react";
 import heroVideo from "@/assets/komilfo_hero_v2.mp4.asset.json";
 import doctorConsultation from "@/assets/doctor-consultation.jpg.asset.json";
 import productPhilosophy from "@/assets/injection-beauty.png.asset.json";
@@ -1208,6 +1208,7 @@ const specialists: Specialist[] = [
 
 function SpecialistsBlock() {
   const [active, setActive] = useState(0);
+  const [infoOpen, setInfoOpen] = useState(false);
   const s = specialists[active];
   const go = (dir: 1 | -1) => setActive((i) => (i + dir + specialists.length) % specialists.length);
 
@@ -1329,7 +1330,21 @@ function SpecialistsBlock() {
             </div>
           </div>
         </div>
+
+        {/* Сноска — официальная информация */}
+        <div className="mt-14 flex justify-center md:mt-20">
+          <button
+            type="button"
+            onClick={() => setInfoOpen(true)}
+            className="group inline-flex items-center gap-2 rounded-full border border-neutral-900/25 bg-white/40 px-5 py-2.5 text-[11px] uppercase tracking-[0.18em] text-neutral-900 backdrop-blur-sm transition-all hover:border-neutral-900/60 hover:bg-white/70"
+          >
+            <FileText className="h-3.5 w-3.5" />
+            <span>Официальная информация</span>
+          </button>
+        </div>
       </div>
+
+      <TeamDisclosureDialog open={infoOpen} onClose={() => setInfoOpen(false)} />
     </section>
   );
 }
@@ -1432,23 +1447,56 @@ function DisclosureItem({ title, subtitle, children, defaultOpen = false }: { ti
   );
 }
 
-function TeamDisclosureBlock() {
+function TeamDisclosureDialog({ open, onClose }: { open: boolean; onClose: () => void }) {
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", onKey);
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prev;
+    };
+  }, [open, onClose]);
+
+  if (!open) return null;
+
   return (
-    <section className="relative bg-white py-16 md:py-20">
-      <div className="mx-auto max-w-5xl px-6 md:px-8 lg:px-12">
-        <div className="mb-8 md:mb-10">
-          <span className="font-caption inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-neutral-500">
-            <span className="h-px w-10 bg-current" />
-            Официальная информация
-          </span>
-          <h3 className="font-display mt-4 text-2xl font-bold uppercase leading-tight text-neutral-900 md:text-3xl">
-            О наших сотрудниках
-          </h3>
+    <div
+      className="fixed inset-0 z-[100] flex items-end justify-center bg-black/60 backdrop-blur-sm md:items-center"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+    >
+      <div
+        className="relative max-h-[92vh] w-full max-w-4xl overflow-hidden rounded-t-2xl bg-white shadow-2xl md:rounded-2xl"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="flex items-start justify-between gap-4 border-b border-neutral-900/10 px-5 py-5 md:px-8 md:py-6">
+          <div>
+            <span className="font-caption text-[10px] uppercase tracking-[0.2em] text-neutral-500">
+              Официальная информация
+            </span>
+            <h3 className="font-display mt-2 text-xl font-bold uppercase leading-tight text-neutral-900 md:text-2xl">
+              О наших сотрудниках
+            </h3>
+          </div>
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="Закрыть"
+            className="flex h-9 w-9 flex-none items-center justify-center rounded-full border border-neutral-900/15 text-neutral-700 transition-colors hover:bg-neutral-100"
+          >
+            <X className="h-4 w-4" />
+          </button>
         </div>
 
-        <div className="rounded-2xl border border-neutral-900/10 bg-white px-5 shadow-[0_10px_40px_-24px_rgba(0,0,0,0.2)] md:px-8">
+        <div className="max-h-[calc(92vh-96px)] overflow-y-auto px-5 py-2 md:px-8">
           {/* График работы */}
-          <DisclosureItem title="График работы специалистов" subtitle="Часы приёма и номера кабинетов">
+          <DisclosureItem title="График работы специалистов" subtitle="Часы приёма и номера кабинетов" defaultOpen>
             <div className="overflow-x-auto">
               <table className="w-full border-collapse text-left text-sm">
                 <thead>
@@ -1528,7 +1576,7 @@ function TeamDisclosureBlock() {
           </DisclosureItem>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 
@@ -2201,7 +2249,6 @@ function Index() {
       {/* Блок наших специалистов */}
       <div id="specialists">
         <SpecialistsBlock />
-        <TeamDisclosureBlock />
       </div>
 
       {/* Экран призыва подписаться на группу ВКонтакте */}
