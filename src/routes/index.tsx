@@ -2385,6 +2385,9 @@ function Index() {
               >
                 Политика конфиденциальности
               </a>
+              <div className="mt-4">
+                <ClientsInfoDialog />
+              </div>
             </div>
             <div className="md:text-right">
               <a href="tel:89623500909" className="text-2xl font-light text-white hover:opacity-80 md:text-3xl">
