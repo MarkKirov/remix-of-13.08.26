@@ -11,6 +11,7 @@ import serviceVrachebnaya from "@/assets/service_vrachebnaya.png.asset.json";
 import serviceMassage from "@/assets/massage.png.asset.json";
 import comparisonBg from "@/assets/comparison-bg.png.asset.json";
 import headerLogo from "@/assets/header_logo.svg.asset.json";
+import mdKomilfoLogo from "@/assets/md-komilfo-logo.png.asset.json";
 import consultationBg from "@/assets/consultation-bg.png.asset.json";
 import specialistZhuravleva from "@/assets/specialist-zhuravleva.jpg.asset.json";
 import specialistTonkih from "@/assets/specialist-tonkih.jpg.asset.json";
@@ -1658,9 +1659,11 @@ function TeamTrustBlock() {
                 <p className="font-caption text-[10px] uppercase tracking-[0.14em] text-neutral-500">
                   Наши специалисты
                 </p>
-                <p className="font-display mt-1 text-lg uppercase tracking-wide text-neutral-900 md:text-xl">
-                  MD — «Комильфо»
-                </p>
+                <img
+                  src={mdKomilfoLogo.url}
+                  alt="МД Комильфо"
+                  className="mt-1.5 h-8 w-auto md:h-10"
+                />
               </div>
             </div>
           </div>
