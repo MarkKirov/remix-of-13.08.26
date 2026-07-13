@@ -1334,6 +1334,204 @@ function SpecialistsBlock() {
   );
 }
 
+type ScheduleRow = { name: string; role: string; room: string; hours: string[] };
+const scheduleRows: ScheduleRow[] = [
+  { name: "Журавлева Евгения Владимировна", role: "Главный врач, врач-косметолог", room: "1", hours: ["пн, вт, чт: 09:00–21:00", "пт: 09:00–18:00*"] },
+  { name: "Мамонтова Марина Александровна", role: "Врач-косметолог, врач дерматолог-венеролог", room: "2", hours: ["пн, ср, пт: 09:00–21:00", "сб: 10:00–18:00*"] },
+  { name: "Дмитриевская Анна Ивановна", role: "Медицинская сестра по косметологии", room: "5", hours: ["Сменный график 2/2*"] },
+  { name: "Тонких Ирина Серафимовна", role: "Медицинская сестра по косметологии", room: "7", hours: ["Сменный график 2/2*"] },
+  { name: "Корабельщикова Анна Игоревна", role: "Медицинская сестра по косметологии", room: "5", hours: ["Сменный график 2/2*"] },
+  { name: "Волокитина Ольга Анатольевна", role: "Медицинская сестра", room: "3", hours: ["Сменный график 2/2*"] },
+  { name: "Попова Наталья Александровна", role: "Мастер маникюра и педикюра", room: "4", hours: ["Сменный график 2/2*"] },
+];
+
+type EducationItem = { stage: string; place: string; specialty: string; qualification: string; certificate?: string };
+type EducationEntry = { name: string; role: string; items: EducationItem[] };
+const educationEntries: EducationEntry[] = [
+  {
+    name: "Журавлева Евгения Владимировна",
+    role: "Главный врач, врач-косметолог",
+    items: [
+      { stage: "Высшее", place: "Южно-Казахстанская государственная медицинская академия, 1998 г.", specialty: "Лечебное дело", qualification: "Врач" },
+      { stage: "Интернатура", place: "ГУВППО «Воронежская государственная медицинская академия им. Н.Н. Бурденко», 1999 г.", specialty: "Терапия", qualification: "Врач-терапевт" },
+      { stage: "Профессиональная переподготовка", place: "ГУВППО «Воронежская государственная медицинская академия им. Н.Н. Бурденко», 2003 г.", specialty: "Дерматовенерология", qualification: "Врач-дерматовенеролог", certificate: "Дерматовенерология до 10.03.2025 г." },
+      { stage: "Профессиональная переподготовка", place: "ГОУ ВПО «Воронежская государственная медицинская академия имени Н.Н. Бурденко», 2013 г.", specialty: "Косметология", qualification: "Врач-косметолог", certificate: "Косметология до 06.03.2025 г." },
+      { stage: "Профессиональная переподготовка", place: "ГОУ ВПО «Воронежская государственная медицинская академия имени Н.Н. Бурденко», 2017 г.", specialty: "Организация здравоохранения и общественное здоровье", qualification: "—", certificate: "до 30.10.2025 г." },
+    ],
+  },
+  {
+    name: "Мамонтова Марина Александровна",
+    role: "Врач-косметолог, врач дерматолог-венеролог",
+    items: [
+      { stage: "Высшее", place: "ГОУ ВПО «Воронежская государственная медицинская академия имени Н.Н. Бурденко», 2009 г.", specialty: "Лечебное дело", qualification: "Врач" },
+      { stage: "Интернатура", place: "ГОУ ВПО «Воронежская государственная медицинская академия имени Н.Н. Бурденко», 2010 г.", specialty: "Дерматовенерология", qualification: "Врач-дерматовенеролог", certificate: "Дерматовенерология до 04.03.2025 г." },
+      { stage: "Профессиональная переподготовка", place: "ФГАОУ ВО «РУДН», 2015 г.", specialty: "Косметология", qualification: "Врач-косметолог", certificate: "Косметология до 06.03.2025 г." },
+      { stage: "Профессиональная переподготовка", place: "ООО «ЦСО «ПРОФ-РЕСУРС»», 2019 г.", specialty: "Организация здравоохранения и общественное здоровье", qualification: "—", certificate: "до 30.10.2025 г." },
+    ],
+  },
+  {
+    name: "Ашурбекова Хадижат Халирбагиновна",
+    role: "Медицинская сестра по косметологии",
+    items: [
+      { stage: "Среднее профессиональное", place: "ФГБОУ ВПО «Московский государственный университет путей сообщения», 2014 г.", specialty: "Сестринское дело", qualification: "Медицинская сестра" },
+      { stage: "Профессиональная подготовка", place: "АНО ДПО «ГК Профи», 2020 г.", specialty: "Сестринское дело в косметологии", qualification: "Медицинская сестра по косметологии", certificate: "Сестринское дело в косметологии до 21.12.2025 г." },
+    ],
+  },
+  {
+    name: "Тонких Ирина Серафимовна",
+    role: "Медицинская сестра по косметологии",
+    items: [
+      { stage: "Среднее профессиональное", place: "Липецкое медицинское училище, 1986 г.", specialty: "Медицинская сестра", qualification: "Медицинская сестра" },
+      { stage: "Профессиональная переподготовка", place: "АНО ДПО «ГК Профи», 2020 г.", specialty: "Сестринское дело в косметологии", qualification: "Медицинская сестра по косметологии", certificate: "Сестринское дело в косметологии до 21.12.2025 г." },
+    ],
+  },
+  {
+    name: "Перфилова Анна Игоревна",
+    role: "Медицинская сестра по косметологии",
+    items: [
+      { stage: "Среднее профессиональное", place: "ГАП ОУ «Липецкий медицинский колледж», 2019 г.", specialty: "Акушерское дело", qualification: "Акушерка" },
+      { stage: "Профессиональная переподготовка", place: "ГАП ОУ «Липецкий медицинский колледж», 2019 г.", specialty: "Сестринское дело в косметологии", qualification: "Медицинская сестра по косметологии", certificate: "Сестринское дело в косметологии до 04.07.2024 г." },
+    ],
+  },
+  {
+    name: "Волокитина Ольга Анатольевна",
+    role: "Медицинская сестра",
+    items: [
+      { stage: "Среднее профессиональное", place: "Липецкое медицинское училище Министерства здравоохранения РСФСР, 1983 г.", specialty: "Медицинская сестра", qualification: "Медицинская сестра", certificate: "Сестринское дело до 17.03.2025 г." },
+    ],
+  },
+  {
+    name: "Савина Любовь Николаевна",
+    role: "Медицинская сестра",
+    items: [
+      { stage: "Среднее профессиональное", place: "Узловское медицинское училище, 1978 г.", specialty: "Медицинская сестра", qualification: "Медицинская сестра", certificate: "Сестринское дело до 29.12.2025 г." },
+    ],
+  },
+];
+
+function DisclosureItem({ title, subtitle, children, defaultOpen = false }: { title: string; subtitle?: string; children: React.ReactNode; defaultOpen?: boolean }) {
+  return (
+    <details
+      className="group border-b border-neutral-900/10 last:border-b-0"
+      {...(defaultOpen ? { open: true } : {})}
+    >
+      <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-5 md:py-6">
+        <div className="min-w-0">
+          <p className="font-display text-base uppercase tracking-wide text-neutral-900 md:text-lg">{title}</p>
+          {subtitle ? <p className="font-body mt-1 text-xs font-light text-neutral-900/60 md:text-sm">{subtitle}</p> : null}
+        </div>
+        <span
+          className="flex h-9 w-9 flex-none items-center justify-center rounded-full border border-neutral-900/20 text-neutral-900 transition-transform duration-300 group-open:rotate-180"
+          aria-hidden
+        >
+          <ChevronDown className="h-4 w-4" />
+        </span>
+      </summary>
+      <div className="pb-6 md:pb-8">{children}</div>
+    </details>
+  );
+}
+
+function TeamDisclosureBlock() {
+  return (
+    <section className="relative bg-white py-16 md:py-20">
+      <div className="mx-auto max-w-5xl px-6 md:px-8 lg:px-12">
+        <div className="mb-8 md:mb-10">
+          <span className="font-caption inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-neutral-500">
+            <span className="h-px w-10 bg-current" />
+            Официальная информация
+          </span>
+          <h3 className="font-display mt-4 text-2xl font-bold uppercase leading-tight text-neutral-900 md:text-3xl">
+            О наших сотрудниках
+          </h3>
+        </div>
+
+        <div className="rounded-2xl border border-neutral-900/10 bg-white px-5 shadow-[0_10px_40px_-24px_rgba(0,0,0,0.2)] md:px-8">
+          {/* График работы */}
+          <DisclosureItem title="График работы специалистов" subtitle="Часы приёма и номера кабинетов">
+            <div className="overflow-x-auto">
+              <table className="w-full border-collapse text-left text-sm">
+                <thead>
+                  <tr className="border-b border-neutral-900/10 text-[11px] uppercase tracking-wider text-neutral-500">
+                    <th className="py-3 pr-4 font-medium">ФИО</th>
+                    <th className="py-3 pr-4 font-medium">Должность</th>
+                    <th className="py-3 pr-4 font-medium">Кабинет</th>
+                    <th className="py-3 font-medium">Дата и время</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {scheduleRows.map((r) => (
+                    <tr key={r.name} className="border-b border-neutral-900/5 align-top last:border-b-0">
+                      <td className="py-4 pr-4 font-medium text-neutral-900">{r.name}</td>
+                      <td className="py-4 pr-4 text-neutral-700">{r.role}</td>
+                      <td className="py-4 pr-4 text-neutral-700">{r.room}</td>
+                      <td className="py-4 text-neutral-700">
+                        {r.hours.map((h, i) => (
+                          <div key={i}>{h}</div>
+                        ))}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+            <p className="mt-4 text-xs font-light leading-relaxed text-neutral-500">
+              *Точный график работы специалиста уточняйте у администратора по телефону{" "}
+              <a href="tel:+74742900909" className="whitespace-nowrap font-medium" style={{ color: BRAND }}>
+                8 (4742) 90-09-09
+              </a>
+              .
+            </p>
+          </DisclosureItem>
+
+          {/* Образование */}
+          <DisclosureItem
+            title="Сведения о профессиональном образовании и квалификации"
+            subtitle="Медицинские работники ООО «МЭЦ «Комильфо»"
+          >
+            <div className="space-y-6">
+              {educationEntries.map((e) => (
+                <div key={e.name} className="rounded-xl border border-neutral-900/10 p-4 md:p-5">
+                  <p className="font-display text-sm uppercase tracking-wide text-neutral-900 md:text-base">{e.name}</p>
+                  <p className="font-body mt-1 text-xs font-light text-neutral-500 md:text-sm">{e.role}</p>
+                  <ul className="mt-4 space-y-3">
+                    {e.items.map((it, i) => (
+                      <li key={i} className="grid grid-cols-1 gap-1 border-l-2 pl-4 text-sm md:grid-cols-[180px_1fr] md:gap-4" style={{ borderColor: BRAND }}>
+                        <div className="text-[11px] uppercase tracking-wider text-neutral-500">{it.stage}</div>
+                        <div className="space-y-1 text-neutral-800">
+                          <div>{it.place}</div>
+                          <div className="text-neutral-600">
+                            <span className="font-medium text-neutral-800">Специальность:</span> {it.specialty} · <span className="font-medium text-neutral-800">Квалификация:</span> {it.qualification}
+                          </div>
+                          {it.certificate ? (
+                            <div className="text-xs text-neutral-500">Сертификат / аккредитация: {it.certificate}</div>
+                          ) : null}
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </DisclosureItem>
+
+          {/* Дисклеймер */}
+          <DisclosureItem title="Правовая информация и согласия" subtitle="Публикация фото, видео и персональных данных">
+            <div className="space-y-4 text-sm font-light leading-relaxed text-neutral-700">
+              <p>
+                Публикация фотоизображений и видеоматериалов на сайте осуществляется с письменного согласия субъектов персональных данных, либо фотоизображения и видеоматериалы приобретены в соответствии с договорами позирования граждан за плату, либо сгенерированы с использованием нейросетевых технологий. Указанные изображения в том числе могут быть подвергнуты изменениям при помощи графических редакторов и иных программных продуктов. Копирование, публичное воспроизведение, распространение запрещено.
+              </p>
+              <p>
+                Публикация персональных данных (фамилия, имя, отчество (при наличии) медицинского работника, занимаемая должность; сведения из документа об образовании (уровень образования, организация, выдавшая документ об образовании, год выдачи, специальность, квалификация); сведения из сертификата специалиста (специальность, соответствующая занимаемой должности, срок действия); график работы и часы приёма медицинского работника) осуществляется в соответствии с требованиями Закона РФ от 07.02.1992 № 2300-1 «О защите прав потребителей», Правилами предоставления медицинскими организациями платных медицинских услуг, утв. Постановлением Правительства России от 11.05.2023 г. № 736, Приказа Министерства здравоохранения Российской Федерации от 30 декабря 2014 г. № 956н «Об информации, необходимой для проведения независимой оценки качества оказания услуг медицинскими организациями, и требований к содержанию и форме предоставления информации о деятельности медицинских организаций, размещаемой на официальных сайтах Министерства здравоохранения Российской Федерации, органов государственной власти субъектов Российской Федерации, органов местного самоуправления и медицинских организаций в информационно-телекоммуникационной сети «Интернет», а также на основании письменных согласий субъектов персональных данных. Копирование, публичное воспроизведение, распространение запрещено.
+              </p>
+            </div>
+          </DisclosureItem>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function TeamTrustBlock() {
   const slides = [teamSlide1.url, teamSlide2.url, teamSlide3.url];
   const [current, setCurrent] = useState(0);
@@ -2003,6 +2201,7 @@ function Index() {
       {/* Блок наших специалистов */}
       <div id="specialists">
         <SpecialistsBlock />
+        <TeamDisclosureBlock />
       </div>
 
       {/* Экран призыва подписаться на группу ВКонтакте */}
