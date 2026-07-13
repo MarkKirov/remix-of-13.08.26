@@ -1659,9 +1659,11 @@ function TeamTrustBlock() {
                 <p className="font-caption text-[10px] uppercase tracking-[0.14em] text-neutral-500">
                   Наши специалисты
                 </p>
-                <p className="font-display mt-1 text-lg uppercase tracking-wide text-neutral-900 md:text-xl">
-                  MD — «Комильфо»
-                </p>
+                <img
+                  src={mdKomilfoLogo.url}
+                  alt="МД Комильфо"
+                  className="mt-1.5 h-8 w-auto md:h-10"
+                />
               </div>
             </div>
           </div>
