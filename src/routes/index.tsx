@@ -11,6 +11,7 @@ import serviceVrachebnaya from "@/assets/service_vrachebnaya.png.asset.json";
 import serviceMassage from "@/assets/massage.png.asset.json";
 import comparisonBg from "@/assets/comparison-bg.png.asset.json";
 import headerLogo from "@/assets/header_logo.svg.asset.json";
+import mdKomilfoLogo from "@/assets/md-komilfo-logo.png.asset.json";
 import consultationBg from "@/assets/consultation-bg.png.asset.json";
 import specialistZhuravleva from "@/assets/specialist-zhuravleva.jpg.asset.json";
 import specialistTonkih from "@/assets/specialist-tonkih.jpg.asset.json";
