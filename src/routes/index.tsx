@@ -2432,6 +2432,8 @@ const clientDocs: { title: string; url: string }[] = [
   { title: "Порядок ознакомления пациентов с медицинской документацией", url: docPrikaz789n.url },
   { title: "Порядок и сроки предоставления медицинских документов (их копий) и выписок из них", url: docPrikaz1050n.url },
   { title: "Шаблон заявления для ознакомления с медицинской документацией в помещении медицинской организации", url: docShablonZayavleniya.url },
+  { title: "Шаблон заявления о предоставлении копии медицинской документации", url: docShablonKopiya.url },
+  { title: "Образец заявления пациента на выдачу копии медицинской документации", url: docObrazecKopiya.url },
 ];
 
 function ClientsInfoDialog() {
