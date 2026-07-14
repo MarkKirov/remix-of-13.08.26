@@ -43,6 +43,10 @@ import docPrikaz1050n from "@/assets/prikaz-1050n.docx.asset.json";
 import docShablonZayavleniya from "@/assets/shablon-zayavleniya.pdf.asset.json";
 import docShablonKopiya from "@/assets/shablon-zayavleniya-kopiya.pdf.asset.json";
 import docObrazecKopiya from "@/assets/obrazec-zayavleniya-kopiya.pdf.asset.json";
+import docVidyMedpomoshchi from "@/assets/polozhenie-vidy-medpomoshchi.pdf.asset.json";
+import docPravilaZapisi from "@/assets/pravila-zapisi.pdf.asset.json";
+import docPravilaPodgotovki from "@/assets/pravila-podgotovki.docx.asset.json";
+import docSvedeniyaObrazovanie from "@/assets/svedeniya-obrazovanie.docx.asset.json";
 import {
   Dialog,
   DialogContent,
