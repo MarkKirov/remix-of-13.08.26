@@ -1628,7 +1628,7 @@ function TeamTrustBlock() {
             <p className="font-body mt-6 text-base font-light leading-relaxed text-neutral-600 md:text-lg">
               А в вопросе красоты вашей лучшей подругой станет наш специалист. Мы подбираем
               протоколы, которые сохраняют вашу естественность, и сопровождаем вас на каждом
-              этапе — от первой диагностики до долгосрочной стратегии.
+              приёме.
             </p>
             <button
               type="button"
