@@ -41,6 +41,8 @@ import docKontrolOrgany from "@/assets/kontroliruyushchie-organy.docx.asset.json
 import docPrikaz789n from "@/assets/prikaz-789n.docx.asset.json";
 import docPrikaz1050n from "@/assets/prikaz-1050n.docx.asset.json";
 import docShablonZayavleniya from "@/assets/shablon-zayavleniya.pdf.asset.json";
+import docShablonKopiya from "@/assets/shablon-zayavleniya-kopiya.pdf.asset.json";
+import docObrazecKopiya from "@/assets/obrazec-zayavleniya-kopiya.pdf.asset.json";
 import {
   Dialog,
   DialogContent,
@@ -2430,6 +2432,8 @@ const clientDocs: { title: string; url: string }[] = [
   { title: "Порядок ознакомления пациентов с медицинской документацией", url: docPrikaz789n.url },
   { title: "Порядок и сроки предоставления медицинских документов (их копий) и выписок из них", url: docPrikaz1050n.url },
   { title: "Шаблон заявления для ознакомления с медицинской документацией в помещении медицинской организации", url: docShablonZayavleniya.url },
+  { title: "Шаблон заявления о предоставлении копии медицинской документации", url: docShablonKopiya.url },
+  { title: "Образец заявления пациента на выдачу копии медицинской документации", url: docObrazecKopiya.url },
 ];
 
 function ClientsInfoDialog() {
