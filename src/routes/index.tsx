@@ -2529,6 +2529,30 @@ function ClientsInfoDialog() {
                 <span className="underline underline-offset-4">Федеральный закон от 29.11.2010 № 326-ФЗ «Об обязательном медицинском страховании в Российской Федерации»</span>
               </a>
             </li>
+            <li>
+              <a
+                href="http://publication.pravo.gov.ru/document/0001202512300036"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-3 py-3 text-sm leading-snug transition-colors hover:opacity-80"
+                style={{ color: BRAND }}
+              >
+                <FileText className="mt-0.5 h-4 w-4 flex-none" />
+                <span className="underline underline-offset-4">Постановление Правительства РФ от 29.12.2025 № 2188 «О Программе государственных гарантий бесплатного оказания гражданам медицинской помощи на 2026 год и на плановый период 2027 и 2028 годов»</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://publication.pravo.gov.ru/document/4800202501050001"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-3 py-3 text-sm leading-snug transition-colors hover:opacity-80"
+                style={{ color: BRAND }}
+              >
+                <FileText className="mt-0.5 h-4 w-4 flex-none" />
+                <span className="underline underline-offset-4">Постановление Правительства Липецкой области от 28.12.2024 № 739 «Об утверждении Программы государственных гарантий бесплатного оказания гражданам на территории Липецкой области медицинской помощи на 2025 год и на плановый период 2026 и 2027 годов»</span>
+              </a>
+            </li>
           </ul>
         </div>
       </DialogContent>
