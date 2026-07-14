@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Cookie, X } from "lucide-react";
+import privacyPolicy from "@/assets/privacy-policy.pdf.asset.json";
 
 const STORAGE_KEY = "komilfo_cookie_consent_v1";
 const BRAND = "#AE31A6";
