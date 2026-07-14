@@ -36,6 +36,11 @@ import docPostanovlenie2463 from "@/assets/postanovlenie-2463.pdf.asset.json";
 import docPoryadokKosmetologiya from "@/assets/poryadok-kosmetologiya.docx.asset.json";
 import docPoryadokDermatovenerologiya from "@/assets/poryadok-dermatovenerologiya.docx.asset.json";
 import docPoryadokAkusherstvoGinekologiya from "@/assets/poryadok-akusherstvo-ginekologiya.docx.asset.json";
+import docPamyatkaPrava from "@/assets/pamyatka-prava-pacientov.pdf.asset.json";
+import docKontrolOrgany from "@/assets/kontroliruyushchie-organy.docx.asset.json";
+import docPrikaz789n from "@/assets/prikaz-789n.docx.asset.json";
+import docPrikaz1050n from "@/assets/prikaz-1050n.docx.asset.json";
+import docShablonZayavleniya from "@/assets/shablon-zayavleniya.pdf.asset.json";
 import {
   Dialog,
   DialogContent,
@@ -2420,6 +2425,11 @@ const clientDocs: { title: string; url: string }[] = [
   { title: "Порядок оказания медицинской помощи населению по профилю «косметология»", url: docPoryadokKosmetologiya.url },
   { title: "Порядок оказания медицинской помощи населению по профилю «дерматовенерология»", url: docPoryadokDermatovenerologiya.url },
   { title: "Порядок оказания медицинской помощи населению по профилю «акушерство и гинекология»", url: docPoryadokAkusherstvoGinekologiya.url },
+  { title: "Памятка о правах и обязанностях пациентов", url: docPamyatkaPrava.url },
+  { title: "Сведения о контролирующих органах", url: docKontrolOrgany.url },
+  { title: "Порядок ознакомления пациентов с медицинской документацией", url: docPrikaz789n.url },
+  { title: "Порядок и сроки предоставления медицинских документов (их копий) и выписок из них", url: docPrikaz1050n.url },
+  { title: "Шаблон заявления для ознакомления с медицинской документацией в помещении медицинской организации", url: docShablonZayavleniya.url },
 ];
 
 function ClientsInfoDialog() {
