@@ -2425,6 +2425,11 @@ const clientDocs: { title: string; url: string }[] = [
   { title: "Порядок оказания медицинской помощи населению по профилю «косметология»", url: docPoryadokKosmetologiya.url },
   { title: "Порядок оказания медицинской помощи населению по профилю «дерматовенерология»", url: docPoryadokDermatovenerologiya.url },
   { title: "Порядок оказания медицинской помощи населению по профилю «акушерство и гинекология»", url: docPoryadokAkusherstvoGinekologiya.url },
+  { title: "Памятка о правах и обязанностях пациентов", url: docPamyatkaPrava.url },
+  { title: "Сведения о контролирующих органах", url: docKontrolOrgany.url },
+  { title: "Порядок ознакомления пациентов с медицинской документацией", url: docPrikaz789n.url },
+  { title: "Порядок и сроки предоставления медицинских документов (их копий) и выписок из них", url: docPrikaz1050n.url },
+  { title: "Шаблон заявления для ознакомления с медицинской документацией в помещении медицинской организации", url: docShablonZayavleniya.url },
 ];
 
 function ClientsInfoDialog() {
