@@ -36,6 +36,11 @@ import docPostanovlenie2463 from "@/assets/postanovlenie-2463.pdf.asset.json";
 import docPoryadokKosmetologiya from "@/assets/poryadok-kosmetologiya.docx.asset.json";
 import docPoryadokDermatovenerologiya from "@/assets/poryadok-dermatovenerologiya.docx.asset.json";
 import docPoryadokAkusherstvoGinekologiya from "@/assets/poryadok-akusherstvo-ginekologiya.docx.asset.json";
+import docPamyatkaPrava from "@/assets/pamyatka-prava-pacientov.pdf.asset.json";
+import docKontrolOrgany from "@/assets/kontroliruyushchie-organy.docx.asset.json";
+import docPrikaz789n from "@/assets/prikaz-789n.docx.asset.json";
+import docPrikaz1050n from "@/assets/prikaz-1050n.docx.asset.json";
+import docShablonZayavleniya from "@/assets/shablon-zayavleniya.pdf.asset.json";
 import {
   Dialog,
   DialogContent,
