@@ -2555,6 +2555,37 @@ function ClientsInfoDialog() {
             </li>
           </ul>
         </div>
+        <div className="mt-6">
+          <h4 className="font-display text-base uppercase tracking-wide md:text-lg" style={{ color: BRAND }}>
+            Перечень ЖНВЛП
+          </h4>
+          <ul className="mt-3 divide-y divide-neutral-900/10">
+            <li>
+              <a
+                href="http://publication.pravo.gov.ru/document/0001202512240041"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-3 py-3 text-sm leading-snug transition-colors hover:opacity-80"
+                style={{ color: BRAND }}
+              >
+                <FileText className="mt-0.5 h-4 w-4 flex-none" />
+                <span className="underline underline-offset-4">Перечень ЖНВЛП 2026</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href="http://publication.pravo.gov.ru/document/0001202512240041"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-3 py-3 text-sm leading-snug transition-colors hover:opacity-80"
+                style={{ color: BRAND }}
+              >
+                <FileText className="mt-0.5 h-4 w-4 flex-none" />
+                <span className="underline underline-offset-4">Распоряжение Правительства РФ от 12.10.2019 № 2406-р «Об утверждении перечня жизненно необходимых и важнейших лекарственных препаратов, а также перечней лекарственных препаратов для медицинского применения и минимального ассортимента лекарственных препаратов, необходимых для оказания медицинской помощи»</span>
+              </a>
+            </li>
+          </ul>
+        </div>
       </DialogContent>
     </Dialog>
   );
