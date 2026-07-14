@@ -1748,8 +1748,8 @@ function Index() {
           playsInline
         />
         {/* Затемнение */}
-        <div className="absolute inset-0 bg-black/60" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/70" />
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
 
         <header className="absolute inset-x-0 top-0 z-20 w-full pt-4 md:pt-6">
           <div className="mx-auto flex max-w-6xl items-start px-6 md:px-8">
