@@ -2509,6 +2509,28 @@ function ClientsInfoDialog() {
         <div className="mt-6 rounded-lg border p-4 text-sm leading-relaxed text-neutral-700" style={{ borderColor: `${BRAND}40`, background: `${BRAND}0D` }}>
           <span className="font-semibold" style={{ color: BRAND }}>Важно!</span> Уважаемые пациенты! Администрация «Медико-эстетического центра «MD-Комильфо» уведомляет Вас о том, что несоблюдение указаний и рекомендаций специалиста центра, предоставляющего вам платную медицинскую услугу, а также нарушение назначенного вам режима лечения, могут снизить качество предоставляемой медицинской услуги, а также повлечь за собой невозможность её завершения в срок или отрицательно сказаться на состоянии вашего здоровья.
         </div>
+        <div className="mt-6">
+          <h4 className="font-display text-base uppercase tracking-wide md:text-lg" style={{ color: BRAND }}>
+            Программа государственных гарантий
+          </h4>
+          <p className="mt-2 text-sm leading-relaxed text-neutral-700">
+            Уважаемые клиенты, уведомляем вас о том, что в настоящее время «Медико-эстетический центр «MD-Комильфо» не предоставляет медицинские услуги в рамках программы государственных гарантий бесплатного оказания гражданам медицинской помощи. Все услуги центра предоставляются исключительно на возмездной основе.
+          </p>
+          <ul className="mt-3 divide-y divide-neutral-900/10">
+            <li>
+              <a
+                href={docFz326.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-3 py-3 text-sm leading-snug transition-colors hover:opacity-80"
+                style={{ color: BRAND }}
+              >
+                <FileText className="mt-0.5 h-4 w-4 flex-none" />
+                <span className="underline underline-offset-4">Федеральный закон от 29.11.2010 № 326-ФЗ «Об обязательном медицинском страховании в Российской Федерации»</span>
+              </a>
+            </li>
+          </ul>
+        </div>
       </DialogContent>
     </Dialog>
   );
