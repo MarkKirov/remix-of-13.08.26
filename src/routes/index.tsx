@@ -2614,7 +2614,7 @@ function ClientsInfoDialog() {
                 style={{ color: BRAND }}
               >
                 <FileText className="mt-0.5 h-4 w-4 flex-none" />
-                <span className="underline underline-offset-4">Прайс-лист Клиники Комильфо</span>
+                <span className="underline underline-offset-4">Прайс 2026</span>
               </a>
             </li>
           </ul>
