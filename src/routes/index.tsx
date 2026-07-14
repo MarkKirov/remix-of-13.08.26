@@ -47,6 +47,7 @@ import docVidyMedpomoshchi from "@/assets/polozhenie-vidy-medpomoshchi.pdf.asset
 import docPravilaZapisi from "@/assets/pravila-zapisi.pdf.asset.json";
 import docPravilaPodgotovki from "@/assets/pravila-podgotovki.docx.asset.json";
 import docSvedeniyaObrazovanie from "@/assets/svedeniya-obrazovanie.docx.asset.json";
+import docFz326 from "@/assets/fz-326.docx.asset.json";
 import {
   Dialog,
   DialogContent,
