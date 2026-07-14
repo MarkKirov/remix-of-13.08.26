@@ -43,6 +43,10 @@ import docPrikaz1050n from "@/assets/prikaz-1050n.docx.asset.json";
 import docShablonZayavleniya from "@/assets/shablon-zayavleniya.pdf.asset.json";
 import docShablonKopiya from "@/assets/shablon-zayavleniya-kopiya.pdf.asset.json";
 import docObrazecKopiya from "@/assets/obrazec-zayavleniya-kopiya.pdf.asset.json";
+import docVidyMedpomoshchi from "@/assets/polozhenie-vidy-medpomoshchi.pdf.asset.json";
+import docPravilaZapisi from "@/assets/pravila-zapisi.pdf.asset.json";
+import docPravilaPodgotovki from "@/assets/pravila-podgotovki.docx.asset.json";
+import docSvedeniyaObrazovanie from "@/assets/svedeniya-obrazovanie.docx.asset.json";
 import {
   Dialog,
   DialogContent,
@@ -2436,6 +2440,13 @@ const clientDocs: { title: string; url: string }[] = [
   { title: "Образец заявления пациента на выдачу копии медицинской документации", url: docObrazecKopiya.url },
 ];
 
+const localDocs: { title: string; url: string }[] = [
+  { title: "О видах медицинской помощи, оказываемой Медико-эстетическим центром «Комильфо»", url: docVidyMedpomoshchi.url },
+  { title: "Правила записи на первичный приём", url: docPravilaZapisi.url },
+  { title: "Правила подготовки к исследованиям", url: docPravilaPodgotovki.url },
+  { title: "Сведения об образовании / сертификаты сотрудников", url: docSvedeniyaObrazovanie.url },
+];
+
 function ClientsInfoDialog() {
   return (
     <Dialog>
@@ -2448,7 +2459,7 @@ function ClientsInfoDialog() {
           <span>Для клиентов</span>
         </button>
       </DialogTrigger>
-      <DialogContent className="max-w-2xl">
+      <DialogContent className="max-w-2xl max-h-[85vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="font-display text-lg uppercase tracking-wide md:text-xl">
             Для пациентов «МЭЦ «MD-Комильфо»
@@ -2473,6 +2484,30 @@ function ClientsInfoDialog() {
             </li>
           ))}
         </ul>
+        <div className="mt-6">
+          <h4 className="font-display text-sm uppercase tracking-wide" style={{ color: BRAND }}>
+            Локальные нормативно-правовые акты, разработанные администрацией «МЭЦ «MD-Комильфо», в целях наиболее качественного оказания медицинских услуг
+          </h4>
+          <ul className="mt-2 divide-y divide-neutral-900/10">
+            {localDocs.map((d) => (
+              <li key={d.url}>
+                <a
+                  href={d.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-3 py-3 text-sm leading-snug transition-colors hover:opacity-80"
+                  style={{ color: BRAND }}
+                >
+                  <FileText className="mt-0.5 h-4 w-4 flex-none" />
+                  <span className="underline underline-offset-4">{d.title}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="mt-6 rounded-lg border p-4 text-sm leading-relaxed text-neutral-700" style={{ borderColor: `${BRAND}40`, background: `${BRAND}0D` }}>
+          <span className="font-semibold" style={{ color: BRAND }}>Важно!</span> Уважаемые пациенты! Администрация «Медико-эстетического центра «MD-Комильфо» уведомляет Вас о том, что несоблюдение указаний и рекомендаций специалиста центра, предоставляющего вам платную медицинскую услугу, а также нарушение назначенного вам режима лечения, могут снизить качество предоставляемой медицинской услуги, а также повлечь за собой невозможность её завершения в срок или отрицательно сказаться на состоянии вашего здоровья.
+        </div>
       </DialogContent>
     </Dialog>
   );
