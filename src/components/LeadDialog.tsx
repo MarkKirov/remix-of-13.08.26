@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "sonner";
+import privacyPolicy from "@/assets/privacy-policy.pdf.asset.json";
 
 const BRAND = "#AE31A6";
 
@@ -123,7 +124,12 @@ export function LeadDialogProvider({ children }: { children: ReactNode }) {
                 />
                 <span className="font-body text-xs leading-relaxed text-neutral-600">
                   Согласен(а) с обработкой персональных данных и{" "}
-                  <a href="#" className="underline decoration-neutral-400 underline-offset-2 hover:text-neutral-900">
+                  <a
+                    href={privacyPolicy.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline decoration-neutral-400 underline-offset-2 hover:text-neutral-900"
+                  >
                     политикой конфиденциальности
                   </a>
                 </span>
