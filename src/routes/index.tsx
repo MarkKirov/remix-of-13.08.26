@@ -41,6 +41,8 @@ import docKontrolOrgany from "@/assets/kontroliruyushchie-organy.docx.asset.json
 import docPrikaz789n from "@/assets/prikaz-789n.docx.asset.json";
 import docPrikaz1050n from "@/assets/prikaz-1050n.docx.asset.json";
 import docShablonZayavleniya from "@/assets/shablon-zayavleniya.pdf.asset.json";
+import docShablonKopiya from "@/assets/shablon-zayavleniya-kopiya.pdf.asset.json";
+import docObrazecKopiya from "@/assets/obrazec-zayavleniya-kopiya.pdf.asset.json";
 import {
   Dialog,
   DialogContent,
