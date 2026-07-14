@@ -34,6 +34,8 @@ import docPravila736 from "@/assets/pravila-736.docx.asset.json";
 import docZakon23001 from "@/assets/zakon-2300-1.docx.asset.json";
 import docPostanovlenie2463 from "@/assets/postanovlenie-2463.pdf.asset.json";
 import docPoryadokKosmetologiya from "@/assets/poryadok-kosmetologiya.docx.asset.json";
+import docPoryadokDermatovenerologiya from "@/assets/poryadok-dermatovenerologiya.docx.asset.json";
+import docPoryadokAkusherstvoGinekologiya from "@/assets/poryadok-akusherstvo-ginekologiya.docx.asset.json";
 import {
   Dialog,
   DialogContent,
