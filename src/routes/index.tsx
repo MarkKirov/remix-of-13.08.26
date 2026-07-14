@@ -34,6 +34,8 @@ import docPravila736 from "@/assets/pravila-736.docx.asset.json";
 import docZakon23001 from "@/assets/zakon-2300-1.docx.asset.json";
 import docPostanovlenie2463 from "@/assets/postanovlenie-2463.pdf.asset.json";
 import docPoryadokKosmetologiya from "@/assets/poryadok-kosmetologiya.docx.asset.json";
+import docPoryadokDermatovenerologiya from "@/assets/poryadok-dermatovenerologiya.docx.asset.json";
+import docPoryadokAkusherstvoGinekologiya from "@/assets/poryadok-akusherstvo-ginekologiya.docx.asset.json";
 import {
   Dialog,
   DialogContent,
@@ -2416,6 +2418,8 @@ const clientDocs: { title: string; url: string }[] = [
   { title: "Закон РФ от 07.02.1992 № 2300-1 «О защите прав потребителей»", url: docZakon23001.url },
   { title: "Постановление Правительства РФ от 31.12.2020 № 2463 «Об утверждении правил продажи товаров по договору розничной купли-продажи»", url: docPostanovlenie2463.url },
   { title: "Порядок оказания медицинской помощи населению по профилю «косметология»", url: docPoryadokKosmetologiya.url },
+  { title: "Порядок оказания медицинской помощи населению по профилю «дерматовенерология»", url: docPoryadokDermatovenerologiya.url },
+  { title: "Порядок оказания медицинской помощи населению по профилю «акушерство и гинекология»", url: docPoryadokAkusherstvoGinekologiya.url },
 ];
 
 function ClientsInfoDialog() {
