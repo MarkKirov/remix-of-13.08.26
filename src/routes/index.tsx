@@ -2440,6 +2440,13 @@ const clientDocs: { title: string; url: string }[] = [
   { title: "Образец заявления пациента на выдачу копии медицинской документации", url: docObrazecKopiya.url },
 ];
 
+const localDocs: { title: string; url: string }[] = [
+  { title: "О видах медицинской помощи, оказываемой Медико-эстетическим центром «Комильфо»", url: docVidyMedpomoshchi.url },
+  { title: "Правила записи на первичный приём", url: docPravilaZapisi.url },
+  { title: "Правила подготовки к исследованиям", url: docPravilaPodgotovki.url },
+  { title: "Сведения об образовании / сертификаты сотрудников", url: docSvedeniyaObrazovanie.url },
+];
+
 function ClientsInfoDialog() {
   return (
     <Dialog>
