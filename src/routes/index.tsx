@@ -49,6 +49,7 @@ import docPravilaPodgotovki from "@/assets/pravila-podgotovki.docx.asset.json";
 import docSvedeniyaObrazovanie from "@/assets/svedeniya-obrazovanie.docx.asset.json";
 import docFz326 from "@/assets/fz-326.docx.asset.json";
 import docPostanovlenie890 from "@/assets/postanovlenie-890.pdf.asset.json";
+import docPraysKomilfo from "@/assets/prays-komilfo.xls.asset.json";
 import {
   Dialog,
   DialogContent,
@@ -2595,6 +2596,25 @@ function ClientsInfoDialog() {
               >
                 <FileText className="mt-0.5 h-4 w-4 flex-none" />
                 <span className="underline underline-offset-4">Постановление Правительства РФ от 30.07.1994 № 890 «О государственной поддержке развития медицинской промышленности и улучшении обеспечения населения и учреждений здравоохранения лекарственными средствами и изделиями медицинского назначения»</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div className="mt-6">
+          <h4 className="font-display text-base uppercase tracking-wide md:text-lg" style={{ color: BRAND }}>
+            Прайс
+          </h4>
+          <ul className="mt-3 divide-y divide-neutral-900/10">
+            <li>
+              <a
+                href={docPraysKomilfo.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-3 py-3 text-sm leading-snug transition-colors hover:opacity-80"
+                style={{ color: BRAND }}
+              >
+                <FileText className="mt-0.5 h-4 w-4 flex-none" />
+                <span className="underline underline-offset-4">Прайс-лист Клиники Комильфо</span>
               </a>
             </li>
           </ul>
