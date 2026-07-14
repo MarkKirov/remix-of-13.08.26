@@ -48,6 +48,7 @@ import docPravilaZapisi from "@/assets/pravila-zapisi.pdf.asset.json";
 import docPravilaPodgotovki from "@/assets/pravila-podgotovki.docx.asset.json";
 import docSvedeniyaObrazovanie from "@/assets/svedeniya-obrazovanie.docx.asset.json";
 import docFz326 from "@/assets/fz-326.docx.asset.json";
+import docPostanovlenie890 from "@/assets/postanovlenie-890.pdf.asset.json";
 import {
   Dialog,
   DialogContent,
@@ -2582,6 +2583,18 @@ function ClientsInfoDialog() {
               >
                 <FileText className="mt-0.5 h-4 w-4 flex-none" />
                 <span className="underline underline-offset-4">Распоряжение Правительства РФ от 12.10.2019 № 2406-р «Об утверждении перечня жизненно необходимых и важнейших лекарственных препаратов, а также перечней лекарственных препаратов для медицинского применения и минимального ассортимента лекарственных препаратов, необходимых для оказания медицинской помощи»</span>
+              </a>
+            </li>
+            <li>
+              <a
+                href={docPostanovlenie890.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-3 py-3 text-sm leading-snug transition-colors hover:opacity-80"
+                style={{ color: BRAND }}
+              >
+                <FileText className="mt-0.5 h-4 w-4 flex-none" />
+                <span className="underline underline-offset-4">Постановление Правительства РФ от 30.07.1994 № 890 «О государственной поддержке развития медицинской промышленности и улучшении обеспечения населения и учреждений здравоохранения лекарственными средствами и изделиями медицинского назначения»</span>
               </a>
             </li>
           </ul>
