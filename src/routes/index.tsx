@@ -48,6 +48,7 @@ import docPravilaZapisi from "@/assets/pravila-zapisi.pdf.asset.json";
 import docPravilaPodgotovki from "@/assets/pravila-podgotovki.docx.asset.json";
 import docSvedeniyaObrazovanie from "@/assets/svedeniya-obrazovanie.docx.asset.json";
 import docFz326 from "@/assets/fz-326.docx.asset.json";
+import docPostanovlenie890 from "@/assets/postanovlenie-890.pdf.asset.json";
 import {
   Dialog,
   DialogContent,
