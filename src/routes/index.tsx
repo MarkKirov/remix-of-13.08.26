@@ -2418,6 +2418,8 @@ const clientDocs: { title: string; url: string }[] = [
   { title: "Закон РФ от 07.02.1992 № 2300-1 «О защите прав потребителей»", url: docZakon23001.url },
   { title: "Постановление Правительства РФ от 31.12.2020 № 2463 «Об утверждении правил продажи товаров по договору розничной купли-продажи»", url: docPostanovlenie2463.url },
   { title: "Порядок оказания медицинской помощи населению по профилю «косметология»", url: docPoryadokKosmetologiya.url },
+  { title: "Порядок оказания медицинской помощи населению по профилю «дерматовенерология»", url: docPoryadokDermatovenerologiya.url },
+  { title: "Порядок оказания медицинской помощи населению по профилю «акушерство и гинекология»", url: docPoryadokAkusherstvoGinekologiya.url },
 ];
 
 function ClientsInfoDialog() {
