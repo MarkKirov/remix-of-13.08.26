@@ -1166,6 +1166,15 @@ const specialists: Specialist[] = [
   },
   {
     id: 5,
+    name: "Попова Наталья",
+    role: "Медицинская сестра, подолог, специалист по маникюру и педикюру",
+    focus: "",
+    about: "",
+    education: "",
+    image: specialistPopova.url,
+  },
+  {
+    id: 6,
     name: "Дмитриевская Анна",
     role: "Медицинская сестра по косметологии",
     focus: "",
@@ -1174,7 +1183,7 @@ const specialists: Specialist[] = [
     image: specDmitrievskaya.url,
   },
   {
-    id: 6,
+    id: 7,
     name: "Скачкова Людмила",
     role: "Специалист по эстетическому массажу",
     focus: "",
@@ -1183,7 +1192,7 @@ const specialists: Specialist[] = [
     image: specSkachkova.url,
   },
   {
-    id: 7,
+    id: 8,
     name: "Волокитина Ольга",
     role: "Медицинская сестра процедурного кабинета",
     focus: "",
@@ -1192,7 +1201,7 @@ const specialists: Specialist[] = [
     image: specialistVolokitina.url,
   },
   {
-    id: 8,
+    id: 9,
     name: "Дармина Марина",
     role: "Медицинская сестра процедурного кабинета",
     focus: "",
@@ -1201,7 +1210,7 @@ const specialists: Specialist[] = [
     image: specialistDarmira.url,
   },
   {
-    id: 9,
+    id: 10,
     name: "Сушкова Юлия",
     role: "Администратор",
     focus: "",
@@ -1210,7 +1219,7 @@ const specialists: Specialist[] = [
     image: specialistSushkova.url,
   },
   {
-    id: 10,
+    id: 11,
     name: "Бесчеревных Ирина",
     role: "Администратор",
     focus: "",
@@ -1219,22 +1228,13 @@ const specialists: Specialist[] = [
     image: specialistBescherevnykh.url,
   },
   {
-    id: 11,
+    id: 12,
     name: "Моисеенко Мария",
     role: "Администратор",
     focus: "",
     about: "",
     education: "",
     image: specialistMoiseenko.url,
-  },
-  {
-    id: 12,
-    name: "Попова Наталья",
-    role: "Медицинская сестра, подолог, специалист по маникюру и педикюру",
-    focus: "",
-    about: "",
-    education: "",
-    image: specialistPopova.url,
   },
 ];
 
