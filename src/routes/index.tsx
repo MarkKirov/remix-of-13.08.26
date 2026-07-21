@@ -1636,7 +1636,7 @@ function TeamTrustBlock() {
               <span style={{ color: BRAND }}>порекомендует</span> нас
             </h2>
             <p className="font-body mt-6 text-base font-light leading-relaxed text-neutral-600 md:text-lg">
-              А в вопросе красоты вашей лучшей подругой станет наш специалистом. Мы подберём
+              А в вопросе красоты вашей лучшей подругой станет наш специалист. Мы подберём
               протоколы, которые сохранят вашу естественность.
             </p>
             <button
