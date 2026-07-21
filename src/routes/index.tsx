@@ -24,6 +24,7 @@ import spec5 from "@/assets/spec-5.jpg.asset.json";
 import specialistDarmira from "@/assets/specialist-darmira.jpg.asset.json";
 import specialistBescherevnykh from "@/assets/specialist-bescherevnykh.jpg.asset.json";
 import specialistMoiseenko from "@/assets/specialist-moiseenko.jpg.asset.json";
+import specialistPopova from "@/assets/specialist-popova.jpg.asset.json";
 import teamImage from "@/assets/team.jpg.asset.json";
 import teamSlide1 from "@/assets/team-slide-1.jpg.asset.json";
 import teamSlide2 from "@/assets/team-slide-2.jpg.asset.json";
@@ -1226,6 +1227,15 @@ const specialists: Specialist[] = [
     education: "",
     image: specialistMoiseenko.url,
   },
+  {
+    id: 12,
+    name: "Попова Наталья",
+    role: "Медицинская сестра, подолог, специалист по маникюру и педикюру",
+    focus: "",
+    about: "",
+    education: "",
+    image: specialistPopova.url,
+  },
 ];
 
 function SpecialistsBlock() {
@@ -1379,7 +1389,7 @@ const scheduleRows: ScheduleRow[] = [
   { name: "Тонких Ирина Серафимовна", role: "Медицинская сестра по косметологии", room: "7", hours: ["Сменный график 2/2*"] },
   { name: "Корабельщикова Анна Игоревна", role: "Медицинская сестра по косметологии", room: "5", hours: ["Сменный график 2/2*"] },
   { name: "Волокитина Ольга Анатольевна", role: "Медицинская сестра", room: "3", hours: ["Сменный график 2/2*"] },
-  { name: "Попова Наталья Александровна", role: "Мастер маникюра и педикюра", room: "4", hours: ["Сменный график 2/2*"] },
+  { name: "Попова Наталья Александровна", role: "Медицинская сестра, подолог, специалист по маникюру и педикюру", room: "4", hours: ["Сменный график 2/2*"] },
 ];
 
 type EducationItem = { stage: string; place: string; specialty: string; qualification: string; certificate?: string };
