@@ -1166,7 +1166,7 @@ const specialists: Specialist[] = [
   {
     id: 5,
     name: "Дмитриевская Анна",
-    role: "Медицинская сестра",
+    role: "Медицинская сестра по косметологии",
     focus: "",
     about: "",
     education: "",
