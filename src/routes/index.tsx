@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import { ChevronLeft, ChevronRight, ArrowRight, Plus, ChevronUp, ChevronDown, X, FileText } from "lucide-react";
+import { ChevronLeft, ChevronRight, ArrowRight, Plus, ChevronUp, ChevronDown, X, FileText, FileDown } from "lucide-react";
 import heroVideo from "@/assets/komilfo_hero_v2.mp4.asset.json";
 import doctorConsultation from "@/assets/doctor-consultation.jpg.asset.json";
 import productPhilosophy from "@/assets/injection-beauty.png.asset.json";
@@ -619,15 +619,30 @@ function SubGroupRow({ group }: { group: SubGroup }) {
 }
 
 
+function PriceFileNote() {
+  return (
+    <div className="px-4 pt-4 md:px-8">
+      <a
+        href={docPraysKomilfo.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="font-body inline-flex items-center gap-2 rounded-full border px-4 py-2 text-[12px] font-medium transition-colors hover:bg-neutral-50"
+        style={{ borderColor: BRAND, color: BRAND }}
+      >
+        <FileDown className="h-4 w-4" />
+        Полный прайс 2026 (Excel)
+      </a>
+    </div>
+  );
+}
+
 function MedicalCosmetologyContent() {
   return (
     <div className="space-y-2.5">
       {medicalProcedures.map((p) => (
         <ProcedureRow key={p.name} procedure={p} />
       ))}
-      <p className="font-body px-4 pt-4 text-[11px] leading-relaxed text-neutral-500 md:px-8">
-        Приведённая информация носит справочный характер. Если вам требуется медицинская консультация, обратитесь к специалисту.
-      </p>
+      <PriceFileNote />
     </div>
   );
 }
@@ -844,9 +859,7 @@ function HardwareCosmetologyContent() {
       {hardwareProcedures.map((p) => (
         <ProcedureRow key={p.name} procedure={p} />
       ))}
-      <p className="font-body px-4 pt-4 text-[11px] leading-relaxed text-neutral-500 md:px-8">
-        Приведённая информация носит справочный характер. Если вам требуется медицинская консультация, обратитесь к специалисту.
-      </p>
+      <PriceFileNote />
     </div>
   );
 }
@@ -979,9 +992,7 @@ function EstheticCosmetologyContent() {
       {estheticProcedures.map((p) => (
         <ProcedureRow key={p.name} procedure={p} />
       ))}
-      <p className="font-body px-4 pt-4 text-[11px] leading-relaxed text-neutral-500 md:px-8">
-        Приведённая информация носит справочный характер. Если вам требуется медицинская консультация, обратитесь к специалисту.
-      </p>
+      <PriceFileNote />
     </div>
   );
 }
@@ -1061,9 +1072,7 @@ function MassageContent() {
       {massageProcedures.map((p) => (
         <ProcedureRow key={p.name} procedure={p} />
       ))}
-      <p className="font-body px-4 pt-4 text-[11px] leading-relaxed text-neutral-500 md:px-8">
-        Приведённая информация носит справочный характер. Если вам требуется медицинская консультация, обратитесь к специалисту.
-      </p>
+      <PriceFileNote />
     </div>
   );
 }
@@ -2098,9 +2107,7 @@ function Index() {
                         специалистов этого направления. Заглушка для предпросмотра.
                       </DialogDescription>
                     </DialogHeader>
-                    <p className="font-body px-4 pt-4 text-[11px] leading-relaxed text-neutral-500 md:px-8">
-                      Приведённая информация носит справочный характер. Если вам требуется медицинская консультация, обратитесь к специалисту.
-                    </p>
+                    <PriceFileNote />
                   </DialogContent>
                 )}
               </Dialog>
