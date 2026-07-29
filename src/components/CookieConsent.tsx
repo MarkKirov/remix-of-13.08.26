@@ -48,13 +48,11 @@ export default function CookieConsent() {
             <Cookie className="w-5 h-5" />
           </div>
           <div className="flex-1 text-sm text-neutral-700 leading-relaxed">
-            <p className="font-semibold text-neutral-900 mb-1">
-              Мы используем файлы cookie
-            </p>
             <p>
-              Продолжая пользоваться сайтом, вы соглашаетесь на обработку
-              персональных данных и использование файлов cookie в соответствии
-              с{" "}
+              Мы используем файлы Cookie, сервис web-аналитики Яндекс.Метрика. Во время
+              посещения сайта Медико-эстетического центра «Комильфо» вы соглашаетесь с тем,
+              что мы обрабатываем ваши персональные данные с использованием метрических
+              программ в порядке, установленном{" "}
               <a
                 href={privacyPolicy.url}
                 target="_blank"
@@ -62,34 +60,23 @@ export default function CookieConsent() {
                 className="underline hover:no-underline"
                 style={{ color: BRAND }}
               >
-                Политикой конфиденциальности
+                Политикой обработки и защиты персональных данных
               </a>
-              .
+              . Если вы не хотите, чтобы ваши данные обрабатывались, покиньте сайт.
             </p>
+            <p className="mt-3 font-medium text-neutral-900">Ознакомлен(а), согласен(на)</p>
           </div>
-          <button
-            onClick={() => setVisible(false)}
-            aria-label="Закрыть"
-            className="shrink-0 rounded-full p-1 text-neutral-400 hover:text-neutral-700 hover:bg-neutral-100 transition"
-          >
-            <X className="w-4 h-4" />
-          </button>
         </div>
-        <div className="mt-4 flex flex-col-reverse sm:flex-row sm:justify-end gap-2">
-          <button
-            onClick={() => setVisible(false)}
-            className="px-4 py-2 rounded-full text-sm font-medium text-neutral-700 border border-neutral-300 hover:bg-neutral-50 transition"
-          >
-            Отклонить
-          </button>
+        <div className="mt-4 flex justify-end">
           <button
             onClick={accept}
-            className="px-5 py-2 rounded-full text-sm font-semibold text-white transition hover:opacity-90"
+            className="px-6 py-2.5 rounded-full text-sm font-semibold text-white transition hover:opacity-90"
             style={{ backgroundColor: BRAND }}
           >
-            Принять
+            Подтвердить
           </button>
         </div>
+
       </div>
     </div>
   );
