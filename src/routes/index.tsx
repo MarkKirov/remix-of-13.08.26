@@ -2257,11 +2257,6 @@ function Index() {
               Вы достойны профессионального{"\n"}
               отношения к вашему здоровью
             </h2>
-            <p className="font-body mt-4 max-w-lg whitespace-pre-line text-base font-light leading-relaxed text-[#c4c4c4] md:mt-5 md:text-lg">
-              Подберём персональную стратегию{"\n"}
-              вашей естественной красоты на встрече с косметологом
-            </p>
-
             <button
               type="button"
               onClick={() => openLead("Записаться на консультацию")}
