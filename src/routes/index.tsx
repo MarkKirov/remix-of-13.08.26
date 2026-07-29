@@ -2,7 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, ArrowRight, Plus, ChevronUp, ChevronDown, X, FileText, FileDown } from "lucide-react";
 import heroVideo from "@/assets/komilfo_hero_v2.mp4.asset.json";
-
+import doctorConsultation from "@/assets/doctor-consultation.jpg.asset.json";
 import productPhilosophy from "@/assets/injection-beauty.png.asset.json";
 import serviceEsthetic from "@/assets/esthetic-cosmetology.png.asset.json";
 import serviceMedical from "@/assets/apparatnaya-cosmetology.png.asset.json";
@@ -2236,6 +2236,56 @@ function Index() {
         </div>
       </section>
 
+      {/* Экран призыва с фоновым изображением */}
+      <section className="relative min-h-[80vh] overflow-hidden">
+        <img
+          className="absolute inset-0 h-full w-full object-cover"
+          style={{ objectPosition: "center top" }}
+          src={doctorConsultation.url}
+          alt="Врач клиники Комильфо"
+          decoding="async"
+        />
+        {/* Затемнение с розоватым оттенком */}
+        <div className="absolute inset-0 bg-black/35" />
+        <div className="absolute inset-0 bg-[#7A6E8F]/10" />
+        <div className="absolute inset-0 bg-gradient-to-l from-black/70 via-black/25 to-transparent" />
+
+        {/* Контент */}
+        <div className="relative z-10 mx-auto flex min-h-[80vh] max-w-6xl flex-col items-end justify-center px-6 py-16 text-left md:px-8 md:py-20">
+          <div className="text-left">
+            <h2 className="font-display max-w-xl whitespace-pre-line text-2xl leading-[1.15] tracking-[0.01em] drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)] md:text-3xl lg:text-4xl" style={{ color: "#D6CCE3" }}>
+              Вы достойны профессионального{"\n"}
+              отношения к вашему здоровью
+            </h2>
+            <p className="font-body mt-4 max-w-lg whitespace-pre-line text-base font-light leading-relaxed text-[#c4c4c4] md:mt-5 md:text-lg">
+              Подберём персональную стратегию{"\n"}
+              вашей естественной красоты на встрече с косметологом
+            </p>
+
+            <button
+              type="button"
+              onClick={() => openLead("Записаться на консультацию")}
+              className="group mt-8 inline-flex items-center gap-2 rounded-full border-2 px-5 py-2.5 text-xs font-normal uppercase tracking-[0.1em] transition-all md:mt-10 md:px-7 md:py-3 md:text-sm"
+              style={{
+                borderColor: BRAND,
+                color: "#fff",
+                backgroundColor: "transparent",
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = BRAND;
+                e.currentTarget.style.borderColor = BRAND;
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = "transparent";
+                e.currentTarget.style.borderColor = BRAND;
+              }}
+            >
+              <span>Записаться на консультацию</span>
+              <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
+            </button>
+          </div>
+        </div>
+      </section>
 
       {/* Блок с подругой — editorial split showcase */}
       <TeamTrustBlock />
