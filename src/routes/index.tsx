@@ -2653,7 +2653,30 @@ function ClientsInfoDialog() {
             <li><span className="font-semibold" style={{ color: BRAND }}>Свидетельство о государственной регистрации юридического лица:</span> серия 48 № 001461432</li>
             <li><span className="font-semibold" style={{ color: BRAND }}>Наименование регистрирующего органа:</span> ИФНС России по Левобережному району г. Липецка</li>
           </ul>
+          <ul className="mt-4 divide-y divide-neutral-900/10">
+            {[
+              { title: "Выписка из ЕГРЮЛ", url: docEgrul.url },
+              { title: "Выписка из реестра лицензий", url: docLicenseRegistry.url },
+              { title: "Лицензия", url: docLicense.url },
+              { title: "Свидетельство на товарный знак", url: docTrademark.url },
+              { title: "Сводная ведомость результатов проведения СОУТ", url: docSout.url },
+            ].map((d) => (
+              <li key={d.url}>
+                <a
+                  href={d.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-3 py-3 text-sm leading-snug transition-colors hover:opacity-80"
+                  style={{ color: BRAND }}
+                >
+                  <FileText className="mt-0.5 h-4 w-4 flex-none" />
+                  <span className="underline underline-offset-4">{d.title}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
+
       </DialogContent>
     </Dialog>
   );
