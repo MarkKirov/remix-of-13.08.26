@@ -75,7 +75,7 @@ export function LeadDialogProvider({ children }: { children: ReactNode }) {
                 {title}
               </DialogTitle>
               <DialogDescription className="font-body text-sm leading-relaxed text-neutral-600">
-                Оставьте имя и номер — мы <strong className="font-semibold text-neutral-900">не будем названивать</strong>, просто перезвоним в ближайшее время и подберём удобное время визита.
+                Оставьте имя и номер, чтобы мы перезвонили и подобрали удобное для Вас время.
               </DialogDescription>
             </DialogHeader>
 
