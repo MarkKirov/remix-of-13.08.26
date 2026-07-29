@@ -2682,6 +2682,54 @@ function ClientsInfoDialog() {
           </ul>
         </div>
 
+        <div className="mt-6 rounded-lg border p-4 text-sm leading-relaxed text-neutral-700" style={{ borderColor: `${BRAND}40` }}>
+          <h4 className="font-display text-base uppercase tracking-wide md:text-lg" style={{ color: BRAND }}>
+            Адреса органов исполнительной власти в сфере здравоохранения
+          </h4>
+          <div className="mt-3 space-y-4">
+            <div>
+              <p className="font-semibold text-neutral-900">
+                Территориальный орган Федеральной службы по надзору в сфере здравоохранения по Липецкой области
+              </p>
+              <p className="mt-1">
+                <a href="http://48reg.roszdravnadzor.gov.ru" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4" style={{ color: BRAND }}>48reg.roszdravnadzor.gov.ru</a>
+              </p>
+              <p>E-mail: roszdravr48@reg48.roszdravnadzor.ru</p>
+              <p>Адрес: 398001, г. Липецк, ул. Ворошилова, д. 1</p>
+              <p>Телефон: (4742) 23-07-35, 74-04-47</p>
+            </div>
+            <div>
+              <p className="font-semibold text-neutral-900">
+                Управление Федеральной службы по надзору в сфере защиты прав потребителей и благополучия человека по Липецкой области
+              </p>
+              <p className="mt-1">
+                <a href="http://48.rospotrebnadzor.ru" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4" style={{ color: BRAND }}>48.rospotrebnadzor.ru</a>
+              </p>
+              <p>E-mail: saneps@lipetsk.ru, ocgsen@lipetsk.ru</p>
+              <p>Адрес: 398002, г. Липецк, ул. Гагарина, 60а</p>
+              <p>Телефон: (4742) 27-00-76, 27-25-98</p>
+              <p>Факс: (4742) 27-73-43</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-6 rounded-lg border p-4 text-sm leading-relaxed text-neutral-700" style={{ borderColor: `${BRAND}40`, background: `${BRAND}0D` }}>
+          <h4 className="font-display text-base uppercase tracking-wide md:text-lg" style={{ color: BRAND }}>
+            Руководство
+          </h4>
+          <p className="mt-3 font-semibold text-neutral-900">Журавлев Олег Викторович</p>
+          <p>Управляющий</p>
+          <p>
+            <a href="mailto:ozhuravlev@komilfocentr.ru" className="underline underline-offset-4" style={{ color: BRAND }}>ozhuravlev@komilfocentr.ru</a>
+          </p>
+          <p>
+            <a href="tel:+79601422244" className="underline underline-offset-4" style={{ color: BRAND }}>+7 (960) 142-22-44</a>
+          </p>
+          <p className="mt-1">График приёма граждан — четверг с 15:00 до 17:00</p>
+        </div>
+
+
+
       </DialogContent>
     </Dialog>
   );
