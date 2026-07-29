@@ -1097,7 +1097,7 @@ const slides: Slide[] = [
       </>
     ),
     paragraphs: [
-      "Вы не получите то, что вы хотите, но мы дадим то, что необходимо именно вам.",
+      "Сохраняем вашу естественную красоту и индивидуальность\nбез комплексов и рисков для здоровья.",
       "Используем различные методики, сохраняя индивидуальный подход.",
       "Работаем на медицинском оборудовании и с сертифицированными препаратами.",
     ],
@@ -1769,15 +1769,12 @@ function Index() {
               style={{ filter: "brightness(0) invert(1)" }}
             />
             <div className="flex-1 text-center">
-              <p className="font-caption text-[9px] uppercase tracking-[0.14em] text-white/90 md:text-[10px]">
-                17 лет сохраняем вашу естественную красоту и индивидуальность
-              </p>
-              <p className="font-caption text-[9px] uppercase tracking-[0.14em] text-white/75 mt-1 md:text-[10px]">
-                без комплексов и рисков для здоровья
+              <p className="font-caption text-[10px] uppercase tracking-[0.16em] text-white/90 md:text-xs">
+                Всё так как должно быть
               </p>
               <span className="mx-auto my-1.5 block h-px w-5 bg-white/40 md:my-2 md:w-6" />
               <p className="font-caption text-[9px] uppercase tracking-[0.12em] text-white/70 md:text-[10px]">
-                г.Липецк ул.Гагарина д.45А 5 этаж
+                Пн–Пт 9:00–21:00 · Сб 10:00–18:00 · Вс 10:00–16:00
               </p>
             </div>
             <div className="flex shrink-0 flex-col items-end text-right">
@@ -1787,6 +1784,10 @@ function Index() {
               >
                 8(962)350-09-09
               </a>
+              <p className="font-caption mt-1 text-[9px] uppercase tracking-[0.12em] text-white/70 md:text-[10px]">
+                г.Липецк ул.Гагарина д.45А 5 этаж
+              </p>
+
               <a
                 href="https://vk.com/mdkomilfolip"
                 target="_blank"
@@ -2378,6 +2379,10 @@ function Index() {
             <p className="font-body mt-2 text-sm text-white/70 md:text-base">
               г. Липецк, ул. Гагарина, д. 45А, 5 этаж
             </p>
+            <p className="font-body mt-2 text-sm text-white/60 md:text-base">
+              Пн–Пт 9:00–21:00 · Сб 10:00–18:00 · Вс 10:00–16:00
+            </p>
+
           </div>
           <div className="overflow-hidden rounded-xl border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.35)]">
             <iframe
