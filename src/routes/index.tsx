@@ -31,6 +31,11 @@ import teamSlide2 from "@/assets/team-slide-2.jpg.asset.json";
 import teamSlide3 from "@/assets/team-slide-3.jpg.asset.json";
 import privacyPolicy from "@/assets/privacy-policy.pdf.asset.json";
 import docFz323 from "@/assets/fz-323.docx.asset.json";
+import docEgrul from "@/assets/egrul.pdf.asset.json";
+import docLicenseRegistry from "@/assets/license-registry.pdf.asset.json";
+import docLicense from "@/assets/license.pdf.asset.json";
+import docTrademark from "@/assets/trademark.jpeg.asset.json";
+import docSout from "@/assets/sout.pdf.asset.json";
 import docPravila736 from "@/assets/pravila-736.docx.asset.json";
 import docZakon23001 from "@/assets/zakon-2300-1.docx.asset.json";
 import docPostanovlenie2463 from "@/assets/postanovlenie-2463.pdf.asset.json";
@@ -2653,7 +2658,30 @@ function ClientsInfoDialog() {
             <li><span className="font-semibold" style={{ color: BRAND }}>Свидетельство о государственной регистрации юридического лица:</span> серия 48 № 001461432</li>
             <li><span className="font-semibold" style={{ color: BRAND }}>Наименование регистрирующего органа:</span> ИФНС России по Левобережному району г. Липецка</li>
           </ul>
+          <ul className="mt-4 divide-y divide-neutral-900/10">
+            {[
+              { title: "Выписка из ЕГРЮЛ", url: docEgrul.url },
+              { title: "Выписка из реестра лицензий", url: docLicenseRegistry.url },
+              { title: "Лицензия", url: docLicense.url },
+              { title: "Свидетельство на товарный знак", url: docTrademark.url },
+              { title: "Сводная ведомость результатов проведения СОУТ", url: docSout.url },
+            ].map((d) => (
+              <li key={d.url}>
+                <a
+                  href={d.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-3 py-3 text-sm leading-snug transition-colors hover:opacity-80"
+                  style={{ color: BRAND }}
+                >
+                  <FileText className="mt-0.5 h-4 w-4 flex-none" />
+                  <span className="underline underline-offset-4">{d.title}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
+
       </DialogContent>
     </Dialog>
   );
