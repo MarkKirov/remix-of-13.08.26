@@ -2379,6 +2379,10 @@ function Index() {
             <p className="font-body mt-2 text-sm text-white/70 md:text-base">
               г. Липецк, ул. Гагарина, д. 45А, 5 этаж
             </p>
+            <p className="font-body mt-2 text-sm text-white/60 md:text-base">
+              Пн–Пт 9:00–21:00 · Сб 10:00–18:00 · Вс 10:00–16:00
+            </p>
+
           </div>
           <div className="overflow-hidden rounded-xl border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.35)]">
             <iframe
