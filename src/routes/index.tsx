@@ -2638,6 +2638,22 @@ function ClientsInfoDialog() {
             </li>
           </ul>
         </div>
+        <div className="mt-6 rounded-lg border p-4 text-sm leading-relaxed text-neutral-700" style={{ borderColor: `${BRAND}40`, background: `${BRAND}0D` }}>
+          <h4 className="font-display text-base uppercase tracking-wide md:text-lg" style={{ color: BRAND }}>
+            Общая информация
+          </h4>
+          <ul className="mt-3 space-y-2">
+            <li><span className="font-semibold" style={{ color: BRAND }}>Полное наименование:</span> Общество с ограниченной ответственностью «Медико-эстетический центр «Комильфо»</li>
+            <li><span className="font-semibold" style={{ color: BRAND }}>Сокращенное наименование:</span> ООО «МЭЦ «Комильфо»</li>
+            <li><span className="font-semibold" style={{ color: BRAND }}>Юридический адрес:</span> 398002, г. Липецк, ул. Гагарина, 45а, 5 этаж, помещение 3</li>
+            <li><span className="font-semibold" style={{ color: BRAND }}>Способ образования:</span> создание юридического лица</li>
+            <li><span className="font-semibold" style={{ color: BRAND }}>Дата регистрации:</span> 07.04.2009</li>
+            <li><span className="font-semibold" style={{ color: BRAND }}>ОГРН:</span> 1094823003956</li>
+            <li><span className="font-semibold" style={{ color: BRAND }}>ИНН:</span> 4826067133</li>
+            <li><span className="font-semibold" style={{ color: BRAND }}>Свидетельство о государственной регистрации юридического лица:</span> серия 48 № 001461432</li>
+            <li><span className="font-semibold" style={{ color: BRAND }}>Наименование регистрирующего органа:</span> ИФНС России по Левобережному району г. Липецка</li>
+          </ul>
+        </div>
       </DialogContent>
     </Dialog>
   );
