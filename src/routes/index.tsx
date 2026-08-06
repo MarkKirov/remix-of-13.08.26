@@ -1916,40 +1916,7 @@ function Index() {
       </section>
 
 
-      {/* Второй экран — призыв на бесплатную диагностику */}
-      <section className="relative min-h-[80vh] overflow-hidden">
-        <img
-          src={consultationBg.url}
-          alt=""
-          className="absolute inset-0 h-full w-full object-cover"
-          style={{ objectPosition: "center calc(55% - 60px)" }}
-          decoding="async"
-        />
-        <div className="absolute inset-0 bg-black/55" />
-        <div className="absolute inset-0 bg-[#7A6E8F]/25" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
-
-        <div className="relative z-10 mx-auto flex min-h-[80vh] max-w-5xl flex-col items-center justify-center px-6 py-16 text-center md:px-8 md:py-20">
-          <div className="md:-translate-y-10">
-            <h2 className="font-display whitespace-pre-line text-xl leading-[1.25] tracking-[0.01em] text-[#e5e5e5] drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)] md:text-3xl lg:text-4xl">
-              {"Подберём персональную\u00a0\nстратегию вашей естественной красоты"}
-            </h2>
-            <button
-              type="button"
-              onClick={() => openLead("Записаться на консультацию")}
-              className="group mt-8 inline-flex items-center gap-2 rounded-full border-2 px-5 py-2.5 text-xs font-normal uppercase tracking-[0.1em] transition-all md:mt-10 md:px-6 md:py-3"
-              style={{ borderColor: BRAND, color: "#fff", backgroundColor: "transparent" }}
-              onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = BRAND; }}
-              onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent"; }}
-            >
-              <span>Записаться на консультацию</span>
-              <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
-            </button>
-          </div>
-        </div>
-      </section>
-
-      {/* Третий экран — услуги на сером фоне */}
+      {/* Второй экран — услуги на сером фоне */}
       <section className="relative bg-neutral-200 py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-6 md:px-8">
           <h2
@@ -2092,6 +2059,39 @@ function Index() {
                 )}
               </Dialog>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Третий экран — призыв на бесплатную диагностику */}
+      <section className="relative min-h-[80vh] overflow-hidden">
+        <img
+          src={consultationBg.url}
+          alt=""
+          className="absolute inset-0 h-full w-full object-cover"
+          style={{ objectPosition: "center calc(55% - 60px)" }}
+          decoding="async"
+        />
+        <div className="absolute inset-0 bg-black/55" />
+        <div className="absolute inset-0 bg-[#7A6E8F]/25" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
+
+        <div className="relative z-10 mx-auto flex min-h-[80vh] max-w-5xl flex-col items-center justify-center px-6 py-16 text-center md:px-8 md:py-20">
+          <div className="md:-translate-y-10">
+            <h2 className="font-display whitespace-pre-line text-xl leading-[1.25] tracking-[0.01em] text-[#e5e5e5] drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)] md:text-3xl lg:text-4xl">
+              {"Подберём персональную\u00a0\nстратегию вашей естественной красоты"}
+            </h2>
+            <button
+              type="button"
+              onClick={() => openLead("Записаться на консультацию")}
+              className="group mt-8 inline-flex items-center gap-2 rounded-full border-2 px-5 py-2.5 text-xs font-normal uppercase tracking-[0.1em] transition-all md:mt-10 md:px-6 md:py-3"
+              style={{ borderColor: BRAND, color: "#fff", backgroundColor: "transparent" }}
+              onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = BRAND; }}
+              onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "transparent"; }}
+            >
+              <span>Записаться на консультацию</span>
+              <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
+            </button>
           </div>
         </div>
       </section>
