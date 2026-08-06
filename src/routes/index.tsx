@@ -1620,7 +1620,12 @@ function TeamDisclosureDialog({ open, onClose }: { open: boolean; onClose: () =>
               </p>
             </div>
           </DisclosureItem>
+
+          <div className="pb-6">
+            <GeneralInfoSections />
+          </div>
         </div>
+
       </div>
     </div>
   );
