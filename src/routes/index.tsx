@@ -2076,7 +2076,7 @@ function Index() {
         />
         <div className="absolute inset-0 bg-black/55" />
         <div className="absolute inset-0 bg-[#7A6E8F]/25" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-transparent" />
 
         <div className="relative z-10 mx-auto flex min-h-[80vh] max-w-5xl flex-col items-center justify-center px-6 py-16 text-center md:px-8 md:py-20">
           <div className="md:-translate-y-10">
