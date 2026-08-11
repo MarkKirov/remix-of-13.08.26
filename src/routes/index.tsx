@@ -2203,22 +2203,22 @@ function Index() {
                   className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.06] backdrop-blur-sm"
                 >
                   <div className="grid grid-cols-2 divide-x divide-white/10">
-                    <div className="p-4 md:p-6">
+                    <div className="p-3 md:p-6">
                       <div
-                        className="mb-2 font-caption text-[10px] uppercase tracking-[0.18em] md:hidden"
+                        className="mb-1.5 font-caption text-[9px] uppercase tracking-[0.18em] md:hidden"
                         style={{ color: BRAND }}
                       >
                         Комильфо
                       </div>
-                      <div className="font-body text-sm font-light leading-relaxed text-[#e5e5e5] md:text-base">
+                      <div className="font-body break-words text-xs font-light leading-snug text-[#e5e5e5] md:text-base md:leading-relaxed">
                         {row.us}
                       </div>
                     </div>
-                    <div className="p-4 md:p-6">
-                      <div className="mb-2 font-caption text-[10px] uppercase tracking-[0.18em] text-white/40 md:hidden">
+                    <div className="p-3 md:p-6">
+                      <div className="mb-1.5 font-caption text-[9px] uppercase tracking-[0.18em] text-white/40 md:hidden">
                         Нелегальные кабинеты
                       </div>
-                      <div className="font-body text-sm font-light leading-relaxed text-white/55 md:text-base">
+                      <div className="font-body break-words text-xs font-light leading-snug text-white/55 md:text-base md:leading-relaxed">
                         {row.them}
                       </div>
                     </div>
