@@ -65,7 +65,7 @@ export function LeadDialogProvider({ children }: { children: ReactNode }) {
     <LeadCtx.Provider value={value}>
       {children}
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
-        <DialogContent className="max-w-md border-none bg-white p-0 sm:rounded-2xl">
+        <DialogContent className="w-[calc(100%-2rem)] max-w-md border-none bg-white p-0 rounded-2xl sm:w-full">
           <div className="px-6 pt-7 pb-6 md:px-8 md:pt-8">
             <DialogHeader className="space-y-2 text-left">
               <DialogTitle
