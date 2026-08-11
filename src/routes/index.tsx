@@ -414,17 +414,17 @@ function ProcedureRow({ procedure }: { procedure: Procedure }) {
   return (
     <div className="group">
       <div
-        className="flex items-center gap-3 rounded-full border border-neutral-200 bg-white pl-5 pr-2 py-2 transition-all hover:border-[color:var(--brand-color)]"
+        className="flex items-center gap-2 rounded-full border border-neutral-200 bg-white pl-3 pr-1.5 py-1.5 transition-all hover:border-[color:var(--brand-color)] md:gap-3 md:pl-5 md:pr-2 md:py-2"
         style={{ ["--brand-color" as string]: BRAND }}
       >
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="flex flex-1 items-center gap-3 text-left"
+          className="flex flex-1 min-w-0 items-center gap-2 text-left md:gap-3"
           aria-expanded={open}
         >
           <span
-            className="grid h-7 w-7 shrink-0 place-items-center rounded-full border transition-all"
+            className="grid h-6 w-6 shrink-0 place-items-center rounded-full border transition-all md:h-7 md:w-7"
             style={{
               borderColor: BRAND,
               color: BRAND,
@@ -432,9 +432,9 @@ function ProcedureRow({ procedure }: { procedure: Procedure }) {
             }}
             aria-hidden
           >
-            <Plus className="h-3.5 w-3.5" />
+            <Plus className="h-3 w-3 md:h-3.5 md:w-3.5" />
           </span>
-          <span className="font-body flex-1 text-sm font-normal text-neutral-900 md:text-base">
+          <span className="font-body flex-1 min-w-0 truncate text-xs font-normal text-neutral-900 md:text-sm md:text-base">
             {procedure.name}
           </span>
         </button>
@@ -447,7 +447,7 @@ function ProcedureRow({ procedure }: { procedure: Procedure }) {
         <button
           type="button"
           onClick={() => openLead(`Записаться: ${procedure.name}`)}
-          className="font-caption ml-2 shrink-0 rounded-full px-4 py-2 text-[10px] font-normal uppercase tracking-[0.14em] text-white transition-colors md:px-5 md:text-[11px]"
+          className="font-caption ml-1 shrink-0 rounded-full px-2.5 py-1.5 text-[9px] font-normal uppercase tracking-[0.12em] text-white transition-colors md:ml-2 md:px-5 md:py-2 md:text-[11px]"
           style={{ backgroundColor: BRAND }}
           onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#5E5470")}
           onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = BRAND)}
