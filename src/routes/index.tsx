@@ -2179,7 +2179,7 @@ function Index() {
               </div>
             </div>
 
-            <div className="divide-y divide-white/10">
+            <div className="flex flex-col gap-4 md:gap-5">
               {[
                 {
                   us: (
@@ -2198,18 +2198,30 @@ function Index() {
                   them: "Работа «вслепую» без документов на руках, фальшивые дипломы из принтера.",
                 },
               ].map((row, idx) => (
-                <div key={idx} className="grid grid-cols-1 gap-3 py-6 md:grid-cols-2 md:gap-8 md:py-7">
-                  <div className="font-body text-sm font-light leading-relaxed text-[#e5e5e5] md:text-base">
-                    <div className="mb-1 font-caption text-[10px] uppercase tracking-[0.18em] md:hidden" style={{ color: BRAND }}>
-                      Комильфо
+                <div
+                  key={idx}
+                  className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.06] backdrop-blur-sm"
+                >
+                  <div className="grid grid-cols-2 divide-x divide-white/10">
+                    <div className="p-4 md:p-6">
+                      <div
+                        className="mb-2 font-caption text-[10px] uppercase tracking-[0.18em] md:hidden"
+                        style={{ color: BRAND }}
+                      >
+                        Комильфо
+                      </div>
+                      <div className="font-body text-sm font-light leading-relaxed text-[#e5e5e5] md:text-base">
+                        {row.us}
+                      </div>
                     </div>
-                    {row.us}
-                  </div>
-                  <div className="font-body text-sm font-light leading-relaxed text-white/55 md:text-base">
-                    <div className="mb-1 font-caption text-[10px] uppercase tracking-[0.18em] text-white/40 md:hidden">
-                      Нелегальные кабинеты
+                    <div className="p-4 md:p-6">
+                      <div className="mb-2 font-caption text-[10px] uppercase tracking-[0.18em] text-white/40 md:hidden">
+                        Нелегальные кабинеты
+                      </div>
+                      <div className="font-body text-sm font-light leading-relaxed text-white/55 md:text-base">
+                        {row.them}
+                      </div>
                     </div>
-                    {row.them}
                   </div>
                 </div>
               ))}
