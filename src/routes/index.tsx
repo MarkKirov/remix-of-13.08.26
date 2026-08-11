@@ -1554,22 +1554,22 @@ function TeamDisclosureDialog({ open, onClose }: { open: boolean; onClose: () =>
             title="Сведения о профессиональном образовании и квалификации"
             subtitle="Медицинские работники ООО «МЭЦ «Комильфо»"
           >
-            <div className="space-y-6">
+            <div className="space-y-4 md:space-y-6">
               {educationEntries.map((e) => (
-                <div key={e.name} className="rounded-xl border border-neutral-900/10 p-4 md:p-5">
-                  <p className="font-display text-sm uppercase tracking-wide text-neutral-900 md:text-base">{e.name}</p>
-                  <p className="font-body mt-1 text-xs font-light text-neutral-500 md:text-sm">{e.role}</p>
-                  <ul className="mt-4 space-y-3">
+                <div key={e.name} className="rounded-xl border border-neutral-900/10 p-3 md:p-4">
+                  <p className="font-display text-xs uppercase tracking-wide text-neutral-900 md:text-sm">{e.name}</p>
+                  <p className="font-body mt-1 text-[11px] font-light text-neutral-500 md:text-xs">{e.role}</p>
+                  <ul className="mt-3 space-y-2 md:mt-4 md:space-y-3">
                     {e.items.map((it, i) => (
-                      <li key={i} className="grid grid-cols-1 gap-1 border-l-2 pl-4 text-sm md:grid-cols-[180px_1fr] md:gap-4" style={{ borderColor: BRAND }}>
-                        <div className="text-[11px] uppercase tracking-wider text-neutral-500">{it.stage}</div>
+                      <li key={i} className="grid grid-cols-1 gap-1 border-l-2 pl-3 text-xs md:grid-cols-[180px_1fr] md:gap-4 md:pl-4 md:text-sm" style={{ borderColor: BRAND }}>
+                        <div className="text-[10px] uppercase tracking-wider text-neutral-500 md:text-[11px]">{it.stage}</div>
                         <div className="space-y-1 text-neutral-800">
                           <div>{it.place}</div>
                           <div className="text-neutral-600">
                             <span className="font-medium text-neutral-800">Специальность:</span> {it.specialty} · <span className="font-medium text-neutral-800">Квалификация:</span> {it.qualification}
                           </div>
                           {it.certificate ? (
-                            <div className="text-xs text-neutral-500">Сертификат / аккредитация: {it.certificate}</div>
+                            <div className="text-[11px] text-neutral-500 md:text-xs">Сертификат / аккредитация: {it.certificate}</div>
                           ) : null}
                         </div>
                       </li>
