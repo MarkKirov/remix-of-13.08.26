@@ -605,11 +605,11 @@ function SubGroupRow({ group }: { group: SubGroup }) {
             {group.items.map((s, i) => (
               <li
                 key={i}
-                className="font-body flex items-start justify-between gap-4 py-2 text-sm text-neutral-700"
+                className="font-body flex items-start justify-between gap-3 py-2 text-xs text-neutral-700 md:gap-4 md:text-sm"
               >
-                <span className="flex-1">{s.name}</span>
+                <span className="min-w-0 flex-1">{s.name}</span>
                 <span
-                  className="font-caption shrink-0 text-xs font-bold uppercase tracking-[0.12em]"
+                  className="font-caption shrink-0 text-[10px] font-bold uppercase tracking-[0.12em] md:text-xs"
                   style={{ color: BRAND }}
                 >
                   {s.price}
