@@ -414,17 +414,17 @@ function ProcedureRow({ procedure }: { procedure: Procedure }) {
   return (
     <div className="group">
       <div
-        className="flex items-center gap-3 rounded-full border border-neutral-200 bg-white pl-5 pr-2 py-2 transition-all hover:border-[color:var(--brand-color)]"
+        className="flex items-center gap-2 rounded-full border border-neutral-200 bg-white pl-3 pr-1.5 py-1.5 transition-all hover:border-[color:var(--brand-color)] md:gap-3 md:pl-5 md:pr-2 md:py-2"
         style={{ ["--brand-color" as string]: BRAND }}
       >
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="flex flex-1 items-center gap-3 text-left"
+          className="flex flex-1 min-w-0 items-center gap-2 text-left md:gap-3"
           aria-expanded={open}
         >
           <span
-            className="grid h-7 w-7 shrink-0 place-items-center rounded-full border transition-all"
+            className="grid h-6 w-6 shrink-0 place-items-center rounded-full border transition-all md:h-7 md:w-7"
             style={{
               borderColor: BRAND,
               color: BRAND,
@@ -432,9 +432,9 @@ function ProcedureRow({ procedure }: { procedure: Procedure }) {
             }}
             aria-hidden
           >
-            <Plus className="h-3.5 w-3.5" />
+            <Plus className="h-3 w-3 md:h-3.5 md:w-3.5" />
           </span>
-          <span className="font-body flex-1 text-sm font-normal text-neutral-900 md:text-base">
+          <span className="font-body flex-1 min-w-0 text-xs font-normal text-neutral-900 md:text-sm md:text-base">
             {procedure.name}
           </span>
         </button>
@@ -447,7 +447,7 @@ function ProcedureRow({ procedure }: { procedure: Procedure }) {
         <button
           type="button"
           onClick={() => openLead(`Записаться: ${procedure.name}`)}
-          className="font-caption ml-2 shrink-0 rounded-full px-4 py-2 text-[10px] font-normal uppercase tracking-[0.14em] text-white transition-colors md:px-5 md:text-[11px]"
+          className="font-caption ml-1 shrink-0 rounded-full px-2.5 py-1.5 text-[9px] font-normal uppercase tracking-[0.12em] text-white transition-colors md:ml-2 md:px-5 md:py-2 md:text-[11px]"
           style={{ backgroundColor: BRAND }}
           onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#5E5470")}
           onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = BRAND)}
@@ -464,7 +464,7 @@ function ProcedureRow({ procedure }: { procedure: Procedure }) {
         }}
       >
           <div className="overflow-hidden">
-            <div className="mx-4 mt-2 rounded-2xl bg-neutral-100 px-5 py-4 md:mx-8 md:px-6 md:py-5">
+            <div className="mx-2 mt-2 rounded-2xl bg-neutral-100 px-3 py-3 md:mx-8 md:px-6 md:py-5">
               {procedure.description && (
                 <p className={`font-body whitespace-pre-line text-[13px] leading-relaxed text-neutral-700 md:text-sm${procedure.preparations.length > 0 || procedure.device || procedure.subServices || procedure.groups ? " mb-4 border-b border-neutral-200 pb-4" : ""}`}>
                   {procedure.description}
@@ -514,11 +514,11 @@ function ProcedureRow({ procedure }: { procedure: Procedure }) {
                     {procedure.subServices.map((s, i) => (
                       <li
                         key={i}
-                        className="font-body flex items-start justify-between gap-4 py-2 text-sm text-neutral-700"
+                        className="font-body flex items-start justify-between gap-3 py-2 text-xs text-neutral-700 md:gap-4 md:text-sm"
                       >
-                        <span className="flex-1">{s.name}</span>
+                        <span className="min-w-0 flex-1">{s.name}</span>
                         <span
-                          className="font-caption shrink-0 text-xs font-bold uppercase tracking-[0.12em]"
+                          className="font-caption shrink-0 text-[10px] font-bold uppercase tracking-[0.12em] md:text-xs"
                           style={{ color: BRAND }}
                         >
                           {s.price}
@@ -605,11 +605,11 @@ function SubGroupRow({ group }: { group: SubGroup }) {
             {group.items.map((s, i) => (
               <li
                 key={i}
-                className="font-body flex items-start justify-between gap-4 py-2 text-sm text-neutral-700"
+                className="font-body flex items-start justify-between gap-3 py-2 text-xs text-neutral-700 md:gap-4 md:text-sm"
               >
-                <span className="flex-1">{s.name}</span>
+                <span className="min-w-0 flex-1">{s.name}</span>
                 <span
-                  className="font-caption shrink-0 text-xs font-bold uppercase tracking-[0.12em]"
+                  className="font-caption shrink-0 text-[10px] font-bold uppercase tracking-[0.12em] md:text-xs"
                   style={{ color: BRAND }}
                 >
                   {s.price}
@@ -1977,81 +1977,81 @@ function Index() {
                   </button>
                 </DialogTrigger>
                 {s.title === "Врачебная\nкосметология" ? (
-                  <DialogContent className="max-h-[90vh] max-w-4xl overflow-y-auto">
+                  <DialogContent className="max-h-[90vh] max-w-4xl overflow-y-auto p-4 md:p-6">
                     <DialogHeader>
                       <DialogTitle
-                        className="font-display text-2xl md:text-3xl"
+                        className="font-display text-xl md:text-3xl"
                         style={{ color: BRAND }}
                       >
                         Врачебная косметология
                       </DialogTitle>
-                      <DialogDescription className="font-body pt-1 text-sm leading-relaxed text-neutral-500">
+                      <DialogDescription className="font-body pt-1 text-xs leading-relaxed text-neutral-500 md:text-sm">
                         Выберите процедуру, чтобы увидеть используемые препараты и записаться на приём.
                       </DialogDescription>
                     </DialogHeader>
-                    <div className="mt-5">
+                    <div className="mt-4 md:mt-5">
                       <MedicalCosmetologyContent />
                     </div>
                   </DialogContent>
                 ) : s.title === "Аппаратная\nкосметология" ? (
-                  <DialogContent className="max-h-[90vh] max-w-4xl overflow-y-auto">
+                  <DialogContent className="max-h-[90vh] max-w-4xl overflow-y-auto p-4 md:p-6">
                     <DialogHeader>
                       <DialogTitle
-                        className="font-display text-2xl md:text-3xl"
+                        className="font-display text-xl md:text-3xl"
                         style={{ color: BRAND }}
                       >
                         Аппаратная косметология
                       </DialogTitle>
-                      <DialogDescription className="font-body pt-1 text-sm leading-relaxed text-neutral-500">
+                      <DialogDescription className="font-body pt-1 text-xs leading-relaxed text-neutral-500 md:text-sm">
                         Выберите процедуру, чтобы увидеть подробности и записаться на приём.
                       </DialogDescription>
                     </DialogHeader>
-                    <div className="mt-5">
+                    <div className="mt-4 md:mt-5">
                       <HardwareCosmetologyContent />
                     </div>
                   </DialogContent>
                 ) : s.title === "Эстетическая\nкосметология" ? (
-                  <DialogContent className="max-h-[90vh] max-w-4xl overflow-y-auto">
+                  <DialogContent className="max-h-[90vh] max-w-4xl overflow-y-auto p-4 md:p-6">
                     <DialogHeader>
                       <DialogTitle
-                        className="font-display text-2xl md:text-3xl"
+                        className="font-display text-xl md:text-3xl"
                         style={{ color: BRAND }}
                       >
                         Эстетическая косметология
                       </DialogTitle>
-                      <DialogDescription className="font-body pt-1 text-sm leading-relaxed text-neutral-500">
+                      <DialogDescription className="font-body pt-1 text-xs leading-relaxed text-neutral-500 md:text-sm">
                         Выберите процедуру, чтобы увидеть подробности и записаться на приём.
                       </DialogDescription>
                     </DialogHeader>
-                    <div className="mt-5">
+                    <div className="mt-4 md:mt-5">
                       <EstheticCosmetologyContent />
                     </div>
                   </DialogContent>
 
                 ) : s.title === "Массаж" ? (
-                  <DialogContent className="max-h-[90vh] max-w-4xl overflow-y-auto">
+                  <DialogContent className="max-h-[90vh] max-w-4xl overflow-y-auto p-4 md:p-6">
                     <DialogHeader>
                       <DialogTitle
-                        className="font-display text-2xl md:text-3xl"
+                        className="font-display text-xl md:text-3xl"
                         style={{ color: BRAND }}
                       >
                         Массаж
                       </DialogTitle>
-                      <DialogDescription className="font-body pt-1 text-sm leading-relaxed text-neutral-500">
+                      <DialogDescription className="font-body pt-1 text-xs leading-relaxed text-neutral-500 md:text-sm">
                         Выберите процедуру, чтобы увидеть подробности и записаться на приём.
                       </DialogDescription>
                     </DialogHeader>
-                    <div className="mt-5">
+                    <div className="mt-4 md:mt-5">
                       <MassageContent />
                     </div>
                   </DialogContent>
                 ) : (
-                  <DialogContent className="max-w-lg">
+                  <DialogContent className="max-w-lg p-4 md:p-6">
                     <DialogHeader>
-                      <DialogTitle className="font-display text-2xl" style={{ color: BRAND }}>
+                      <DialogTitle className="font-display text-xl md:text-2xl" style={{ color: BRAND }}>
                         {s.title.replace("\n", " ")}
                       </DialogTitle>
-                      <DialogDescription className="font-body pt-2 text-sm leading-relaxed text-neutral-600">
+                      <DialogDescription className="font-body pt-2 text-xs leading-relaxed text-neutral-600 md:text-sm">
                         Здесь скоро появится подробное описание услуг, методик и
                         специалистов этого направления. Заглушка для предпросмотра.
                       </DialogDescription>
