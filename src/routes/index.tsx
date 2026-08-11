@@ -2233,7 +2233,7 @@ function Index() {
       {/* Экран призыва с фоновым изображением */}
       <section className="relative min-h-[80vh] overflow-hidden">
         <img
-          className="absolute inset-0 h-full w-full object-cover object-[30%_top] md:object-[center_top]"
+          className="absolute inset-0 h-full w-full object-cover object-[40%_top] md:object-[center_top]"
           src={doctorConsultation.url}
           alt="Врач клиники Комильфо"
           decoding="async"
