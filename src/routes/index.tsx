@@ -2078,7 +2078,7 @@ function Index() {
         <div className="absolute inset-0 bg-[#7A6E8F]/25" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-transparent" />
 
-        <div className="relative z-10 mx-auto flex min-h-[60vh] max-w-5xl flex-col items-center justify-center px-6 py-16 text-center md:min-h-[80vh] md:px-8 md:py-20">
+        <div className="relative z-10 mx-auto flex min-h-0 max-w-5xl flex-col items-center justify-center px-6 py-16 text-center md:min-h-[80vh] md:px-8 md:py-20">
           <div className="md:-translate-y-10">
             <h2 className="font-display whitespace-pre-line text-xl leading-[1.25] tracking-[0.01em] text-[#e5e5e5] drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)] md:text-3xl lg:text-4xl">
               {"Подберём персональную\u00a0\nстратегию вашей естественной красоты"}
