@@ -1515,22 +1515,22 @@ function TeamDisclosureDialog({ open, onClose }: { open: boolean; onClose: () =>
           {/* График работы */}
           <DisclosureItem title="График работы специалистов" subtitle="Часы приёма и номера кабинетов" defaultOpen>
             <div className="overflow-x-auto">
-              <table className="w-full border-collapse text-left text-sm">
+              <table className="w-full border-collapse text-left text-xs md:text-sm">
                 <thead>
-                  <tr className="border-b border-neutral-900/10 text-[11px] uppercase tracking-wider text-neutral-500">
-                    <th className="py-3 pr-4 font-medium">ФИО</th>
-                    <th className="py-3 pr-4 font-medium">Должность</th>
-                    <th className="py-3 pr-4 font-medium">Кабинет</th>
-                    <th className="py-3 font-medium">Дата и время</th>
+                  <tr className="border-b border-neutral-900/10 text-[10px] uppercase tracking-wider text-neutral-500 md:text-[11px]">
+                    <th className="py-2 pr-3 font-medium md:py-3 md:pr-4">ФИО</th>
+                    <th className="py-2 pr-3 font-medium md:py-3 md:pr-4">Должность</th>
+                    <th className="py-2 pr-3 font-medium md:py-3 md:pr-4">Кабинет</th>
+                    <th className="py-2 font-medium md:py-3">Дата и время</th>
                   </tr>
                 </thead>
                 <tbody>
                   {scheduleRows.map((r) => (
                     <tr key={r.name} className="border-b border-neutral-900/5 align-top last:border-b-0">
-                      <td className="py-4 pr-4 font-medium text-neutral-900">{r.name}</td>
-                      <td className="py-4 pr-4 text-neutral-700">{r.role}</td>
-                      <td className="py-4 pr-4 text-neutral-700">{r.room}</td>
-                      <td className="py-4 text-neutral-700">
+                      <td className="py-3 pr-3 font-medium text-neutral-900 md:py-4 md:pr-4">{r.name}</td>
+                      <td className="py-3 pr-3 text-neutral-700 md:py-4 md:pr-4">{r.role}</td>
+                      <td className="py-3 pr-3 text-neutral-700 md:py-4 md:pr-4">{r.room}</td>
+                      <td className="py-3 text-neutral-700 md:py-4">
                         {r.hours.map((h, i) => (
                           <div key={i}>{h}</div>
                         ))}
@@ -1540,7 +1540,7 @@ function TeamDisclosureDialog({ open, onClose }: { open: boolean; onClose: () =>
                 </tbody>
               </table>
             </div>
-            <p className="mt-4 text-xs font-light leading-relaxed text-neutral-500">
+            <p className="mt-3 text-[11px] font-light leading-relaxed text-neutral-500 md:mt-4 md:text-xs">
               *Точный график работы специалиста уточняйте у администратора по телефону{" "}
               <a href="tel:+74742900909" className="whitespace-nowrap font-medium" style={{ color: BRAND }}>
                 8 (4742) 90-09-09
