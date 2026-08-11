@@ -1977,81 +1977,81 @@ function Index() {
                   </button>
                 </DialogTrigger>
                 {s.title === "Врачебная\nкосметология" ? (
-                  <DialogContent className="max-h-[90vh] max-w-4xl overflow-y-auto">
+                  <DialogContent className="max-h-[90vh] max-w-4xl overflow-y-auto p-4 md:p-6">
                     <DialogHeader>
                       <DialogTitle
-                        className="font-display text-2xl md:text-3xl"
+                        className="font-display text-xl md:text-3xl"
                         style={{ color: BRAND }}
                       >
                         Врачебная косметология
                       </DialogTitle>
-                      <DialogDescription className="font-body pt-1 text-sm leading-relaxed text-neutral-500">
+                      <DialogDescription className="font-body pt-1 text-xs leading-relaxed text-neutral-500 md:text-sm">
                         Выберите процедуру, чтобы увидеть используемые препараты и записаться на приём.
                       </DialogDescription>
                     </DialogHeader>
-                    <div className="mt-5">
+                    <div className="mt-4 md:mt-5">
                       <MedicalCosmetologyContent />
                     </div>
                   </DialogContent>
                 ) : s.title === "Аппаратная\nкосметология" ? (
-                  <DialogContent className="max-h-[90vh] max-w-4xl overflow-y-auto">
+                  <DialogContent className="max-h-[90vh] max-w-4xl overflow-y-auto p-4 md:p-6">
                     <DialogHeader>
                       <DialogTitle
-                        className="font-display text-2xl md:text-3xl"
+                        className="font-display text-xl md:text-3xl"
                         style={{ color: BRAND }}
                       >
                         Аппаратная косметология
                       </DialogTitle>
-                      <DialogDescription className="font-body pt-1 text-sm leading-relaxed text-neutral-500">
+                      <DialogDescription className="font-body pt-1 text-xs leading-relaxed text-neutral-500 md:text-sm">
                         Выберите процедуру, чтобы увидеть подробности и записаться на приём.
                       </DialogDescription>
                     </DialogHeader>
-                    <div className="mt-5">
+                    <div className="mt-4 md:mt-5">
                       <HardwareCosmetologyContent />
                     </div>
                   </DialogContent>
                 ) : s.title === "Эстетическая\nкосметология" ? (
-                  <DialogContent className="max-h-[90vh] max-w-4xl overflow-y-auto">
+                  <DialogContent className="max-h-[90vh] max-w-4xl overflow-y-auto p-4 md:p-6">
                     <DialogHeader>
                       <DialogTitle
-                        className="font-display text-2xl md:text-3xl"
+                        className="font-display text-xl md:text-3xl"
                         style={{ color: BRAND }}
                       >
                         Эстетическая косметология
                       </DialogTitle>
-                      <DialogDescription className="font-body pt-1 text-sm leading-relaxed text-neutral-500">
+                      <DialogDescription className="font-body pt-1 text-xs leading-relaxed text-neutral-500 md:text-sm">
                         Выберите процедуру, чтобы увидеть подробности и записаться на приём.
                       </DialogDescription>
                     </DialogHeader>
-                    <div className="mt-5">
+                    <div className="mt-4 md:mt-5">
                       <EstheticCosmetologyContent />
                     </div>
                   </DialogContent>
 
                 ) : s.title === "Массаж" ? (
-                  <DialogContent className="max-h-[90vh] max-w-4xl overflow-y-auto">
+                  <DialogContent className="max-h-[90vh] max-w-4xl overflow-y-auto p-4 md:p-6">
                     <DialogHeader>
                       <DialogTitle
-                        className="font-display text-2xl md:text-3xl"
+                        className="font-display text-xl md:text-3xl"
                         style={{ color: BRAND }}
                       >
                         Массаж
                       </DialogTitle>
-                      <DialogDescription className="font-body pt-1 text-sm leading-relaxed text-neutral-500">
+                      <DialogDescription className="font-body pt-1 text-xs leading-relaxed text-neutral-500 md:text-sm">
                         Выберите процедуру, чтобы увидеть подробности и записаться на приём.
                       </DialogDescription>
                     </DialogHeader>
-                    <div className="mt-5">
+                    <div className="mt-4 md:mt-5">
                       <MassageContent />
                     </div>
                   </DialogContent>
                 ) : (
-                  <DialogContent className="max-w-lg">
+                  <DialogContent className="max-w-lg p-4 md:p-6">
                     <DialogHeader>
-                      <DialogTitle className="font-display text-2xl" style={{ color: BRAND }}>
+                      <DialogTitle className="font-display text-xl md:text-2xl" style={{ color: BRAND }}>
                         {s.title.replace("\n", " ")}
                       </DialogTitle>
-                      <DialogDescription className="font-body pt-2 text-sm leading-relaxed text-neutral-600">
+                      <DialogDescription className="font-body pt-2 text-xs leading-relaxed text-neutral-600 md:text-sm">
                         Здесь скоро появится подробное описание услуг, методик и
                         специалистов этого направления. Заглушка для предпросмотра.
                       </DialogDescription>
