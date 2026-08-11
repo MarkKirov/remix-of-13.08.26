@@ -1489,15 +1489,15 @@ function TeamDisclosureDialog({ open, onClose }: { open: boolean; onClose: () =>
       aria-modal="true"
     >
       <div
-        className="relative max-h-[92vh] w-full max-w-4xl overflow-hidden rounded-t-2xl bg-white shadow-2xl md:rounded-2xl"
+        className="relative max-h-[85vh] w-[calc(100%-2rem)] max-w-3xl overflow-hidden rounded-t-2xl bg-white shadow-2xl md:rounded-2xl"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-start justify-between gap-4 border-b border-neutral-900/10 px-5 py-5 md:px-8 md:py-6">
+        <div className="flex items-start justify-between gap-4 border-b border-neutral-900/10 px-4 py-4 md:px-6 md:py-5">
           <div>
             <span className="font-caption text-[10px] uppercase tracking-[0.2em] text-neutral-500">
               Официальная информация
             </span>
-            <h3 className="font-display mt-2 text-xl font-bold uppercase leading-tight text-neutral-900 md:text-2xl">
+            <h3 className="font-display mt-1.5 text-lg font-bold uppercase leading-tight text-neutral-900 md:mt-2 md:text-xl">
               О наших сотрудниках
             </h3>
           </div>
@@ -1505,32 +1505,32 @@ function TeamDisclosureDialog({ open, onClose }: { open: boolean; onClose: () =>
             type="button"
             onClick={onClose}
             aria-label="Закрыть"
-            className="flex h-9 w-9 flex-none items-center justify-center rounded-full border border-neutral-900/15 text-neutral-700 transition-colors hover:bg-neutral-100"
+            className="flex h-8 w-8 flex-none items-center justify-center rounded-full border border-neutral-900/15 text-neutral-700 transition-colors hover:bg-neutral-100 md:h-9 md:w-9"
           >
             <X className="h-4 w-4" />
           </button>
         </div>
 
-        <div className="max-h-[calc(92vh-96px)] overflow-y-auto px-5 py-2 md:px-8">
+        <div className="max-h-[calc(85vh-88px)] overflow-y-auto px-4 py-2 md:px-6">
           {/* График работы */}
           <DisclosureItem title="График работы специалистов" subtitle="Часы приёма и номера кабинетов" defaultOpen>
             <div className="overflow-x-auto">
-              <table className="w-full border-collapse text-left text-sm">
+              <table className="w-full border-collapse text-left text-xs md:text-sm">
                 <thead>
-                  <tr className="border-b border-neutral-900/10 text-[11px] uppercase tracking-wider text-neutral-500">
-                    <th className="py-3 pr-4 font-medium">ФИО</th>
-                    <th className="py-3 pr-4 font-medium">Должность</th>
-                    <th className="py-3 pr-4 font-medium">Кабинет</th>
-                    <th className="py-3 font-medium">Дата и время</th>
+                  <tr className="border-b border-neutral-900/10 text-[10px] uppercase tracking-wider text-neutral-500 md:text-[11px]">
+                    <th className="py-2 pr-3 font-medium md:py-3 md:pr-4">ФИО</th>
+                    <th className="py-2 pr-3 font-medium md:py-3 md:pr-4">Должность</th>
+                    <th className="py-2 pr-3 font-medium md:py-3 md:pr-4">Кабинет</th>
+                    <th className="py-2 font-medium md:py-3">Дата и время</th>
                   </tr>
                 </thead>
                 <tbody>
                   {scheduleRows.map((r) => (
                     <tr key={r.name} className="border-b border-neutral-900/5 align-top last:border-b-0">
-                      <td className="py-4 pr-4 font-medium text-neutral-900">{r.name}</td>
-                      <td className="py-4 pr-4 text-neutral-700">{r.role}</td>
-                      <td className="py-4 pr-4 text-neutral-700">{r.room}</td>
-                      <td className="py-4 text-neutral-700">
+                      <td className="py-3 pr-3 font-medium text-neutral-900 md:py-4 md:pr-4">{r.name}</td>
+                      <td className="py-3 pr-3 text-neutral-700 md:py-4 md:pr-4">{r.role}</td>
+                      <td className="py-3 pr-3 text-neutral-700 md:py-4 md:pr-4">{r.room}</td>
+                      <td className="py-3 text-neutral-700 md:py-4">
                         {r.hours.map((h, i) => (
                           <div key={i}>{h}</div>
                         ))}
@@ -1540,7 +1540,7 @@ function TeamDisclosureDialog({ open, onClose }: { open: boolean; onClose: () =>
                 </tbody>
               </table>
             </div>
-            <p className="mt-4 text-xs font-light leading-relaxed text-neutral-500">
+            <p className="mt-3 text-[11px] font-light leading-relaxed text-neutral-500 md:mt-4 md:text-xs">
               *Точный график работы специалиста уточняйте у администратора по телефону{" "}
               <a href="tel:+74742900909" className="whitespace-nowrap font-medium" style={{ color: BRAND }}>
                 8 (4742) 90-09-09
@@ -1554,22 +1554,22 @@ function TeamDisclosureDialog({ open, onClose }: { open: boolean; onClose: () =>
             title="Сведения о профессиональном образовании и квалификации"
             subtitle="Медицинские работники ООО «МЭЦ «Комильфо»"
           >
-            <div className="space-y-6">
+            <div className="space-y-4 md:space-y-6">
               {educationEntries.map((e) => (
-                <div key={e.name} className="rounded-xl border border-neutral-900/10 p-4 md:p-5">
-                  <p className="font-display text-sm uppercase tracking-wide text-neutral-900 md:text-base">{e.name}</p>
-                  <p className="font-body mt-1 text-xs font-light text-neutral-500 md:text-sm">{e.role}</p>
-                  <ul className="mt-4 space-y-3">
+                <div key={e.name} className="rounded-xl border border-neutral-900/10 p-3 md:p-4">
+                  <p className="font-display text-xs uppercase tracking-wide text-neutral-900 md:text-sm">{e.name}</p>
+                  <p className="font-body mt-1 text-[11px] font-light text-neutral-500 md:text-xs">{e.role}</p>
+                  <ul className="mt-3 space-y-2 md:mt-4 md:space-y-3">
                     {e.items.map((it, i) => (
-                      <li key={i} className="grid grid-cols-1 gap-1 border-l-2 pl-4 text-sm md:grid-cols-[180px_1fr] md:gap-4" style={{ borderColor: BRAND }}>
-                        <div className="text-[11px] uppercase tracking-wider text-neutral-500">{it.stage}</div>
+                      <li key={i} className="grid grid-cols-1 gap-1 border-l-2 pl-3 text-xs md:grid-cols-[180px_1fr] md:gap-4 md:pl-4 md:text-sm" style={{ borderColor: BRAND }}>
+                        <div className="text-[10px] uppercase tracking-wider text-neutral-500 md:text-[11px]">{it.stage}</div>
                         <div className="space-y-1 text-neutral-800">
                           <div>{it.place}</div>
                           <div className="text-neutral-600">
                             <span className="font-medium text-neutral-800">Специальность:</span> {it.specialty} · <span className="font-medium text-neutral-800">Квалификация:</span> {it.qualification}
                           </div>
                           {it.certificate ? (
-                            <div className="text-xs text-neutral-500">Сертификат / аккредитация: {it.certificate}</div>
+                            <div className="text-[11px] text-neutral-500 md:text-xs">Сертификат / аккредитация: {it.certificate}</div>
                           ) : null}
                         </div>
                       </li>
@@ -1582,7 +1582,7 @@ function TeamDisclosureDialog({ open, onClose }: { open: boolean; onClose: () =>
 
           {/* Дисклеймер */}
           <DisclosureItem title="Правовая информация и согласия" subtitle="Публикация фото, видео и персональных данных">
-            <div className="space-y-4 text-sm font-light leading-relaxed text-neutral-700">
+            <div className="space-y-3 text-xs font-light leading-relaxed text-neutral-700 md:space-y-4 md:text-sm">
               <p>
                 Публикация фотоизображений и видеоматериалов на сайте осуществляется с письменного согласия субъектов персональных данных, либо фотоизображения и видеоматериалы приобретены в соответствии с договорами позирования граждан за плату, либо сгенерированы с использованием нейросетевых технологий. Указанные изображения в том числе могут быть подвергнуты изменениям при помощи графических редакторов и иных программных продуктов. Копирование, публичное воспроизведение, распространение запрещено.
               </p>
@@ -1592,8 +1592,8 @@ function TeamDisclosureDialog({ open, onClose }: { open: boolean; onClose: () =>
             </div>
           </DisclosureItem>
 
-          <div className="pb-6">
-            <GeneralInfoSections />
+          <div className="pb-4 md:pb-6">
+            <GeneralInfoSections compact />
           </div>
         </div>
 
@@ -2641,11 +2641,16 @@ function ClientsInfoDialog() {
   );
 }
 
-function GeneralInfoSections() {
+function GeneralInfoSections({ compact = false }: { compact?: boolean }) {
+  const body = compact ? "text-xs md:text-sm" : "text-sm";
+  const heading = compact ? "text-sm md:text-base" : "text-base md:text-lg";
+  const pad = compact ? "p-3 md:p-4" : "p-4";
+  const link = compact ? "text-xs md:text-sm" : "text-sm";
+
   return (
     <>
-      <div className="mt-6 rounded-lg border p-4 text-sm leading-relaxed text-neutral-700" style={{ borderColor: `${BRAND}40`, background: `${BRAND}0D` }}>
-        <h4 className="font-display text-base uppercase tracking-wide md:text-lg" style={{ color: BRAND }}>
+      <div className={`mt-4 rounded-lg border ${pad} ${body} leading-relaxed text-neutral-700 md:mt-6`} style={{ borderColor: `${BRAND}40`, background: `${BRAND}0D` }}>
+        <h4 className={`font-display ${heading} uppercase tracking-wide`} style={{ color: BRAND }}>
           Общая информация
         </h4>
         <ul className="mt-3 space-y-2">
@@ -2672,7 +2677,7 @@ function GeneralInfoSections() {
                 href={d.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-start gap-3 py-3 text-sm leading-snug transition-colors hover:opacity-80"
+                className={`flex items-start gap-3 py-3 ${link} leading-snug transition-colors hover:opacity-80`}
                 style={{ color: BRAND }}
               >
                 <FileText className="mt-0.5 h-4 w-4 flex-none" />
@@ -2683,8 +2688,8 @@ function GeneralInfoSections() {
         </ul>
       </div>
 
-      <div className="mt-6 rounded-lg border p-4 text-sm leading-relaxed text-neutral-700" style={{ borderColor: `${BRAND}40` }}>
-        <h4 className="font-display text-base uppercase tracking-wide md:text-lg" style={{ color: BRAND }}>
+      <div className={`mt-4 rounded-lg border ${pad} ${body} leading-relaxed text-neutral-700 md:mt-6`} style={{ borderColor: `${BRAND}40` }}>
+        <h4 className={`font-display ${heading} uppercase tracking-wide`} style={{ color: BRAND }}>
           Адреса органов исполнительной власти в сфере здравоохранения
         </h4>
         <div className="mt-3 space-y-4">
@@ -2714,8 +2719,8 @@ function GeneralInfoSections() {
         </div>
       </div>
 
-      <div className="mt-6 rounded-lg border p-4 text-sm leading-relaxed text-neutral-700" style={{ borderColor: `${BRAND}40`, background: `${BRAND}0D` }}>
-        <h4 className="font-display text-base uppercase tracking-wide md:text-lg" style={{ color: BRAND }}>
+      <div className={`mt-4 rounded-lg border ${pad} ${body} leading-relaxed text-neutral-700 md:mt-6`} style={{ borderColor: `${BRAND}40`, background: `${BRAND}0D` }}>
+        <h4 className={`font-display ${heading} uppercase tracking-wide`} style={{ color: BRAND }}>
           Руководство
         </h4>
         <p className="mt-3 font-semibold text-neutral-900">Журавлев Олег Викторович</p>
