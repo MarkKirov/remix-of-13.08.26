@@ -2642,10 +2642,15 @@ function ClientsInfoDialog() {
 }
 
 function GeneralInfoSections({ compact = false }: { compact?: boolean }) {
+  const body = compact ? "text-xs md:text-sm" : "text-sm";
+  const heading = compact ? "text-sm md:text-base" : "text-base md:text-lg";
+  const pad = compact ? "p-3 md:p-4" : "p-4";
+  const link = compact ? "text-xs md:text-sm" : "text-sm";
+
   return (
     <>
-      <div className="mt-6 rounded-lg border p-4 text-sm leading-relaxed text-neutral-700" style={{ borderColor: `${BRAND}40`, background: `${BRAND}0D` }}>
-        <h4 className="font-display text-base uppercase tracking-wide md:text-lg" style={{ color: BRAND }}>
+      <div className={`mt-4 rounded-lg border ${pad} ${body} leading-relaxed text-neutral-700 md:mt-6`} style={{ borderColor: `${BRAND}40`, background: `${BRAND}0D` }}>
+        <h4 className={`font-display ${heading} uppercase tracking-wide`} style={{ color: BRAND }}>
           Общая информация
         </h4>
         <ul className="mt-3 space-y-2">
@@ -2672,7 +2677,7 @@ function GeneralInfoSections({ compact = false }: { compact?: boolean }) {
                 href={d.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-start gap-3 py-3 text-sm leading-snug transition-colors hover:opacity-80"
+                className={`flex items-start gap-3 py-3 ${link} leading-snug transition-colors hover:opacity-80`}
                 style={{ color: BRAND }}
               >
                 <FileText className="mt-0.5 h-4 w-4 flex-none" />
@@ -2683,8 +2688,8 @@ function GeneralInfoSections({ compact = false }: { compact?: boolean }) {
         </ul>
       </div>
 
-      <div className="mt-6 rounded-lg border p-4 text-sm leading-relaxed text-neutral-700" style={{ borderColor: `${BRAND}40` }}>
-        <h4 className="font-display text-base uppercase tracking-wide md:text-lg" style={{ color: BRAND }}>
+      <div className={`mt-4 rounded-lg border ${pad} ${body} leading-relaxed text-neutral-700 md:mt-6`} style={{ borderColor: `${BRAND}40` }}>
+        <h4 className={`font-display ${heading} uppercase tracking-wide`} style={{ color: BRAND }}>
           Адреса органов исполнительной власти в сфере здравоохранения
         </h4>
         <div className="mt-3 space-y-4">
@@ -2714,8 +2719,8 @@ function GeneralInfoSections({ compact = false }: { compact?: boolean }) {
         </div>
       </div>
 
-      <div className="mt-6 rounded-lg border p-4 text-sm leading-relaxed text-neutral-700" style={{ borderColor: `${BRAND}40`, background: `${BRAND}0D` }}>
-        <h4 className="font-display text-base uppercase tracking-wide md:text-lg" style={{ color: BRAND }}>
+      <div className={`mt-4 rounded-lg border ${pad} ${body} leading-relaxed text-neutral-700 md:mt-6`} style={{ borderColor: `${BRAND}40`, background: `${BRAND}0D` }}>
+        <h4 className={`font-display ${heading} uppercase tracking-wide`} style={{ color: BRAND }}>
           Руководство
         </h4>
         <p className="mt-3 font-semibold text-neutral-900">Журавлев Олег Викторович</p>
