@@ -2066,19 +2066,19 @@ function Index() {
       </section>
 
       {/* Третий экран — призыв на бесплатную диагностику */}
-      <section className="relative min-h-[80vh] overflow-hidden">
+      <section className="relative min-h-[calc(80vh-100px)] overflow-hidden md:min-h-[80vh]">
         <img
           src={consultationBg.url}
           alt=""
           className="absolute inset-0 h-full w-full object-cover"
-          style={{ objectPosition: "center calc(55% - 60px)" }}
+          style={{ objectPosition: "center 55%" }}
           decoding="async"
         />
         <div className="absolute inset-0 bg-black/55" />
         <div className="absolute inset-0 bg-[#7A6E8F]/25" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
 
-        <div className="relative z-10 mx-auto flex min-h-[80vh] max-w-5xl flex-col items-center justify-center px-6 py-16 text-center md:px-8 md:py-20">
+        <div className="relative z-10 mx-auto flex min-h-[calc(80vh-100px)] max-w-5xl flex-col items-center justify-center px-6 py-10 text-center md:min-h-[80vh] md:px-8 md:py-20">
           <div className="md:-translate-y-10">
             <h2 className="font-display whitespace-pre-line text-xl leading-[1.25] tracking-[0.01em] text-[#e5e5e5] drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)] md:text-3xl lg:text-4xl">
               {"Подберём персональную\u00a0\nстратегию вашей естественной красоты"}
