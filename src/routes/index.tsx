@@ -2641,7 +2641,7 @@ function ClientsInfoDialog() {
   );
 }
 
-function GeneralInfoSections() {
+function GeneralInfoSections({ compact = false }: { compact?: boolean }) {
   return (
     <>
       <div className="mt-6 rounded-lg border p-4 text-sm leading-relaxed text-neutral-700" style={{ borderColor: `${BRAND}40`, background: `${BRAND}0D` }}>
