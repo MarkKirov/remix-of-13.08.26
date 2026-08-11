@@ -1801,7 +1801,7 @@ function Index() {
               type="button"
               aria-label="Предыдущий слайд"
               onClick={() => go(-1)}
-              className="shrink-0 grid h-9 w-9 place-items-center rounded-full border border-white/40 bg-white/10 text-white backdrop-blur transition-colors md:h-10 md:w-10"
+              className="hidden shrink-0 md:grid h-9 w-9 place-items-center rounded-full border border-white/40 bg-white/10 text-white backdrop-blur transition-colors md:h-10 md:w-10"
               style={{ transition: "background-color .2s, color .2s, border-color .2s" }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = BRAND;
@@ -1851,7 +1851,7 @@ function Index() {
                       <button
                         type="button"
                         onClick={() => openLead(s.cta)}
-                        className="group inline-flex items-center gap-2 rounded-full border-2 px-6 py-3 text-xs font-normal uppercase tracking-[0.1em] transition-all"
+                        className="group inline-flex items-center gap-2 rounded-full border-2 px-4 py-2 text-[10px] font-normal uppercase tracking-[0.08em] transition-all md:px-6 md:py-3 md:text-xs"
                         style={{
                           borderColor: BRAND,
                           color: "#fff",
@@ -1901,7 +1901,7 @@ function Index() {
               type="button"
               aria-label="Следующий слайд"
               onClick={() => go(1)}
-              className="shrink-0 grid h-9 w-9 place-items-center rounded-full border border-white/40 bg-white/10 text-white backdrop-blur transition-colors md:h-10 md:w-10"
+              className="hidden shrink-0 md:grid h-9 w-9 place-items-center rounded-full border border-white/40 bg-white/10 text-white backdrop-blur transition-colors md:h-10 md:w-10"
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = BRAND;
                 e.currentTarget.style.borderColor = BRAND;
