@@ -434,7 +434,7 @@ function ProcedureRow({ procedure }: { procedure: Procedure }) {
           >
             <Plus className="h-3 w-3 md:h-3.5 md:w-3.5" />
           </span>
-          <span className="font-body flex-1 min-w-0 truncate text-xs font-normal text-neutral-900 md:text-sm md:text-base">
+          <span className="font-body flex-1 min-w-0 text-xs font-normal text-neutral-900 md:text-sm md:text-base">
             {procedure.name}
           </span>
         </button>
