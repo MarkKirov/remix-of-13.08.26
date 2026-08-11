@@ -1489,15 +1489,15 @@ function TeamDisclosureDialog({ open, onClose }: { open: boolean; onClose: () =>
       aria-modal="true"
     >
       <div
-        className="relative max-h-[92vh] w-full max-w-4xl overflow-hidden rounded-t-2xl bg-white shadow-2xl md:rounded-2xl"
+        className="relative max-h-[85vh] w-[calc(100%-2rem)] max-w-3xl overflow-hidden rounded-t-2xl bg-white shadow-2xl md:rounded-2xl"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-start justify-between gap-4 border-b border-neutral-900/10 px-5 py-5 md:px-8 md:py-6">
+        <div className="flex items-start justify-between gap-4 border-b border-neutral-900/10 px-4 py-4 md:px-6 md:py-5">
           <div>
             <span className="font-caption text-[10px] uppercase tracking-[0.2em] text-neutral-500">
               Официальная информация
             </span>
-            <h3 className="font-display mt-2 text-xl font-bold uppercase leading-tight text-neutral-900 md:text-2xl">
+            <h3 className="font-display mt-1.5 text-lg font-bold uppercase leading-tight text-neutral-900 md:mt-2 md:text-xl">
               О наших сотрудниках
             </h3>
           </div>
@@ -1505,13 +1505,13 @@ function TeamDisclosureDialog({ open, onClose }: { open: boolean; onClose: () =>
             type="button"
             onClick={onClose}
             aria-label="Закрыть"
-            className="flex h-9 w-9 flex-none items-center justify-center rounded-full border border-neutral-900/15 text-neutral-700 transition-colors hover:bg-neutral-100"
+            className="flex h-8 w-8 flex-none items-center justify-center rounded-full border border-neutral-900/15 text-neutral-700 transition-colors hover:bg-neutral-100 md:h-9 md:w-9"
           >
             <X className="h-4 w-4" />
           </button>
         </div>
 
-        <div className="max-h-[calc(92vh-96px)] overflow-y-auto px-5 py-2 md:px-8">
+        <div className="max-h-[calc(85vh-88px)] overflow-y-auto px-4 py-2 md:px-6">
           {/* График работы */}
           <DisclosureItem title="График работы специалистов" subtitle="Часы приёма и номера кабинетов" defaultOpen>
             <div className="overflow-x-auto">
