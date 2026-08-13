@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "5452b200-18ee-456d-93f8-b0a208b407de",
-  "project_id": "e3ceabe4-9e55-4854-ae43-f35ddae56b99",
-  "url": "/__l5e/assets-v1/5452b200-18ee-456d-93f8-b0a208b407de/prikaz-789n.docx",
-  "r2_key": "a/v1/e3ceabe4-9e55-4854-ae43-f35ddae56b99/5452b200-18ee-456d-93f8-b0a208b407de/prikaz-789n.docx",
-  "original_filename": "prikaz-789n.docx",
-  "size": 20241,
   "content_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-  "created_at": "2026-07-14T11:01:18Z"
+  "created_at": "2026-07-14T11:01:18Z",
+  "original_filename": "prikaz-789n.docx",
+  "project_id": "fbb22044-be8b-4d50-8594-f91d967b6248",
+  "r2_key": "a/v1/fbb22044-be8b-4d50-8594-f91d967b6248/5452b200-18ee-456d-93f8-b0a208b407de/prikaz-789n.docx",
+  "size": 20241,
+  "url": "/__l5e/assets-v1/5452b200-18ee-456d-93f8-b0a208b407de/prikaz-789n.docx",
+  "version": 1
 }

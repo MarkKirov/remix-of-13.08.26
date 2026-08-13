@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "ab50bff7-89f3-4ab6-b34d-b5ed65009294",
-  "project_id": "e3ceabe4-9e55-4854-ae43-f35ddae56b99",
-  "url": "/__l5e/assets-v1/ab50bff7-89f3-4ab6-b34d-b5ed65009294/md-komilfo-logo.png",
-  "r2_key": "a/v1/e3ceabe4-9e55-4854-ae43-f35ddae56b99/ab50bff7-89f3-4ab6-b34d-b5ed65009294/md-komilfo-logo.png",
-  "original_filename": "md-komilfo-logo.png",
-  "size": 11955,
   "content_type": "image/png",
-  "created_at": "2026-07-13T14:15:36Z"
+  "created_at": "2026-07-13T14:15:36Z",
+  "original_filename": "md-komilfo-logo.png",
+  "project_id": "fbb22044-be8b-4d50-8594-f91d967b6248",
+  "r2_key": "a/v1/fbb22044-be8b-4d50-8594-f91d967b6248/ab50bff7-89f3-4ab6-b34d-b5ed65009294/md-komilfo-logo.png",
+  "size": 11955,
+  "url": "/__l5e/assets-v1/ab50bff7-89f3-4ab6-b34d-b5ed65009294/md-komilfo-logo.png",
+  "version": 1
 }

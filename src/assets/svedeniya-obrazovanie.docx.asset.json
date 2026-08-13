@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "7af72c61-4e1b-4a19-8ddb-6b92f07086e2",
-  "project_id": "e3ceabe4-9e55-4854-ae43-f35ddae56b99",
-  "url": "/__l5e/assets-v1/7af72c61-4e1b-4a19-8ddb-6b92f07086e2/svedeniya-obrazovanie.docx",
-  "r2_key": "a/v1/e3ceabe4-9e55-4854-ae43-f35ddae56b99/7af72c61-4e1b-4a19-8ddb-6b92f07086e2/svedeniya-obrazovanie.docx",
-  "original_filename": "svedeniya-obrazovanie.docx",
-  "size": 30804,
   "content_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-  "created_at": "2026-07-14T11:06:20Z"
+  "created_at": "2026-07-14T11:06:20Z",
+  "original_filename": "svedeniya-obrazovanie.docx",
+  "project_id": "fbb22044-be8b-4d50-8594-f91d967b6248",
+  "r2_key": "a/v1/fbb22044-be8b-4d50-8594-f91d967b6248/7af72c61-4e1b-4a19-8ddb-6b92f07086e2/svedeniya-obrazovanie.docx",
+  "size": 30804,
+  "url": "/__l5e/assets-v1/7af72c61-4e1b-4a19-8ddb-6b92f07086e2/svedeniya-obrazovanie.docx",
+  "version": 1
 }

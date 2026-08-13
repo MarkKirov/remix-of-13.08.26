@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "fcb88cf1-12d9-4c4b-99a6-3e5fc842a032",
-  "project_id": "e3ceabe4-9e55-4854-ae43-f35ddae56b99",
-  "url": "/__l5e/assets-v1/fcb88cf1-12d9-4c4b-99a6-3e5fc842a032/egrul.pdf",
-  "r2_key": "a/v1/e3ceabe4-9e55-4854-ae43-f35ddae56b99/fcb88cf1-12d9-4c4b-99a6-3e5fc842a032/egrul.pdf",
-  "original_filename": "egrul.pdf",
-  "size": 182883,
   "content_type": "application/pdf",
-  "created_at": "2026-07-29T14:09:59Z"
+  "created_at": "2026-07-29T14:09:59Z",
+  "original_filename": "egrul.pdf",
+  "project_id": "fbb22044-be8b-4d50-8594-f91d967b6248",
+  "r2_key": "a/v1/fbb22044-be8b-4d50-8594-f91d967b6248/fcb88cf1-12d9-4c4b-99a6-3e5fc842a032/egrul.pdf",
+  "size": 182883,
+  "url": "/__l5e/assets-v1/fcb88cf1-12d9-4c4b-99a6-3e5fc842a032/egrul.pdf",
+  "version": 1
 }

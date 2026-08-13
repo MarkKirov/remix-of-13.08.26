@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "21216cdf-c3ac-4e26-8428-142a2657c177",
-  "project_id": "e3ceabe4-9e55-4854-ae43-f35ddae56b99",
-  "url": "/__l5e/assets-v1/21216cdf-c3ac-4e26-8428-142a2657c177/pravila-podgotovki.docx",
-  "r2_key": "a/v1/e3ceabe4-9e55-4854-ae43-f35ddae56b99/21216cdf-c3ac-4e26-8428-142a2657c177/pravila-podgotovki.docx",
-  "original_filename": "pravila-podgotovki.docx",
-  "size": 26599,
   "content_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-  "created_at": "2026-07-14T11:06:20Z"
+  "created_at": "2026-07-14T11:06:20Z",
+  "original_filename": "pravila-podgotovki.docx",
+  "project_id": "fbb22044-be8b-4d50-8594-f91d967b6248",
+  "r2_key": "a/v1/fbb22044-be8b-4d50-8594-f91d967b6248/21216cdf-c3ac-4e26-8428-142a2657c177/pravila-podgotovki.docx",
+  "size": 26599,
+  "url": "/__l5e/assets-v1/21216cdf-c3ac-4e26-8428-142a2657c177/pravila-podgotovki.docx",
+  "version": 1
 }

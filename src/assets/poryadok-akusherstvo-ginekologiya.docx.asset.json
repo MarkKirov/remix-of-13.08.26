@@ -1,11 +1,11 @@
 {
-  "version": 1,
   "asset_id": "70c3d014-3677-44eb-9853-935a91c27f93",
-  "project_id": "e3ceabe4-9e55-4854-ae43-f35ddae56b99",
-  "url": "/__l5e/assets-v1/70c3d014-3677-44eb-9853-935a91c27f93/poryadok-akusherstvo-ginekologiya.docx",
-  "r2_key": "a/v1/e3ceabe4-9e55-4854-ae43-f35ddae56b99/70c3d014-3677-44eb-9853-935a91c27f93/poryadok-akusherstvo-ginekologiya.docx",
-  "original_filename": "poryadok-akusherstvo-ginekologiya.docx",
-  "size": 1285644,
   "content_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-  "created_at": "2026-07-14T10:57:50Z"
+  "created_at": "2026-07-14T10:57:50Z",
+  "original_filename": "poryadok-akusherstvo-ginekologiya.docx",
+  "project_id": "fbb22044-be8b-4d50-8594-f91d967b6248",
+  "r2_key": "a/v1/fbb22044-be8b-4d50-8594-f91d967b6248/70c3d014-3677-44eb-9853-935a91c27f93/poryadok-akusherstvo-ginekologiya.docx",
+  "size": 1285644,
+  "url": "/__l5e/assets-v1/70c3d014-3677-44eb-9853-935a91c27f93/poryadok-akusherstvo-ginekologiya.docx",
+  "version": 1
 }
