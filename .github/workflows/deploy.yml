@@ -1,4 +1,7 @@
-name: Deploy to Timeweb
+name: CI build
+
+# Деплой выполняет сам сервер (git pull по таймеру / вебхуку).
+# Здесь только проверка, что код собирается.
 
 on:
   push:
@@ -6,55 +9,27 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: deploy-timeweb
+  group: ci-build
   cancel-in-progress: true
 
 env:
-  # Публичные (publishable) значения бэкенда — не секреты, можно хранить открыто
   SUPABASE_URL: "https://vmknkraslubyrgfzhjnm.supabase.co"
   SUPABASE_PUBLISHABLE_KEY: "sb_publishable_ivCe6_M17J6fX_KJ-E1oPQ_k-rpQJ6w"
   SUPABASE_PROJECT_ID: "vmknkraslubyrgfzhjnm"
   VITE_SUPABASE_URL: "https://vmknkraslubyrgfzhjnm.supabase.co"
   VITE_SUPABASE_PUBLISHABLE_KEY: "sb_publishable_ivCe6_M17J6fX_KJ-E1oPQ_k-rpQJ6w"
   VITE_SUPABASE_PROJECT_ID: "vmknkraslubyrgfzhjnm"
-  SSH_HOST: "91.186.196.204"
-  SSH_USER: "root"
-  SSH_PORT: "22"
 
 jobs:
-  build-and-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - uses: oven-sh/setup-bun@v2
         with:
           bun-version: latest
-
-      - name: Install dependencies
-        run: bun install --frozen-lockfile
-
+      - run: bun install --frozen-lockfile
       - name: Build (Node server bundle)
         env:
           NITRO_PRESET: node_server
         run: bun run build
-
-      - name: Prepare SSH key
-        run: |
-          mkdir -p ~/.ssh
-          printf '%s\n' "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_deploy
-          chmod 600 ~/.ssh/id_deploy
-          ssh-keyscan -p "$SSH_PORT" -H "$SSH_HOST" >> ~/.ssh/known_hosts
-
-      - name: Upload build to server
-        run: |
-          ssh -i ~/.ssh/id_deploy -p "$SSH_PORT" "$SSH_USER@$SSH_HOST" "mkdir -p /var/www/app/dist"
-          rsync -az --delete \
-            -e "ssh -i ~/.ssh/id_deploy -p $SSH_PORT" \
-            dist/ \
-            "$SSH_USER@$SSH_HOST:/var/www/app/dist/"
-
-      - name: Restart app service
-        run: |
-          ssh -i ~/.ssh/id_deploy -p "$SSH_PORT" "$SSH_USER@$SSH_HOST" \
-            "systemctl restart komilfo-app && sleep 2 && systemctl is-active komilfo-app"
