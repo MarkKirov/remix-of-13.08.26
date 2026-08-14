@@ -20,14 +20,14 @@ fi
 echo "==> Каталог приложения"
 mkdir -p "$APP_DIR/dist"
 
-echo "==> Файл окружения $APP_DIR/.env (заполнить значениями!)"
+echo "==> Файл окружения $APP_DIR/.env"
 if [ ! -f "$APP_DIR/.env" ]; then
   cat > "$APP_DIR/.env" <<'EOF'
 PORT=3000
 HOST=127.0.0.1
-SUPABASE_URL=
-SUPABASE_PUBLISHABLE_KEY=
-SUPABASE_PROJECT_ID=
+SUPABASE_URL=https://vmknkraslubyrgfzhjnm.supabase.co
+SUPABASE_PUBLISHABLE_KEY=sb_publishable_ivCe6_M17J6fX_KJ-E1oPQ_k-rpQJ6w
+SUPABASE_PROJECT_ID=vmknkraslubyrgfzhjnm
 EOF
   chmod 600 "$APP_DIR/.env"
 fi
