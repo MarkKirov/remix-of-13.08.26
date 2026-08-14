@@ -1703,13 +1703,24 @@ function TeamTrustBlock() {
 function Index() {
   const [active, setActive] = useState(0);
   const videoRef = useRef<HTMLVideoElement | null>(null);
+  const [playHeroVideo, setPlayHeroVideo] = useState(false);
   const { open: openLead } = useLeadDialog();
+
+  useEffect(() => {
+    // Видео подключаем только на широких экранах и только после гидрации,
+    // чтобы оно не конкурировало за трафик с интерактивностью страницы.
+    if (window.matchMedia("(min-width: 768px)").matches) {
+      const id = window.setTimeout(() => setPlayHeroVideo(true), 300);
+      return () => window.clearTimeout(id);
+    }
+  }, []);
 
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.playbackRate = 0.4;
     }
-  }, []);
+  }, [playHeroVideo]);
+
 
   useEffect(() => {
     const id = setInterval(() => setActive((i) => (i + 1) % slides.length), 12000);
