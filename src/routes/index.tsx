@@ -1761,11 +1761,11 @@ function Index() {
           muted
           loop
           playsInline
-          preload="metadata"
+          preload="none"
           poster={heroMobile.url}
-        >
-          <source src={heroVideo.url} type="video/mp4" media="(min-width: 768px)" />
-        </video>
+          src={playHeroVideo ? heroVideo.url : undefined}
+        />
+
         {/* Затемнение */}
         <div className="absolute inset-0 bg-black/50" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
