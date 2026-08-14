@@ -10,14 +10,21 @@ const leadSchema = z.object({
   agreedToPolicy: z.boolean(),
 });
 
-function stripOpaqueBearer(key: string, input: RequestInfo | URL, init?: RequestInit): Promise<Response> {
+function stripOpaqueBearer(
+  key: string,
+  input: RequestInfo | URL,
+  init?: RequestInit,
+): Promise<Response> {
   const headers = new Headers(
     typeof Request !== "undefined" && input instanceof Request ? input.headers : undefined,
   );
   if (init?.headers) {
     new Headers(init.headers).forEach((value, keyName) => headers.set(keyName, value));
   }
-  if ((key.startsWith("sb_publishable_") || key.startsWith("sb_secret_")) && headers.get("Authorization") === `Bearer ${key}`) {
+  if (
+    (key.startsWith("sb_publishable_") || key.startsWith("sb_secret_")) &&
+    headers.get("Authorization") === `Bearer ${key}`
+  ) {
     headers.delete("Authorization");
   }
   headers.set("apikey", key);
