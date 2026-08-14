@@ -33,13 +33,20 @@ echo "==> Обновляю код: $LOCAL -> $REMOTE"
 git reset --hard "origin/$BRANCH"
 
 echo "==> Зависимости"
-bun install --frozen-lockfile
+RUNNER=bun
+if ! bun install --frozen-lockfile; then
+  echo "bun install не удался — ставлю через npm"
+  rm -rf node_modules
+  npm install --no-audit --no-fund
+  RUNNER=npm
+fi
 
-echo "==> Сборка"
+echo "==> Сборка ($RUNNER)"
 set -a
 [ -f "$APP_DIR/.env" ] && . "$APP_DIR/.env"
 set +a
-NITRO_PRESET=node_server bun run build
+NITRO_PRESET=node_server "$RUNNER" run build
+
 
 echo "==> Публикация сборки"
 rm -rf "$APP_DIR/dist.new"
