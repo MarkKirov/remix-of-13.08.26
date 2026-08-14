@@ -1332,6 +1332,8 @@ function SpecialistsBlock() {
                   <img
                     src={sp.image}
                     alt={sp.name}
+                    loading="lazy"
+                    decoding="async"
                     className="h-full w-full object-cover"
                   />
                 </button>
@@ -1681,6 +1683,8 @@ function TeamTrustBlock() {
                 <img
                   src={mdKomilfoLogo.url}
                   alt="МД Комильфо"
+                  loading="lazy"
+                  decoding="async"
                   className="mt-1.5 h-8 w-auto md:h-10"
                 />
               </div>
@@ -1744,6 +1748,7 @@ function Index() {
           muted
           loop
           playsInline
+          preload="auto"
         />
         {/* Затемнение */}
         <div className="absolute inset-0 bg-black/50" />
@@ -1754,6 +1759,8 @@ function Index() {
             <img
               src={headerLogo.url}
               alt="Camille Four"
+              fetchPriority="high"
+              decoding="async"
               className="w-44 shrink-0 md:w-52"
               style={{ filter: "brightness(0) invert(1)" }}
             />
@@ -1948,6 +1955,8 @@ function Index() {
                         <img
                           src={s.image}
                           alt=""
+                          loading="lazy"
+                          decoding="async"
                           className="h-full w-full scale-105 object-cover grayscale-0 saturate-[1.2] transition-all duration-700 group-hover:scale-100 group-hover:grayscale"
                         />
                 ) : (
@@ -2072,6 +2081,7 @@ function Index() {
           alt=""
           className="absolute inset-0 h-full w-full object-cover"
           style={{ objectPosition: "center 55%" }}
+          loading="lazy"
           decoding="async"
         />
         <div className="absolute inset-0 bg-black/55" />
@@ -2138,6 +2148,7 @@ function Index() {
             className="absolute inset-0 h-full w-full object-cover"
             src={productPhilosophy.url}
             alt="Косметологическая процедура в клинике Комильфо"
+            loading="lazy"
             decoding="async"
           />
         </div>
@@ -2151,6 +2162,7 @@ function Index() {
           alt=""
           className="absolute inset-0 h-full w-full object-cover"
           style={{ objectPosition: "center 30%" }}
+          loading="lazy"
           decoding="async"
         />
         <div className="absolute inset-0 bg-black/60" />
@@ -2236,6 +2248,7 @@ function Index() {
           className="absolute inset-0 h-full w-full object-cover object-[12%_top] md:object-[center_top]"
           src={doctorConsultation.url}
           alt="Врач клиники Комильфо"
+          loading="lazy"
           decoding="async"
         />
         {/* Затемнение с розоватым оттенком */}
@@ -2289,6 +2302,7 @@ function Index() {
           className="absolute inset-0 h-full w-full object-cover"
           src={teamImage.url}
           alt="Команда клиники Комильфо"
+          loading="lazy"
           decoding="async"
         />
         <div className="absolute inset-0 bg-black/55" />
