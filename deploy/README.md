@@ -75,6 +75,6 @@ certbot --nginx -d ваш-домен.ру -d www.ваш-домен.ру
 
 ## Примечания
 - Сборка в CI идёт с `NITRO_PRESET=node_server`, поэтому получается обычный Node-сервер
-  (`.output/server/index.mjs`), а не Cloudflare-бандл.
+  (`dist/server/index.mjs`), а не Cloudflare-бандл.
 - База данных остаётся в Lovable Cloud. Если её тоже нужно перенести на свой сервер —
   это отдельная задача (self-hosted Supabase или Postgres).

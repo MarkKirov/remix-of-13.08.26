@@ -18,7 +18,7 @@ if ! command -v node >/dev/null || [ "$(node -v | cut -d. -f1)" != "v22" ]; then
 fi
 
 echo "==> Каталог приложения"
-mkdir -p "$APP_DIR/.output"
+mkdir -p "$APP_DIR/dist"
 
 echo "==> Файл окружения $APP_DIR/.env (заполнить значениями!)"
 if [ ! -f "$APP_DIR/.env" ]; then
@@ -42,7 +42,7 @@ After=network.target
 Type=simple
 WorkingDirectory=$APP_DIR
 EnvironmentFile=$APP_DIR/.env
-ExecStart=/usr/bin/node $APP_DIR/.output/server/index.mjs
+ExecStart=/usr/bin/node $APP_DIR/dist/server/index.mjs
 Restart=always
 RestartSec=3
 User=root

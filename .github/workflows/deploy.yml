@@ -44,8 +44,8 @@ jobs:
         run: |
           rsync -az --delete \
             -e "ssh -i ~/.ssh/id_deploy -p ${{ secrets.SSH_PORT || 22 }}" \
-            .output/ \
-            "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/app/.output/"
+            dist/ \
+            "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/app/dist/"
 
       - name: Restart app service
         run: |
