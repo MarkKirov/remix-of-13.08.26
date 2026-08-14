@@ -1,9 +1,17 @@
 import { createContext, useCallback, useContext, useMemo, useState, type ReactNode } from "react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { useServerFn } from "@tanstack/react-start";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { toast } from "sonner";
+import { submitLead } from "@/lib/leads.functions";
 import privacyPolicy from "@/assets/privacy-policy.pdf.asset.json";
 
 const BRAND = "#AE31A6";
@@ -32,7 +40,9 @@ export function LeadDialogProvider({ children }: { children: ReactNode }) {
 
   const value = useMemo(() => ({ open }), [open]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const submitLeadFn = useServerFn(submitLead);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const trimmedName = name.trim();
     const trimmedPhone = phone.trim();
@@ -50,15 +60,26 @@ export function LeadDialogProvider({ children }: { children: ReactNode }) {
       return;
     }
     setSubmitting(true);
-    // Демо-заглушка. Позже — Яндекс.Формы / бэкенд.
-    setTimeout(() => {
-      setSubmitting(false);
+    try {
+      await submitLeadFn({
+        data: {
+          name: trimmedName,
+          phone: trimmedPhone,
+          source: title,
+          agreedToPolicy: agree,
+        },
+      });
       setIsOpen(false);
       setName("");
       setPhone("");
       setAgree(true);
       toast.success("Заявка принята — мы позвоним вам в ближайшее время");
-    }, 400);
+    } catch (error) {
+      const message = error instanceof Error ? error.message : "Не удалось отправить заявку";
+      toast.error(message);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -81,7 +102,10 @@ export function LeadDialogProvider({ children }: { children: ReactNode }) {
 
             <form onSubmit={handleSubmit} className="mt-6 space-y-4">
               <div className="space-y-1.5">
-                <Label htmlFor="lead-name" className="font-caption text-[10px] uppercase tracking-[0.16em] text-neutral-500">
+                <Label
+                  htmlFor="lead-name"
+                  className="font-caption text-[10px] uppercase tracking-[0.16em] text-neutral-500"
+                >
                   Как к вам обращаться
                 </Label>
                 <Input
@@ -97,7 +121,10 @@ export function LeadDialogProvider({ children }: { children: ReactNode }) {
               </div>
 
               <div className="space-y-1.5">
-                <Label htmlFor="lead-phone" className="font-caption text-[10px] uppercase tracking-[0.16em] text-neutral-500">
+                <Label
+                  htmlFor="lead-phone"
+                  className="font-caption text-[10px] uppercase tracking-[0.16em] text-neutral-500"
+                >
                   Номер телефона
                 </Label>
                 <Input

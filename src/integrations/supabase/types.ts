@@ -14,7 +14,33 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      leads: {
+        Row: {
+          agreed_to_policy: boolean
+          created_at: string
+          id: string
+          name: string
+          phone: string
+          source: string | null
+        }
+        Insert: {
+          agreed_to_policy?: boolean
+          created_at?: string
+          id?: string
+          name: string
+          phone: string
+          source?: string | null
+        }
+        Update: {
+          agreed_to_policy?: boolean
+          created_at?: string
+          id?: string
+          name?: string
+          phone?: string
+          source?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
