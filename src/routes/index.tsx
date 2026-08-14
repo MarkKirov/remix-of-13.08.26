@@ -1703,14 +1703,14 @@ function TeamTrustBlock() {
 function Index() {
   const [active, setActive] = useState(0);
   const videoRef = useRef<HTMLVideoElement | null>(null);
-  const [playHeroVideo, setPlayHeroVideo] = useState(false);
+  const [heroVideoEnabled, setHeroVideoEnabled] = useState(false);
   const { open: openLead } = useLeadDialog();
 
   useEffect(() => {
     // Видео подключаем только на широких экранах и только после гидрации,
     // чтобы оно не конкурировало за трафик с интерактивностью страницы.
     if (window.matchMedia("(min-width: 768px)").matches) {
-      const id = window.setTimeout(() => setPlayHeroVideo(true), 300);
+      const id = window.setTimeout(() => setHeroVideoEnabled(true), 300);
       return () => window.clearTimeout(id);
     }
   }, []);
@@ -1719,7 +1719,7 @@ function Index() {
     if (videoRef.current) {
       videoRef.current.playbackRate = 0.4;
     }
-  }, [playHeroVideo]);
+  }, [heroVideoEnabled]);
 
 
   useEffect(() => {
@@ -1754,17 +1754,28 @@ function Index() {
       {/* Первый экран — видео на всю высоту viewport с текстом поверх */}
       <section className="relative h-screen min-h-screen overflow-hidden">
         {/* Видео фон */}
-        <video
-          ref={videoRef}
-          className="absolute inset-0 h-full w-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="none"
-          poster={heroMobile.url}
-          src={playHeroVideo ? heroVideo.url : undefined}
-        />
+        {heroVideoEnabled ? (
+          <video
+            ref={videoRef}
+            className="absolute inset-0 h-full w-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            poster={heroMobile.url}
+            src={heroVideo.url}
+          />
+        ) : (
+          <img
+            src={heroMobile.url}
+            alt=""
+            aria-hidden="true"
+            fetchPriority="high"
+            decoding="async"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+        )}
 
         {/* Затемнение */}
         <div className="absolute inset-0 bg-black/50" />

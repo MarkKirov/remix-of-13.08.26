@@ -118,6 +118,16 @@ gzip_types = (
     "    gzip_types text/plain text/css text/javascript application/javascript "
     "application/json application/xml image/svg+xml font/woff2;"
 )
+assets_location = '''    location ^~ /assets/ {
+        proxy_pass http://127.0.0.1:3000;
+        proxy_http_version 1.1;
+        proxy_set_header Host $host;
+        proxy_set_header Accept-Encoding "";
+        gzip on;
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+    }
+'''
 if "gzip_comp_level" not in text:
     text = text.replace(
         "    client_max_body_size 20m;",
@@ -132,6 +142,10 @@ else:
     # Always refresh the MIME list: TanStack serves JS as text/javascript,
     # which the previous list did not compress.
     text = re.sub(r"[ \t]*gzip_types [^;]*;", gzip_types, text, count=1)
+if "gzip_vary on;" not in text:
+    text = text.replace("    gzip_proxied any;", "    gzip_proxied any;\n    gzip_vary on;", 1)
+if "location ^~ /assets/" not in text:
+    text = text.replace("    location / {", assets_location + "\n    location / {", 1)
 path.write_text(text)
 PY
 
