@@ -16,5 +16,12 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
-  ...(nitroPreset ? { nitro: { preset: nitroPreset } } : {}),
+  ...(nitroPreset
+    ? {
+        nitro: {
+          preset: nitroPreset,
+          output: { dir: "dist", serverDir: "dist/server", publicDir: "dist/client" },
+        },
+      }
+    : {}),
 });
