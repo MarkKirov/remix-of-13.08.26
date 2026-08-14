@@ -34,7 +34,9 @@ export function LeadDialogProvider({ children }: { children: ReactNode }) {
 
   const value = useMemo(() => ({ open }), [open]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const submitLeadFn = useServerFn(submitLead);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const trimmedName = name.trim();
     const trimmedPhone = phone.trim();
@@ -52,15 +54,26 @@ export function LeadDialogProvider({ children }: { children: ReactNode }) {
       return;
     }
     setSubmitting(true);
-    // Демо-заглушка. Позже — Яндекс.Формы / бэкенд.
-    setTimeout(() => {
-      setSubmitting(false);
+    try {
+      await submitLeadFn({
+        data: {
+          name: trimmedName,
+          phone: trimmedPhone,
+          source: title,
+          agreedToPolicy: agree,
+        },
+      });
       setIsOpen(false);
       setName("");
       setPhone("");
       setAgree(true);
       toast.success("Заявка принята — мы позвоним вам в ближайшее время");
-    }, 400);
+    } catch (error) {
+      const message = error instanceof Error ? error.message : "Не удалось отправить заявку";
+      toast.error(message);
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
