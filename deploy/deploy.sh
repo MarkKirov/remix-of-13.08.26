@@ -27,7 +27,8 @@ REMOTE=$(git rev-parse "origin/$BRANCH")
 if [ "$LOCAL" = "$REMOTE" ] \
   && [ "${FORCE:-0}" != "1" ] \
   && [ -f "$APP_DIR/dist/server/index.mjs" ] \
-  && grep -q 'location \^~ /__l5e/assets-v1/' /etc/nginx/sites-available/$SERVICE 2>/dev/null; then
+  && grep -q 'location \^~ /__l5e/assets-v1/' /etc/nginx/sites-available/$SERVICE 2>/dev/null \
+  && grep -q 'gzip_types .*text/javascript' /etc/nginx/sites-available/$SERVICE 2>/dev/null; then
   echo "Изменений нет ($LOCAL) — деплой не нужен."
   exit 0
 fi
@@ -109,9 +110,14 @@ rm -rf "$APP_DIR/dist.old"
 echo "==> Настройка локальной раздачи медиа"
 python3 <<'PY'
 from pathlib import Path
+import re
 
 path = Path("/etc/nginx/sites-available/komilfo-app")
 text = path.read_text()
+gzip_types = (
+    "    gzip_types text/plain text/css text/javascript application/javascript "
+    "application/json application/xml image/svg+xml font/woff2;"
+)
 if "gzip_comp_level" not in text:
     text = text.replace(
         "    client_max_body_size 20m;",
@@ -119,12 +125,16 @@ if "gzip_comp_level" not in text:
         "    gzip on;\n"
         "    gzip_comp_level 5;\n"
         "    gzip_min_length 1024;\n"
-        "    gzip_proxied any;\n"
-        "    gzip_types text/plain text/css application/javascript application/json image/svg+xml;",
+        "    gzip_proxied any;\n" + gzip_types,
         1,
     )
-    path.write_text(text)
+else:
+    # Always refresh the MIME list: TanStack serves JS as text/javascript,
+    # which the previous list did not compress.
+    text = re.sub(r"[ \t]*gzip_types [^;]*;", gzip_types, text, count=1)
+path.write_text(text)
 PY
+
 
 cat > /etc/nginx/conf.d/komilfo-assets.conf <<'EOF'
 # Media is mirrored automatically by deploy.sh and served without an external CDN.

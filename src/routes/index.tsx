@@ -1703,13 +1703,24 @@ function TeamTrustBlock() {
 function Index() {
   const [active, setActive] = useState(0);
   const videoRef = useRef<HTMLVideoElement | null>(null);
+  const [playHeroVideo, setPlayHeroVideo] = useState(false);
   const { open: openLead } = useLeadDialog();
+
+  useEffect(() => {
+    // Видео подключаем только на широких экранах и только после гидрации,
+    // чтобы оно не конкурировало за трафик с интерактивностью страницы.
+    if (window.matchMedia("(min-width: 768px)").matches) {
+      const id = window.setTimeout(() => setPlayHeroVideo(true), 300);
+      return () => window.clearTimeout(id);
+    }
+  }, []);
 
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.playbackRate = 0.4;
     }
-  }, []);
+  }, [playHeroVideo]);
+
 
   useEffect(() => {
     const id = setInterval(() => setActive((i) => (i + 1) % slides.length), 12000);
@@ -1750,11 +1761,11 @@ function Index() {
           muted
           loop
           playsInline
-          preload="metadata"
+          preload="none"
           poster={heroMobile.url}
-        >
-          <source src={heroVideo.url} type="video/mp4" media="(min-width: 768px)" />
-        </video>
+          src={playHeroVideo ? heroVideo.url : undefined}
+        />
+
         {/* Затемнение */}
         <div className="absolute inset-0 bg-black/50" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
