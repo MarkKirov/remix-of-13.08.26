@@ -24,7 +24,10 @@ git fetch --prune origin "$BRANCH"
 LOCAL=$(git rev-parse HEAD)
 REMOTE=$(git rev-parse "origin/$BRANCH")
 
-if [ "$LOCAL" = "$REMOTE" ] && [ "${FORCE:-0}" != "1" ] && [ -f "$APP_DIR/dist/server/index.mjs" ]; then
+if [ "$LOCAL" = "$REMOTE" ] \
+  && [ "${FORCE:-0}" != "1" ] \
+  && [ -f "$APP_DIR/dist/server/index.mjs" ] \
+  && grep -q 'location \^~ /__l5e/assets-v1/' /etc/nginx/sites-available/$SERVICE 2>/dev/null; then
   echo "Изменений нет ($LOCAL) — деплой не нужен."
   exit 0
 fi
