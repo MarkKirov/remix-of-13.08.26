@@ -107,6 +107,25 @@ mv "$APP_DIR/dist.new" "$APP_DIR/dist"
 rm -rf "$APP_DIR/dist.old"
 
 echo "==> Настройка локальной раздачи медиа"
+python3 <<'PY'
+from pathlib import Path
+
+path = Path("/etc/nginx/sites-available/komilfo-app")
+text = path.read_text()
+if "gzip_comp_level" not in text:
+    text = text.replace(
+        "    client_max_body_size 20m;",
+        "    client_max_body_size 20m;\n"
+        "    gzip on;\n"
+        "    gzip_comp_level 5;\n"
+        "    gzip_min_length 1024;\n"
+        "    gzip_proxied any;\n"
+        "    gzip_types text/plain text/css application/javascript application/json image/svg+xml;",
+        1,
+    )
+    path.write_text(text)
+PY
+
 cat > /etc/nginx/conf.d/komilfo-assets.conf <<'EOF'
 # Media is mirrored automatically by deploy.sh and served without an external CDN.
 location ^~ /__l5e/assets-v1/ {

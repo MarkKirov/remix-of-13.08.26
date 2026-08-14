@@ -2,8 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, ArrowRight, Plus, ChevronUp, ChevronDown, X, FileText, FileDown } from "lucide-react";
 import heroVideo from "@/assets/komilfo_hero_v2.mp4.asset.json";
+import heroMobile from "@/assets/optimized/hero-mobile.webp.asset.json";
 import doctorConsultation from "@/assets/doctor-consultation.jpg.asset.json";
-import productPhilosophy from "@/assets/injection-beauty.png.asset.json";
+import productPhilosophy from "@/assets/optimized/injection-beauty.webp.asset.json";
 import serviceEsthetic from "@/assets/optimized/service-esthetic.webp.asset.json";
 import serviceMedical from "@/assets/optimized/service-apparatnaya.webp.asset.json";
 import serviceHardware from "@/assets/service_hardware.png.asset.json";
@@ -12,7 +13,7 @@ import serviceMassage from "@/assets/optimized/service-massage.webp.asset.json";
 import comparisonBg from "@/assets/comparison-bg.png.asset.json";
 import headerLogo from "@/assets/header_logo.svg.asset.json";
 import mdKomilfoLogo from "@/assets/md-komilfo-logo.png.asset.json";
-import consultationBg from "@/assets/consultation-bg.png.asset.json";
+import consultationBg from "@/assets/optimized/consultation-bg.webp.asset.json";
 import specialistZhuravleva from "@/assets/optimized/specialist-zhuravleva.webp.asset.json";
 import specialistTonkih from "@/assets/specialist-tonkih.jpg.asset.json";
 import specialistKorabelshchikova from "@/assets/specialist-korabelshchikova.jpg.asset.json";
@@ -81,6 +82,8 @@ export const Route = createFileRoute("/")({
         content:
           "Комильфо — клиника, где сохраняют естественную красоту без рисков для здоровья. Медицинская диагностика, персональная стратегия, сертифицированные препараты.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary" },
     ],
   }),
   component: () => (
@@ -1743,13 +1746,15 @@ function Index() {
         <video
           ref={videoRef}
           className="absolute inset-0 h-full w-full object-cover"
-          src={heroVideo.url}
           autoPlay
           muted
           loop
           playsInline
-          preload="auto"
-        />
+          preload="metadata"
+          poster={heroMobile.url}
+        >
+          <source src={heroVideo.url} type="video/mp4" media="(min-width: 768px)" />
+        </video>
         {/* Затемнение */}
         <div className="absolute inset-0 bg-black/50" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
@@ -2396,6 +2401,7 @@ function Index() {
           <div className="overflow-hidden rounded-xl border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.35)]">
             <iframe
               src="https://yandex.ru/map-widget/v1/?um=constructor%3Ab9ee1753cb92e83ab8ba25232ea59f804fea405124fc08ebe98e9d61af17ce3b&source=constructor"
+              loading="lazy"
               width="100%"
               height="400"
               frameBorder="0"
