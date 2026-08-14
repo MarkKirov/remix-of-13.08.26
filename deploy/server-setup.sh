@@ -109,13 +109,11 @@ server {
     client_max_body_size 20m;
 
     location ^~ /__l5e/assets-v1/ {
-        proxy_pass https://d7c25a86-11ce-4ac7-afce-4c384aa3ed13.lovableproject.com;
-        proxy_ssl_server_name on;
-        proxy_set_header Host d7c25a86-11ce-4ac7-afce-4c384aa3ed13.lovableproject.com;
-        proxy_set_header Accept-Encoding "";
-        proxy_connect_timeout 20s;
-        proxy_read_timeout 120s;
-        proxy_cache_valid 200 1h;
+        root /var/www/app/media-root;
+        try_files \$uri =404;
+        access_log off;
+        expires 30d;
+        add_header Cache-Control "public, immutable";
     }
 
     location / {

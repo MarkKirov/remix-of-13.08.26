@@ -50,6 +50,53 @@ set -a
 set +a
 NITRO_PRESET=node_server "$RUNNER" run build
 
+echo "==> Синхронизация медиа на сервер"
+# .asset.json remains in GitHub, while the binary is downloaded automatically
+# during deployment. Browsers never need to contact the external asset host.
+python3 <<'PY'
+from pathlib import Path
+import json
+import os
+import time
+import urllib.request
+
+repo = Path("/var/www/app/repo")
+media_root = Path("/var/www/app/media-root")
+upstream = "https://d7c25a86-11ce-4ac7-afce-4c384aa3ed13.lovableproject.com"
+assets = []
+
+for pointer in repo.rglob("*.asset.json"):
+    data = json.loads(pointer.read_text())
+    url = data.get("url", "")
+    if not url.startswith("/__l5e/assets-v1/"):
+        continue
+    assets.append((url, int(data.get("size", 0))))
+
+for index, (url, expected_size) in enumerate(assets, 1):
+    target = media_root / url.lstrip("/")
+    if target.exists() and (not expected_size or target.stat().st_size == expected_size):
+        continue
+    target.parent.mkdir(parents=True, exist_ok=True)
+    temporary = target.with_suffix(target.suffix + ".download")
+    for attempt in range(1, 5):
+        try:
+            request = urllib.request.Request(upstream + url, headers={"User-Agent": "KomilfoDeploy/1.0"})
+            with urllib.request.urlopen(request, timeout=120) as response, temporary.open("wb") as output:
+                while chunk := response.read(1024 * 1024):
+                    output.write(chunk)
+            if expected_size and temporary.stat().st_size != expected_size:
+                raise RuntimeError(f"размер {temporary.stat().st_size}, ожидался {expected_size}")
+            os.replace(temporary, target)
+            break
+        except Exception as error:
+            temporary.unlink(missing_ok=True)
+            if attempt == 4:
+                raise SystemExit(f"Не удалось скачать {url}: {error}")
+            time.sleep(attempt * 3)
+
+print(f"Медиа готовы: {len(assets)} файлов")
+PY
+
 
 echo "==> Публикация сборки"
 rm -rf "$APP_DIR/dist.new"
@@ -59,18 +106,15 @@ rm -rf "$APP_DIR/dist.old"
 mv "$APP_DIR/dist.new" "$APP_DIR/dist"
 rm -rf "$APP_DIR/dist.old"
 
-echo "==> Настройка прокси для медиа Lovable Assets"
+echo "==> Настройка локальной раздачи медиа"
 cat > /etc/nginx/conf.d/komilfo-assets.conf <<'EOF'
-# Asset pointers in the repository use this same-origin path. On Lovable hosting
-# it is handled by the platform; on our server nginx forwards it to asset storage.
+# Media is mirrored automatically by deploy.sh and served without an external CDN.
 location ^~ /__l5e/assets-v1/ {
-    proxy_pass https://d7c25a86-11ce-4ac7-afce-4c384aa3ed13.lovableproject.com;
-    proxy_ssl_server_name on;
-    proxy_set_header Host d7c25a86-11ce-4ac7-afce-4c384aa3ed13.lovableproject.com;
-    proxy_set_header Accept-Encoding "";
-    proxy_connect_timeout 20s;
-    proxy_read_timeout 120s;
-    proxy_cache_valid 200 1h;
+    root /var/www/app/media-root;
+    try_files $uri =404;
+    access_log off;
+    expires 30d;
+    add_header Cache-Control "public, immutable";
 }
 EOF
 
