@@ -9,6 +9,18 @@ concurrency:
   group: deploy-timeweb
   cancel-in-progress: true
 
+env:
+  # Публичные (publishable) значения бэкенда — не секреты, можно хранить открыто
+  SUPABASE_URL: "https://vmknkraslubyrgfzhjnm.supabase.co"
+  SUPABASE_PUBLISHABLE_KEY: "sb_publishable_ivCe6_M17J6fX_KJ-E1oPQ_k-rpQJ6w"
+  SUPABASE_PROJECT_ID: "vmknkraslubyrgfzhjnm"
+  VITE_SUPABASE_URL: "https://vmknkraslubyrgfzhjnm.supabase.co"
+  VITE_SUPABASE_PUBLISHABLE_KEY: "sb_publishable_ivCe6_M17J6fX_KJ-E1oPQ_k-rpQJ6w"
+  VITE_SUPABASE_PROJECT_ID: "vmknkraslubyrgfzhjnm"
+  SSH_HOST: "91.186.196.204"
+  SSH_USER: "root"
+  SSH_PORT: "22"
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -25,30 +37,24 @@ jobs:
       - name: Build (Node server bundle)
         env:
           NITRO_PRESET: node_server
-          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
-          VITE_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.VITE_SUPABASE_PUBLISHABLE_KEY }}
-          VITE_SUPABASE_PROJECT_ID: ${{ secrets.VITE_SUPABASE_PROJECT_ID }}
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_PUBLISHABLE_KEY: ${{ secrets.SUPABASE_PUBLISHABLE_KEY }}
-          SUPABASE_PROJECT_ID: ${{ secrets.SUPABASE_PROJECT_ID }}
         run: bun run build
 
       - name: Prepare SSH key
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_deploy
+          printf '%s\n' "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_deploy
           chmod 600 ~/.ssh/id_deploy
-          ssh-keyscan -p "${{ secrets.SSH_PORT || 22 }}" -H "${{ secrets.SSH_HOST }}" >> ~/.ssh/known_hosts
+          ssh-keyscan -p "$SSH_PORT" -H "$SSH_HOST" >> ~/.ssh/known_hosts
 
       - name: Upload build to server
         run: |
+          ssh -i ~/.ssh/id_deploy -p "$SSH_PORT" "$SSH_USER@$SSH_HOST" "mkdir -p /var/www/app/dist"
           rsync -az --delete \
-            -e "ssh -i ~/.ssh/id_deploy -p ${{ secrets.SSH_PORT || 22 }}" \
+            -e "ssh -i ~/.ssh/id_deploy -p $SSH_PORT" \
             dist/ \
-            "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/var/www/app/dist/"
+            "$SSH_USER@$SSH_HOST:/var/www/app/dist/"
 
       - name: Restart app service
         run: |
-          ssh -i ~/.ssh/id_deploy -p "${{ secrets.SSH_PORT || 22 }}" \
-            "${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}" \
-            "sudo systemctl restart komilfo-app && sleep 2 && sudo systemctl is-active komilfo-app"
+          ssh -i ~/.ssh/id_deploy -p "$SSH_PORT" "$SSH_USER@$SSH_HOST" \
+            "systemctl restart komilfo-app && sleep 2 && systemctl is-active komilfo-app"
