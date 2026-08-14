@@ -36,20 +36,15 @@ fi
 echo "==> Обновляю код: $LOCAL -> $REMOTE"
 git reset --hard "origin/$BRANCH"
 
-echo "==> Зависимости"
-RUNNER=bun
-if ! bun install --frozen-lockfile; then
-  echo "bun install не удался — ставлю через npm"
-  rm -rf node_modules
-  npm install --no-audit --no-fund
-  RUNNER=npm
-fi
+echo "==> Зависимости (npm — bun ломает резолв @tailwindcss/node при сборке)"
+rm -rf node_modules
+npm install --no-audit --no-fund
 
-echo "==> Сборка ($RUNNER)"
+echo "==> Сборка"
 set -a
 [ -f "$APP_DIR/.env" ] && . "$APP_DIR/.env"
 set +a
-NITRO_PRESET=node_server "$RUNNER" run build
+NITRO_PRESET=node_server npm run build
 
 echo "==> Синхронизация медиа на сервер"
 # .asset.json remains in GitHub, while the binary is downloaded automatically
