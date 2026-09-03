@@ -59,17 +59,37 @@ export const submitLead = createServerFn({ method: "POST" })
       },
     });
 
-    const { error } = await supabase.from("leads").insert({
-      name: data.name,
-      phone: data.phone,
-      source: data.source || null,
-      agreed_to_policy: data.agreedToPolicy,
-    });
+    const { data: inserted, error } = await supabase
+      .from("leads")
+      .insert({
+        name: data.name,
+        phone: data.phone,
+        source: data.source || null,
+        agreed_to_policy: data.agreedToPolicy,
+      })
+      .select("id")
+      .single();
 
     if (error) {
       console.error("Lead insert error:", error);
       throw new Error("Не удалось сохранить заявку. Попробуйте позже.");
     }
 
+    try {
+      const { sendTemplateEmail } = await import("@/lib/email-templates/send-email");
+      await sendTemplateEmail("new-lead", "info@komilfocentr.ru", {
+        templateData: {
+          name: data.name,
+          phone: data.phone,
+          source: data.source || "Сайт",
+          submittedAt: new Date().toLocaleString("ru-RU", { timeZone: "Europe/Moscow" }),
+        },
+        idempotencyKey: `new-lead-${inserted?.id ?? crypto.randomUUID()}`,
+      });
+    } catch (emailError) {
+      console.error("Lead notification email failed:", emailError);
+    }
+
     return { success: true };
   });
+
