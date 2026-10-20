@@ -24,15 +24,20 @@ export const Route = createFileRoute("/api/public/lead-notify")({
           return new Response("Too old", { status: 410 });
         }
 
-        const { sendLeadEmail } = await import("@/lib/lead-email");
-        await sendLeadEmail({
-          id: lead.id,
-          name: lead.name,
-          phone: lead.phone,
-          source: lead.source,
-          createdAt: lead.created_at,
-        });
-        return Response.json({ ok: true });
+        try {
+          const { sendLeadEmail } = await import("@/lib/lead-email");
+          await sendLeadEmail({
+            id: lead.id,
+            name: lead.name,
+            phone: lead.phone,
+            source: lead.source,
+            createdAt: lead.created_at,
+          });
+          return Response.json({ ok: true });
+        } catch (error) {
+          console.error("lead-notify send failed:", error);
+          return Response.json({ ok: false, error: "send_failed" }, { status: 502 });
+        }
       },
     },
   },
