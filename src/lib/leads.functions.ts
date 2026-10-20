@@ -71,17 +71,13 @@ export const submitLead = createServerFn({ method: "POST" })
     );
 
     try {
-      const { sendTemplateEmail } = await import("@/lib/email-templates/send-email");
-      const emailResult = await sendTemplateEmail("new-lead", "info@komilfocentr.ru", {
-        templateData: {
-          name: data.name,
-          phone: data.phone,
-          source: data.source || "Сайт",
-          submittedAt: new Date().toLocaleString("ru-RU", { timeZone: "Europe/Moscow" }),
-        },
-        idempotencyKey: `new-lead-${submissionId}`,
+      const { notifyOwner } = await import("@/lib/lead-email");
+      await notifyOwner({
+        id: submissionId,
+        name: data.name,
+        phone: data.phone,
+        source: data.source || null,
       });
-      if (!emailResult.sent) console.warn("Lead notification blocked by recipient suppression", { submissionId });
     } catch (emailError) {
       console.error("Lead notification email failed:", emailError);
     }
