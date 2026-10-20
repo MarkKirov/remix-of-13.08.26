@@ -2,6 +2,7 @@ import { createServerFn } from "@tanstack/react-start";
 import { createClient } from "@supabase/supabase-js";
 import { z } from "zod";
 import type { Database } from "@/integrations/supabase/types";
+import { storeLead } from "@/lib/lead-storage";
 
 const leadSchema = z.object({
   name: z.string().trim().min(2).max(80),
@@ -59,33 +60,28 @@ export const submitLead = createServerFn({ method: "POST" })
       },
     });
 
-    const { data: inserted, error } = await supabase
-      .from("leads")
-      .insert({
+    const submissionId = await storeLead(
+      {
         name: data.name,
         phone: data.phone,
         source: data.source || null,
         agreed_to_policy: data.agreedToPolicy,
-      })
-      .select("id")
-      .single();
-
-    if (error) {
-      console.error("Lead insert error:", error);
-      throw new Error("Не удалось сохранить заявку. Попробуйте позже.");
-    }
+      },
+      (row) => supabase.from("leads").insert(row),
+    );
 
     try {
       const { sendTemplateEmail } = await import("@/lib/email-templates/send-email");
-      await sendTemplateEmail("new-lead", "info@komilfocentr.ru", {
+      const emailResult = await sendTemplateEmail("new-lead", "info@komilfocentr.ru", {
         templateData: {
           name: data.name,
           phone: data.phone,
           source: data.source || "Сайт",
           submittedAt: new Date().toLocaleString("ru-RU", { timeZone: "Europe/Moscow" }),
         },
-        idempotencyKey: `new-lead-${inserted?.id ?? crypto.randomUUID()}`,
+        idempotencyKey: `new-lead-${submissionId}`,
       });
+      if (!emailResult.sent) console.warn("Lead notification blocked by recipient suppression", { submissionId });
     } catch (emailError) {
       console.error("Lead notification email failed:", emailError);
     }

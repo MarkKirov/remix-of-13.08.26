@@ -58,6 +58,8 @@ certbot --nginx -d example.ru -d www.example.ru
 
 ## Примечания
 
+- Уведомления о заявках требуют `LOVABLE_API_KEY` в защищённом `/var/www/app/.env` на сервере. Секрет из Lovable не переносится на Timeweb автоматически; не добавляйте его в GitHub или клиентские `VITE_*` переменные. После настройки перезапустите `komilfo-app` и проверьте заявку с основного домена и событие отправки в Lovable Emails.
+
 - GitHub Actions (`.github/workflows/deploy.yml`) теперь только проверяет сборку — деплой делает сервер.
 - Сборка идёт на сервере, нужно ≥2 ГБ RAM. Если сборка падает по памяти — добавьте swap:
   `fallocate -l 2G /swapfile && chmod 600 /swapfile && mkswap /swapfile && swapon /swapfile`
