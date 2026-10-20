@@ -11,3 +11,4 @@
 
 - Store public leads with an INSERT-only operation and a server-generated UUID; never request returned rows because public visitors cannot read private leads.
 - Send owner lead emails only after successful storage, using that UUID for email idempotency; keep the recipient fixed by the template.
+- Owner lead emails are sent by a DB trigger on `leads` calling the Lovable-hosted /api/public/lead-notify, because the self-hosted RU server is blocked by the email API.

@@ -22,9 +22,10 @@ export async function sendLeadEmail(lead: LeadEmailData) {
   });
 }
 
-// Self-hosted servers in Russia cannot reach the email API directly, so they
-// relay through the Lovable-hosted copy of the app (LEAD_NOTIFY_URL).
+// Self-hosted servers in Russia cannot reach the email API. There the database
+// trigger on `leads` calls /api/public/lead-notify instead (LEAD_NOTIFY_VIA_DB=1).
 export async function notifyOwner(lead: LeadEmailData) {
+  if (process.env["LEAD_NOTIFY_VIA_DB"] === "1") return;
   const relayUrl = process.env["LEAD_NOTIFY_URL"];
   if (relayUrl) {
     const res = await fetch(relayUrl, {
