@@ -46,6 +46,11 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-ring-offset-background: var(--background);
+  --color-clinic: var(--clinic);
+  --color-clinic-foreground: var(--clinic-foreground);
+  --color-clinic-muted: var(--clinic-muted);
+  --color-clinic-ink: var(--clinic-ink);
+  --color-clinic-overlay: var(--clinic-overlay);
   --color-chart-1: var(--chart-1);
   --color-chart-2: var(--chart-2);
   --color-chart-3: var(--chart-3);
@@ -62,6 +67,11 @@
 }
 
 :root {
+  --clinic: oklch(0.56 0.052 305);
+  --clinic-foreground: oklch(1 0 0);
+  --clinic-muted: oklch(0.965 0.009 305);
+  --clinic-ink: oklch(0.28 0.018 305);
+  --clinic-overlay: oklch(0.2 0.015 305 / 68%);
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.129 0.042 264.695);
@@ -98,6 +108,11 @@
 }
 
 .dark {
+  --clinic: oklch(0.72 0.052 305);
+  --clinic-foreground: oklch(0.2 0.015 305);
+  --clinic-muted: oklch(0.25 0.009 305);
+  --clinic-ink: oklch(0.94 0.01 305);
+  --clinic-overlay: oklch(0.2 0.015 305 / 68%);
   --background: oklch(0.129 0.042 264.695);
   --foreground: oklch(0.984 0.003 247.858);
   --card: oklch(0.208 0.042 265.755);
