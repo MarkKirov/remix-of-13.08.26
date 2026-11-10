@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as UslugiRouteImport } from './routes/uslugi'
+import { Route as UslugiVrachebnayaKosmetologiyaRouteImport } from './routes/uslugi_.vrachebnaya-kosmetologiya'
 import { Route as ApiPublicLeadNotifyRouteImport } from './routes/api/public/lead-notify'
 import { Route as LovableEmailTransactionalPreviewRouteImport } from './routes/lovable/email/transactional/preview'
 
@@ -24,6 +25,12 @@ const UslugiRoute = UslugiRouteImport.update({
   path: '/uslugi',
   getParentRoute: () => rootRouteImport,
 } as any)
+const UslugiVrachebnayaKosmetologiyaRoute =
+  UslugiVrachebnayaKosmetologiyaRouteImport.update({
+    id: '/uslugi_/vrachebnaya-kosmetologiya',
+    path: '/uslugi/vrachebnaya-kosmetologiya',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const ApiPublicLeadNotifyRoute = ApiPublicLeadNotifyRouteImport.update({
   id: '/api/public/lead-notify',
   path: '/api/public/lead-notify',
@@ -39,12 +46,14 @@ const LovableEmailTransactionalPreviewRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/uslugi': typeof UslugiRoute
+  '/uslugi/vrachebnaya-kosmetologiya': typeof UslugiVrachebnayaKosmetologiyaRoute
   '/api/public/lead-notify': typeof ApiPublicLeadNotifyRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/uslugi': typeof UslugiRoute
+  '/uslugi/vrachebnaya-kosmetologiya': typeof UslugiVrachebnayaKosmetologiyaRoute
   '/api/public/lead-notify': typeof ApiPublicLeadNotifyRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
 }
@@ -52,6 +61,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/uslugi': typeof UslugiRoute
+  '/uslugi_/vrachebnaya-kosmetologiya': typeof UslugiVrachebnayaKosmetologiyaRoute
   '/api/public/lead-notify': typeof ApiPublicLeadNotifyRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
 }
@@ -60,18 +70,21 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/uslugi'
+    | '/uslugi/vrachebnaya-kosmetologiya'
     | '/api/public/lead-notify'
     | '/lovable/email/transactional/preview'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/uslugi'
+    | '/uslugi/vrachebnaya-kosmetologiya'
     | '/api/public/lead-notify'
     | '/lovable/email/transactional/preview'
   id:
     | '__root__'
     | '/'
     | '/uslugi'
+    | '/uslugi_/vrachebnaya-kosmetologiya'
     | '/api/public/lead-notify'
     | '/lovable/email/transactional/preview'
   fileRoutesById: FileRoutesById
@@ -79,6 +92,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   UslugiRoute: typeof UslugiRoute
+  UslugiVrachebnayaKosmetologiyaRoute: typeof UslugiVrachebnayaKosmetologiyaRoute
   ApiPublicLeadNotifyRoute: typeof ApiPublicLeadNotifyRoute
   LovableEmailTransactionalPreviewRoute: typeof LovableEmailTransactionalPreviewRoute
 }
@@ -97,6 +111,13 @@ declare module '@tanstack/react-router' {
       path: '/uslugi'
       fullPath: '/uslugi'
       preLoaderRoute: typeof UslugiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/uslugi_/vrachebnaya-kosmetologiya': {
+      id: '/uslugi_/vrachebnaya-kosmetologiya'
+      path: '/uslugi/vrachebnaya-kosmetologiya'
+      fullPath: '/uslugi/vrachebnaya-kosmetologiya'
+      preLoaderRoute: typeof UslugiVrachebnayaKosmetologiyaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/api/public/lead-notify': {
@@ -119,6 +140,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   UslugiRoute: UslugiRoute,
+  UslugiVrachebnayaKosmetologiyaRoute: UslugiVrachebnayaKosmetologiyaRoute,
   ApiPublicLeadNotifyRoute: ApiPublicLeadNotifyRoute,
   LovableEmailTransactionalPreviewRoute: LovableEmailTransactionalPreviewRoute,
 }
