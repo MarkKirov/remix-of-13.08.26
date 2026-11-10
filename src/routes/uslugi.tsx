@@ -9,8 +9,10 @@ export const Route = createFileRoute("/uslugi")({
       { property: "og:title", content: "Услуги и цены — MD-Комильфо" },
       { property: "og:description", content: "Все направления косметологии и массажа: процедуры, цены и запись на консультацию в Комильфо." },
       { property: "og:type", content: "website" },
+      { property: "og:url", content: "https://komilfocentr.ru/uslugi" },
       { name: "twitter:card", content: "summary" },
     ],
+    links: [{ rel: "canonical", href: "https://komilfocentr.ru/uslugi" }],
   }),
   component: ServiceCatalogPage,
 });
