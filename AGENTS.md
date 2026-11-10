@@ -13,3 +13,4 @@
 - Send owner lead emails only after successful storage, using that UUID for email idempotency; keep the recipient fixed by the template.
 - Owner lead emails are sent by a DB trigger on `leads` calling the Lovable-hosted /api/public/lead-notify, because the self-hosted RU server is blocked by the email API.
 - Keep procedure data in a browser-safe shared catalog so homepage dialogs and service pages use identical prices and descriptions without importing route modules.
+- Share the full clinic footer and patient documents through ClinicFooter, and procedure details through ProcedureDetails, to keep public pages consistent without importing route modules.
