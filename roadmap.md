@@ -7,3 +7,6 @@
 # Trial service page
 - [x] Add a separate page with all four service directions, existing prices, descriptions and appointment buttons; preserve homepage dialogs.
 - [x] Verify page navigation, appointment dialog and desktop/mobile layout.
+
+# Links from service dialogs
+- [x] Add and verify a link to the full service page in all four homepage dialogs.
