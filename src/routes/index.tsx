@@ -1,5 +1,6 @@
 import { medicalProcedures, hardwareProcedures, estheticProcedures, massageProcedures, type Procedure, type SubGroup } from "@/lib/service-catalog";
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { Button } from "@/components/ui/button";
 import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, ArrowRight, Plus, ChevronUp, ChevronDown, X, FileText, FileDown } from "lucide-react";
 import heroVideo from "@/assets/komilfo_hero_v2.mp4.asset.json";
@@ -95,6 +96,16 @@ export const Route = createFileRoute("/")({
 });
 
 const BRAND = "#7A6E8F";
+
+function ServiceCatalogLink() {
+  return (
+    <div className="border-b border-border pb-4">
+      <Button asChild className="h-auto min-h-10 w-full whitespace-normal bg-clinic text-clinic-foreground hover:bg-clinic/90 sm:w-auto">
+        <Link to="/uslugi">Все услуги и цены <ArrowRight /></Link>
+      </Button>
+    </div>
+  );
+}
 
 function ProcedureRow({ procedure }: { procedure: Procedure }) {
   const [open, setOpen] = useState(false);
@@ -1329,6 +1340,7 @@ function Index() {
                       </DialogDescription>
                     </DialogHeader>
                     <div className="mt-4 md:mt-5">
+                      <ServiceCatalogLink />
                       <MedicalCosmetologyContent />
                     </div>
                   </DialogContent>
@@ -1346,6 +1358,7 @@ function Index() {
                       </DialogDescription>
                     </DialogHeader>
                     <div className="mt-4 md:mt-5">
+                      <ServiceCatalogLink />
                       <HardwareCosmetologyContent />
                     </div>
                   </DialogContent>
@@ -1363,6 +1376,7 @@ function Index() {
                       </DialogDescription>
                     </DialogHeader>
                     <div className="mt-4 md:mt-5">
+                      <ServiceCatalogLink />
                       <EstheticCosmetologyContent />
                     </div>
                   </DialogContent>
@@ -1381,6 +1395,7 @@ function Index() {
                       </DialogDescription>
                     </DialogHeader>
                     <div className="mt-4 md:mt-5">
+                      <ServiceCatalogLink />
                       <MassageContent />
                     </div>
                   </DialogContent>
