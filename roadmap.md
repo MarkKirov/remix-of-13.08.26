@@ -9,4 +9,4 @@
 - [x] Verify page navigation, appointment dialog and desktop/mobile layout.
 
 # Links from service dialogs
-- [ ] Add and verify a link to the full service page in all four homepage dialogs.
+- [x] Add and verify a link to the full service page in all four homepage dialogs.
