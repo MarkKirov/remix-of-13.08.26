@@ -1,3 +1,4 @@
+/// <reference types="bun" />
 import { describe, expect, test } from "bun:test";
 import { storeLead } from "./lead-storage";
 import { template } from "./email-templates/new-lead";
