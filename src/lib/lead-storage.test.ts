@@ -1,5 +1,5 @@
-/// <reference types="bun" />
-import { describe, expect, test } from "bun:test";
+import { describe, test } from "node:test";
+import assert from "node:assert/strict";
 import { storeLead } from "./lead-storage";
 import { template } from "./email-templates/new-lead";
 
@@ -10,15 +10,15 @@ describe("lead storage", () => {
       storedId = row.id;
       return { error: null };
     });
-    expect(id).toMatch(/^[0-9a-f-]{36}$/);
-    expect(storedId).toBe(id);
+    assert.match(id, /^[0-9a-f-]{36}$/);
+    assert.equal(storedId, id);
   });
 
   test("does not report success when insertion fails", async () => {
-    await expect(storeLead({ name: "Тест", phone: "+70000000000" }, async () => ({ error: { message: "denied" } }))).rejects.toThrow();
+    await assert.rejects(storeLead({ name: "Тест", phone: "+70000000000" }, async () => ({ error: { message: "denied" } })));
   });
 
   test("all owner notifications use the requested fixed mailbox", () => {
-    expect(template.to).toBe("info@komilfocentr.ru");
+    assert.equal(template.to, "info@komilfocentr.ru");
   });
 });
