@@ -91,8 +91,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "Комильфо — 17 лет сохраняем вашу естественную красоту" },
       { name: "twitter:description", content: "Комильфо — клиника, где сохраняют естественную красоту без рисков для здоровья. Медицинская диагностика, персональная стратегия, сертифицированные препараты." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/cd997c73-b88d-476c-b8cd-5350eb97abdb" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/cd997c73-b88d-476c-b8cd-5350eb97abdb" },
     ],
     links: [
       {

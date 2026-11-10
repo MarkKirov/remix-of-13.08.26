@@ -10,3 +10,8 @@
 
 # Links from service dialogs
 - [x] Add and verify a link to the full service page in all four homepage dialogs.
+
+# Medical cosmetology page
+- [x] Create a medical-only page with existing procedures, appointment buttons and the full 2026 price file.
+- [x] Share the complete homepage footer and connect the medical dialog to the new page.
+- [x] Verify navigation, appointment form, footer and mobile layout.
