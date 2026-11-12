@@ -15,3 +15,7 @@
 - [x] Create a medical-only page with existing procedures, appointment buttons and the full 2026 price file.
 - [x] Share the complete homepage footer and connect the medical dialog to the new page.
 - [x] Verify navigation, appointment form, footer and mobile layout.
+
+# Reviews block transfer
+- [x] Transfer the original review screenshots and replace the comparison block at the matching position.
+- [x] Verify all slides, navigation, swipe and desktop/mobile layout.

@@ -14,3 +14,4 @@
 - Owner lead emails are sent by a DB trigger on `leads` calling the Lovable-hosted /api/public/lead-notify, because the self-hosted RU server is blocked by the email API.
 - Keep procedure data in a browser-safe shared catalog so homepage dialogs and service pages use identical prices and descriptions without importing route modules.
 - Share the full clinic footer and patient documents through ClinicFooter, and procedure details through ProcedureDetails, to keep public pages consistent without importing route modules.
+- Keep the review slideshow in ReviewsSection with project-owned asset pointers and a fixed-aspect stage so imported screenshots remain portable and slide changes do not shift the layout.

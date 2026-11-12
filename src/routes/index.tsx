@@ -13,7 +13,7 @@ import serviceMedical from "@/assets/optimized/service-apparatnaya.webp.asset.js
 import serviceHardware from "@/assets/service_hardware.png.asset.json";
 import serviceVrachebnaya from "@/assets/optimized/service-vrachebnaya.webp.asset.json";
 import serviceMassage from "@/assets/optimized/service-massage.webp.asset.json";
-import comparisonBg from "@/assets/comparison-bg.png.asset.json";
+import { ReviewsSection } from "@/components/ReviewsSection";
 import headerLogo from "@/assets/header_logo.svg.asset.json";
 import mdKomilfoLogo from "@/assets/md-komilfo-logo.png.asset.json";
 import consultationBg from "@/assets/optimized/consultation-bg.webp.asset.json";
@@ -1501,92 +1501,7 @@ function Index() {
       </section>
 
 
-      {/* Сравнительная таблица — Комильфо vs нелегальные кабинеты */}
-      <section className="relative overflow-hidden">
-        <img
-          src={comparisonBg.url}
-          alt=""
-          className="absolute inset-0 h-full w-full object-cover"
-          style={{ objectPosition: "center 30%" }}
-          loading="lazy"
-          decoding="async"
-        />
-        <div className="absolute inset-0 bg-black/60" />
-        <div className="absolute inset-0 bg-[#7A6E8F]/10" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/80" />
-
-        <div className="relative z-10 mx-auto max-w-6xl px-6 py-20 md:px-8 md:py-28">
-          <h2 className="font-display text-2xl leading-[1.1] tracking-[0.01em] text-[#e5e5e5] drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)] md:text-4xl lg:text-5xl">
-            Ваша уверенность в безопасности{"\n"}
-            <span style={{ color: BRAND }}>— это тоже часть красивого отражения</span>
-          </h2>
-          <p className="font-body mt-6 max-w-4xl whitespace-pre-line text-sm font-light leading-relaxed text-[#c4c4c4] md:mt-8 md:text-base">
-            Настоящий психологический комфорт появляется тогда, когда вы на сто процентов уверены в квалифицированных специалистах, подлинных препаратах, соблюдении санитарных норм.
-          </p>
-
-          <div className="mt-10 rounded-3xl bg-black/40 p-6 backdrop-blur-md ring-1 ring-white/10 md:mt-14 md:p-10">
-            <div className="hidden grid-cols-2 gap-8 border-b border-white/15 pb-5 md:grid">
-              <img
-                src={headerLogo.url}
-                alt="Camille Four"
-                className="h-7 w-auto object-contain object-left"
-                style={{ filter: "brightness(0) invert(1)" }}
-              />
-              <div className="font-caption text-[10px] uppercase tracking-[0.18em] text-white/60">
-                Нелегальные кабинеты
-              </div>
-            </div>
-
-            <div className="flex flex-col gap-4 md:gap-5">
-              {[
-                {
-                  us: (
-                    <>
-                      Используем сертифицированные препараты — их можно проверить через <span className="font-medium" style={{ color: BRAND }}>“Честный знак”</span>.
-                    </>
-                  ),
-                  them: "Незарегистрированный контрафакт из Интернета — риск для здоровья и жизни.",
-                },
-                {
-                  us: "Зарегистрированная медицинская техника.",
-                  them: "Дешевые китайские аппараты, которые нельзя использовать в медицине.",
-                },
-                {
-                  us: "Медицинский подход, аккредитованные специалисты, ведение медицинской документации на каждом приёме.",
-                  them: "Работа «вслепую» без документов на руках, фальшивые дипломы из принтера.",
-                },
-              ].map((row, idx) => (
-                <div
-                  key={idx}
-                  className="overflow-hidden rounded-2xl border border-white/10 bg-white/[0.06] backdrop-blur-sm"
-                >
-                  <div className="grid grid-cols-2 divide-x divide-white/10">
-                    <div className="p-3 md:p-6">
-                      <div
-                        className="mb-1.5 font-caption text-[9px] uppercase tracking-[0.18em] md:hidden"
-                        style={{ color: BRAND }}
-                      >
-                        Комильфо
-                      </div>
-                      <div className="font-body break-words text-xs font-light leading-snug text-[#e5e5e5] md:text-base md:leading-relaxed">
-                        {row.us}
-                      </div>
-                    </div>
-                    <div className="p-3 md:p-6">
-                      <div className="mb-1.5 font-caption text-[9px] uppercase tracking-[0.18em] text-white/40 md:hidden">
-                        Нелегальные кабинеты
-                      </div>
-                      <div className="font-body break-words text-xs font-light leading-snug text-white/55 md:text-base md:leading-relaxed">
-                        {row.them}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      <ReviewsSection />
 
       {/* Экран призыва с фоновым изображением */}
       <section className="relative min-h-[80vh] overflow-hidden">
