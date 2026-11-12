@@ -15,3 +15,5 @@
 - Keep procedure data in a browser-safe shared catalog so homepage dialogs and service pages use identical prices and descriptions without importing route modules.
 - Share the full clinic footer and patient documents through ClinicFooter, and procedure details through ProcedureDetails, to keep public pages consistent without importing route modules.
 - Keep the review slideshow in ReviewsSection with project-owned asset pointers and a fixed-aspect stage so imported screenshots remain portable and slide changes do not shift the layout.
+- Use CosmetologyPage for direction-specific cosmetology pages so procedure lists, appointment controls and the complete footer remain consistent.
+- Service-page home links target the homepage services anchor so returning visitors resume at the service selection rather than the top.

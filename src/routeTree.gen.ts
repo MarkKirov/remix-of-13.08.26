@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as UslugiRouteImport } from './routes/uslugi'
+import { Route as UslugiEsteticheskayaKosmetologiyaRouteImport } from './routes/uslugi_.esteticheskaya-kosmetologiya'
 import { Route as UslugiVrachebnayaKosmetologiyaRouteImport } from './routes/uslugi_.vrachebnaya-kosmetologiya'
 import { Route as ApiPublicLeadNotifyRouteImport } from './routes/api/public/lead-notify'
 import { Route as LovableEmailTransactionalPreviewRouteImport } from './routes/lovable/email/transactional/preview'
@@ -25,6 +26,12 @@ const UslugiRoute = UslugiRouteImport.update({
   path: '/uslugi',
   getParentRoute: () => rootRouteImport,
 } as any)
+const UslugiEsteticheskayaKosmetologiyaRoute =
+  UslugiEsteticheskayaKosmetologiyaRouteImport.update({
+    id: '/uslugi_/esteticheskaya-kosmetologiya',
+    path: '/uslugi/esteticheskaya-kosmetologiya',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const UslugiVrachebnayaKosmetologiyaRoute =
   UslugiVrachebnayaKosmetologiyaRouteImport.update({
     id: '/uslugi_/vrachebnaya-kosmetologiya',
@@ -46,6 +53,7 @@ const LovableEmailTransactionalPreviewRoute =
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/uslugi': typeof UslugiRoute
+  '/uslugi/esteticheskaya-kosmetologiya': typeof UslugiEsteticheskayaKosmetologiyaRoute
   '/uslugi/vrachebnaya-kosmetologiya': typeof UslugiVrachebnayaKosmetologiyaRoute
   '/api/public/lead-notify': typeof ApiPublicLeadNotifyRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
@@ -53,6 +61,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/uslugi': typeof UslugiRoute
+  '/uslugi/esteticheskaya-kosmetologiya': typeof UslugiEsteticheskayaKosmetologiyaRoute
   '/uslugi/vrachebnaya-kosmetologiya': typeof UslugiVrachebnayaKosmetologiyaRoute
   '/api/public/lead-notify': typeof ApiPublicLeadNotifyRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
@@ -61,6 +70,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/uslugi': typeof UslugiRoute
+  '/uslugi_/esteticheskaya-kosmetologiya': typeof UslugiEsteticheskayaKosmetologiyaRoute
   '/uslugi_/vrachebnaya-kosmetologiya': typeof UslugiVrachebnayaKosmetologiyaRoute
   '/api/public/lead-notify': typeof ApiPublicLeadNotifyRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
@@ -70,6 +80,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/uslugi'
+    | '/uslugi/esteticheskaya-kosmetologiya'
     | '/uslugi/vrachebnaya-kosmetologiya'
     | '/api/public/lead-notify'
     | '/lovable/email/transactional/preview'
@@ -77,6 +88,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/uslugi'
+    | '/uslugi/esteticheskaya-kosmetologiya'
     | '/uslugi/vrachebnaya-kosmetologiya'
     | '/api/public/lead-notify'
     | '/lovable/email/transactional/preview'
@@ -84,6 +96,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/uslugi'
+    | '/uslugi_/esteticheskaya-kosmetologiya'
     | '/uslugi_/vrachebnaya-kosmetologiya'
     | '/api/public/lead-notify'
     | '/lovable/email/transactional/preview'
@@ -92,6 +105,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   UslugiRoute: typeof UslugiRoute
+  UslugiEsteticheskayaKosmetologiyaRoute: typeof UslugiEsteticheskayaKosmetologiyaRoute
   UslugiVrachebnayaKosmetologiyaRoute: typeof UslugiVrachebnayaKosmetologiyaRoute
   ApiPublicLeadNotifyRoute: typeof ApiPublicLeadNotifyRoute
   LovableEmailTransactionalPreviewRoute: typeof LovableEmailTransactionalPreviewRoute
@@ -111,6 +125,13 @@ declare module '@tanstack/react-router' {
       path: '/uslugi'
       fullPath: '/uslugi'
       preLoaderRoute: typeof UslugiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/uslugi_/esteticheskaya-kosmetologiya': {
+      id: '/uslugi_/esteticheskaya-kosmetologiya'
+      path: '/uslugi/esteticheskaya-kosmetologiya'
+      fullPath: '/uslugi/esteticheskaya-kosmetologiya'
+      preLoaderRoute: typeof UslugiEsteticheskayaKosmetologiyaRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/uslugi_/vrachebnaya-kosmetologiya': {
@@ -140,6 +161,8 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   UslugiRoute: UslugiRoute,
+  UslugiEsteticheskayaKosmetologiyaRoute:
+    UslugiEsteticheskayaKosmetologiyaRoute,
   UslugiVrachebnayaKosmetologiyaRoute: UslugiVrachebnayaKosmetologiyaRoute,
   ApiPublicLeadNotifyRoute: ApiPublicLeadNotifyRoute,
   LovableEmailTransactionalPreviewRoute: LovableEmailTransactionalPreviewRoute,

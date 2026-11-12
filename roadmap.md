@@ -19,3 +19,8 @@
 # Reviews block transfer
 - [x] Transfer the original review screenshots and replace the comparison block at the matching position.
 - [x] Verify all slides, navigation, swipe and desktop/mobile layout.
+
+# Esthetic cosmetology and return navigation
+- [x] Add an esthetic-only page matching the medical page, with existing prices, appointment buttons and the complete footer.
+- [x] Connect the esthetic dialog and return links to the homepage services section.
+- [x] Verify both directions, return navigation and desktop/mobile layout.

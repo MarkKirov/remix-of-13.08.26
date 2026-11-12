@@ -21,13 +21,13 @@ const directions = [
 function Catalog() {
   const { open } = useLeadDialog();
   return <div className="bg-background text-clinic-ink">
-    <header className="border-b border-border"><div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-5"><Link to="/" aria-label="Комильфо — главная"><img src={logo.url} alt="Комильфо" className="h-10 w-32 object-contain" /></Link><Button asChild variant="ghost"><Link to="/"><ArrowLeft /> На главную</Link></Button></div></header>
+    <header className="border-b border-border"><div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-5"><Link to="/" hash="services" aria-label="Комильфо — главная"><img src={logo.url} alt="Комильфо" className="h-10 w-32 object-contain" /></Link><Button asChild variant="ghost"><Link to="/" hash="services"><ArrowLeft /> На главную</Link></Button></div></header>
     <main>
       <section className="relative isolate overflow-hidden">
         <img src={medicalImage.url} alt="Врачебная косметология в Комильфо" className="absolute inset-0 h-full w-full object-cover object-center" />
         <div className="absolute inset-0 bg-clinic-overlay" />
         <div className="relative mx-auto max-w-6xl px-6 py-20 text-clinic-foreground md:py-24">
-          <nav aria-label="Хлебные крошки" className="mb-12 flex items-center gap-2 text-sm"><Link to="/" className="underline-offset-4 hover:underline">Главная</Link><span aria-hidden> / </span><span>Услуги</span></nav>
+          <nav aria-label="Хлебные крошки" className="mb-12 flex items-center gap-2 text-sm"><Link to="/" hash="services" className="underline-offset-4 hover:underline">Главная</Link><span aria-hidden> / </span><span>Услуги</span></nav>
           <p className="mb-4 text-sm uppercase">MD-Комильфо</p><h1 className="font-display max-w-2xl text-4xl leading-tight md:text-5xl">Косметология и массаж</h1>
           <p className="mt-6 max-w-xl text-base leading-7">Врачебная, эстетическая и аппаратная косметология. Уход за лицом и телом, процедуры и цены.</p>
           <div className="mt-8 flex flex-wrap gap-3"><Button className="bg-clinic text-clinic-foreground hover:bg-clinic/90" onClick={() => open("Консультация по услугам")}>Записаться на консультацию <ArrowRight /></Button><Button asChild variant="outline" className="border-clinic-foreground/60 bg-transparent text-clinic-foreground hover:bg-clinic-foreground/10 hover:text-clinic-foreground"><a href={priceFile.url} target="_blank" rel="noopener noreferrer"><FileDown /> Полный прайс (Excel)</a></Button></div>
@@ -40,7 +40,7 @@ function Catalog() {
       </div></section>)}
       <section className="bg-clinic-muted"><div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-6 py-12 sm:flex-row sm:items-center"><div><h2 className="font-display text-2xl">Консультация в Комильфо</h2><p className="mt-3 max-w-lg text-sm leading-6 text-muted-foreground">Точную стоимость и подходящую программу определяет специалист на консультации.</p></div><Button className="bg-clinic text-clinic-foreground hover:bg-clinic/90" onClick={() => open("Консультация по услугам")}>Записаться <ArrowRight /></Button></div></section>
     </main>
-    <footer className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-8 text-sm text-muted-foreground"><span>MD-Комильфо</span><Link to="/" className="inline-flex items-center gap-2 text-clinic"><ArrowLeft className="h-4 w-4" /> Вернуться на главную</Link></footer>
+    <footer className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-8 text-sm text-muted-foreground"><span>MD-Комильфо</span><Link to="/" hash="services" className="inline-flex items-center gap-2 text-clinic"><ArrowLeft className="h-4 w-4" /> Вернуться на главную</Link></footer>
   </div>;
 }
 
