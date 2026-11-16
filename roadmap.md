@@ -32,3 +32,7 @@
 # Medical service list transfer
 - [x] Copy only the draft medical procedures into the shared catalog, preserving other directions and appointment behavior.
 - [x] Verify the transferred list in the homepage dialog and medical page on desktop and mobile.
+
+# Hardware cosmetology page
+- [x] Add a hardware-only page with the shared procedures, appointments, full price file and clinic footer; connect its homepage dialog.
+- [x] Verify navigation, hardware-only list, appointment form and return to services on desktop and mobile.
