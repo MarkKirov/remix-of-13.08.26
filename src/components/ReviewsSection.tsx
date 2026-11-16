@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ReviewViewer } from "@/components/ReviewViewer";
 import comparisonBg from "@/assets/comparison-bg.png.asset.json";
 import review01 from "@/assets/reviews/review-01.jpg.asset.json";
 import review02 from "@/assets/reviews/review-02.jpg.asset.json";
@@ -17,6 +18,8 @@ const reviewImages = [review01, review02, review03, review04, review05, review06
 
 export function ReviewsSection() {
   const [index, setIndex] = useState(0);
+  const [viewerOpen, setViewerOpen] = useState(false);
+  const swiped = useRef(false);
   const touchStartX = useRef<number | null>(null);
   const move = (direction: number) => setIndex(current => (current + direction + reviewImages.length) % reviewImages.length);
 
@@ -31,18 +34,19 @@ export function ReviewsSection() {
       }}>
         <div className="grid w-full grid-cols-2 items-center justify-items-center gap-3 md:flex md:justify-center md:gap-6">
           <Button variant="ghost" size="icon" aria-label="Предыдущий отзыв" title="Предыдущий отзыв" onClick={() => move(-1)} className="review-arrow order-2 h-10 w-10 rounded-full md:order-none md:h-12 md:w-12"><ChevronLeft className="size-5 md:size-6" /></Button>
-          <div className="review-stage relative order-1 col-span-2 aspect-[2.3/1] w-full min-w-0 max-w-2xl overflow-hidden rounded-2xl md:order-none md:flex-1" onTouchStart={event => {
+          <Button variant="ghost" aria-label={`Открыть отзыв ${index + 1} на весь экран`} title="Открыть отзыв на весь экран" onClick={() => { if (!swiped.current) setViewerOpen(true); swiped.current = false; }} className="review-stage relative order-1 col-span-2 aspect-[2.3/1] h-auto w-full min-w-0 max-w-2xl cursor-zoom-in overflow-hidden rounded-2xl p-0 hover:bg-home-paper md:order-none md:flex-1" onTouchStart={event => {
+            swiped.current = false;
             touchStartX.current = event.touches[0]?.clientX ?? null;
           }} onTouchEnd={event => {
             const end = event.changedTouches[0]?.clientX;
             if (touchStartX.current !== null && end !== undefined) {
               const distance = end - touchStartX.current;
-              if (Math.abs(distance) > 40) move(distance < 0 ? 1 : -1);
+              if (Math.abs(distance) > 40) { swiped.current = true; move(distance < 0 ? 1 : -1); }
             }
             touchStartX.current = null;
           }} onTouchCancel={() => { touchStartX.current = null; }}>
             {reviewImages.map((image, i) => <img key={image.url} src={image.url} alt={`Отзыв клиента клиники MD-Комильфо ${i + 1}`} aria-hidden={i !== index} className={`absolute inset-0 h-full w-full object-contain p-3 transition-[opacity,transform] duration-500 ease-out motion-reduce:transition-none md:p-4 ${i === index ? "scale-100 opacity-100" : "pointer-events-none scale-[0.985] opacity-0"}`} loading="lazy" decoding="async" />)}
-          </div>
+          </Button>
           <Button variant="ghost" size="icon" aria-label="Следующий отзыв" title="Следующий отзыв" onClick={() => move(1)} className="review-arrow order-3 h-10 w-10 rounded-full md:order-none md:h-12 md:w-12"><ChevronRight className="size-5 md:size-6" /></Button>
         </div>
         <div className="mt-6 flex items-center justify-center gap-2">
@@ -50,5 +54,6 @@ export function ReviewsSection() {
         </div>
       </div>
     </div>
+    <ReviewViewer open={viewerOpen} onOpenChange={setViewerOpen} images={reviewImages} index={index} onMove={move} />
   </section>;
 }
