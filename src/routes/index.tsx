@@ -98,11 +98,11 @@ export const Route = createFileRoute("/")({
 
 const BRAND = "#7A6E8F";
 
-function ServiceCatalogLink({ medical = false, esthetic = false, hardware = false }: { medical?: boolean; esthetic?: boolean; hardware?: boolean }) {
+function ServiceCatalogLink({ medical = false, esthetic = false, hardware = false, massage = false }: { medical?: boolean; esthetic?: boolean; hardware?: boolean; massage?: boolean }) {
   return (
     <div className="border-b border-border pb-4">
       <Button asChild className="h-auto min-h-10 w-full whitespace-normal bg-clinic text-clinic-foreground hover:bg-clinic/90 sm:w-auto">
-        <Link to={medical ? "/uslugi/vrachebnaya-kosmetologiya" : esthetic ? "/uslugi/esteticheskaya-kosmetologiya" : hardware ? "/uslugi/apparatnaya-kosmetologiya" : "/uslugi"}>Все услуги и цены <ArrowRight /></Link>
+        <Link to={medical ? "/uslugi/vrachebnaya-kosmetologiya" : esthetic ? "/uslugi/esteticheskaya-kosmetologiya" : hardware ? "/uslugi/apparatnaya-kosmetologiya" : massage ? "/uslugi/massazh" : "/uslugi"}>Все услуги и цены <ArrowRight /></Link>
       </Button>
     </div>
   );
@@ -1378,7 +1378,7 @@ function Index() {
                       </DialogDescription>
                     </DialogHeader>
                     <div className="mt-4 md:mt-5">
-                      <ServiceCatalogLink />
+                      <ServiceCatalogLink massage />
                       <MassageContent />
                     </div>
                   </DialogContent>

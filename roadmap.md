@@ -36,3 +36,7 @@
 # Hardware cosmetology page
 - [x] Add a hardware-only page with the shared procedures, appointments, full price file and clinic footer; connect its homepage dialog.
 - [x] Verify navigation, hardware-only list, appointment form and return to services on desktop and mobile.
+
+# Massage page
+- [x] Add a massage-only page with the approved heading and description, shared massage procedures and full footer; connect the massage dialog.
+- [x] Verify the page, appointment controls and return navigation on desktop and mobile.
