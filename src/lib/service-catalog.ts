@@ -311,7 +311,7 @@ export const hardwareProcedures: Procedure[] = [
   },
 
   {
-    name: "Эстетическая лазерная шлифовка аппаратом Fotona",
+    name: "Эстетическая лазерная шлифовка",
     price: "от 5 800 ₽",
     detailsLabel: "Аппарат",
     preparations: [],
