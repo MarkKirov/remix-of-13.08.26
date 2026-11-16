@@ -24,3 +24,7 @@
 - [x] Add an esthetic-only page matching the medical page, with existing prices, appointment buttons and the complete footer.
 - [x] Connect the esthetic dialog and return links to the homepage services section.
 - [x] Verify both directions, return navigation and desktop/mobile layout.
+
+# Complete homepage transfer
+- [x] Transfer the draft homepage layout, typography, menu and images while preserving appointment forms and service-page links.
+- [x] Verify all homepage sections and navigation on desktop and mobile.

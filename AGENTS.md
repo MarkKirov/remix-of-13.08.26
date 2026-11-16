@@ -17,3 +17,5 @@
 - Keep the review slideshow in ReviewsSection with project-owned asset pointers and a fixed-aspect stage so imported screenshots remain portable and slide changes do not shift the layout.
 - Use CosmetologyPage for direction-specific cosmetology pages so procedure lists, appointment controls and the complete footer remain consistent.
 - Service-page home links target the homepage services anchor so returning visitors resume at the service selection rather than the top.
+
+- Import draft homepage presentation without replacing the live lead provider, shared service catalog, service-page links or ClinicFooter; this preserves production behavior during visual transfers.

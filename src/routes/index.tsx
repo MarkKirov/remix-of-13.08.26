@@ -3,7 +3,7 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { ClinicFooter, GeneralInfoSections } from "@/components/ClinicFooter";
 import { useEffect, useRef, useState } from "react";
-import { ChevronLeft, ChevronRight, ArrowRight, Plus, ChevronUp, ChevronDown, X, FileText, FileDown } from "lucide-react";
+import { ChevronLeft, ChevronRight, ArrowRight, Plus, ChevronUp, ChevronDown, X, Menu, FileText, FileDown } from "lucide-react";
 import heroVideo from "@/assets/komilfo_hero_v2.mp4.asset.json";
 import heroMobile from "@/assets/optimized/hero-mobile.webp.asset.json";
 import doctorConsultation from "@/assets/doctor-consultation.jpg.asset.json";
@@ -14,7 +14,7 @@ import serviceHardware from "@/assets/service_hardware.png.asset.json";
 import serviceVrachebnaya from "@/assets/optimized/service-vrachebnaya.webp.asset.json";
 import serviceMassage from "@/assets/optimized/service-massage.webp.asset.json";
 import { ReviewsSection } from "@/components/ReviewsSection";
-import headerLogo from "@/assets/header_logo.svg.asset.json";
+import headerLogo from "@/assets/md-komilfo-logo-white.png.asset.json";
 import mdKomilfoLogo from "@/assets/md-komilfo-logo.png.asset.json";
 import consultationBg from "@/assets/optimized/consultation-bg.webp.asset.json";
 import specialistZhuravleva from "@/assets/optimized/specialist-zhuravleva.webp.asset.json";
@@ -110,11 +110,10 @@ function ServiceCatalogLink({ medical = false, esthetic = false }: { medical?: b
 
 function ProcedureRow({ procedure }: { procedure: Procedure }) {
   const [open, setOpen] = useState(false);
-  const { open: openLead } = useLeadDialog();
   return (
     <div className="group">
       <div
-        className="flex items-center gap-2 rounded-full border border-neutral-200 bg-white pl-3 pr-1.5 py-1.5 transition-all hover:border-[color:var(--brand-color)] md:gap-3 md:pl-5 md:pr-2 md:py-2"
+        className="flex items-center gap-2 rounded-full border border-home-neutral-200 bg-home-paper pl-3 pr-1.5 py-1.5 transition-all hover:border-[color:var(--brand-color)] md:gap-3 md:pl-5 md:pr-2 md:py-2"
         style={{ ["--brand-color" as string]: BRAND }}
       >
         <button
@@ -134,7 +133,7 @@ function ProcedureRow({ procedure }: { procedure: Procedure }) {
           >
             <Plus className="h-3 w-3 md:h-3.5 md:w-3.5" />
           </span>
-          <span className="font-body flex-1 min-w-0 text-xs font-normal text-neutral-900 md:text-sm md:text-base">
+          <span className="font-body flex-1 min-w-0 text-xs font-normal text-home-neutral-900 md:text-sm md:text-base">
             {procedure.name}
           </span>
         </button>
@@ -146,13 +145,13 @@ function ProcedureRow({ procedure }: { procedure: Procedure }) {
         </span>
         <button
           type="button"
-          onClick={() => openLead(`Записаться: ${procedure.name}`)}
-          className="font-caption ml-1 shrink-0 rounded-full px-2.5 py-1.5 text-[9px] font-normal uppercase tracking-[0.12em] text-white transition-colors md:ml-2 md:px-5 md:py-2 md:text-[11px]"
+          onClick={() => setOpen((v) => !v)}
+          className="font-caption ml-1 shrink-0 rounded-full px-2.5 py-1.5 text-[9px] font-normal uppercase tracking-[0.12em] text-home-paper transition-colors md:ml-2 md:px-5 md:py-2 md:text-[11px]"
           style={{ backgroundColor: BRAND }}
           onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#5E5470")}
           onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = BRAND)}
         >
-          Записаться
+          Подробнее
         </button>
       </div>
 
@@ -166,20 +165,20 @@ function ProcedureRow({ procedure }: { procedure: Procedure }) {
           <div className="overflow-hidden">
             <div className="mx-2 mt-2 rounded-2xl bg-neutral-100 px-3 py-3 md:mx-8 md:px-6 md:py-5">
               {procedure.description && (
-                <p className={`font-body whitespace-pre-line text-[13px] leading-relaxed text-neutral-700 md:text-sm${procedure.preparations.length > 0 || procedure.device || procedure.subServices || procedure.groups ? " mb-4 border-b border-neutral-200 pb-4" : ""}`}>
+                <p className={`font-body whitespace-pre-line text-[13px] leading-relaxed text-home-neutral-700 md:text-sm${procedure.preparations.length > 0 || procedure.device || procedure.subServices || procedure.groups ? " mb-4 border-b border-home-neutral-200 pb-4" : ""}`}>
                   {procedure.description}
                 </p>
               )}
               {procedure.preparations.length > 0 && (
                 <>
-                  <p className="font-caption mb-2 text-[10px] uppercase tracking-[0.18em] text-neutral-500">
+                  <p className="font-caption mb-2 text-[10px] uppercase tracking-[0.18em] text-home-neutral-500">
                     {procedure.detailsLabel ?? "Препараты"}
                   </p>
                   <ul className="space-y-1.5">
                     {procedure.preparations.map((p, i) => (
                       <li
                         key={i}
-                        className="font-body flex items-center gap-2 text-sm text-neutral-700"
+                        className="font-body flex items-center gap-2 text-sm text-home-neutral-700"
                       >
                         <span
                           aria-hidden
@@ -189,32 +188,32 @@ function ProcedureRow({ procedure }: { procedure: Procedure }) {
                         {p}
                       </li>
                     ))}
-                    <li className="font-caption pt-1 text-[10px] uppercase tracking-[0.14em] text-neutral-400">
+                    <li className="font-caption pt-1 text-[10px] uppercase tracking-[0.14em] text-home-neutral-400">
                       Список пополняется
                     </li>
                   </ul>
                 </>
               )}
               {procedure.device && (
-                <div className={procedure.preparations.length > 0 ? "mt-4 border-t border-neutral-200 pt-3" : ""}>
-                  <p className="font-caption mb-1 text-[10px] uppercase tracking-[0.18em] text-neutral-500">
+                <div className={procedure.preparations.length > 0 ? "mt-4 border-t border-home-neutral-200 pt-3" : ""}>
+                  <p className="font-caption mb-1 text-[10px] uppercase tracking-[0.18em] text-home-neutral-500">
                     Аппарат
                   </p>
-                  <p className="font-body text-sm text-neutral-700">
+                  <p className="font-body text-sm text-home-neutral-700">
                     {procedure.device}
                   </p>
                 </div>
               )}
               {procedure.subServices && procedure.subServices.length > 0 && (
-                <div className={procedure.preparations.length > 0 || procedure.device ? "mt-4 border-t border-neutral-200 pt-3" : ""}>
-                  <p className="font-caption mb-2 text-[10px] uppercase tracking-[0.18em] text-neutral-500">
+                <div className={procedure.preparations.length > 0 || procedure.device ? "mt-4 border-t border-home-neutral-200 pt-3" : ""}>
+                  <p className="font-caption mb-2 text-[10px] uppercase tracking-[0.18em] text-home-neutral-500">
                     Весь список услуг
                   </p>
                   <ul className="divide-y divide-neutral-200">
                     {procedure.subServices.map((s, i) => (
                       <li
                         key={i}
-                        className="font-body flex items-start justify-between gap-3 py-2 text-xs text-neutral-700 md:gap-4 md:text-sm"
+                        className="font-body flex items-start justify-between gap-3 py-2 text-xs text-home-neutral-700 md:gap-4 md:text-sm"
                       >
                         <span className="min-w-0 flex-1">{s.name}</span>
                         <span
@@ -229,8 +228,8 @@ function ProcedureRow({ procedure }: { procedure: Procedure }) {
                 </div>
               )}
               {procedure.groups && procedure.groups.length > 0 && (
-                <div className={procedure.preparations.length > 0 || procedure.device || procedure.subServices ? "mt-4 border-t border-neutral-200 pt-3" : ""}>
-                  <p className="font-caption mb-2 text-[10px] uppercase tracking-[0.18em] text-neutral-500">
+                <div className={procedure.preparations.length > 0 || procedure.device || procedure.subServices ? "mt-4 border-t border-home-neutral-200 pt-3" : ""}>
+                  <p className="font-caption mb-2 text-[10px] uppercase tracking-[0.18em] text-home-neutral-500">
                     Категории
                   </p>
                   <div className="space-y-2">
@@ -244,7 +243,7 @@ function ProcedureRow({ procedure }: { procedure: Procedure }) {
                 className="mt-4 rounded-xl border-l-2 px-4 py-3"
                 style={{ borderColor: BRAND, backgroundColor: "rgba(122,110,143,0.08)" }}
               >
-                <p className="font-body text-[13px] leading-relaxed text-neutral-700 md:text-sm">
+                <p className="font-body text-[13px] leading-relaxed text-home-neutral-700 md:text-sm">
                   {procedure.note ??
                     "Точную цену вы узнаете на первичной консультации. Наш специалист подберёт подходящую услугу, рассчитает стоимость и определит нужное количество процедур."}
                 </p>
@@ -259,7 +258,7 @@ function ProcedureRow({ procedure }: { procedure: Procedure }) {
           role="button"
           tabIndex={0}
           onMouseDown={() => setOpen(false)}
-          className="relative z-10 mx-auto mb-1 mt-2 flex cursor-pointer items-center gap-1.5 rounded-full px-3 py-1.5 font-caption text-[10px] uppercase tracking-[0.14em] text-neutral-500 transition-colors hover:text-neutral-900"
+          className="relative z-10 mx-auto mb-1 mt-2 flex cursor-pointer items-center gap-1.5 rounded-full px-3 py-1.5 font-caption text-[10px] uppercase tracking-[0.14em] text-home-neutral-500 transition-colors hover:text-home-neutral-900"
         >
           <ChevronUp className="h-3.5 w-3.5" />
           Свернуть
@@ -272,7 +271,7 @@ function ProcedureRow({ procedure }: { procedure: Procedure }) {
 function SubGroupRow({ group }: { group: SubGroup }) {
   const [open, setOpen] = useState(false);
   return (
-    <div className="rounded-xl border border-neutral-200 bg-white">
+    <div className="rounded-xl border border-home-neutral-200 bg-home-paper">
       <button
         type="button"
         onClick={() => setOpen((v) => !v)}
@@ -289,10 +288,10 @@ function SubGroupRow({ group }: { group: SubGroup }) {
         >
           <ChevronDown className="h-3.5 w-3.5" strokeWidth={2.5} />
         </span>
-        <span className="font-body flex-1 text-sm font-medium text-neutral-900">
+        <span className="font-body flex-1 text-sm font-medium text-home-neutral-900">
           {group.title}
         </span>
-        <span className="font-caption text-[10px] uppercase tracking-[0.14em] text-neutral-400">
+        <span className="font-caption text-[10px] uppercase tracking-[0.14em] text-home-neutral-400">
           {group.items.length}
         </span>
       </button>
@@ -301,11 +300,11 @@ function SubGroupRow({ group }: { group: SubGroup }) {
         style={{ gridTemplateRows: open ? "1fr" : "0fr", opacity: open ? 1 : 0 }}
       >
         <div className="overflow-hidden">
-          <ul className="divide-y divide-neutral-200 border-t border-neutral-200 px-4 py-2">
+          <ul className="divide-y divide-neutral-200 border-t border-home-neutral-200 px-4 py-2">
             {group.items.map((s, i) => (
               <li
                 key={i}
-                className="font-body flex items-start justify-between gap-3 py-2 text-xs text-neutral-700 md:gap-4 md:text-sm"
+                className="font-body flex items-start justify-between gap-3 py-2 text-xs text-home-neutral-700 md:gap-4 md:text-sm"
               >
                 <span className="min-w-0 flex-1">{s.name}</span>
                 <span
@@ -325,8 +324,22 @@ function SubGroupRow({ group }: { group: SubGroup }) {
 
 
 function PriceFileNote() {
+  const { open: openLead } = useLeadDialog();
   return (
-    <div className="px-4 pt-4 md:px-8">
+    <div className="pt-2">
+      <div className="flex justify-center px-4 pb-5 md:px-8">
+        <Button variant="ghost"
+          type="button"
+          onClick={() => openLead("Записаться на консультацию")}
+          className="font-caption h-auto rounded-full px-9 py-3 text-[11px] font-normal uppercase tracking-[0.14em] text-white transition-colors md:px-12 md:text-xs"
+          style={{ backgroundColor: BRAND }}
+          onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#5E5470")}
+          onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = BRAND)}
+        >
+          Записаться
+        </Button>
+      </div>
+      <div className="px-4 pb-4 md:px-8">
       <a
         href={docPraysKomilfo.url}
         target="_blank"
@@ -337,6 +350,7 @@ function PriceFileNote() {
         <FileDown className="h-4 w-4" />
         Полный прайс 2026 (Excel)
       </a>
+      </div>
     </div>
   );
 }
@@ -549,7 +563,7 @@ function SpecialistsBlock() {
 
   return (
     <section
-      className="relative overflow-hidden py-20 text-neutral-900 md:py-28"
+      className="relative overflow-hidden py-20 text-home-neutral-900 md:py-28"
       style={{ background: "linear-gradient(135deg, #CFC5E0 0%, #E6DEEF 50%, #B8ADCE 100%)" }}
     >
       {/* Soft lavender background glows */}
@@ -572,22 +586,22 @@ function SpecialistsBlock() {
         <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-12">
           {/* Текст */}
           <div className="order-2 lg:order-1 lg:col-span-5">
-            <span className="font-caption mb-6 inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-neutral-900/70">
+            <span className="font-caption mb-6 inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-home-neutral-900/70">
               <span className="h-px w-10 bg-current" />
               Наши специалисты
             </span>
             <div>
-              <h2 className="font-display text-3xl font-black uppercase leading-tight text-neutral-900 md:text-4xl lg:text-5xl">
+              <h2 className="font-display text-2xl font-black uppercase leading-tight text-home-neutral-900 md:text-3xl lg:text-4xl">
                 {s.name.split(" ").map((part, i) => (
                   <span key={i} className="block">
                     {part}
                   </span>
                 ))}
               </h2>
-              <p className="font-body mt-3 text-sm font-medium uppercase tracking-wider text-neutral-900/80">
+              <p className="font-body mt-3 text-sm font-medium uppercase tracking-wider text-home-neutral-900/80">
                 {s.role}
               </p>
-              <p className="font-body mt-6 text-base font-light leading-relaxed text-neutral-900">
+              <p className="font-body mt-6 text-base font-light leading-relaxed text-home-neutral-900">
                 {s.focus}
               </p>
             </div>
@@ -596,7 +610,7 @@ function SpecialistsBlock() {
           {/* Фото + подпись */}
           <div className="order-1 lg:order-2 lg:col-span-6">
             <div className="relative mx-auto max-w-md lg:max-w-none">
-              <div className="aspect-[4/5] overflow-hidden rounded-2xl shadow-[0_24px_60px_-20px_rgba(86,28,74,0.35)] ring-1 ring-white/40">
+              <div className="aspect-[4/5] overflow-hidden rounded-2xl shadow-[0_24px_60px_-20px_rgba(86,28,74,0.35)] ring-1 ring-home-paper/40">
                 <img
                   src={s.image}
                   alt={s.name}
@@ -612,7 +626,7 @@ function SpecialistsBlock() {
                 type="button"
                 aria-label="Предыдущий специалист"
                 onClick={() => go(-1)}
-                className="absolute left-2 top-1/2 -translate-y-1/2 inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-neutral-900 shadow-lg shadow-black/10 backdrop-blur transition-all hover:scale-105 hover:bg-white md:left-3 md:h-10 md:w-10"
+                className="absolute left-2 top-1/2 -translate-y-1/2 inline-flex h-9 w-9 items-center justify-center rounded-full bg-home-paper/90 text-home-neutral-900 shadow-lg shadow-home-ink/10 backdrop-blur transition-all hover:scale-105 hover:bg-home-paper md:left-3 md:h-10 md:w-10"
               >
                 <ChevronLeft className="h-5 w-5" />
               </button>
@@ -620,7 +634,7 @@ function SpecialistsBlock() {
                 type="button"
                 aria-label="Следующий специалист"
                 onClick={() => go(1)}
-                className="absolute right-2 top-1/2 -translate-y-1/2 inline-flex h-9 w-9 items-center justify-center rounded-full bg-white/90 text-neutral-900 shadow-lg shadow-black/10 backdrop-blur transition-all hover:scale-105 hover:bg-white md:right-3 md:h-10 md:w-10"
+                className="absolute right-2 top-1/2 -translate-y-1/2 inline-flex h-9 w-9 items-center justify-center rounded-full bg-home-paper/90 text-home-neutral-900 shadow-lg shadow-home-ink/10 backdrop-blur transition-all hover:scale-105 hover:bg-home-paper md:right-3 md:h-10 md:w-10"
               >
                 <ChevronRight className="h-5 w-5" />
               </button>
@@ -634,7 +648,7 @@ function SpecialistsBlock() {
                 type="button"
                 aria-label="Предыдущий специалист"
                 onClick={() => go(-1)}
-                className="hidden h-8 w-8 items-center justify-center rounded-full border border-neutral-900/30 text-neutral-900/70 transition-colors hover:border-neutral-900 hover:text-neutral-900 lg:inline-flex"
+                className="hidden h-8 w-8 items-center justify-center rounded-full border border-home-neutral-900/30 text-home-neutral-900/70 transition-colors hover:border-home-neutral-900 hover:text-home-neutral-900 lg:inline-flex"
               >
                 <ChevronUp className="h-4 w-4" />
               </button>
@@ -644,7 +658,7 @@ function SpecialistsBlock() {
                   type="button"
                   aria-label={`Показать ${sp.name}`}
                   onClick={() => setActive(i)}
-                  className={`relative h-12 w-12 overflow-hidden rounded-full transition-all md:h-14 md:w-14 ${i === active ? "ring-2 ring-white ring-offset-2 shadow-[0_0_20px_rgba(122,110,143,0.55)]" : "opacity-60 hover:opacity-100"}`}
+                  className={`relative h-12 w-12 overflow-hidden rounded-full transition-all md:h-14 md:w-14 ${i === active ? "ring-2 ring-home-paper ring-offset-2 shadow-[0_0_20px_rgba(122,110,143,0.55)]" : "opacity-60 hover:opacity-100"}`}
                   style={i === active ? { ["--tw-ring-offset-color" as string]: "#CFC5E0", ["--tw-ring-color" as string]: "#ffffff" } : undefined}
                 >
                   <img
@@ -660,7 +674,7 @@ function SpecialistsBlock() {
                 type="button"
                 aria-label="Следующий специалист"
                 onClick={() => go(1)}
-                className="hidden h-8 w-8 items-center justify-center rounded-full border border-neutral-900/30 text-neutral-900/70 transition-colors hover:border-neutral-900 hover:text-neutral-900 lg:inline-flex"
+                className="hidden h-8 w-8 items-center justify-center rounded-full border border-home-neutral-900/30 text-home-neutral-900/70 transition-colors hover:border-home-neutral-900 hover:text-home-neutral-900 lg:inline-flex"
               >
                 <ChevronDown className="h-4 w-4" />
               </button>
@@ -673,7 +687,7 @@ function SpecialistsBlock() {
           <button
             type="button"
             onClick={() => setInfoOpen(true)}
-            className="group inline-flex items-center gap-2 rounded-full border border-neutral-900/25 bg-white/40 px-5 py-2.5 text-[11px] uppercase tracking-[0.18em] text-neutral-900 backdrop-blur-sm transition-all hover:border-neutral-900/60 hover:bg-white/70"
+            className="group inline-flex items-center gap-2 rounded-full border border-home-neutral-900/25 bg-home-paper/40 px-5 py-2.5 text-[11px] uppercase tracking-[0.18em] text-home-neutral-900 backdrop-blur-sm transition-all hover:border-home-neutral-900/60 hover:bg-home-paper/70"
           >
             <FileText className="h-3.5 w-3.5" />
             <span>Официальная информация</span>
@@ -764,16 +778,16 @@ const educationEntries: EducationEntry[] = [
 function DisclosureItem({ title, subtitle, children, defaultOpen = false }: { title: string; subtitle?: string; children: React.ReactNode; defaultOpen?: boolean }) {
   return (
     <details
-      className="group border-b border-neutral-900/10 last:border-b-0"
+      className="group border-b border-home-neutral-900/10 last:border-b-0"
       {...(defaultOpen ? { open: true } : {})}
     >
       <summary className="flex cursor-pointer list-none items-center justify-between gap-4 py-5 md:py-6">
         <div className="min-w-0">
-          <p className="font-display text-base uppercase tracking-wide text-neutral-900 md:text-lg">{title}</p>
-          {subtitle ? <p className="font-body mt-1 text-xs font-light text-neutral-900/60 md:text-sm">{subtitle}</p> : null}
+          <p className="font-display text-base uppercase tracking-wide text-home-neutral-900 md:text-lg">{title}</p>
+          {subtitle ? <p className="font-body mt-1 text-xs font-light text-home-neutral-900/60 md:text-sm">{subtitle}</p> : null}
         </div>
         <span
-          className="flex h-9 w-9 flex-none items-center justify-center rounded-full border border-neutral-900/20 text-neutral-900 transition-transform duration-300 group-open:rotate-180"
+          className="flex h-9 w-9 flex-none items-center justify-center rounded-full border border-home-neutral-900/20 text-home-neutral-900 transition-transform duration-300 group-open:rotate-180"
           aria-hidden
         >
           <ChevronDown className="h-4 w-4" />
@@ -803,21 +817,21 @@ function TeamDisclosureDialog({ open, onClose }: { open: boolean; onClose: () =>
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-end justify-center bg-black/60 backdrop-blur-sm md:items-center"
+      className="fixed inset-0 z-[100] flex items-end justify-center bg-home-ink/60 backdrop-blur-sm md:items-center"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
     >
       <div
-        className="relative max-h-[85vh] w-[calc(100%-2rem)] max-w-3xl overflow-hidden rounded-t-2xl bg-white shadow-2xl md:rounded-2xl"
+        className="relative max-h-[85vh] w-[calc(100%-2rem)] max-w-3xl overflow-hidden rounded-t-2xl bg-home-paper shadow-2xl md:rounded-2xl"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="flex items-start justify-between gap-4 border-b border-neutral-900/10 px-4 py-4 md:px-6 md:py-5">
+        <div className="flex items-start justify-between gap-4 border-b border-home-neutral-900/10 px-4 py-4 md:px-6 md:py-5">
           <div>
-            <span className="font-caption text-[10px] uppercase tracking-[0.2em] text-neutral-500">
+            <span className="font-caption text-[10px] uppercase tracking-[0.2em] text-home-neutral-500">
               Официальная информация
             </span>
-            <h3 className="font-display mt-1.5 text-lg font-bold uppercase leading-tight text-neutral-900 md:mt-2 md:text-xl">
+            <h3 className="font-display mt-1.5 text-lg font-bold uppercase leading-tight text-home-neutral-900 md:mt-2 md:text-xl">
               О наших сотрудниках
             </h3>
           </div>
@@ -825,7 +839,7 @@ function TeamDisclosureDialog({ open, onClose }: { open: boolean; onClose: () =>
             type="button"
             onClick={onClose}
             aria-label="Закрыть"
-            className="flex h-8 w-8 flex-none items-center justify-center rounded-full border border-neutral-900/15 text-neutral-700 transition-colors hover:bg-neutral-100 md:h-9 md:w-9"
+            className="flex h-8 w-8 flex-none items-center justify-center rounded-full border border-home-neutral-900/15 text-home-neutral-700 transition-colors hover:bg-neutral-100 md:h-9 md:w-9"
           >
             <X className="h-4 w-4" />
           </button>
@@ -837,7 +851,7 @@ function TeamDisclosureDialog({ open, onClose }: { open: boolean; onClose: () =>
             <div className="overflow-x-auto">
               <table className="w-full border-collapse text-left text-xs md:text-sm">
                 <thead>
-                  <tr className="border-b border-neutral-900/10 text-[10px] uppercase tracking-wider text-neutral-500 md:text-[11px]">
+                  <tr className="border-b border-home-neutral-900/10 text-[10px] uppercase tracking-wider text-home-neutral-500 md:text-[11px]">
                     <th className="py-2 pr-3 font-medium md:py-3 md:pr-4">ФИО</th>
                     <th className="py-2 pr-3 font-medium md:py-3 md:pr-4">Должность</th>
                     <th className="py-2 pr-3 font-medium md:py-3 md:pr-4">Кабинет</th>
@@ -846,11 +860,11 @@ function TeamDisclosureDialog({ open, onClose }: { open: boolean; onClose: () =>
                 </thead>
                 <tbody>
                   {scheduleRows.map((r) => (
-                    <tr key={r.name} className="border-b border-neutral-900/5 align-top last:border-b-0">
-                      <td className="py-3 pr-3 font-medium text-neutral-900 md:py-4 md:pr-4">{r.name}</td>
-                      <td className="py-3 pr-3 text-neutral-700 md:py-4 md:pr-4">{r.role}</td>
-                      <td className="py-3 pr-3 text-neutral-700 md:py-4 md:pr-4">{r.room}</td>
-                      <td className="py-3 text-neutral-700 md:py-4">
+                    <tr key={r.name} className="border-b border-home-neutral-900/5 align-top last:border-b-0">
+                      <td className="py-3 pr-3 font-medium text-home-neutral-900 md:py-4 md:pr-4">{r.name}</td>
+                      <td className="py-3 pr-3 text-home-neutral-700 md:py-4 md:pr-4">{r.role}</td>
+                      <td className="py-3 pr-3 text-home-neutral-700 md:py-4 md:pr-4">{r.room}</td>
+                      <td className="py-3 text-home-neutral-700 md:py-4">
                         {r.hours.map((h, i) => (
                           <div key={i}>{h}</div>
                         ))}
@@ -860,7 +874,7 @@ function TeamDisclosureDialog({ open, onClose }: { open: boolean; onClose: () =>
                 </tbody>
               </table>
             </div>
-            <p className="mt-3 text-[11px] font-light leading-relaxed text-neutral-500 md:mt-4 md:text-xs">
+            <p className="mt-3 text-[11px] font-light leading-relaxed text-home-neutral-500 md:mt-4 md:text-xs">
               *Точный график работы специалиста уточняйте у администратора по телефону{" "}
               <a href="tel:+74742900909" className="whitespace-nowrap font-medium" style={{ color: BRAND }}>
                 8 (4742) 90-09-09
@@ -876,20 +890,20 @@ function TeamDisclosureDialog({ open, onClose }: { open: boolean; onClose: () =>
           >
             <div className="space-y-4 md:space-y-6">
               {educationEntries.map((e) => (
-                <div key={e.name} className="rounded-xl border border-neutral-900/10 p-3 md:p-4">
-                  <p className="font-display text-xs uppercase tracking-wide text-neutral-900 md:text-sm">{e.name}</p>
-                  <p className="font-body mt-1 text-[11px] font-light text-neutral-500 md:text-xs">{e.role}</p>
+                <div key={e.name} className="rounded-xl border border-home-neutral-900/10 p-3 md:p-4">
+                  <p className="font-display text-xs uppercase tracking-wide text-home-neutral-900 md:text-sm">{e.name}</p>
+                  <p className="font-body mt-1 text-[11px] font-light text-home-neutral-500 md:text-xs">{e.role}</p>
                   <ul className="mt-3 space-y-2 md:mt-4 md:space-y-3">
                     {e.items.map((it, i) => (
                       <li key={i} className="grid grid-cols-1 gap-1 border-l-2 pl-3 text-xs md:grid-cols-[180px_1fr] md:gap-4 md:pl-4 md:text-sm" style={{ borderColor: BRAND }}>
-                        <div className="text-[10px] uppercase tracking-wider text-neutral-500 md:text-[11px]">{it.stage}</div>
+                        <div className="text-[10px] uppercase tracking-wider text-home-neutral-500 md:text-[11px]">{it.stage}</div>
                         <div className="space-y-1 text-neutral-800">
                           <div>{it.place}</div>
                           <div className="text-neutral-600">
                             <span className="font-medium text-neutral-800">Специальность:</span> {it.specialty} · <span className="font-medium text-neutral-800">Квалификация:</span> {it.qualification}
                           </div>
                           {it.certificate ? (
-                            <div className="text-[11px] text-neutral-500 md:text-xs">Сертификат / аккредитация: {it.certificate}</div>
+                            <div className="text-[11px] text-home-neutral-500 md:text-xs">Сертификат / аккредитация: {it.certificate}</div>
                           ) : null}
                         </div>
                       </li>
@@ -902,7 +916,7 @@ function TeamDisclosureDialog({ open, onClose }: { open: boolean; onClose: () =>
 
           {/* Дисклеймер */}
           <DisclosureItem title="Правовая информация и согласия" subtitle="Публикация фото, видео и персональных данных">
-            <div className="space-y-3 text-xs font-light leading-relaxed text-neutral-700 md:space-y-4 md:text-sm">
+            <div className="space-y-3 text-xs font-light leading-relaxed text-home-neutral-700 md:space-y-4 md:text-sm">
               <p>
                 Публикация фотоизображений и видеоматериалов на сайте осуществляется с письменного согласия субъектов персональных данных, либо фотоизображения и видеоматериалы приобретены в соответствии с договорами позирования граждан за плату, либо сгенерированы с использованием нейросетевых технологий. Указанные изображения в том числе могут быть подвергнуты изменениям при помощи графических редакторов и иных программных продуктов. Копирование, публичное воспроизведение, распространение запрещено.
               </p>
@@ -932,25 +946,25 @@ function TeamTrustBlock() {
     return () => clearInterval(id);
   }, [slides.length]);
   return (
-    <section className="relative overflow-hidden bg-white py-20 md:py-28">
+    <section className="relative overflow-hidden bg-home-paper py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-6 md:px-8 lg:px-12">
         <div className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-16">
           {/* Текст */}
           <div className="lg:col-span-5">
-            <span className="font-caption mb-6 inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-neutral-500">
+            <span className="font-caption mb-6 inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-home-neutral-500">
               <span className="h-px w-10 bg-current" />
               Наша команда
             </span>
-            <h2 className="font-display text-3xl font-bold uppercase leading-tight text-neutral-900 md:text-4xl lg:text-5xl">
+            <h2 className="font-display text-3xl font-bold uppercase leading-tight text-home-neutral-900 md:text-4xl lg:text-5xl">
               Ваша лучшая подруга{" "}
-              <span style={{ color: BRAND }}>порекомендует</span> нас
+              <span style={{ color: BRAND }}>порекомендует</span> нас,
             </h2>
             <p className="font-body mt-6 text-base font-light leading-relaxed text-neutral-600 md:text-lg">
-              и мы предложим индивидуальную стратегию сохранения вашей естественности.
+              и мы предложим индивидуальную стратегию сохранения вашей естественной красоты.
             </p>
             <button
               type="button"
-              className="group mt-8 inline-flex items-center gap-2 rounded-full border-2 px-6 py-3 text-xs font-normal uppercase tracking-[0.1em] text-white transition-all md:mt-10"
+              className="group mt-8 inline-flex items-center gap-2 rounded-full border-2 px-6 py-3 text-xs font-normal uppercase tracking-[0.1em] text-home-paper transition-all md:mt-10"
               style={{ borderColor: BRAND, backgroundColor: BRAND }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = "#5E5470";
@@ -989,13 +1003,13 @@ function TeamTrustBlock() {
                   {slides.map((_, i) => (
                     <span
                       key={i}
-                      className={`h-1.5 rounded-full transition-all duration-500 ${i === current ? "w-6 bg-white" : "w-1.5 bg-white/60"}`}
+                      className={`h-1.5 rounded-full transition-all duration-500 ${i === current ? "w-6 bg-home-paper" : "w-1.5 bg-home-paper/60"}`}
                     />
                   ))}
                 </div>
               </div>
-              <div className="absolute -bottom-5 -left-5 rounded-2xl bg-white p-4 shadow-[0_16px_40px_-12px_rgba(0,0,0,0.2)] md:-bottom-6 md:-left-6 md:p-5">
-                <p className="font-caption text-[10px] uppercase tracking-[0.14em] text-neutral-500">
+              <div className="absolute -bottom-5 -left-5 rounded-2xl bg-home-paper p-4 shadow-[0_16px_40px_-12px_rgba(0,0,0,0.2)] md:-bottom-6 md:-left-6 md:p-5">
+                <p className="font-caption text-[10px] uppercase tracking-[0.14em] text-home-neutral-500">
                   Наши специалисты
                 </p>
                 <img
@@ -1015,19 +1029,89 @@ function TeamTrustBlock() {
 }
 
 
+function FloatingMenu() {
+  const [open, setOpen] = useState(false);
+  const wrapRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    const onClick = (e: MouseEvent) => {
+      if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) setOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    document.addEventListener("mousedown", onClick);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.removeEventListener("mousedown", onClick);
+    };
+  }, [open]);
+
+  const items = [
+    { label: "Главная", target: "top" },
+    { label: "Наши услуги", target: "services" },
+    { label: "Консультация", target: "consultation" },
+    { label: "О клинике", target: "about" },
+    { label: "Безопасность", target: "safety" },
+    { label: "Специалисты", target: "specialists" },
+    { label: "ВКонтакте", target: "vk" },
+    { label: "Контакты", target: "contacts" },
+  ];
+
+  const go = (target: string) => {
+    setOpen(false);
+    if (target === "top") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+    document.getElementById(target)?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  return (
+    <div ref={wrapRef} className="fixed right-4 top-4 z-50 md:right-6 md:top-6">
+      <Button variant="ghost"
+        type="button"
+        aria-label={open ? "Закрыть меню" : "Открыть меню"}
+        aria-expanded={open}
+        onClick={() => setOpen((v) => !v)}
+        className="flex h-12 w-12 items-center justify-center rounded-full border border-home-paper/25 bg-home-ink/45 text-home-paper shadow-[0_8px_24px_rgba(0,0,0,0.35)] backdrop-blur-md transition-colors hover:bg-home-ink/65"
+      >
+        {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+      </Button>
+
+      {open && (
+        <nav
+          aria-label="Меню сайта"
+          className="absolute right-0 top-14 w-56 overflow-hidden rounded-2xl border border-home-paper/15 bg-home-neutral-950/95 py-2 shadow-[0_20px_50px_rgba(0,0,0,0.5)] backdrop-blur-md"
+        >
+          {items.map((item) => (
+            <Button variant="ghost"
+              key={item.target}
+              type="button"
+              onClick={() => go(item.target)}
+              className="h-auto justify-start rounded-none block w-full px-5 py-2.5 text-left font-caption text-[11px] uppercase tracking-[0.14em] text-home-paper/85 transition-colors hover:bg-home-paper/10 hover:text-home-paper"
+            >
+              {item.label}
+            </Button>
+          ))}
+        </nav>
+      )}
+    </div>
+  );
+}
+
 function Index() {
-  const [active, setActive] = useState(0);
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const [heroVideoEnabled, setHeroVideoEnabled] = useState(false);
   const { open: openLead } = useLeadDialog();
 
   useEffect(() => {
-    // Видео подключаем только на широких экранах и только после гидрации,
-    // чтобы оно не конкурировало за трафик с интерактивностью страницы.
-    if (window.matchMedia("(min-width: 768px)").matches) {
-      const id = window.setTimeout(() => setHeroVideoEnabled(true), 300);
-      return () => window.clearTimeout(id);
-    }
+    // Видео подключаем после гидрации, чтобы оно не конкурировало
+    // за трафик с интерактивностью страницы. Размер ~1.2 МБ — грузим на всех экранах.
+    const id = window.setTimeout(() => setHeroVideoEnabled(true), 300);
+    return () => window.clearTimeout(id);
   }, []);
 
   useEffect(() => {
@@ -1036,14 +1120,10 @@ function Index() {
     }
   }, [heroVideoEnabled]);
 
+  const scrollToServices = () => {
+    document.getElementById("services")?.scrollIntoView({ behavior: "smooth" });
+  };
 
-  useEffect(() => {
-    const id = setInterval(() => setActive((i) => (i + 1) % slides.length), 12000);
-    return () => clearInterval(id);
-  }, []);
-
-  const go = (dir: 1 | -1) =>
-    setActive((i) => (i + dir + slides.length) % slides.length);
 
   const services = [
     {
@@ -1065,9 +1145,10 @@ function Index() {
   ];
 
   return (
-    <div className="bg-neutral-950 text-white">
+    <div className="draft-home bg-home-neutral-950 text-home-paper">
+      <FloatingMenu />
       {/* Первый экран — видео на всю высоту viewport с текстом поверх */}
-      <section className="relative h-screen min-h-screen overflow-hidden">
+      <section className="home-first-screen relative h-screen min-h-screen overflow-hidden">
         {/* Видео фон */}
         {heroVideoEnabled ? (
           <video
@@ -1093,182 +1174,83 @@ function Index() {
         )}
 
         {/* Затемнение */}
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
+        <div className="absolute inset-0 bg-home-ink/50" />
+        <div className="absolute inset-0 bg-gradient-to-b from-home-ink/40 via-home-ink/20 to-home-ink/60" />
 
         <header className="absolute inset-x-0 top-0 z-20 w-full pt-4 md:pt-6">
-          <div className="mx-auto flex max-w-6xl flex-col items-center gap-3 px-6 text-center md:flex-row md:items-start md:gap-0 md:px-8 md:text-left">
+          <a href="/" className="absolute left-4 top-4 z-30 md:left-8 md:top-6">
             <img
               src={headerLogo.url}
-              alt="Camille Four"
+              alt="MD-Комильфо"
               fetchPriority="high"
               decoding="async"
-              className="w-44 shrink-0 md:w-52"
-              style={{ filter: "brightness(0) invert(1)" }}
+              className="h-10 w-auto md:h-12"
             />
-            <div className="flex-1 text-center">
-              <p className="font-caption text-[10px] uppercase tracking-[0.16em] text-white/90 md:text-xs">
-                Всё так как должно быть
-              </p>
-              <span className="mx-auto my-1.5 block h-px w-5 bg-white/40 md:my-2 md:w-6" />
-              <p className="font-caption text-[9px] uppercase tracking-[0.12em] text-white/70 md:text-[10px]">
-                Пн–Пт 9:00–21:00 · Сб 10:00–18:00 · Вс 10:00–16:00
-              </p>
-            </div>
-            <div className="flex shrink-0 flex-col items-center text-center md:items-end md:text-right">
-              <a
-                href="tel:89623500909"
-                className="font-display text-sm tracking-[0.04em] text-white transition-colors hover:text-white/80 md:text-base"
-              >
-                8(962)350-09-09
-              </a>
-              <p className="font-caption mt-1 text-[9px] uppercase tracking-[0.12em] text-white/70 md:text-[10px]">
-                г.Липецк ул.Гагарина д.45А 5 этаж
-              </p>
-
-              <a
-                href="https://vk.com/mdkomilfolip"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-2 inline-flex items-center gap-1.5 rounded-full border border-white/40 bg-white/10 px-3 py-1 text-[9px] uppercase tracking-[0.08em] text-white transition-colors hover:bg-white/20 md:px-4 md:py-2 md:text-[11px]"
-              >
-                <svg className="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path d="M12.785 16.241s.288-.032.437-.194c.136-.148.132-.427.132-.427s-.02-1.304.585-1.496c.597-.19 1.363 1.26 2.178 1.817.615.42 1.082.328 1.082.328l2.177-.03s1.14-.071.599-.968c-.044-.074-.314-.66-1.617-1.868-1.365-1.264-1.182-1.058.462-3.24.998-1.332 1.397-2.145 1.272-2.494-.12-.327-.861-.24-.861-.24l-2.45.015s-.181-.025-.316.056c-.132.08-.217.264-.217.264s-.39 1.037-.91 1.921c-1.095 1.871-1.534 1.971-1.713 1.852-.418-.27-.314-1.085-.314-1.663 0-1.808.274-2.562-.534-2.756-.268-.065-.465-.108-1.148-.115-.876-.01-1.618.003-2.04.208-.28.139-.496.448-.364.466.163.022.533.1.729.363.254.34.244 1.103.244 1.103s.163 2.13-.38 2.395c-.373.18-.884-.187-1.982-1.865-.562-.858-.987-1.808-.987-1.808s-.082-.18-.229-.277c-.179-.12-.429-.158-.429-.158l-2.335.016s-.351.01-.48.162c-.116.137-.009.42-.009.42s1.835 4.317 3.912 6.493c1.907 1.999 4.075 1.864 4.075 1.864h.982z" />
-                </svg>
-                <span>ВКонтакте</span>
-              </a>
-            </div>
+          </a>
+          <div className="mx-auto flex max-w-6xl flex-col items-center gap-1.5 px-6 text-center md:px-8 md:pr-14">
+            <p className="font-caption text-[10px] uppercase tracking-[0.16em] text-home-paper/90 md:text-xs">
+              Всё так как должно быть
+            </p>
+            <span className="mx-auto my-0.5 block h-px w-5 bg-home-paper/40 md:w-6" />
+            <p className="font-caption text-[9px] uppercase tracking-[0.12em] text-home-paper/70 md:text-[10px]">
+              Пн–Пт 9:00–21:00 · Сб 10:00–18:00 · Вс 10:00–16:00
+            </p>
+            <p className="font-caption text-[9px] uppercase tracking-[0.12em] text-home-paper/70 md:text-[10px]">
+              г.Липецк ул.Гагарина д.45А 5 этаж
+            </p>
+            <a
+              href="tel:89623500909"
+              className="font-display inline-block text-sm tracking-[0.04em] text-home-paper transition-colors hover:text-home-paper/80 md:text-base"
+            >
+              8(962)350-09-09
+            </a>
           </div>
-
         </header>
 
         <div className="relative z-10 mx-auto flex h-full min-h-screen max-w-6xl items-center px-6 pt-52 pb-8 md:px-8 md:pb-12 md:pt-24">
-          <div className="flex w-full items-center gap-0 md:gap-10">
+          <div className="w-full text-center">
+            <h1 className="font-display mx-auto max-w-4xl text-3xl leading-[1.15] tracking-[0.01em] text-home-accent-3 drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)] md:text-4xl lg:text-5xl">
+              <span className="block">Экспертная косметология</span>
+              <span className="block">для здоровья и молодости</span>
+              <span className="block">вашей кожи</span>
+            </h1>
 
-            {/* Стрелка назад */}
-            <button
-              type="button"
-              aria-label="Предыдущий слайд"
-              onClick={() => go(-1)}
-              className="hidden shrink-0 md:grid h-9 w-9 place-items-center rounded-full border border-white/40 bg-white/10 text-white backdrop-blur transition-colors md:h-10 md:w-10"
-              style={{ transition: "background-color .2s, color .2s, border-color .2s" }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = BRAND;
-                e.currentTarget.style.borderColor = BRAND;
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = "";
-                e.currentTarget.style.borderColor = "";
-              }}
-            >
-              <ChevronLeft className="h-5 w-5" />
-            </button>
+            <p className="font-body mx-auto mt-6 max-w-2xl text-sm font-light leading-relaxed text-home-accent-2 md:mt-8 md:text-base">
+              Сохраняем вашу естественную красоту с помощью эстетических,
+              аппаратных и инъекционных методик с доказанной безопасностью.
+            </p>
 
-            {/* Слайды + точки */}
-            <div className="min-w-0 flex-1 px-1 md:px-2">
-              {/* Слайды — все рендерятся в одной grid-ячейке, без скачков высоты */}
-              <div className="grid">
-                {slides.map((s, i) => (
-                  <article
-                    key={i}
-                    aria-hidden={i !== active}
-                    style={{ gridArea: "1 / 1 / 2 / 2" }}
-                    className={`flex flex-col justify-between transition-opacity duration-700 ease-out ${
-                      i === active ? "opacity-100" : "pointer-events-none opacity-0"
-                    }`}
-                  >
-                    <div className="pb-6 md:pb-8">
-                      <h1 className="font-display max-w-4xl whitespace-pre-line text-2xl leading-[1.15] tracking-[0.01em] text-[#d4d4d4] drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)] md:text-3xl lg:text-5xl">
-                        {s.title}
-                      </h1>
+            <div className="mt-8 md:mt-10">
 
-                      <ul className="mt-6 max-w-2xl space-y-3 md:mt-8 md:space-y-4">
-                        {s.paragraphs.map((p, j) => (
-                          <li key={j} className="font-body flex gap-4 text-sm font-light leading-relaxed text-[#c4c4c4] md:text-base">
-                            <span
-                              aria-hidden
-                              className="mt-2 h-2 w-2 shrink-0 rounded-full ring-2 ring-white/30 md:mt-2.5"
-                              style={{ backgroundColor: BRAND }}
-                            />
-                            <span className="whitespace-pre-line">{p}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div>
-                      <button
-                        type="button"
-                        onClick={() => openLead(s.cta)}
-                        className="group inline-flex items-center gap-2 rounded-full border-2 px-4 py-2 text-[10px] font-normal uppercase tracking-[0.08em] transition-all md:px-6 md:py-3 md:text-xs"
-                        style={{
-                          borderColor: BRAND,
-                          color: "#fff",
-                          backgroundColor: BRAND,
-                        }}
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.backgroundColor = "#5E5470";
-                          e.currentTarget.style.borderColor = "#5E5470";
-                        }}
-                        onMouseLeave={(e) => {
-                          e.currentTarget.style.backgroundColor = BRAND;
-                          e.currentTarget.style.borderColor = BRAND;
-                        }}
-                      >
-                        <span>{s.cta}</span>
-                        <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
-                      </button>
-                    </div>
-                  </article>
-                ))}
-              </div>
-
-
-
-
-
-              {/* Навигация по слайдам */}
-              <div className="mt-14 flex items-center justify-center gap-3">
-                {slides.map((_, i) => (
-                  <button
-                    key={i}
-                    type="button"
-                    aria-label={`Слайд ${i + 1}`}
-                    onClick={() => setActive(i)}
-                    className="h-1.5 rounded-full transition-all"
-                    style={{
-                      width: i === active ? 40 : 16,
-                      backgroundColor: i === active ? BRAND : "rgba(255,255,255,0.35)",
-                    }}
-                  />
-                ))}
-              </div>
+              <Button variant="ghost"
+                type="button"
+                onClick={scrollToServices}
+                className="group inline-flex h-auto whitespace-normal items-center gap-2 rounded-full border-2 px-4 py-2 text-[10px] font-normal uppercase tracking-[0.08em] transition-all md:px-6 md:py-3 md:text-xs"
+                style={{
+                  borderColor: BRAND,
+                  color: "#fff",
+                  backgroundColor: BRAND,
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = "#5E5470";
+                  e.currentTarget.style.borderColor = "#5E5470";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = BRAND;
+                  e.currentTarget.style.borderColor = BRAND;
+                }}
+              >
+                <span>Подобрать процедуру</span>
+                <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
+              </Button>
             </div>
-
-            {/* Стрелка вперёд */}
-            <button
-              type="button"
-              aria-label="Следующий слайд"
-              onClick={() => go(1)}
-              className="hidden shrink-0 md:grid h-9 w-9 place-items-center rounded-full border border-white/40 bg-white/10 text-white backdrop-blur transition-colors md:h-10 md:w-10"
-              onMouseEnter={(e) => {
-                e.currentTarget.style.backgroundColor = BRAND;
-                e.currentTarget.style.borderColor = BRAND;
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = "";
-                e.currentTarget.style.borderColor = "";
-              }}
-            >
-              <ChevronRight className="h-5 w-5" />
-            </button>
           </div>
         </div>
       </section>
 
 
       {/* Второй экран — услуги на сером фоне */}
-      <section id="services" className="relative bg-neutral-200 py-20 md:py-28">
+      <section id="services" className="relative bg-home-neutral-200 py-20 md:py-28">
         <div className="mx-auto max-w-6xl px-6 md:px-8">
           <h2
             className="font-display text-center text-3xl tracking-[0.01em] md:text-4xl lg:text-5xl"
@@ -1276,7 +1258,7 @@ function Index() {
           >
             Наши услуги
           </h2>
-          <p className="font-caption mt-3 text-center text-[10px] uppercase tracking-[0.18em] text-neutral-500 md:text-xs">
+          <p className="font-caption mt-3 text-center text-[10px] uppercase tracking-[0.18em] text-home-neutral-500 md:text-xs">
             Выберите направление, чтобы узнать подробнее
           </p>
 
@@ -1284,9 +1266,9 @@ function Index() {
             {services.map((s) => (
               <Dialog key={s.title}>
                 <DialogTrigger asChild>
-                  <button
+                  <Button variant="ghost"
                     type="button"
-                    className="group relative aspect-[3/4] w-full overflow-hidden rounded-2xl bg-neutral-900 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.35)] transition-transform duration-500 hover:-translate-y-1"
+                    className="group relative h-auto aspect-[3/4] w-full whitespace-normal p-0 overflow-hidden rounded-2xl bg-home-neutral-900 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.35)] transition-transform duration-500 hover:-translate-y-1"
                     style={{ backgroundColor: BRAND }}
                   >
                     {/* Обёртка изображения — уменьшается при наведении, открывая рамку */}
@@ -1303,7 +1285,7 @@ function Index() {
                         />
                 ) : (
 
-                        <div className="absolute inset-0 bg-neutral-400" />
+                        <div className="absolute inset-0 bg-home-neutral-400" />
                       )}
                       {/* Нейтральное затемнение снизу для читаемости текста */}
                       <div
@@ -1315,17 +1297,17 @@ function Index() {
                     </div>
 
                     <div className="absolute inset-0 flex flex-col justify-between p-7 text-left md:p-8">
-                      <h3 className="font-body whitespace-pre-line text-xl leading-tight text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)] md:text-2xl lg:text-[1.7rem]">
+                      <h3 className="font-body whitespace-pre-line text-xl leading-tight text-home-paper drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)] md:text-2xl lg:text-[1.7rem]">
                         {s.title}
                       </h3>
                       <span
-                        className="mt-5 self-end inline-flex items-center gap-2 rounded-full border border-white/70 px-4 py-2 text-[10px] font-normal uppercase tracking-[0.14em] text-white backdrop-blur-sm opacity-0 translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0 group-hover:bg-white group-hover:text-neutral-900 md:text-xs"
+                        className="mt-5 self-end inline-flex items-center gap-2 rounded-full border border-home-paper/70 px-4 py-2 text-[10px] font-normal uppercase tracking-[0.14em] text-home-paper backdrop-blur-sm opacity-0 translate-y-4 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0 group-hover:bg-home-paper group-hover:text-home-neutral-900 md:text-xs"
                       >
                         Подробнее
                         <ArrowRight className="h-3 w-3" />
                       </span>
                     </div>
-                  </button>
+                  </Button>
                 </DialogTrigger>
                 {s.title === "Врачебная\nкосметология" ? (
                   <DialogContent className="max-h-[90vh] max-w-4xl overflow-y-auto p-4 md:p-6">
@@ -1336,7 +1318,7 @@ function Index() {
                       >
                         Врачебная косметология
                       </DialogTitle>
-                      <DialogDescription className="font-body pt-1 text-xs leading-relaxed text-neutral-500 md:text-sm">
+                      <DialogDescription className="font-body pt-1 text-xs leading-relaxed text-home-neutral-500 md:text-sm">
                         Выберите процедуру, чтобы увидеть используемые препараты и записаться на приём.
                       </DialogDescription>
                     </DialogHeader>
@@ -1354,7 +1336,7 @@ function Index() {
                       >
                         Аппаратная косметология
                       </DialogTitle>
-                      <DialogDescription className="font-body pt-1 text-xs leading-relaxed text-neutral-500 md:text-sm">
+                      <DialogDescription className="font-body pt-1 text-xs leading-relaxed text-home-neutral-500 md:text-sm">
                         Выберите процедуру, чтобы увидеть подробности и записаться на приём.
                       </DialogDescription>
                     </DialogHeader>
@@ -1372,7 +1354,7 @@ function Index() {
                       >
                         Эстетическая косметология
                       </DialogTitle>
-                      <DialogDescription className="font-body pt-1 text-xs leading-relaxed text-neutral-500 md:text-sm">
+                      <DialogDescription className="font-body pt-1 text-xs leading-relaxed text-home-neutral-500 md:text-sm">
                         Выберите процедуру, чтобы увидеть подробности и записаться на приём.
                       </DialogDescription>
                     </DialogHeader>
@@ -1391,7 +1373,7 @@ function Index() {
                       >
                         Массаж
                       </DialogTitle>
-                      <DialogDescription className="font-body pt-1 text-xs leading-relaxed text-neutral-500 md:text-sm">
+                      <DialogDescription className="font-body pt-1 text-xs leading-relaxed text-home-neutral-500 md:text-sm">
                         Выберите процедуру, чтобы увидеть подробности и записаться на приём.
                       </DialogDescription>
                     </DialogHeader>
@@ -1421,7 +1403,7 @@ function Index() {
       </section>
 
       {/* Третий экран — призыв на бесплатную диагностику */}
-      <section className="relative min-h-[calc(80vh-100px)] overflow-hidden md:min-h-[80vh]">
+      <section id="consultation" className="relative min-h-[calc(80vh-100px)] overflow-hidden md:min-h-[80vh]">
         <img
           src={consultationBg.url}
           alt=""
@@ -1430,16 +1412,16 @@ function Index() {
           loading="lazy"
           decoding="async"
         />
-        <div className="absolute inset-0 bg-black/55" />
-        <div className="absolute inset-0 bg-[#7A6E8F]/25" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60" />
+        <div className="absolute inset-0 bg-home-ink/55" />
+        <div className="absolute inset-0 bg-home-accent-0/25" />
+        <div className="absolute inset-0 bg-gradient-to-b from-home-ink/40 via-home-ink/20 to-home-ink/60" />
 
         <div className="relative z-10 mx-auto flex min-h-[calc(80vh-100px)] max-w-5xl flex-col items-center justify-center px-6 py-10 text-center md:min-h-[80vh] md:px-8 md:py-20">
           <div className="md:-translate-y-10">
-            <h2 className="font-display whitespace-pre-line text-xl leading-[1.25] tracking-[0.01em] text-[#e5e5e5] drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)] md:text-3xl lg:text-4xl">
+            <h2 className="font-display whitespace-pre-line text-xl leading-[1.25] tracking-[0.01em] text-home-accent-4 drop-shadow-[0_2px_12px_rgba(0,0,0,0.5)] md:text-3xl lg:text-4xl">
               {"Подберём персональную\u00a0\nстратегию вашей естественной красоты"}
             </h2>
-            <button
+            <Button variant="ghost"
               type="button"
               onClick={() => openLead("Записаться на консультацию")}
               className="group mt-8 inline-flex items-center gap-2 rounded-full border-2 px-5 py-2.5 text-xs font-normal uppercase tracking-[0.1em] transition-all md:mt-10 md:px-6 md:py-3"
@@ -1449,17 +1431,17 @@ function Index() {
             >
               <span>Записаться на консультацию</span>
               <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
-            </button>
+            </Button>
           </div>
         </div>
       </section>
 
       {/* Четвёртый экран — философия продукта: текст / изображение */}
-      <section className="relative flex min-h-screen flex-col overflow-hidden md:flex-row">
+      <section id="about" className="relative flex min-h-screen flex-col overflow-hidden md:flex-row">
         {/* Левая половина — фон с цветом из бренд-изображения */}
         <div
           className="relative flex w-full items-center justify-center overflow-hidden px-8 py-16 md:w-1/2 md:px-12 lg:px-20"
-          style={{ background: "linear-gradient(160deg, #D6CCE3 0%, #CBC1D9 45%, #B8ADCE 100%)" }}
+          style={{ background: "linear-gradient(160deg, #CFC4E1 0%, #BFB1D6 45%, #A89AC5 100%)" }}
         >
           {/* Soft dimensional glows */}
           <div className="pointer-events-none absolute inset-0 opacity-60">
@@ -1478,11 +1460,11 @@ function Index() {
           </div>
 
           <div className="relative z-10 max-w-xl">
-            <h2 className="font-display text-2xl leading-[1.15] tracking-[0.01em] text-[#f5f5f5] drop-shadow-[0_2px_12px_rgba(0,0,0,0.15)] md:text-3xl lg:text-4xl">
+            <h2 className="font-display text-2xl leading-[1.15] tracking-[0.01em] text-home-accent-5 drop-shadow-[0_2px_10px_rgba(60,50,80,0.45)] md:text-3xl lg:text-4xl">
               Ваше желанное отражение в зеркале —{"\n"}
               это не просто «уколы красоты»
             </h2>
-            <p className="font-body mt-6 text-sm font-light leading-relaxed text-black/80 md:mt-8 md:text-base">
+            <p className="font-body mt-6 text-sm font-light leading-relaxed text-home-ink/80 md:mt-8 md:text-base">
               Мы создаём комплексную стратегию, комбинируем методики, чтобы сохранять вашу естественную молодость и индивидуальность.
             </p>
           </div>
@@ -1513,9 +1495,9 @@ function Index() {
           decoding="async"
         />
         {/* Затемнение с розоватым оттенком */}
-        <div className="absolute inset-0 bg-black/35" />
-        <div className="absolute inset-0 bg-[#7A6E8F]/10" />
-        <div className="absolute inset-0 bg-gradient-to-l from-black/70 via-black/25 to-transparent" />
+        <div className="absolute inset-0 bg-home-ink/35" />
+        <div className="absolute inset-0 bg-home-accent-0/10" />
+        <div className="absolute inset-0 bg-gradient-to-l from-home-ink/70 via-home-ink/25 to-transparent" />
 
         {/* Контент */}
         <div className="relative z-10 mx-auto flex min-h-[80vh] max-w-6xl flex-col items-end justify-center px-6 py-16 text-left md:px-8 md:py-20">
@@ -1524,7 +1506,7 @@ function Index() {
               Вы достойны профессионального{"\n"}
               отношения к вашему здоровью
             </h2>
-            <button
+            <Button variant="ghost"
               type="button"
               onClick={() => openLead("Записаться на консультацию")}
               className="group mt-8 inline-flex items-center gap-2 rounded-full border-2 px-5 py-2.5 text-xs font-normal uppercase tracking-[0.1em] transition-all md:mt-10 md:px-7 md:py-3 md:text-sm"
@@ -1544,7 +1526,7 @@ function Index() {
             >
               <span>Записаться на консультацию</span>
               <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
-            </button>
+            </Button>
           </div>
         </div>
       </section>
@@ -1558,7 +1540,7 @@ function Index() {
       </div>
 
       {/* Экран призыва подписаться на группу ВКонтакте */}
-      <section className="relative overflow-hidden">
+      <section id="vk" className="relative overflow-hidden">
         <img
           className="absolute inset-0 h-full w-full object-cover"
           src={teamImage.url}
@@ -1566,27 +1548,49 @@ function Index() {
           loading="lazy"
           decoding="async"
         />
-        <div className="absolute inset-0 bg-black/55" />
-        <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/30 to-transparent" />
+        <div className="absolute inset-0 bg-home-ink/55" />
+        <div className="absolute inset-0 bg-gradient-to-r from-home-ink/70 via-home-ink/30 to-transparent" />
 
         <div className="relative z-10 mx-auto flex min-h-[75vh] max-w-6xl flex-col items-start justify-center px-6 py-16 md:px-8 md:py-20">
           <div className="max-w-xl">
-            <h2 className="font-display max-w-xl text-2xl leading-[1.15] tracking-[0.01em] text-[#F5C1E2] drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)] md:text-3xl lg:text-4xl">
+            <h2 className="font-display max-w-xl text-2xl leading-[1.15] tracking-[0.01em] text-home-accent-1 drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)] md:text-3xl lg:text-4xl">
               Найдите своего специалиста
             </h2>
-            <p className="font-body mt-4 text-sm font-light leading-relaxed text-white/85 md:mt-5 md:text-base">
+            <p className="font-body mt-4 text-sm font-light leading-relaxed text-home-paper/85 md:mt-5 md:text-base">
               Тысячи женщин Липецка доверяют нам свою красоту, тело и здоровье — приходите, и мы станем вашими проверенными специалистами.
             </p>
-            <p className="font-body mt-3 text-sm font-light leading-relaxed text-white/85 md:text-base">
+            <p className="font-body mt-3 text-sm font-light leading-relaxed text-home-paper/85 md:text-base">
               В нашей группе ВКонтакте мы бесплатно делимся советами, разборами и рекомендациями: познавательно, интересно и помогает решиться на первую встречу.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-4 md:mt-10">
+              <Button variant="ghost"
+                type="button"
+                onClick={() => openLead("Записаться на встречу-знакомство")}
+                className="group inline-flex h-auto whitespace-normal items-center gap-2 rounded-full border-2 px-5 py-2.5 text-xs font-normal uppercase tracking-[0.1em] transition-all md:px-7 md:py-3 md:text-sm"
+                style={{
+                  borderColor: BRAND,
+                  color: "#fff",
+                  backgroundColor: BRAND,
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = "transparent";
+                  e.currentTarget.style.color = "#fff";
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = BRAND;
+                  e.currentTarget.style.color = "#fff";
+                }}
+              >
+                <span>Записаться на встречу-знакомство</span>
+                <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
+              </Button>
+
               <a
                 href="https://vk.com/mdkomilfolip"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center gap-2 rounded-full border-2 px-5 py-2.5 text-xs font-normal uppercase tracking-[0.1em] transition-all md:px-7 md:py-3 md:text-sm"
+                className="group inline-flex h-auto whitespace-normal items-center gap-2 rounded-full border-2 px-5 py-2.5 text-xs font-normal uppercase tracking-[0.1em] transition-all md:px-7 md:py-3 md:text-sm"
                 style={{
                   borderColor: "#fff",
                   color: "#fff",
@@ -1612,49 +1616,45 @@ function Index() {
                 <span>Подписаться на группу ВКонтакте</span>
                 <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
               </a>
-
-              <button
-                type="button"
-                onClick={() => openLead("Записаться на встречу-знакомство")}
-                className="group inline-flex items-center gap-2 rounded-full border-2 px-5 py-2.5 text-xs font-normal uppercase tracking-[0.1em] transition-all md:px-7 md:py-3 md:text-sm"
-                style={{
-                  borderColor: BRAND,
-                  color: "#fff",
-                  backgroundColor: BRAND,
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = "transparent";
-                  e.currentTarget.style.color = "#fff";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = BRAND;
-                  e.currentTarget.style.color = "#fff";
-                }}
-              >
-                <span>Записаться на встречу-знакомство</span>
-                <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />
-              </button>
             </div>
           </div>
         </div>
       </section>
 
       {/* Map */}
-      <section className="bg-neutral-950 py-10 md:py-14">
+      <section id="contacts" className="bg-home-neutral-950 py-10 md:py-14">
         <div className="mx-auto max-w-6xl px-6 md:px-8">
-          <div className="mb-6 md:mb-8">
-            <h2 className="font-display text-xl uppercase tracking-[0.08em] text-[#F5C1E2] md:text-2xl">
+          <div className="mb-6 text-center md:mb-8">
+            <h2 className="font-display text-xl uppercase tracking-[0.08em] text-home-accent-1 md:text-2xl">
               Как добраться
             </h2>
-            <p className="font-body mt-2 text-sm text-white/70 md:text-base">
+            <p className="font-body mt-2 text-sm text-home-paper/70 md:text-base">
               г. Липецк, ул. Гагарина, д. 45А, 5 этаж
             </p>
-            <p className="font-body mt-2 text-sm text-white/60 md:text-base">
+            <p className="font-body mt-2 text-sm text-home-paper/60 md:text-base">
               Пн–Пт 9:00–21:00 · Сб 10:00–18:00 · Вс 10:00–16:00
             </p>
-
+            <a
+              href="tel:89623500909"
+              className="font-display mt-4 inline-block text-xl tracking-[0.04em] text-home-paper transition-colors hover:text-home-paper/80 md:text-2xl"
+            >
+              8(962)350-09-09
+            </a>
+            <div className="mt-4">
+              <a
+                href="https://vk.com/mdkomilfolip"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 rounded-full border border-home-paper/40 bg-home-paper/10 px-4 py-2 text-xs uppercase tracking-[0.08em] text-home-paper transition-colors hover:bg-home-paper/20"
+              >
+                <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12.785 16.241s.288-.032.437-.194c.136-.148.132-.427.132-.427s-.02-1.304.585-1.496c.597-.19 1.363 1.26 2.178 1.817.615.42 1.082.328 1.082.328l2.177-.03s1.14-.071.599-.968c-.044-.074-.314-.66-1.617-1.868-1.365-1.264-1.182-1.058.462-3.24.998-1.332 1.397-2.145 1.272-2.494-.12-.327-.861-.24-.861-.24l-2.45.015s-.181-.025-.316.056c-.132.08-.217.264-.217.264s-.39 1.037-.91 1.921c-1.095 1.871-1.534 1.971-1.713 1.852-.418-.27-.314-1.085-.314-1.663 0-1.808.274-2.562-.534-2.756-.268-.065-.465-.108-1.148-.115-.876-.01-1.618.003-2.04.208-.28.139-.496.448-.364.466.163.022.533.1.729.363.254.34.244 1.103.244 1.103s.163 2.13-.38 2.395c-.373.18-.884-.187-1.982-1.865-.562-.858-.987-1.808-.987-1.808s-.082-.18-.229-.277c-.179-.12-.429-.158-.429-.158l-2.335.016s-.351.01-.48.162c-.116.137-.009.42-.009.42s1.835 4.317 3.912 6.493c1.907 1.999 4.075 1.864 4.075 1.864h.982z" />
+                </svg>
+                <span>ВКонтакте</span>
+              </a>
+            </div>
           </div>
-          <div className="overflow-hidden rounded-xl border border-white/10 shadow-[0_8px_30px_rgba(0,0,0,0.35)]">
+          <div className="overflow-hidden rounded-xl border border-home-paper/10 shadow-[0_8px_30px_rgba(0,0,0,0.35)]">
             <iframe
               src="https://yandex.ru/map-widget/v1/?um=constructor%3Ab9ee1753cb92e83ab8ba25232ea59f804fea405124fc08ebe98e9d61af17ce3b&source=constructor"
               loading="lazy"
@@ -1673,4 +1673,3 @@ function Index() {
     </div>
   );
 }
-

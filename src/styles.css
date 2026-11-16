@@ -19,6 +19,20 @@
  */
 
 @theme inline {
+  --color-home-paper: var(--home-paper);
+  --color-home-ink: var(--home-ink);
+  --color-home-neutral-950: var(--home-neutral-950);
+  --color-home-neutral-900: var(--home-neutral-900);
+  --color-home-neutral-700: var(--home-neutral-700);
+  --color-home-neutral-500: var(--home-neutral-500);
+  --color-home-neutral-400: var(--home-neutral-400);
+  --color-home-neutral-200: var(--home-neutral-200);
+  --color-home-accent-0: var(--home-accent-0);
+  --color-home-accent-1: var(--home-accent-1);
+  --color-home-accent-2: var(--home-accent-2);
+  --color-home-accent-3: var(--home-accent-3);
+  --color-home-accent-4: var(--home-accent-4);
+  --color-home-accent-5: var(--home-accent-5);
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -213,4 +227,27 @@
     font-weight: 300;
     letter-spacing: 0.14em;
   }
+}
+
+/* Imported homepage typography and palette, isolated from service pages. */
+:root {
+  --home-paper: #ffffff;
+  --home-ink: #000000;
+  --home-neutral-950: #0a0a0a;
+  --home-neutral-900: #171717;
+  --home-neutral-700: #404040;
+  --home-neutral-500: #737373;
+  --home-neutral-400: #a3a3a3;
+  --home-neutral-200: #e5e5e5;
+  --home-accent-0: #7A6E8F;
+  --home-accent-1: #F5C1E2;
+  --home-accent-2: #c4c4c4;
+  --home-accent-3: #d4d4d4;
+  --home-accent-4: #e5e5e5;
+  --home-accent-5: #ffffff;
+}
+.draft-home .font-display { font-family: "Playfair Display", "PT Sans", serif; }
+.draft-home .font-caption { font-family: "Inter", "PT Sans", system-ui, sans-serif; }
+@media (max-width: 640px) {
+  .home-first-screen header > div { padding-top: 3.5rem; }
 }
