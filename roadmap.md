@@ -28,3 +28,7 @@
 # Complete homepage transfer
 - [x] Transfer the draft homepage layout, typography, menu and images while preserving appointment forms and service-page links.
 - [x] Verify all homepage sections and navigation on desktop and mobile.
+
+# Medical service list transfer
+- [x] Copy only the draft medical procedures into the shared catalog, preserving other directions and appointment behavior.
+- [x] Verify the transferred list in the homepage dialog and medical page on desktop and mobile.
