@@ -877,7 +877,7 @@ function TeamDisclosureDialog({ open, onClose }: { open: boolean; onClose: () =>
             <p className="mt-3 text-[11px] font-light leading-relaxed text-home-neutral-500 md:mt-4 md:text-xs">
               *Точный график работы специалиста уточняйте у администратора по телефону{" "}
               <a href="tel:+74742900909" className="whitespace-nowrap font-medium" style={{ color: BRAND }}>
-                8 (4742) 90-09-09
+                +7 (4742) 90-09-09
               </a>
               .
             </p>
@@ -1635,10 +1635,10 @@ function Index() {
               Пн–Пт 9:00–21:00 · Сб 10:00–18:00 · Вс 10:00–16:00
             </p>
             <a
-              href="tel:89623500909"
+              href="tel:+79623500909"
               className="font-display mt-4 inline-block text-xl tracking-[0.04em] text-home-paper transition-colors hover:text-home-paper/80 md:text-2xl"
             >
-              8(962)350-09-09
+              +7 (962) 350-09-09
             </a>
             <div className="mt-4">
               <a
