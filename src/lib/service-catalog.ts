@@ -321,7 +321,7 @@ export const hardwareProcedures: Procedure[] = [
   },
 
   {
-    name: "СМАС-лифтинг",
+    name: "Ультразвуковой СМАС-лифтинг",
     price: "от 13 200 ₽",
     detailsLabel: "Аппарат",
     preparations: [],
