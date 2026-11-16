@@ -1215,9 +1215,9 @@ function Index() {
               <span className="block">вашей кожи</span>
             </h1>
 
-            <p className="font-body mx-auto mt-6 max-w-2xl text-sm font-light leading-relaxed text-home-accent-2 md:mt-8 md:text-base">
-              <span className="block">Сохраняем вашу естественную красоту с помощью</span>
-              <span className="block">эстетических, аппаратных и инъекционных методик</span>
+            <p className="font-body mx-auto mt-6 max-w-2xl text-xs font-light leading-relaxed text-home-accent-2 md:mt-8 md:text-base">
+              <span className="block text-balance">Сохраняем вашу естественную красоту с помощью</span>
+              <span className="block text-balance">эстетических, аппаратных и инъекционных методик</span>
               <span className="block">с доказанной безопасностью.</span>
             </p>
 
