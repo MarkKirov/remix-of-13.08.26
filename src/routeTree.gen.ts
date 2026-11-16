@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as UslugiRouteImport } from './routes/uslugi'
 import { Route as UslugiApparatnayaKosmetologiyaRouteImport } from './routes/uslugi_.apparatnaya-kosmetologiya'
 import { Route as UslugiEsteticheskayaKosmetologiyaRouteImport } from './routes/uslugi_.esteticheskaya-kosmetologiya'
+import { Route as UslugiMassazhRouteImport } from './routes/uslugi_.massazh'
 import { Route as UslugiVrachebnayaKosmetologiyaRouteImport } from './routes/uslugi_.vrachebnaya-kosmetologiya'
 import { Route as ApiPublicLeadNotifyRouteImport } from './routes/api/public/lead-notify'
 import { Route as LovableEmailTransactionalPreviewRouteImport } from './routes/lovable/email/transactional/preview'
@@ -39,6 +40,11 @@ const UslugiEsteticheskayaKosmetologiyaRoute =
     path: '/uslugi/esteticheskaya-kosmetologiya',
     getParentRoute: () => rootRouteImport,
   } as any)
+const UslugiMassazhRoute = UslugiMassazhRouteImport.update({
+  id: '/uslugi_/massazh',
+  path: '/uslugi/massazh',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const UslugiVrachebnayaKosmetologiyaRoute =
   UslugiVrachebnayaKosmetologiyaRouteImport.update({
     id: '/uslugi_/vrachebnaya-kosmetologiya',
@@ -62,6 +68,7 @@ export interface FileRoutesByFullPath {
   '/uslugi': typeof UslugiRoute
   '/uslugi/apparatnaya-kosmetologiya': typeof UslugiApparatnayaKosmetologiyaRoute
   '/uslugi/esteticheskaya-kosmetologiya': typeof UslugiEsteticheskayaKosmetologiyaRoute
+  '/uslugi/massazh': typeof UslugiMassazhRoute
   '/uslugi/vrachebnaya-kosmetologiya': typeof UslugiVrachebnayaKosmetologiyaRoute
   '/api/public/lead-notify': typeof ApiPublicLeadNotifyRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
@@ -71,6 +78,7 @@ export interface FileRoutesByTo {
   '/uslugi': typeof UslugiRoute
   '/uslugi/apparatnaya-kosmetologiya': typeof UslugiApparatnayaKosmetologiyaRoute
   '/uslugi/esteticheskaya-kosmetologiya': typeof UslugiEsteticheskayaKosmetologiyaRoute
+  '/uslugi/massazh': typeof UslugiMassazhRoute
   '/uslugi/vrachebnaya-kosmetologiya': typeof UslugiVrachebnayaKosmetologiyaRoute
   '/api/public/lead-notify': typeof ApiPublicLeadNotifyRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
@@ -81,6 +89,7 @@ export interface FileRoutesById {
   '/uslugi': typeof UslugiRoute
   '/uslugi_/apparatnaya-kosmetologiya': typeof UslugiApparatnayaKosmetologiyaRoute
   '/uslugi_/esteticheskaya-kosmetologiya': typeof UslugiEsteticheskayaKosmetologiyaRoute
+  '/uslugi_/massazh': typeof UslugiMassazhRoute
   '/uslugi_/vrachebnaya-kosmetologiya': typeof UslugiVrachebnayaKosmetologiyaRoute
   '/api/public/lead-notify': typeof ApiPublicLeadNotifyRoute
   '/lovable/email/transactional/preview': typeof LovableEmailTransactionalPreviewRoute
@@ -92,6 +101,7 @@ export interface FileRouteTypes {
     | '/uslugi'
     | '/uslugi/apparatnaya-kosmetologiya'
     | '/uslugi/esteticheskaya-kosmetologiya'
+    | '/uslugi/massazh'
     | '/uslugi/vrachebnaya-kosmetologiya'
     | '/api/public/lead-notify'
     | '/lovable/email/transactional/preview'
@@ -101,6 +111,7 @@ export interface FileRouteTypes {
     | '/uslugi'
     | '/uslugi/apparatnaya-kosmetologiya'
     | '/uslugi/esteticheskaya-kosmetologiya'
+    | '/uslugi/massazh'
     | '/uslugi/vrachebnaya-kosmetologiya'
     | '/api/public/lead-notify'
     | '/lovable/email/transactional/preview'
@@ -110,6 +121,7 @@ export interface FileRouteTypes {
     | '/uslugi'
     | '/uslugi_/apparatnaya-kosmetologiya'
     | '/uslugi_/esteticheskaya-kosmetologiya'
+    | '/uslugi_/massazh'
     | '/uslugi_/vrachebnaya-kosmetologiya'
     | '/api/public/lead-notify'
     | '/lovable/email/transactional/preview'
@@ -120,6 +132,7 @@ export interface RootRouteChildren {
   UslugiRoute: typeof UslugiRoute
   UslugiApparatnayaKosmetologiyaRoute: typeof UslugiApparatnayaKosmetologiyaRoute
   UslugiEsteticheskayaKosmetologiyaRoute: typeof UslugiEsteticheskayaKosmetologiyaRoute
+  UslugiMassazhRoute: typeof UslugiMassazhRoute
   UslugiVrachebnayaKosmetologiyaRoute: typeof UslugiVrachebnayaKosmetologiyaRoute
   ApiPublicLeadNotifyRoute: typeof ApiPublicLeadNotifyRoute
   LovableEmailTransactionalPreviewRoute: typeof LovableEmailTransactionalPreviewRoute
@@ -155,6 +168,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UslugiEsteticheskayaKosmetologiyaRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/uslugi_/massazh': {
+      id: '/uslugi_/massazh'
+      path: '/uslugi/massazh'
+      fullPath: '/uslugi/massazh'
+      preLoaderRoute: typeof UslugiMassazhRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/uslugi_/vrachebnaya-kosmetologiya': {
       id: '/uslugi_/vrachebnaya-kosmetologiya'
       path: '/uslugi/vrachebnaya-kosmetologiya'
@@ -185,6 +205,7 @@ const rootRouteChildren: RootRouteChildren = {
   UslugiApparatnayaKosmetologiyaRoute: UslugiApparatnayaKosmetologiyaRoute,
   UslugiEsteticheskayaKosmetologiyaRoute:
     UslugiEsteticheskayaKosmetologiyaRoute,
+  UslugiMassazhRoute: UslugiMassazhRoute,
   UslugiVrachebnayaKosmetologiyaRoute: UslugiVrachebnayaKosmetologiyaRoute,
   ApiPublicLeadNotifyRoute: ApiPublicLeadNotifyRoute,
   LovableEmailTransactionalPreviewRoute: LovableEmailTransactionalPreviewRoute,
