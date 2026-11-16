@@ -1054,7 +1054,7 @@ function FloatingMenu() {
     { label: "Наши услуги", target: "services" },
     { label: "Консультация", target: "consultation" },
     { label: "О клинике", target: "about" },
-    { label: "Безопасность", target: "safety" },
+    { label: "Отзывы", target: "safety" },
     { label: "Специалисты", target: "specialists" },
     { label: "ВКонтакте", target: "vk" },
     { label: "Контакты", target: "contacts" },
