@@ -563,7 +563,7 @@ function SpecialistsBlock() {
 
   return (
     <section
-      className="relative overflow-hidden py-20 text-home-neutral-900 md:py-28"
+      className="relative overflow-hidden py-8 text-home-neutral-900 sm:py-20 md:py-28"
       style={{ background: "linear-gradient(135deg, #CFC5E0 0%, #E6DEEF 50%, #B8ADCE 100%)" }}
     >
       {/* Soft lavender background glows */}
@@ -583,10 +583,10 @@ function SpecialistsBlock() {
       </div>
 
       <div className="relative mx-auto max-w-7xl px-6 md:px-8 lg:px-12">
-        <div className="grid grid-cols-1 items-center gap-8 lg:grid-cols-12 lg:gap-12">
+        <div className="grid grid-cols-1 items-center gap-5 sm:gap-8 lg:grid-cols-12 lg:gap-12">
           {/* Текст */}
           <div className="order-2 lg:order-1 lg:col-span-5">
-            <span className="font-caption mb-6 inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-home-neutral-900/70">
+            <span className="font-caption mb-3 inline-flex items-center gap-3 text-[10px] uppercase tracking-[0.2em] text-home-neutral-900/70 sm:mb-6">
               <span className="h-px w-10 bg-current" />
               Наши специалисты
             </span>
@@ -601,7 +601,7 @@ function SpecialistsBlock() {
               <p className="font-body mt-3 text-sm font-medium uppercase tracking-wider text-home-neutral-900/80">
                 {s.role}
               </p>
-              <p className="font-body mt-6 text-base font-light leading-relaxed text-home-neutral-900">
+              <p className="font-body mt-3 text-sm font-light leading-relaxed text-home-neutral-900 sm:mt-6 sm:text-base">
                 {s.focus}
               </p>
             </div>
@@ -609,7 +609,7 @@ function SpecialistsBlock() {
 
           {/* Фото + подпись */}
           <div className="order-1 lg:order-2 lg:col-span-6">
-            <div className="relative mx-auto max-w-md lg:max-w-none">
+            <div className="relative mx-auto max-w-48 sm:max-w-md lg:max-w-none">
               <div className="aspect-[4/5] overflow-hidden rounded-2xl shadow-[0_24px_60px_-20px_rgba(86,28,74,0.35)] ring-1 ring-home-paper/40">
                 <img
                   src={s.image}
@@ -643,7 +643,7 @@ function SpecialistsBlock() {
 
           {/* Аватарки-переключатели */}
           <div className="order-3 lg:col-span-1">
-            <div className="flex flex-row items-center justify-center gap-3 lg:flex-col lg:gap-4">
+            <div className="flex flex-row flex-wrap items-center justify-center gap-2 sm:gap-3 lg:flex-col lg:flex-nowrap lg:gap-4">
               <button
                 type="button"
                 aria-label="Предыдущий специалист"
@@ -658,7 +658,7 @@ function SpecialistsBlock() {
                   type="button"
                   aria-label={`Показать ${sp.name}`}
                   onClick={() => setActive(i)}
-                  className={`relative h-12 w-12 overflow-hidden rounded-full transition-all md:h-14 md:w-14 ${i === active ? "ring-2 ring-home-paper ring-offset-2 shadow-[0_0_20px_rgba(122,110,143,0.55)]" : "opacity-60 hover:opacity-100"}`}
+                  className={`relative h-8 w-8 shrink-0 overflow-hidden rounded-full transition-all sm:h-12 sm:w-12 md:h-14 md:w-14 ${i === active ? "ring-2 ring-home-paper ring-offset-2 shadow-[0_0_20px_rgba(122,110,143,0.55)]" : "opacity-60 hover:opacity-100"}`}
                   style={i === active ? { ["--tw-ring-offset-color" as string]: "#CFC5E0", ["--tw-ring-color" as string]: "#ffffff" } : undefined}
                 >
                   <img
@@ -683,7 +683,7 @@ function SpecialistsBlock() {
         </div>
 
         {/* Сноска — официальная информация */}
-        <div className="mt-14 flex justify-center md:mt-20">
+        <div className="mt-6 flex justify-center sm:mt-14 md:mt-20">
           <button
             type="button"
             onClick={() => setInfoOpen(true)}
