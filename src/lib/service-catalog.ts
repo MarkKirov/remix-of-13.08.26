@@ -274,7 +274,7 @@ export const medicalProcedures: Procedure[] = [
 
 export const hardwareProcedures: Procedure[] = [
   {
-    name: "Удаление папиллом, фибром и кератом на аппарате Fotona и методом электрокоагуляции",
+    name: "Удаление папиллом, фибром и кератом методом электрокоагуляции",
     price: "от 310 ₽",
     detailsLabel: "Показания",
     preparations: [],
