@@ -1199,10 +1199,10 @@ function Index() {
               г.Липецк ул.Гагарина д.45А 5 этаж
             </p>
             <a
-              href="tel:89623500909"
-              className="font-display inline-block text-sm tracking-[0.04em] text-home-paper transition-colors hover:text-home-paper/80 md:text-base"
+              href="tel:+79623500909"
+              className="font-display inline-block text-sm tracking-[0.04em] text-home-paper/70 transition-colors hover:text-home-paper/70 md:text-base"
             >
-              8(962)350-09-09
+              +7 (962) 350-09-09
             </a>
           </div>
         </header>
