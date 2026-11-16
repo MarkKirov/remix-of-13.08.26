@@ -1216,8 +1216,9 @@ function Index() {
             </h1>
 
             <p className="font-body mx-auto mt-6 max-w-2xl text-sm font-light leading-relaxed text-home-accent-2 md:mt-8 md:text-base">
-              Сохраняем вашу естественную красоту с помощью эстетических,
-              аппаратных и инъекционных методик с доказанной безопасностью.
+              <span className="block">Сохраняем вашу естественную красоту</span>
+              <span className="block">с помощью эстетических, аппаратных и инъекционных методик.</span>
+              <span className="block">С доказанной безопасностью.</span>
             </p>
 
             <div className="mt-8 md:mt-10">
