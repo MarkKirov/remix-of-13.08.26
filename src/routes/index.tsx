@@ -1209,7 +1209,7 @@ function Index() {
 
         <div className="relative z-10 mx-auto flex h-full min-h-screen max-w-6xl items-center px-6 pt-52 pb-8 md:px-8 md:pb-12 md:pt-24">
           <div className="w-full text-center">
-            <h1 className="font-display mx-auto max-w-4xl text-3xl leading-[1.15] tracking-[0.01em] text-home-accent-3 drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)] md:text-4xl lg:text-5xl">
+            <h1 className="font-display mx-auto max-w-4xl text-2xl leading-[1.2] tracking-normal text-home-accent-3 drop-shadow-[0_2px_12px_rgba(0,0,0,0.4)] md:text-4xl md:leading-[1.15] lg:text-5xl">
               <span className="block">Экспертная косметология</span>
               <span className="block">для здоровья и молодости</span>
               <span className="block">вашей кожи</span>
