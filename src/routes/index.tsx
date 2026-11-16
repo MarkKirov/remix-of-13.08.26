@@ -1636,7 +1636,7 @@ function Index() {
             </p>
             <a
               href="tel:+79623500909"
-              className="font-display mt-4 inline-block text-xl tracking-[0.04em] text-home-paper transition-colors hover:text-home-paper/80 md:text-2xl"
+              className="font-display mt-4 inline-block text-xl tracking-[0.04em] text-home-paper/60 transition-colors hover:text-home-paper/60 md:text-2xl"
             >
               +7 (962) 350-09-09
             </a>
