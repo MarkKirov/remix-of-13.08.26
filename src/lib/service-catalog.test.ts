@@ -86,19 +86,27 @@ for (const expected of expectedMassagePrices) {
     assert.equal(service.price, expected.price);
   });
   test(`standalone massage starting price: ${expected.name}`, () => {
-    const service = massagePageProcedures.find(item => item.name === expected.name.replace(/^.* — /, ""));
+    const service = massagePageProcedures.find(item => item.name === expected.name.replace(/^.* — /, "").replace(/^Расслабляющий (женский|мужской)$/, "Расслабляющий массаж $1"));
     assert.ok(service);
     assert.equal(service.price, expected.price);
   });
 }
 
-test("massage page retains the manual massage starting price", () => {
-  assert.equal(massagePageProcedures[0]?.name, "Ручной эстетический массаж");
-  assert.equal(massagePageProcedures[0]?.price, "от 600 ₽");
+test("women's relaxing massage comes first at 2500 rubles", () => {
+  assert.equal(massagePageProcedures[0]?.name, "Расслабляющий массаж женский");
+  assert.equal(massagePageProcedures[0]?.price, "от 2 500 ₽");
+  assert.equal(massagePageProcedures.filter(item => item.name === "Расслабляющий массаж женский").length, 1);
 });
 
-test("massage page contains only manual massage and the 17 priced variants", () => {
-  assert.equal(massagePageProcedures.length, 18);
+test("men's relaxing massage comes second at 3000 rubles", () => {
+  assert.equal(massagePageProcedures[1]?.name, "Расслабляющий массаж мужской");
+  assert.equal(massagePageProcedures[1]?.price, "от 3 000 ₽");
+  assert.equal(massagePageProcedures.filter(item => item.name === "Расслабляющий массаж мужской").length, 1);
+});
+
+test("massage page contains only the 17 priced variants without the general manual massage item", () => {
+  assert.equal(massagePageProcedures.length, 17);
+  assert.equal(massagePageProcedures.some(item => item.name === "Ручной эстетический массаж"), false);
   assert.equal(massagePageProcedures.some(item => item.name === "Обёртывание тела"), false);
   assert.equal(massagePageProcedures.some(item => item.name === "Кедровая фитобочка с травами"), false);
   assert.equal(massagePageProcedures.some(item => item.name === "Массаж лица"), false);

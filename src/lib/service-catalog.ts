@@ -694,17 +694,15 @@ export const massageProcedures: Procedure[] = [
 // The full massage page promotes each price entry to its own procedure.
 export const massagePageProcedures: Procedure[] = massageProcedures.flatMap((procedure) => {
   if (procedure.name !== "Ручной эстетический массаж") return [];
-  const { pageServices, ...manualMassage } = procedure;
-  return [
-    {
-      ...manualMassage,
-      description: procedure.description?.split("\n\n")[0] ?? "",
-    },
-    ...(pageServices ?? []).map((service) => ({
-      name: service.name.replace(/^.* — /, ""),
+  const firstNames = ["Расслабляющий массаж женский", "Расслабляющий массаж мужской"];
+  return (procedure.pageServices ?? []).map((service) => ({
+      name: service.name.replace(/^.* — /, "").replace(/^Расслабляющий (женский|мужской)$/, "Расслабляющий массаж $1"),
       price: service.price,
       preparations: [],
       ...(procedure.note ? { note: procedure.note } : {}),
-    })),
-  ];
+    })).sort((a, b) => {
+      const aIndex = firstNames.indexOf(a.name);
+      const bIndex = firstNames.indexOf(b.name);
+      return (aIndex < 0 ? firstNames.length : aIndex) - (bIndex < 0 ? firstNames.length : bIndex);
+    });
 });
