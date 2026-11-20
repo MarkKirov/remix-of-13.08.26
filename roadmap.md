@@ -44,3 +44,6 @@
 # Massage descriptions
 - [x] Remove the detailed manual massage service price list.
 - [x] Remove the body wrapping service price list and verify both descriptions in the homepage dialog and service page.
+
+# Manual massage page prices
+- [x] Add all 17 supplied services with starting prices and no service codes, only on service pages; verify homepage dialog stays description-only.

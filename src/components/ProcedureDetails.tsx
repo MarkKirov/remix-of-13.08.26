@@ -21,6 +21,7 @@ export function ProcedureDetails({ procedure }: { procedure: Procedure }) {
       {procedure.subServices && <PriceList items={procedure.subServices} />}
       {procedure.groups?.map((group) => <div key={group.title} className="mt-6"><h4 className="font-medium">{group.title}</h4><PriceList items={group.items} /></div>)}
     </details>}
+    {procedure.pageServices && <section className="mt-5 border-t border-border pt-4"><h4 className="text-sm font-medium text-clinic-ink">Все услуги и цены</h4><PriceList items={procedure.pageServices} /></section>}
     {procedure.note && <p className="mt-4 text-xs leading-6 text-muted-foreground">{procedure.note}</p>}
   </article>;
 }

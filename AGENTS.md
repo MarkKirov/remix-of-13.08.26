@@ -21,3 +21,5 @@
 - Service-page home links target the homepage services anchor so returning visitors resume at the service selection rather than the top.
 
 - Import draft homepage presentation without replacing the live lead provider, shared service catalog, service-page links or ClinicFooter; this preserves production behavior during visual transfers.
+
+- Keep page-only service prices in the shared catalog’s pageServices field and render them through ProcedureDetails, so homepage dialogs retain description-only content.
