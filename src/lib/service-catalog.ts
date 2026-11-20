@@ -692,15 +692,36 @@ export const massageProcedures: Procedure[] = [
 
 
 // The full massage page promotes each price entry to its own procedure.
+const massagePageNames: Record<string, string> = {
+  "Воротниковой зоны женский": "Массаж воротниковой зоны женский",
+  "Воротниковой зоны мужской": "Массаж воротниковой зоны мужской",
+  "Антицеллюлитный женский": "Антицеллюлитный массаж женский",
+  "Антицеллюлитный женский (2 категория)": "Антицеллюлитный массаж женский (2 категория)",
+  "Антицеллюлитный ягодицы и бедра": "Антицеллюлитный массаж ягодицы и бедра",
+  "Живот": "Массаж живота",
+  "Лимфодренажный женский «Легкие ножки»": "Лимфодренажный массаж женский «Лёгкие ножки»",
+  "Ноги мужской": "Массаж ног мужской",
+  "Расслабляющий женский": "Расслабляющий массаж женский",
+  "Расслабляющий женский (2 категория)": "Расслабляющий массаж женский (2 категория)",
+  "Расслабляющий мужской": "Расслабляющий массаж мужской",
+  "Рук": "Массаж рук",
+  "Спины женский": "Массаж спины женский",
+  "Спины женский (2 категория)": "Массаж спины женский (2 категория)",
+  "Спины мужской": "Массаж спины мужской",
+};
+
 export const massagePageProcedures: Procedure[] = massageProcedures.flatMap((procedure) => {
   if (procedure.name !== "Ручной эстетический массаж") return [];
   const firstNames = ["Расслабляющий массаж женский", "Расслабляющий массаж мужской"];
-  return (procedure.pageServices ?? []).map((service) => ({
-      name: service.name.replace(/^.* — /, "").replace(/^Расслабляющий (женский|мужской)$/, "Расслабляющий массаж $1"),
+  return (procedure.pageServices ?? []).map((service) => {
+    const shortName = service.name.replace(/^.* — /, "");
+    return {
+      name: massagePageNames[shortName] ?? shortName,
       price: service.price,
       preparations: [],
       ...(procedure.note ? { note: procedure.note } : {}),
-    })).sort((a, b) => {
+    };
+    }).sort((a, b) => {
       const aIndex = firstNames.indexOf(a.name);
       const bIndex = firstNames.indexOf(b.name);
       return (aIndex < 0 ? firstNames.length : aIndex) - (bIndex < 0 ? firstNames.length : bIndex);

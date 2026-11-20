@@ -85,10 +85,33 @@ for (const expected of expectedMassagePrices) {
     assert.ok(service);
     assert.equal(service.price, expected.price);
   });
-  test(`standalone massage starting price: ${expected.name}`, () => {
-    const service = massagePageProcedures.find(item => item.name === expected.name.replace(/^.* — /, "").replace(/^Расслабляющий (женский|мужской)$/, "Расслабляющий массаж $1"));
+}
+
+const expectedPagePrices = [
+  ["Расслабляющий массаж женский", "от 2 500 ₽"],
+  ["Расслабляющий массаж мужской", "от 3 000 ₽"],
+  ["Массаж воротниковой зоны женский", "от 800 ₽"],
+  ["Массаж воротниковой зоны мужской", "от 900 ₽"],
+  ["Массаж волосистой части головы", "от 800 ₽"],
+  ["Антицеллюлитный массаж женский", "от 2 300 ₽"],
+  ["Антицеллюлитный массаж женский (2 категория)", "от 2 600 ₽"],
+  ["Антицеллюлитный массаж ягодицы и бедра", "от 2 000 ₽"],
+  ["Детокс со скрабированием (ноги, ягодицы, живот)", "от 2 800 ₽"],
+  ["Массаж живота", "от 1 000 ₽"],
+  ["Лимфодренажный массаж женский «Лёгкие ножки»", "от 1 200 ₽"],
+  ["Массаж ног мужской", "от 1 500 ₽"],
+  ["Расслабляющий массаж женский (2 категория)", "от 2 800 ₽"],
+  ["Массаж рук", "от 600 ₽"],
+  ["Массаж спины женский", "от 1 500 ₽"],
+  ["Массаж спины женский (2 категория)", "от 1 800 ₽"],
+  ["Массаж спины мужской", "от 2 000 ₽"],
+];
+
+for (const [index, expected] of expectedPagePrices.entries()) {
+  test(`massage price and order remain unchanged at position ${index + 1}`, () => {
+    const service = massagePageProcedures[index];
     assert.ok(service);
-    assert.equal(service.price, expected.price);
+    assert.equal(service.price, expected[1]);
   });
 }
 
