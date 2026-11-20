@@ -273,6 +273,7 @@ export const medicalProcedures: Procedure[] = [
 ];
 
 
+
 export const hardwareProcedures: Procedure[] = [
   {
     name: "Удаление папиллом, фибром и кератом методом электрокоагуляции",
@@ -689,3 +690,21 @@ export const massageProcedures: Procedure[] = [
 ];
 
 
+
+// The full massage page promotes each price entry to its own procedure.
+export const massagePageProcedures: Procedure[] = massageProcedures.flatMap((procedure) => {
+  if (procedure.name !== "Ручной эстетический массаж") return [];
+  const { pageServices, ...manualMassage } = procedure;
+  return [
+    {
+      ...manualMassage,
+      description: procedure.description?.split("\n\n")[0] ?? "",
+    },
+    ...(pageServices ?? []).map((service) => ({
+      name: service.name.replace(/^.* — /, ""),
+      price: service.price,
+      preparations: [],
+      ...(procedure.note ? { note: procedure.note } : {}),
+    })),
+  ];
+});

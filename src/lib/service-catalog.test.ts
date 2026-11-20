@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { massageProcedures } from "./service-catalog";
+import { massageProcedures, massagePageProcedures } from "./service-catalog";
 
 test("the transferred phytobarrel service starts at 800 rubles", () => {
   const procedure = massageProcedures.find((item) => item.name === "Кедровая фитобочка с травами");
@@ -85,4 +85,22 @@ for (const expected of expectedMassagePrices) {
     assert.ok(service);
     assert.equal(service.price, expected.price);
   });
+  test(`standalone massage starting price: ${expected.name}`, () => {
+    const service = massagePageProcedures.find(item => item.name === expected.name.replace(/^.* — /, ""));
+    assert.ok(service);
+    assert.equal(service.price, expected.price);
+  });
 }
+
+test("massage page retains the manual massage starting price", () => {
+  assert.equal(massagePageProcedures[0]?.name, "Ручной эстетический массаж");
+  assert.equal(massagePageProcedures[0]?.price, "от 600 ₽");
+});
+
+test("massage page contains only manual massage and the 17 priced variants", () => {
+  assert.equal(massagePageProcedures.length, 18);
+  assert.equal(massagePageProcedures.some(item => item.name === "Обёртывание тела"), false);
+  assert.equal(massagePageProcedures.some(item => item.name === "Кедровая фитобочка с травами"), false);
+  assert.equal(massagePageProcedures.some(item => item.name === "Массаж лица"), false);
+  assert.equal(massagePageProcedures.some(item => item.pageServices !== undefined), false);
+});

@@ -47,3 +47,7 @@
 
 # Manual massage page prices
 - [x] Add all 17 supplied services with starting prices and no service codes, only on service pages; verify homepage dialog stays description-only.
+
+# Standalone massage procedures
+- [x] Promote massage variants to separate collapsible page items; remove wrapping, phytobarrel and the introductory technique lists from this page section.
+- [x] Verify prices, expansion, appointment controls and mobile layout.

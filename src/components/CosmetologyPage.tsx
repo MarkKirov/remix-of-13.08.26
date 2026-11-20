@@ -15,9 +15,10 @@ type CosmetologyPageProps = {
   priceDescription: string;
   image: string;
   procedures: Procedure[];
+  collapsibleProcedures?: boolean;
 };
 
-function Content({ title, description, consultation, priceDescription, image, procedures }: CosmetologyPageProps) {
+function Content({ title, description, consultation, priceDescription, image, procedures, collapsibleProcedures = false }: CosmetologyPageProps) {
   const { open } = useLeadDialog();
   return <div className="bg-background text-clinic-ink">
     <header className="border-b border-border">
@@ -49,7 +50,7 @@ function Content({ title, description, consultation, priceDescription, image, pr
           </div>
           <div className="min-w-0">
             <div className="flex items-center justify-between gap-4 border-b border-border pb-4 text-sm text-muted-foreground"><span>{title}</span><span className="shrink-0">Прайс 2026</span></div>
-            {procedures.map(procedure => <ProcedureDetails key={procedure.name} procedure={procedure} />)}
+            {procedures.map(procedure => <ProcedureDetails key={procedure.name} procedure={procedure} collapsible={collapsibleProcedures} />)}
           </div>
         </div>
       </section>

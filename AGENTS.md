@@ -23,3 +23,4 @@
 - Import draft homepage presentation without replacing the live lead provider, shared service catalog, service-page links or ClinicFooter; this preserves production behavior during visual transfers.
 
 - Keep page-only service prices in the shared catalog’s pageServices field and render them through ProcedureDetails, so homepage dialogs retain description-only content.
+- Derive the massage page's standalone procedures from the shared catalog's pageServices and use ProcedureDetails in collapsible mode; this preserves homepage dialog content and avoids duplicate price data.
