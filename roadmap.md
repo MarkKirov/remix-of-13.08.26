@@ -40,3 +40,7 @@
 # Massage page
 - [x] Add a massage-only page with the approved heading and description, shared massage procedures and full footer; connect the massage dialog.
 - [x] Verify the page, appointment controls and return navigation on desktop and mobile.
+
+# Massage descriptions
+- [x] Remove the detailed manual massage service price list.
+- [x] Remove the body wrapping service price list and verify both descriptions in the homepage dialog and service page.
