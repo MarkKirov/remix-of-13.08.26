@@ -318,9 +318,7 @@ export const hardwareProcedures: Procedure[] = [
   {
     name: "Фототерапия IPL на аппарате Viora V30",
     price: "от 13 700 ₽",
-    detailsLabel: "Аппарат",
     preparations: [],
-    device: "Viora V30 — IPL-фототерапия",
     description:
       "Терапия на аппарате Viora V30 помогает справиться с первыми и очевидными признаками фотостарения, а также процедура способна значительно улучшить качество кожи.",
   },
