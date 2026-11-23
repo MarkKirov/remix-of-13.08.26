@@ -2,6 +2,12 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { medicalProcedures, hardwareProcedures, massageProcedures, massagePageProcedures } from "./service-catalog";
 
+test("HydraFacial facial cleansing starts at 6000 rubles", () => {
+  const procedure = hardwareProcedures.find(item => item.name === "Чистка лица на аппарате HydraFacial");
+  assert.ok(procedure);
+  assert.equal(procedure.price, "от 6 000 ₽");
+});
+
 test("laser hair removal starts at 4200 rubles", () => {
   const procedure = hardwareProcedures.find(item => item.name === "Лазерная эпиляция на аппарате Mediostar Monolith");
   assert.ok(procedure);

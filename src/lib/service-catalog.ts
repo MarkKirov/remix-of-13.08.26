@@ -428,7 +428,7 @@ export const hardwareProcedures: Procedure[] = [
 
   {
     name: "Чистка лица на аппарате HydraFacial",
-    price: "от 2 950 ₽",
+    price: "от 6 000 ₽",
     detailsLabel: "Аппарат",
     preparations: [],
     device: "HydraFacial",
