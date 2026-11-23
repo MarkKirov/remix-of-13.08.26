@@ -24,3 +24,5 @@
 
 - Keep page-only service prices in the shared catalog’s pageServices field and render them through ProcedureDetails, so homepage dialogs retain description-only content.
 - Derive manual massage page procedures from the shared catalog's pageServices, keep page-only facial massage prices in that catalog, and reuse shared wrapping and phytobarrel entries with ProcedureDetails in collapsible mode; this preserves homepage dialogs and avoids duplicate prices.
+
+- Service pages show the consultation price note for every procedure through ProcedureDetails, using the procedure note when set and a shared default otherwise, so new procedures get it automatically.

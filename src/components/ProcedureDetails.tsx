@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { useLeadDialog } from "@/components/LeadDialog";
 import type { Procedure } from "@/lib/service-catalog";
 
+export const DEFAULT_PRICE_NOTE = "Точную цену вы узнаете на первичной консультации. Наш специалист подберёт подходящую услугу, рассчитает стоимость и определит нужное количество процедур.";
+
 function PriceList({ items }: { items: { name: string; price: string }[] }) {
   return <dl className="divide-y divide-border">{items.map((item) => <div key={item.name} className="flex items-start justify-between gap-4 py-3 text-sm"><dt className="min-w-0 flex-1 break-words">{item.name}</dt><dd className="shrink-0 font-medium text-clinic">{item.price}</dd></div>)}</dl>;
 }
@@ -20,7 +22,7 @@ export function ProcedureDetails({ procedure, collapsible = false }: { procedure
       {procedure.groups?.map((group) => <div key={group.title} className="mt-6"><h4 className="font-medium">{group.title}</h4><PriceList items={group.items} /></div>)}
     </details>}
     {procedure.pageServices && <section className="mt-5 border-t border-border pt-4"><h4 className="text-sm font-medium text-clinic-ink">Все услуги и цены</h4><PriceList items={procedure.pageServices} /></section>}
-    {procedure.note && <p className="mt-4 text-xs leading-6 text-muted-foreground">{procedure.note}</p>}
+    <p className="mt-4 text-xs leading-6 text-muted-foreground">{procedure.note ?? DEFAULT_PRICE_NOTE}</p>
     {collapsible && <div className="mt-5">{appointment}</div>}
   </>;
   if (collapsible) return <article className="border-b border-border py-7">
