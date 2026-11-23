@@ -128,7 +128,9 @@ test("men's relaxing massage comes second at 3000 rubles", () => {
 });
 
 test("massage page contains 17 body variants, five face variants, wrapping and phytobarrel without the general manual massage item", () => {
-  assert.equal(massagePageProcedures.length, 24);
+  assert.equal(massagePageProcedures.length, 23);
+  assert.equal(massagePageProcedures.some(item => item.name === "Обёртывание тела"), false);
+  assert.equal(massagePageProcedures.at(-1)?.name, "Кедровая фитобочка с травами");
   assert.equal(massagePageProcedures.some(item => item.name === "Ручной эстетический массаж"), false);
   assert.equal(massagePageProcedures.some(item => item.name === "Массаж лица"), false);
   assert.equal(massagePageProcedures.some(item => item.pageServices !== undefined), false);
@@ -140,7 +142,6 @@ const additionalMassagePrices = [
   ["Классический массаж лица + банки", "от 1 200 ₽"],
   ["Массаж Шиацу", "от 1 000 ₽"],
   ["Скульптурный массаж", "от 1 800 ₽"],
-  ["Обёртывание тела", "от 300 ₽"],
   ["Кедровая фитобочка с травами", "от 800 ₽"],
 ];
 

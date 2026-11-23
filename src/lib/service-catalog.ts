@@ -718,7 +718,9 @@ const massageFacePageServices: SubService[] = [
   { name: "Скульптурный массаж", price: "от 1 800 ₽" },
 ];
 
+const massagePageHidden = ["Обёртывание тела", "Кедровая фитобочка с травами"];
 export const massagePageProcedures: Procedure[] = [...massageProcedures.flatMap((procedure) => {
+  if (massagePageHidden.includes(procedure.name)) return [];
   if (procedure.name !== "Ручной эстетический массаж") return [procedure];
   const firstNames = ["Расслабляющий массаж женский", "Расслабляющий массаж мужской"];
   return (procedure.pageServices ?? []).map((service) => {
@@ -734,4 +736,5 @@ export const massagePageProcedures: Procedure[] = [...massageProcedures.flatMap(
       const bIndex = firstNames.indexOf(b.name);
       return (aIndex < 0 ? firstNames.length : aIndex) - (bIndex < 0 ? firstNames.length : bIndex);
     });
-}), ...massageFacePageServices.map((service) => ({ ...service, preparations: [] }))];
+}), ...massageFacePageServices.map((service) => ({ ...service, preparations: [] })),
+  ...massageProcedures.filter((procedure) => procedure.name === "Кедровая фитобочка с травами")];
