@@ -32,6 +32,12 @@ test("collagen stimulation starts at 47000 rubles", () => {
   assert.equal(procedure.price, "от 47 000 ₽");
 });
 
+test("contour correction starts at 14000 rubles", () => {
+  const procedure = medicalProcedures.find(item => item.name === "Контурная пластика и объёмное моделирование лица");
+  assert.ok(procedure);
+  assert.equal(procedure.price, "от 14 000 ₽");
+});
+
 test("the transferred phytobarrel service starts at 800 rubles", () => {
   const procedure = massageProcedures.find((item) => item.name === "Кедровая фитобочка с травами");
   assert.ok(procedure);
