@@ -317,7 +317,7 @@ export const hardwareProcedures: Procedure[] = [
 
   {
     name: "Фототерапия IPL на аппарате Viora V30",
-    price: "от 1 800 ₽",
+    price: "от 13 700 ₽",
     detailsLabel: "Аппарат",
     preparations: [],
     device: "Viora V30 — IPL-фототерапия",

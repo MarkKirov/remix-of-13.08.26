@@ -2,6 +2,12 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { medicalProcedures, hardwareProcedures, massageProcedures, massagePageProcedures } from "./service-catalog";
 
+test("IPL phototherapy on Viora V30 starts at 13700 rubles", () => {
+  const procedure = hardwareProcedures.find(item => item.name === "Фототерапия IPL на аппарате Viora V30");
+  assert.ok(procedure);
+  assert.equal(procedure.price, "от 13 700 ₽");
+});
+
 test("aesthetic laser resurfacing starts at 20000 rubles", () => {
   const procedure = hardwareProcedures.find(item => item.name === "Эстетическая лазерная шлифовка");
   assert.ok(procedure);
