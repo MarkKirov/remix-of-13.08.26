@@ -20,6 +20,12 @@ test("collagen therapy offers Collost from Russia", () => {
   assert.ok(procedure.preparations.includes("Коллост (Россия)"));
 });
 
+test("collagen therapy does not offer AgentCol", () => {
+  const procedure = medicalProcedures.find(item => item.name === "Коллагентерапия");
+  assert.ok(procedure);
+  assert.equal(procedure.preparations.some(item => item.includes("AgentCol")), false);
+});
+
 test("the transferred phytobarrel service starts at 800 rubles", () => {
   const procedure = massageProcedures.find((item) => item.name === "Кедровая фитобочка с травами");
   assert.ok(procedure);
