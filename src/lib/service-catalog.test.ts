@@ -2,6 +2,12 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { medicalProcedures, hardwareProcedures, massageProcedures, massagePageProcedures } from "./service-catalog";
 
+test("laser hair removal starts at 4200 rubles", () => {
+  const procedure = hardwareProcedures.find(item => item.name === "Лазерная эпиляция на аппарате Mediostar Monolith");
+  assert.ok(procedure);
+  assert.equal(procedure.price, "от 4 200 ₽");
+});
+
 test("Icoon massage suit costs 1350 rubles", () => {
   const procedure = hardwareProcedures.find(item => item.name === "Аппаратный массаж лица и тела Icoon Laser Med");
   assert.ok(procedure);

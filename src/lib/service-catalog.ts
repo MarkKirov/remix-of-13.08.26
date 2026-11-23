@@ -378,10 +378,8 @@ export const hardwareProcedures: Procedure[] = [
 
   {
     name: "Лазерная эпиляция на аппарате Mediostar Monolith",
-    price: "от 1 100 ₽",
-    detailsLabel: "Аппарат",
+    price: "от 4 200 ₽",
     preparations: [],
-    device: "Mediostar Monolith",
     description:
       "Лазерная эпиляция на аппарате Mediostar Monolith — удаление нежелательных волос с помощью диодного лазера. Очень тонкий лазерный луч разрушает меланин в волосе и в волосяной луковице. Волосы отмирают, а разрушенная волосяная луковица больше не может восстановить волос.",
     subServices: [
