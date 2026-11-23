@@ -159,3 +159,9 @@ test("every massage page procedure has a short description", () => {
     assert.ok(item.description.length < 220, item.name);
   }
 });
+
+test("face massage items show the consultation price note", () => {
+  for (const item of massagePageProcedures.filter(i => i.name.includes("лица"))) {
+    assert.ok(item.note?.startsWith("Точную цену вы узнаете на первичной консультации."), item.name);
+  }
+});

@@ -761,7 +761,7 @@ const massagePageList: Procedure[] = [...massageProcedures.flatMap((procedure) =
       const bIndex = firstNames.indexOf(b.name);
       return (aIndex < 0 ? firstNames.length : aIndex) - (bIndex < 0 ? firstNames.length : bIndex);
     });
-}), ...massageFacePageServices.map((service) => ({ ...service, preparations: [] })),
+}), ...massageFacePageServices.map((service) => ({ ...service, preparations: [], note: "Точную цену вы узнаете на первичной консультации. Наш специалист подберёт подходящую услугу, рассчитает стоимость и определит нужное количество процедур." })),
   ...massageProcedures.filter((procedure) => procedure.name === "Кедровая фитобочка с травами")];
 export const massagePageProcedures: Procedure[] = massagePageList.map((procedure) => ({
   ...procedure,
