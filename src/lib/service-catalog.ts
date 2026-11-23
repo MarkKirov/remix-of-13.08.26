@@ -361,7 +361,7 @@ export const hardwareProcedures: Procedure[] = [
   },
 
   {
-    name: "Биостимуляция для коррекции фигуры на аппарате Futura Pro",
+    name: "Биостимуляция для коррекции лица и тела на аппарате Futura Pro",
     price: "от 900 ₽",
     detailsLabel: "Аппарат",
     preparations: [],
