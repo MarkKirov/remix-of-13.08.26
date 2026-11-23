@@ -1,6 +1,10 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { medicalProcedures, massageProcedures, massagePageProcedures } from "./service-catalog";
+import { medicalProcedures, hardwareProcedures, massageProcedures, massagePageProcedures } from "./service-catalog";
+
+test("electrocoagulation removal is no longer offered in the hardware catalog", () => {
+  assert.equal(hardwareProcedures.some(item => item.name === "Удаление папиллом, фибром и кератом методом электрокоагуляции"), false);
+});
 
 test("biorevitalization and bioreparation start at 8500 rubles", () => {
   const procedure = medicalProcedures.find(item => item.name === "Биоревитализация. Биорепарация");
