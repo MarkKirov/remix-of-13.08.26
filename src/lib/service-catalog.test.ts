@@ -2,6 +2,12 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { medicalProcedures, hardwareProcedures, massageProcedures, massagePageProcedures } from "./service-catalog";
 
+test("Icoon massage suit costs 1350 rubles", () => {
+  const procedure = hardwareProcedures.find(item => item.name === "Аппаратный массаж лица и тела Icoon Laser Med");
+  assert.ok(procedure);
+  assert.equal(procedure.additionalPrice?.price, "1 350 ₽");
+});
+
 test("Icoon Laser Med face and body massage starts at 2750 rubles", () => {
   const procedure = hardwareProcedures.find(item => item.name === "Аппаратный массаж лица и тела Icoon Laser Med");
   assert.ok(procedure);

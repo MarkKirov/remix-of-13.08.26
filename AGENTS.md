@@ -14,6 +14,7 @@
 - Send owner lead emails only after successful storage, using that UUID for email idempotency; keep the recipient fixed by the template.
 - Owner lead emails are sent by a DB trigger on `leads` calling the Lovable-hosted /api/public/lead-notify, because the self-hosted RU server is blocked by the email API.
 - Keep procedure data in a browser-safe shared catalog so homepage dialogs and service pages use identical prices and descriptions without importing route modules.
+- Store standalone supplemental prices in the catalog's additionalPrice field and render them through ProcedureDetails, so service-specific fees stay out of presentation logic.
 - Share the full clinic footer and patient documents through ClinicFooter, and procedure details through ProcedureDetails, to keep public pages consistent without importing route modules.
 - Keep the review slideshow in ReviewsSection with project-owned asset pointers and a fixed-aspect stage so imported screenshots remain portable and slide changes do not shift the layout.
 - Use ReviewViewer with Radix dialog and react-zoom-pan-pinch for fullscreen original review images; this preserves screenshot text and provides accessible closing and touch zoom without custom gesture math.

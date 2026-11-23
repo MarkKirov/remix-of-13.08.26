@@ -8,6 +8,7 @@ export type Procedure = {
   preparations: string[];
   detailsLabel?: string;
   device?: string;
+  additionalPrice?: SubService;
   subServices?: SubService[];
   pageServices?: SubService[];
   groups?: SubGroup[];
@@ -327,6 +328,7 @@ export const hardwareProcedures: Procedure[] = [
     name: "Аппаратный массаж лица и тела Icoon Laser Med",
     price: "от 2 750 ₽",
     preparations: [],
+    additionalPrice: { name: "Костюм", price: "1 350 ₽" },
     description:
       "Аппаратный массаж лица и тела на аппарате Icoon Laser Med — запатентованная итальянская технология, сочетающая мультимикроальвеолярную стимуляцию с воздействием холодного диодного лазера и светодиодного излучения. Процедура способствует повышению упругости кожи и выработке коллагена, помогает уменьшить локальные жировые отложения и сделать контуры лица и тела более чёткими.",
     subServices: [

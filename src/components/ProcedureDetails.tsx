@@ -17,6 +17,7 @@ export function ProcedureDetails({ procedure, collapsible = false }: { procedure
     {procedure.description && <p className="mt-4 whitespace-pre-line text-sm leading-7 text-muted-foreground">{procedure.description}</p>}
     {procedure.preparations.length > 0 && <div className="mt-4"><h4 className="text-sm font-medium">{procedure.detailsLabel ?? "Препараты"}</h4><p className="mt-2 text-sm leading-6 text-muted-foreground">{procedure.preparations.join(" · ")}</p></div>}
     {procedure.device && <p className="mt-4 text-sm text-muted-foreground"><span className="font-medium text-clinic-ink">Аппарат: </span>{procedure.device}</p>}
+    {procedure.additionalPrice && <p className="mt-4 text-sm text-clinic-ink"><strong>{procedure.additionalPrice.name} — {procedure.additionalPrice.price}</strong></p>}
     {(procedure.subServices || procedure.groups) && <details className="mt-5 border-t border-border pt-4"><summary className="flex cursor-pointer list-none items-center justify-between gap-3 text-sm font-medium text-clinic">Все варианты и цены <Plus className="h-4 w-4 shrink-0" /></summary>
       {procedure.subServices && <PriceList items={procedure.subServices} />}
       {procedure.groups?.map((group) => <div key={group.title} className="mt-6"><h4 className="font-medium">{group.title}</h4><PriceList items={group.items} /></div>)}
