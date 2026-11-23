@@ -284,8 +284,8 @@ export const hardwareProcedures: Procedure[] = [
   },
 
   {
-    name: "Лазерное омоложение",
-    price: "от 6 600 ₽",
+    name: "Лазерное неабляционное омоложение кожи лица",
+    price: "от 9 700 ₽",
     detailsLabel: "Эффект",
     preparations: ["Выравнивание рельефа кожи", "Улучшение тонуса и текстуры"],
     description:
