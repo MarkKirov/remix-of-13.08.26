@@ -324,8 +324,8 @@ export const hardwareProcedures: Procedure[] = [
   },
 
   {
-    name: "Аппаратный массаж Icoon Laser Med",
-    price: "от 1 650 ₽",
+    name: "Аппаратный массаж лица и тела Icoon Laser Med",
+    price: "от 2 750 ₽",
     detailsLabel: "Аппарат",
     preparations: [],
     device: "Laser Med",

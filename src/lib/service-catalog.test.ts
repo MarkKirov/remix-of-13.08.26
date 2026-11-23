@@ -2,6 +2,12 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { medicalProcedures, hardwareProcedures, massageProcedures, massagePageProcedures } from "./service-catalog";
 
+test("Icoon Laser Med face and body massage starts at 2750 rubles", () => {
+  const procedure = hardwareProcedures.find(item => item.name === "Аппаратный массаж лица и тела Icoon Laser Med");
+  assert.ok(procedure);
+  assert.equal(procedure.price, "от 2 750 ₽");
+});
+
 test("IPL phototherapy on Viora V30 starts at 13700 rubles", () => {
   const procedure = hardwareProcedures.find(item => item.name === "Фототерапия IPL на аппарате Viora V30");
   assert.ok(procedure);
