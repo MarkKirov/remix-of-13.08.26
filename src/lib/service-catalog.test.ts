@@ -44,6 +44,12 @@ test("lip hydro reserve starts at 14250 rubles", () => {
   assert.equal(procedure.price, "от 14 250 ₽");
 });
 
+test("hyperhidrosis treatment starts at 120 rubles per unit", () => {
+  const procedure = medicalProcedures.find(item => item.name === "Лечение гипергидроза");
+  assert.ok(procedure);
+  assert.equal(procedure.price, "от 120 ₽ / 1 ед.");
+});
+
 test("the transferred phytobarrel service starts at 800 rubles", () => {
   const procedure = massageProcedures.find((item) => item.name === "Кедровая фитобочка с травами");
   assert.ok(procedure);
