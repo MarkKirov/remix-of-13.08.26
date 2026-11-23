@@ -51,3 +51,7 @@
 # Standalone massage procedures
 - [x] Promote massage variants to separate collapsible page items; remove wrapping, phytobarrel and the introductory technique lists from this page section.
 - [x] Verify prices, expansion, appointment controls and mobile layout.
+
+# Additional massage page procedures
+- [x] Add five facial massage variants using the supplied photo prices and restore shared wrapping and phytobarrel entries.
+- [x] Verify starting prices, collapsible items, appointments and mobile layout.

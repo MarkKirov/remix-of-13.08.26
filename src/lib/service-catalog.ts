@@ -710,8 +710,16 @@ const massagePageNames: Record<string, string> = {
   "Спины мужской": "Массаж спины мужской",
 };
 
-export const massagePageProcedures: Procedure[] = massageProcedures.flatMap((procedure) => {
-  if (procedure.name !== "Ручной эстетический массаж") return [];
+const massageFacePageServices: SubService[] = [
+  { name: "Буккально-скульптурный массаж", price: "от 2 500 ₽" },
+  { name: "Буккальный массаж лица", price: "от 1 700 ₽" },
+  { name: "Классический массаж лица + банки", price: "от 1 200 ₽" },
+  { name: "Массаж Шиацу", price: "от 1 000 ₽" },
+  { name: "Скульптурный массаж", price: "от 1 800 ₽" },
+];
+
+export const massagePageProcedures: Procedure[] = [...massageProcedures.flatMap((procedure) => {
+  if (procedure.name !== "Ручной эстетический массаж") return [procedure];
   const firstNames = ["Расслабляющий массаж женский", "Расслабляющий массаж мужской"];
   return (procedure.pageServices ?? []).map((service) => {
     const shortName = service.name.replace(/^.* — /, "");
@@ -726,4 +734,4 @@ export const massagePageProcedures: Procedure[] = massageProcedures.flatMap((pro
       const bIndex = firstNames.indexOf(b.name);
       return (aIndex < 0 ? firstNames.length : aIndex) - (bIndex < 0 ? firstNames.length : bIndex);
     });
-});
+}), ...massageFacePageServices.map((service) => ({ ...service, preparations: [] }))];
