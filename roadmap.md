@@ -55,3 +55,4 @@
 # Additional massage page procedures
 - [x] Add five facial massage variants using the supplied photo prices and restore shared wrapping and phytobarrel entries.
 - [x] Verify starting prices, collapsible items, appointments and mobile layout.
+- [x] Update women's collar-zone massage to 1 000 rubles and men's to 1 200 rubles; verify both prices.
