@@ -2,6 +2,12 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { medicalProcedures, hardwareProcedures, massageProcedures, massagePageProcedures } from "./service-catalog";
 
+test("aesthetic laser resurfacing starts at 20000 rubles", () => {
+  const procedure = hardwareProcedures.find(item => item.name === "Эстетическая лазерная шлифовка");
+  assert.ok(procedure);
+  assert.equal(procedure.price, "от 20 000 ₽");
+});
+
 test("non-ablative laser facial rejuvenation starts at 9700 rubles", () => {
   const procedure = hardwareProcedures.find(item => item.name === "Лазерное неабляционное омоложение кожи лица");
   assert.ok(procedure);
