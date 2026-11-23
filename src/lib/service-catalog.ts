@@ -32,7 +32,7 @@ export const medicalProcedures: Procedure[] = [
   },
   {
     name: "Биоревитализация. Биорепарация",
-    price: "от 6 300 ₽",
+    price: "от 8 500 ₽",
     preparations: ["Novacutan (Франция)", "Atlantis (Россия)", "Bellarti (Россия)", "MiraLine (Корея)"],
     description:
       "Подкожные инъекции препарата на основе гиалуроновой кислоты для омоложения, оздоровления и улучшения тонуса кожи.",

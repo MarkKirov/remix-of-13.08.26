@@ -1,6 +1,12 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { massageProcedures, massagePageProcedures } from "./service-catalog";
+import { medicalProcedures, massageProcedures, massagePageProcedures } from "./service-catalog";
+
+test("biorevitalization and bioreparation start at 8500 rubles", () => {
+  const procedure = medicalProcedures.find(item => item.name === "Биоревитализация. Биорепарация");
+  assert.ok(procedure);
+  assert.equal(procedure.price, "от 8 500 ₽");
+});
 
 test("the transferred phytobarrel service starts at 800 rubles", () => {
   const procedure = massageProcedures.find((item) => item.name === "Кедровая фитобочка с травами");
