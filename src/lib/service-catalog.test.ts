@@ -152,3 +152,10 @@ for (const [name, price] of additionalMassagePrices) {
     assert.equal(matches[0]?.price, price);
   });
 }
+
+test("every massage page procedure has a short description", () => {
+  for (const item of massagePageProcedures) {
+    assert.ok(item.description, item.name);
+    assert.ok(item.description.length < 220, item.name);
+  }
+});

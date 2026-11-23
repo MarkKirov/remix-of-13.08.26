@@ -10,6 +10,5 @@ export default function MassagePage() {
     priceDescription="Виды ручного массажа и стоимость процедур. Подходящую программу и точную стоимость определяет специалист на консультации."
     image={massageImage.url}
     procedures={massagePageProcedures}
-    collapsibleProcedures
   />;
 }
