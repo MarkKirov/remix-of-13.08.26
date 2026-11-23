@@ -26,6 +26,12 @@ test("collagen therapy does not offer AgentCol", () => {
   assert.equal(procedure.preparations.some(item => item.includes("AgentCol")), false);
 });
 
+test("collagen stimulation starts at 47000 rubles", () => {
+  const procedure = medicalProcedures.find(item => item.name === "Коллагенстимуляция");
+  assert.ok(procedure);
+  assert.equal(procedure.price, "от 47 000 ₽");
+});
+
 test("the transferred phytobarrel service starts at 800 rubles", () => {
   const procedure = massageProcedures.find((item) => item.name === "Кедровая фитобочка с травами");
   assert.ok(procedure);
