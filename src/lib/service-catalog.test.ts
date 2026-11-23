@@ -2,6 +2,24 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { medicalProcedures, hardwareProcedures, massageProcedures, massagePageProcedures } from "./service-catalog";
 
+test("hardware procedures follow the requested order with remaining services unchanged", () => {
+  assert.deepEqual(hardwareProcedures.map(item => item.name), [
+    "Фототерапия IPL на аппарате Viora V30",
+    "Ультразвуковой СМАС-лифтинг",
+    "Эстетическая лазерная шлифовка",
+    "Лазерная шлифовка рубцовой ткани эрбиевым YAG лазером",
+    "Лазерное удаление сосудов",
+    "Лазерное неабляционное омоложение кожи лица",
+    "Аппаратный массаж лица и тела Icoon Laser Med",
+    "Аппаратный массаж для лица и шеи LPG Mobilift",
+    "Микротоковая терапия",
+    "Биостимуляция для коррекции лица и тела на аппарате Futura Pro",
+    "Ультрафонофорез кожи, лица и шеи",
+    "Лазерная эпиляция на аппарате Mediostar Monolith",
+    "Чистка лица на аппарате HydraFacial",
+  ]);
+});
+
 test("HydraFacial facial cleansing starts at 6000 rubles", () => {
   const procedure = hardwareProcedures.find(item => item.name === "Чистка лица на аппарате HydraFacial");
   assert.ok(procedure);
